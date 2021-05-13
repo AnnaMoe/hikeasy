@@ -1,0 +1,16 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+      <div class="bg-white rounded p-3 shadow confirmation mt-3 mb-3">
+        <h3 class= "mb-4">Complete your booking</h3>
+        <%= simple_form_for [@hike, @booking] do |f| %>
+          <div class="form-row">
+          <%= f.input :date %>
+
+           <p><small><em class="text-muted">By clicking <strong>'Confirm'</strong> you are agreeing to our Terms & Conditions, Privacy Policy, and to received booking-related messages.</em></small></p>
+           <%= f.button :button, "Confirm", class: "button" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
