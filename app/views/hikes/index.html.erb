@@ -2,54 +2,25 @@
   <div>
 
 
-<div class="input-group">
-   <input type="text" class="form-control" placeholder="Explore">
-   <span class="input-group-btn">
-        <button name="button" class="btn btn-default" type="submit">Search!</button>
-   </span>
-</div>
+<%= simple_form_for :search, url: root_path, method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Explore" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+<% end %>
 
-
+<% @hikes.each do |hike| %>
 
   <div class="column">
     <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
-      <h3>Hike</h3>
-      <p>Location</p>
-      <p>Number of hikers</p>
+      <h3><%= hike.name %></h3>
+      <p><%= hike.difficulty %></p>
+      <p><%= hike.accomodation_type %></p>
+      <p><%= hike.price %>$</p>
     </div>
   </div>
 </div>
-
-  <div class="column">
-    <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-      <h3>Hike</h3>
-      <p>Location</p>
-      <p>Number of hikers</p>
-    </div>
-  </div>
-</div>
-
-   <div class="column">
-    <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-      <h3>Hike</h3>
-      <p>Location</p>
-      <p>Number of hikers</p>
-    </div>
-  </div>
-</div>
-
-  <div class="column">
-    <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="..."
-      <h3>Hike</h3>
-      <p>Location</p>
-      <p>Number of hikers</p>
-      <p>Price</p>
-  </div>
-</div>
-
-
 
