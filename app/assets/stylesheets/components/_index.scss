@@ -3,3 +3,34 @@
 @import "avatar";
 @import "navbar";
 @import "footer";
+
+
+
+.btn-flat {
+  position: relative;
+  left: 90px;
+  color:white;
+  background: blue;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  }
+
+//.btn:hover {
+ //     background: green;
+ //     color: white;
+ // }
+
+
+.card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+
