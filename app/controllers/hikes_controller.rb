@@ -2,13 +2,18 @@ class HikesController < ApplicationController
 
   before_action :set_hike, only: [:show]
 
- def index
-    if params[:query].present?
-      @hikes = Hike.search_by_title_and_description(params[:query])
-    else
-      @hikes = Hike.all
+   def index
+    @hikes = Hike.all
+
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @hikes.geocoded.map do |hike|
+      {
+        lat: hike.destination_latitude,
+        lng: hike.destination_longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { hike: hike })
+      }
     end
- end
+  end
 
   def show
     @booking = Booking.new
