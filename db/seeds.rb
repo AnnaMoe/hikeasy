@@ -8,6 +8,7 @@
 
 
 puts 'cleaning up database'
+Booking.destroy_all
 Hike.destroy_all
 puts 'database is clean'
 

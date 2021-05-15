@@ -3,15 +3,13 @@ class HikesController < ApplicationController
   before_action :set_hike, only: [:show]
 
  def index
-    if params[:query].present?
-      @hikes = Hike.search_by_title_and_description(params[:query])
-    else
-      @hikes = Hike.all
-    end
+  @hikes = policy_scope(Hike).order(created_at: :desc)
  end
 
   def show
     @booking = Booking.new
+    authorize @hike
+    authorize @booking
   end
 
  private
