@@ -1,5 +1,56 @@
-<h1>Hike Details Page</h1>
-
-<%= @hike.name %>
-
-<%= render "bookings/form", booking: @booking %>
+<div class="container">
+            <div class="row align-items-center my-5">
+                <div class="col-lg-7"><img class="" src="" alt="..." /></div>
+                <div class="col-lg-5">
+                    <%= render "bookings/form", booking: @booking %>
+                </div>
+                </div>
+            </div>
+            <hr style="width:75%; text-align:left; margin-left:0">
+            <div class="row align-items-center my-5">
+                <div class="col-lg-7"><p>This is the description section</p></div>
+                <div class="col-lg-5">
+                    <div class="card-guide">
+                </div>
+                </div>
+            </div>
+            <hr>
+                <div class="card-review"><p>Reviews</p>
+                <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+                <p>'This is a review"</p>
+                </div>
+            
+            <p class="suggested text-center"><strong>You Might Also Like:</strong></p>
+            <div class="row">
+                <div class="col-md-4 mb-5">
+                    <div class="card-suggestion">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+                        <div class="card-body">
+                            <h2 class="card-title"><%=@hike.name%></h2>
+                            <p class="card-text">Location</p>
+                            <p class="card-group-count">Hikers: <%=@hike.group_size%></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card-suggestion">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+                        <div class="card-body">
+                            <h2 class="card-title"><%=@hike.name%></h2>
+                            <p class="card-text">Location</p>
+                            <p class="card-group-count">Hikers: <%=@hike.group_size%></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card-suggestion">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+                        <div class="card-body">
+                            <h2 class="card-title"><%=@hike.name%></h2>
+                            <p class="card-text">Location</p>
+                            <p class="card-group-count">Hikers: <%=@hike.group_size%></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
