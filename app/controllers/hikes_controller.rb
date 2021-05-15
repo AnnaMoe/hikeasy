@@ -2,8 +2,9 @@ class HikesController < ApplicationController
 
   before_action :set_hike, only: [:show]
 
+
    def index
-    @hikes = Hike.all
+    @hikes = policy_scope(Hike).order(created_at: :desc)
 
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @hikes.geocoded.map do |hike|
@@ -15,8 +16,11 @@ class HikesController < ApplicationController
     end
   end
 
+
   def show
     @booking = Booking.new
+    authorize @hike
+    authorize @booking
   end
 
  private
