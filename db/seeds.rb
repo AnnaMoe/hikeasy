@@ -23,6 +23,7 @@ puts 'creating hikes'
         accomodation_type: 'cabin',
         length: 'distance',
         group_size: rand(3..10),
+        destination_address: Faker::Address.country
     )
     puts "hike #{hike.id} is created"
 end
