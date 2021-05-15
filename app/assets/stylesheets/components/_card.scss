@@ -1,0 +1,52 @@
+.card-guide{
+    padding: 16px;
+    text-align: left;
+    background: white;
+    height: 224px;
+    width: 372px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px 0px #00000040;
+    margin-left: 215px;
+    width: 300px;
+}
+
+.card-suggestion {
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+  }
+  
+  .card-suggestion > img {
+    height: 175px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .card-suggestion h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .card-suggestion p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+  
+  
+  .card-suggestion .card-suggestion-info {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+  }
+  
+  .card-review{
+      padding: 40px;
+      margin: 20px 0px;
+      text-align: center;
+  }
+ 
