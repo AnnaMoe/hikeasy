@@ -1,12 +1,13 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.bg-dark {
+  background-color: #BBCEA8!important;
 }
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.btn-outline-success {
+  color: white;
+  background-color: #748067;
+  border-color: transparent;
 }
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.btn-outline-success:hover {
+  color: #748067;
+  background-color: white;
+  border-color: transparent;
 }
