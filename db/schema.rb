@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2021_05_15_135518) do
-
+ActiveRecord::Schema.define(version: 2021_05_15_154814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,11 +21,11 @@ ActiveRecord::Schema.define(version: 2021_05_15_135518) do
     t.bigint "hike_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "creditcard"
-    t.string "firstname"
-    t.string "lastname"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
     t.string "email"
-    t.integer "phone_number"
+    t.string "credit_card"
     t.index ["hike_id"], name: "index_bookings_on_hike_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
