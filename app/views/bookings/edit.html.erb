@@ -6,6 +6,7 @@
         <%= simple_form_for [@hike, @booking] do |f| %>
           <div class="form-row">
           <%= f.input :date %>
+          </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <%= f.input :first_name, label: false, placeholder: 'First Name (filled from profile)' %>
@@ -25,9 +26,10 @@
           <div class="form-row">
             <div class="form-group col-lg-9">
               <%= f.input :credit_card, label: false, placeholder: 'Card Number' %>
-           <p><small><em class="text-muted">By clicking <strong>'Confirm'</strong> you are agreeing to our Terms & Conditions, Privacy Policy, and to received booking-related messages.</em></small></p>
-           <%= f.button :button, "Confirm", class: "button" %>
+              <p><small><em class="text-muted">By clicking <strong>'Confirm'</strong> you are agreeing to our Terms & Conditions, Privacy Policy, and to received booking-related messages.</em></small></p>
+              <%= f.button :button, "Confirm", class: "button" %>
             </div>
+          </div>
         <% end %>
       </div>
     </div>
