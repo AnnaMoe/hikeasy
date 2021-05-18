@@ -1,5 +1,7 @@
 class Hike < ApplicationRecord
   has_many :bookings
+  has_many :reviews, through: :bookings
+
 
   ## vitor suggestion, easy fix. create an address model and db table
   ## hike will have foreign keys (has one start address, has one destination address), this way each instance of address has only one thing to geocode.

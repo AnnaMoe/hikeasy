@@ -1,0 +1,9 @@
+ <div class="col-12">
+      <div class="bg-white rounded p-3">
+        <h4>Add your review</h4>
+        <%= simple_form_for [@booking.hike, @booking, @review] do |f| %>
+          <%= f.input :comment, placeholder: 'Add your review here...' %>
+          <%= f.submit class: 'btn btn-success' %>
+        <% end %>
+      </div>
+    </div>

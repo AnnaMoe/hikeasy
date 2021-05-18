@@ -1,0 +1,20 @@
+
+<div class="container">
+
+  <h4>Hello, user</h4>
+  <p>Your bookings:</p>
+  <div class="row">
+  
+    <% @bookings.each do |booking| %>
+        <div class="col-12 col-sm-6 col-md-4 my-3 card-suggestion">
+          <%= link_to hike_booking_path(booking.hike, booking), class:'text-decoration-none' do %>
+            <div>
+              <%= booking.hike.name %>
+              <%= booking.hike.destination_address %>
+              <%= booking.hike.price %>$
+            </div>
+          <% end %>
+        </div>
+    <% end %>
+  </div>
+</div>
