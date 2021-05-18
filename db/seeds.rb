@@ -8,8 +8,10 @@
 
 
 puts 'cleaning up database'
+Review.destroy_all
 Booking.destroy_all
 Hike.destroy_all
+
 puts 'database is clean'
 
 puts 'creating hikes'
@@ -23,7 +25,8 @@ puts 'creating hikes'
         accomodation_type: 'cabin',
         length: 'distance',
         group_size: rand(3..10),
-        destination_address: Faker::Address.country
+        start_address: Address.create(address: Faker::Address.country),
+        end_address: Address.create(address: Faker::Address.country)
     )
     puts "hike #{hike.id} is created"
 end

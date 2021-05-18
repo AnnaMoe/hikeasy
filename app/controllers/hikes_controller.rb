@@ -5,19 +5,24 @@ class HikesController < ApplicationController
 
    def index
     @hikes = policy_scope(Hike).order(created_at: :desc)
-
-    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-    @markers = @hikes.geocoded.map do |hike|
-      {
-        lat: hike.destination_latitude,
-        lng: hike.destination_longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { hike: hike })
-      }
-    end
   end
 
 
   def show
+    @markers = 
+      [{
+        lat: @hike.start_address.latitude,
+        lng: @hike.start_address.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { hike: @hike })
+      },
+      {
+        lat: @hike.end_address.latitude,
+        lng: @hike.end_address.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { hike: @hike })
+      }
+    ]
+    
+
     @booking = Booking.new
     authorize @hike
     authorize @booking

@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_16_213623) do
+ActiveRecord::Schema.define(version: 2021_05_18_183858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.date "date"
@@ -41,12 +49,10 @@ ActiveRecord::Schema.define(version: 2021_05_16_213623) do
     t.integer "group_size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "start_address"
-    t.string "destination_address"
-    t.float "start_latitude"
-    t.float "start_longitude"
-    t.float "destination_latitude"
-    t.float "destination_longitude"
+    t.bigint "start_address_id"
+    t.bigint "end_address_id"
+    t.index ["end_address_id"], name: "index_hikes_on_end_address_id"
+    t.index ["start_address_id"], name: "index_hikes_on_start_address_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -71,5 +77,7 @@ ActiveRecord::Schema.define(version: 2021_05_16_213623) do
 
   add_foreign_key "bookings", "hikes"
   add_foreign_key "bookings", "users"
+  add_foreign_key "hikes", "addresses", column: "end_address_id"
+  add_foreign_key "hikes", "addresses", column: "start_address_id"
   add_foreign_key "reviews", "bookings"
 end
