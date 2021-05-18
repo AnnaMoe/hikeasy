@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update]
+  before_action :set_booking, only: [:show, :edit, :update, :confirmation]
 
   def new
     @booking =Booking.new
@@ -23,10 +23,15 @@ class BookingsController < ApplicationController
   def update
     @booking.update(booking_params)
     @booking.save
-      redirect_to hike_booking_path(@booking.hike, @booking)
+      redirect_to confirmation_hike_booking_path(@booking.hike, @booking)
   end
 
   def show
+    @review = Review.new(booking: @booking)
+    # redirect_to dashboard_index_path
+  end
+
+  def confirmation
     
   end
 

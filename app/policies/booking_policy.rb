@@ -14,15 +14,15 @@ class BookingPolicy < ApplicationPolicy
       true
     end
 
-    # def edit?
-    #   true
-    # end
-
     def update?
       true
     end
 
     def show?
+      true
+    end
+
+    def confirmation?
       true
     end
 end
