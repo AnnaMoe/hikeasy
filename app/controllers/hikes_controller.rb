@@ -3,8 +3,15 @@ class HikesController < ApplicationController
   before_action :set_hike, only: [:show]
 
 
-   def index
+  def index
     @hikes = policy_scope(Hike).order(created_at: :desc)
+    @markers = @hikes.map do |hike|
+      {
+        lat: hike.start_address.latitude,
+        lng: hike.start_address.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { hike: hike })
+      }
+    end
   end
 
 
