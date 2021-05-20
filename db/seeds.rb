@@ -29,6 +29,16 @@ puts 'creating hikes'
         end_address: Address.create(address: Faker::Address.country)
     )
     puts "hike #{hike.id} is created"
+
+  malerweg = Hike.create(
+        name: "Malerweg",
+        price: 800,
+        difficulty: "medium",
+        accomodation_type: 'cabin',
+        length: 'distance',
+        group_size: 15,
+        start_address: Address.create(address: "Pirna")
+        end_address: Address.create(address: "Copitz")
 end
 
 puts 'done'
