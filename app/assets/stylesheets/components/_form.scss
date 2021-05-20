@@ -30,3 +30,44 @@ font-weight: bold;
 .btn{
     border-radius: 50px;
 }
+
+.modal {
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  width: 500px;
+  max-width: 80%;
+  height: auto !important;
+
+}
+
+.modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.btn-secondary{
+width: 262px;
+height: 55px;
+border-radius: 5px;
+background-color: #748067;
+color: white;
+font-weight: bold;
+}
