@@ -6,13 +6,13 @@ class ReviewsController < ApplicationController
     @review.booking = @booking
     authorize @review
     if @review.save
-      redirect_to hike_booking_path(@hike, @booking)
+      redirect_to hike_path(@hike)
     else
       render 'bookings/show'
     end
   end
 
   def review_params
-    params.require(:review).permit(:comment, :booking_id)
+    params.require(:review).permit(:comment, :booking_id, :rating)
   end
 end

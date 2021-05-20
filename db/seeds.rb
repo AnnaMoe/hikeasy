@@ -20,7 +20,7 @@ puts 'creating hikes'
 10.times do
     hike = Hike.create(
         name: Faker::Mountain.name,
-        price: rand(200..500),
+        price: rand(400..800),
         difficulty: rand(1..5),
         accomodation_type: 'cabin',
         length: 'distance',

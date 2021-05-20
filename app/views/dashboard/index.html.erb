@@ -10,7 +10,7 @@
           <%= link_to hike_booking_path(booking.hike, booking), class:'text-decoration-none' do %>
             <div>
               <%= booking.hike.name %>
-              <%= booking.hike.destination_address %>
+              <%= booking.hike.start_address %>
               <%= booking.hike.price %>$
             </div>
           <% end %>
