@@ -8,8 +8,10 @@
 
 
 puts 'cleaning up database'
+Review.destroy_all
 Booking.destroy_all
 Hike.destroy_all
+
 puts 'database is clean'
 
 puts 'creating hikes'
@@ -18,12 +20,13 @@ puts 'creating hikes'
 10.times do
     hike = Hike.create(
         name: Faker::Mountain.name,
-        price: rand(200..500),
+        price: rand(400..800),
         difficulty: rand(1..5),
         accomodation_type: 'cabin',
         length: 'distance',
         group_size: rand(3..10),
-        destination_address: Faker::Address.country
+        start_address: Address.create(address: Faker::Address.country),
+        end_address: Address.create(address: Faker::Address.country)
     )
     puts "hike #{hike.id} is created"
 end

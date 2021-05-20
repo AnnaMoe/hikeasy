@@ -3,6 +3,7 @@
         <h4>Add your review</h4>
         <%= simple_form_for [@booking.hike, @booking, @review] do |f| %>
           <%= f.input :comment, placeholder: 'Add your review here...' %>
+          <%= f.input :rating, as: :select, collection: (1..5), required: true, id:'example', input_html: { id: 'review_rating' } %>
           <%= f.submit class: 'btn btn-success' %>
         <% end %>
       </div>

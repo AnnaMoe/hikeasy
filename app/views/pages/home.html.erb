@@ -54,6 +54,7 @@
       <!-- Wrap the rest of the page in another container to center all the content. -->
 
       <div class="container marketing">
+      <%= link_to "Discover more", hikes_path, class: "button" %>
 
         <!-- Three columns of text below the carousel -->
         <div class="row">
@@ -121,7 +122,4 @@
         <!-- /END THE FEATURETTES -->
 
   </main>
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
