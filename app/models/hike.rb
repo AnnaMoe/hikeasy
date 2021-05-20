@@ -1,12 +1,6 @@
 class Hike < ApplicationRecord
   has_many :bookings
   has_many :reviews, through: :bookings
-
-
-  ## vitor suggestion, easy fix. create an address model and db table
-  ## hike will have foreign keys (has one start address, has one destination address), this way each instance of address has only one thing to geocode.
-  # geocoded_by :start_address, latitude: :start_latitude, longitude: :start_longitude
-  geocoded_by :destination_address, latitude: :destination_latitude, longitude: :destination_longitude
-  # after_validation :geocode, if: :will_save_change_to_start_address?
-  after_validation :geocode, if: :will_save_change_to_destination_address?
+  belongs_to :start_address, class_name: "Address", foreign_key: "start_address_id"
+  belongs_to :end_address, class_name: "Address", foreign_key: "end_address_id"
 end

@@ -1,4 +1,9 @@
 <div class="container">
+  <div id="map"
+     style="width: 50%; height: 400px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
             <div class="row align-items-center my-5">
                 <div class="col-lg-7"><img class="" src="" alt="..." /></div>
                 <div class="col-lg-5">
@@ -17,20 +22,25 @@
             <hr>
                 <div class="card-review"><p>Reviews</p>
                 <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-                <p>'This is a review"</p>
+                
                     
               
               <% if @hike.reviews.empty? %>
                 <small><em class="text-muted">Be the first one to review this Hike aaaaaaa</em></small>
-              <% else %>
+              <% end %>
                 <% @hike.reviews.each do |review| %>
-                <div>
-                  <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
-                  <p class="mb-0"><%= review.comment %></p>
-                </div>
+                  <div>
+                    <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+                    <div><% review.rating.times do %>
+                      <i class="fas fa-star star-yellow"></i>
+                    <% end %>
+                    </div>
+                    
+                    <p class="mb-0"><%= review.comment %></p>
+                  </div>
                 <hr>
                 <% end %>
-              <% end %>
+              
             
                 </div>
 
