@@ -16,34 +16,5 @@
   border-radius: 20px;
 }
 
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  border: 1px solid black;
-  border-radius: 10px;
-  background-color: white;
-  width: 500px;
-  max-width: 80%;
 
-}
-
-.modal-header {
-  padding: 10px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid black;
-}
-
-.modal-header .close-button {
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
-
-modal-header .title {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
 
