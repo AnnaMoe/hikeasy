@@ -39,7 +39,7 @@ end
         length: 'distance',
         group_size: 15,
         start_address: Address.create(address: "Pirna"),
-        end_address: Address.create(address: "Copitz")
+        end_address: Address.create(address: "Stolpen")
   )
 
 puts 'done'
