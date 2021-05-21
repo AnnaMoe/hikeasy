@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :confirmation]
+  before_action :set_booking, only: [:show, :edit, :update, :confirmation, :chatroom]
 
   def new
     @booking =Booking.new
@@ -35,11 +35,18 @@ class BookingsController < ApplicationController
     
   end
 
+  def chatroom
+    @hike = Hike.find(params[:hike_id])
+    @booking.hike = @hike
+    @chatroom = @hike.chatroom
+    @message = Message.new(chatroom: @chatroom)
+  end
+
   private
 
     def set_booking
       @booking =Booking.find(params[:id])
-    authorize @booking
+      authorize @booking
     end
 
     def booking_params
