@@ -1,3 +1,4 @@
+
 <div class="container">
     <div class = "row">
         <div class = "col-lg-5">
@@ -5,6 +6,20 @@
             style="width: 50%; height: 400px;"
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+<div class="container mt-5">
+  <div id="map-show"
+     style="width: 50%; height: 400px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+            <div class="row align-items-center my-5">
+                <div class="col-lg-7"><img class="" src="" alt="..." /></div>
+                <div class="col-lg-5">
+                    <%= render "bookings/form", booking: @booking %>
+                </div>
+                </div>
+
             </div>
         </div>
         <div class = "col-lg-3">
