@@ -25,4 +25,8 @@ class BookingPolicy < ApplicationPolicy
     def confirmation?
       true
     end
+
+    def chatroom?
+      true
+    end
 end

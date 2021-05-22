@@ -26,7 +26,8 @@ puts 'creating hikes'
         length: 'distance',
         group_size: rand(3..10),
         start_address: Address.create(address: Faker::Address.country),
-        end_address: Address.create(address: Faker::Address.country)
+        end_address: Address.create(address: Faker::Address.country),
+        chatroom: Chatroom.create(name: 'Group Page')
     )
     puts "hike #{hike.id} is created"
 end
@@ -39,7 +40,9 @@ end
         length: 'distance',
         group_size: 15,
         start_address: Address.create(address: "Pirna"),
-        end_address: Address.create(address: "Stolpen")
+        end_address: Address.create(address: "Stolpen"),
+        chatroom: Chatroom.create(name: 'Malerweg'),
+        map_style: 'mapbox://styles/annamoe/ckoyht30h0awk17mj7tuof7ck'
   )
 
 puts 'done'
