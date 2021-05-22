@@ -34,13 +34,13 @@ const initMapbox = () => {
 };
 
 const initMapboxShow = () => {
-  const mapElement = document.getElementById('map-show');
+  const mapElement = document.getElementById('map-start-end');
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
-      container: 'map-show',
-      style: 'mapbox://styles/annamoe/ckoyht30h0awk17mj7tuof7ck'
+      container: 'map-start-end',
+      style: mapElement.dataset.style
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {

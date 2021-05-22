@@ -1,22 +1,24 @@
-<%= @booking.hike %>
-<h1><%= @hike.chatroom.name %></h1>
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-    <div class="message-container" id="message-<%= message.id %>">
-      <i class="author">
-        <span><%= message.user.nickname %></span>
-        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-      </i>
-      <p><%= message.content %></p>
-    </div>
+<div class="container">
+<br>
+<br>
+<br>
+<br>
+<br>
+ 
+  <h3>Hello <%=@booking.user.nickname  %>. Welcome to<%= @hike.chatroom.name %> </h3>
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <% @chatroom.messages.each do |message| %>
+      <%= render 'messages/message', message: message %>
+    <% end %>
+  </div>
+
+
+
+  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+    <%= f.input :content, label: false, placeholder: "Message your fellow hikers" %>
+    <%= hidden_field_tag :booking_id, @booking.id %>
+    <%= hidden_field_tag :hike_id, @hike.id %>
+    <%= f.submit class: "btn-book" %>
   <% end %>
 </div>
-
-
-
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message your fellow hikers" %>
-  <%= hidden_field_tag :booking_id, @booking.id %>
-  <%= hidden_field_tag :hike_id, @hike.id %>
-<% end %>
 
