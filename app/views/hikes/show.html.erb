@@ -1,25 +1,10 @@
-
 <div class="container">
     <div class = "row">
         <div class = "col-lg-5">
-            <div id="map"
+            <div id="map-start-end"
             style="width: 50%; height: 400px;"
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-
-<div class="container mt-5">
-  <div id="map-show"
-     style="width: 50%; height: 400px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-            <div class="row align-items-center my-5">
-                <div class="col-lg-7"><img class="" src="" alt="..." /></div>
-                <div class="col-lg-5">
-                    <%= render "bookings/form", booking: @booking %>
-                </div>
-                </div>
-
             </div>
         </div>
         <div class = "col-lg-3">
@@ -47,7 +32,7 @@
     <div class="card-review"><p>Reviews</p>
         <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm"> 
             <% if @hike.reviews.empty? %>
-                <small><em class="text-muted">Be the first one to review this Hike aaaaaaa</em></small>
+                <small><em class="text-muted"> Be the first one to review this Hike aaaaaaa</em></small>
             <% end %>
             <% @hike.reviews.each do |review| %>
                 <div>
@@ -73,7 +58,7 @@
         <h3>Location</h3>
         <p>Number of Hikers</p>
         </div>
-        <h2 class="card-hike-pricing">£99.99</h2>
+        <h2 class="card-hike-pricing">$<%=@hike.price%></h2>
     </div>
     </div>
 </div>
@@ -86,7 +71,7 @@
         <h3>Location</h3>
         <p>Number of Hikers</p>
         </div>
-        <h2 class="card-hike-pricing">£99.99</h2>
+        <h2 class="card-hike-pricing">$<%=@hike.price%></h2>
     </div>
     </div>
 </div>
@@ -99,7 +84,7 @@
         <h3>Location</h3>
         <p>Number of Hikers</p>
         </div>
-        <h2 class="card-hike-pricing">£99.99</h2>
+        <h2 class="card-hike-pricing">$<%=@hike.price%></h2>
     </div>
     </div>
 </div>
