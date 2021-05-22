@@ -32,4 +32,15 @@ puts 'creating hikes'
     puts "hike #{hike.id} is created"
 end
 
+  malerweg = Hike.create(
+        name: "Malerweg",
+        price: 800,
+        difficulty: "medium",
+        accomodation_type: 'cabin',
+        length: 'distance',
+        group_size: 15,
+        start_address: Address.create(address: "Pirna"),
+        end_address: Address.create(address: "Stolpen")
+  )
+
 puts 'done'
