@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   resources :hikes, only: [:index, :show] do
     resources :bookings, only: [:create, :new, :show, :update, :edit] do
-      member do
+     # member do
         get 'chatroom' 
-      end
+     # end
       member do
         get 'confirmation'
       end
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
   resources :chatroom do
-    resources :messages, only: :create
+    resources :messages, only: :create 
   end
   resources :dashboard, only: [:index] 
 end

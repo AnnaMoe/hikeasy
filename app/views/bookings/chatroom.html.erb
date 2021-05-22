@@ -13,10 +13,10 @@
 </div>
 
 
- <%= params %>
 
 <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
   <%= f.input :content, label: false, placeholder: "Message your fellow hikers" %>
-  <%= f.submit %>
+  <%= hidden_field_tag :booking_id, @booking.id %>
+  <%= hidden_field_tag :hike_id, @hike.id %>
 <% end %>
 
