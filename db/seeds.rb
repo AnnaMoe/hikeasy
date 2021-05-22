@@ -21,7 +21,7 @@ puts 'creating hikes'
     hike = Hike.create(
         name: Faker::Mountain.name,
         price: rand(400..800),
-        difficulty: rand(1..5),
+        difficulty: ["beginner", "intermediate", "expert"].sample,
         accomodation_type: 'cabin',
         length: 'distance',
         group_size: rand(3..10),
@@ -35,7 +35,7 @@ end
   malerweg = Hike.create(
         name: "Malerweg",
         price: 800,
-        difficulty: "medium",
+        difficulty: "intermediate",
         accomodation_type: 'cabin',
         length: 'distance',
         group_size: 15,
@@ -46,3 +46,5 @@ end
   )
 
 puts 'done'
+
+User.create(email: "emma@emma.com", password: "123456")

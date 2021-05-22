@@ -4,6 +4,4 @@ class PagesController < ApplicationController
   def home
     @hikes = policy_scope(Hike).order(created_at: :desc)
   end
-
-  
 end
