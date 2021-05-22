@@ -40,7 +40,8 @@ end
         length: 'distance',
         group_size: 15,
         start_address: Address.create(address: "Pirna"),
-        end_address: Address.create(address: "Stolpen")
+        end_address: Address.create(address: "Stolpen"),
+        chatroom: Chatroom.create(name: 'Group Page-Malerweg')
   )
 
 puts 'done'
