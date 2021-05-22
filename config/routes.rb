@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   resources :chatroom do
     resources :messages, only: :create 
   end
-  resources :dashboard, only: [:index] 
+  get :dashboard, to: 'dashboard#index', as: :dashboard 
 end

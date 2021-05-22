@@ -8,6 +8,10 @@ class MessagesController < ApplicationController
     @message.chatroom = @chatroom
     @message.user = current_user
     @message.save
+    ChatroomChannel.broadcast_to(
+    @chatroom,
+    render_to_string(partial: "message", locals: { message: @message })
+)
     
       # redirect_to chatroom_hike_booking_path(message.chatroom.hike)
       redirect_to hike_booking_chatroom_path(@hike, @booking, anchor: "message-#{@message.id}")

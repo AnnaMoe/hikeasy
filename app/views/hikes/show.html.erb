@@ -1,8 +1,11 @@
 <div class="container">
     <div class = "row">
         <div class = "col-lg-5">
+       
+
             <div id="map-start-end"
             style="width: 50%; height: 400px;"
+            data-style="<%= @hike.map_style %>"
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
             </div>
