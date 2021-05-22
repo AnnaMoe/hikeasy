@@ -1,0 +1,22 @@
+<%= @booking.hike %>
+<h1><%= @hike.chatroom.name %></h1>
+<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+  <% @chatroom.messages.each do |message| %>
+    <div class="message-container" id="message-<%= message.id %>">
+      <i class="author">
+        <span><%= message.user.nickname %></span>
+        <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+      </i>
+      <p><%= message.content %></p>
+    </div>
+  <% end %>
+</div>
+
+
+
+<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+  <%= f.input :content, label: false, placeholder: "Message your fellow hikers" %>
+  <%= hidden_field_tag :booking_id, @booking.id %>
+  <%= hidden_field_tag :hike_id, @hike.id %>
+<% end %>
+

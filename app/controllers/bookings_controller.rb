@@ -36,11 +36,21 @@ class BookingsController < ApplicationController
     
   end
 
+  def chatroom
+    @booking =Booking.find(params[:booking_id])
+    authorize @booking
+    @hike = Hike.find(params[:hike_id])
+    @booking.hike = @hike
+    @chatroom = @hike.chatroom
+    @message = Message.new(chatroom: @chatroom)
+    
+  end
+
   private
 
     def set_booking
-      @booking =Booking.find(params[:id])
-    authorize @booking
+        @booking =Booking.find(params[:id])
+      authorize @booking
     end
 
     def booking_params
