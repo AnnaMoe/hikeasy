@@ -11,3 +11,15 @@
   background-color: white;
   border-color: transparent;
 }
+.logo_navbar {
+  width: 120px;
+  height: auto;
+}
+.navbar-nav {
+  width: 100%;
+  margin-left: 10px;
+}
+.nav-item:last-child {
+  justify-self: flex-end;
+  margin-left: auto;
+}
