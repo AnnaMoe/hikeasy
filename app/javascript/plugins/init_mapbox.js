@@ -8,7 +8,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/annamoe/ckou76f250e7f17nlaoh07sr2'
+      style: 'mapbox://styles/annamoe/ckou737vg9ysy17pb0j098mur'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
@@ -33,7 +33,38 @@ const initMapbox = () => {
 
 };
 
-export { initMapbox };
+const initMapboxShow = () => {
+  const mapElement = document.getElementById('map-show');
+
+  if (mapElement) { // only build a map if there's a div#map to inject into
+    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+    const map = new mapboxgl.Map({
+      container: 'map-show',
+      style: 'mapbox://styles/annamoe/ckoyht30h0awk17mj7tuof7ck'
+    });
+    const markers = JSON.parse(mapElement.dataset.markers);
+    markers.forEach((marker) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+      new mapboxgl.Marker()
+        .setLngLat([marker.lng, marker.lat])
+        .setPopup(popup)
+        .addTo(map);
+    });
+
+    const fitMapToMarkers = (map, markers) => {
+      const bounds = new mapboxgl.LngLatBounds();
+      markers.forEach(marker => bounds.extend([marker.lng, marker.lat]));
+      map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+    };
+
+    if (mapElement) {
+      // [ ... ]
+      fitMapToMarkers(map, markers);
+    }
+  }
+};
+
+export { initMapbox, initMapboxShow };
 
 
 
