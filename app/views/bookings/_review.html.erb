@@ -14,23 +14,13 @@
                 </button>
               </div>
               <div class="modal-body">
-                <%= f.input :comment, placeholder: 'Add your review here...' %>
-                <%= f.input :rating, as: :select, collection: (1..5), required: true, id:'example', input_html: { id: 'review_rating' } %>
-                
                   <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Name of group/guide</label>
-
-                    <input type="text" class="form-control" id="recipient-name">
+                    <%= f.input :rating, label: "Rate your hike", as: :select, collection: (1..5), required: true, id:'example', input_html: { id: 'review_rating' } %>
+                    <%= f.input :comment, label: false, as: :text, placeholder: 'Leave a comment' %>
                   </div>
-                  <div class="form-group">
-                    <%= f.input :rating, as: :select, collection: (1..5), required: true, id:'example', input_html: { id: 'review_rating' } %>
-                    <label for="message-text" class="col-form-label" >Comment:</label>
-                    <textarea class="form-control" id="message-text"></textarea>
-                  </div>
-                
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Submit review</button>
+                <%= f.button :submit, "Submit review", class: "btn btn-primary" %>
               </div>
             <% end %>
           </div>
