@@ -6,8 +6,8 @@
 
   <div class="notification-blank">
     <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-    <div class="notification-content-blank">
-      <h3>Hello <%=@booking.user.nickname  %>. Welcome to <em><%= @hike.chatroom.name %> </em></h3>
+    <div class="notification-content-blank align-items-centers">
+      <h3 class="m-0 ml-1">Hello <%=@booking.user.nickname  %>. Welcome to <em><%= @hike.chatroom.name %> </em></h3>
     </div>
   </div>
     
@@ -32,12 +32,11 @@
   <div class="col-4">
     <h2>members</h2>
     <% @chatroom.hike.bookings.each do |booking| %>
-    <div class="notification">
+    <div class="notification-members">
       <img class="avatar dropdown-toggle" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-      <div class="notification-content">
-        <p><%= booking.user.nickname %>, Age</p>
-        
-        <p class="text-muted"></small><em>Country</em></small></p>
+      <div class="notification-members-content">
+        <p class="m-0"><%= booking.user.nickname %>, Age</p>
+        <p class="text-muted m-0"></small><em>Country</em></small></p>
       </div>
     </div>
     <% end %>
