@@ -1,24 +1,54 @@
-<div class="container">
-<br>
-<br>
-<br>
-<br>
-<br>
- 
-  <h3>Hello <%=@booking.user.nickname  %>. Welcome to<%= @hike.chatroom.name %> </h3>
-  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-    <% @chatroom.messages.each do |message| %>
-      <%= render 'messages/message', message: message %>
+<div class="container mt-5">
+<div class="row">
+  <div class="col-8">
+  
+  
+
+  <div class="notification-blank">
+    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+    <div class="notification-content-blank">
+      <h3>Hello <%=@booking.user.nickname  %>. Welcome to <em><%= @hike.chatroom.name %> </em></h3>
+    </div>
+  </div>
+    
+    <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+      <% @chatroom.messages.each do |message| %>
+      <div class="notification">
+        <%= render 'messages/message', message: message %>
+      </div>
+      <% end %>
+    </div>
+
+
+
+    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Message your fellow hikers" %>
+      <%= hidden_field_tag :booking_id, @booking.id %>
+      <%= hidden_field_tag :hike_id, @hike.id %>
+      
+      <%# <%= f.submit class: "button" %> 
     <% end %>
   </div>
+  <div class="col-4">
+    <h2>members</h2>
+    <% @chatroom.hike.bookings.each do |booking| %>
+    <div class="notification">
+      <img class="avatar dropdown-toggle" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+      <div class="notification-content">
+        <p><%= booking.user.nickname %>, Age</p>
+        
+        <p class="text-muted"></small><em>Country</em></small></p>
+      </div>
+    </div>
+    <% end %>
+    
 
-
-
-  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-    <%= f.input :content, label: false, placeholder: "Message your fellow hikers" %>
-    <%= hidden_field_tag :booking_id, @booking.id %>
-    <%= hidden_field_tag :hike_id, @hike.id %>
-    <%= f.submit class: "btn-book" %>
-  <% end %>
+  </div>
 </div>
+ 
+</div>
+
+
+
+
 
