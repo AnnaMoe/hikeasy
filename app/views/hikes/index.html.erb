@@ -8,6 +8,28 @@
   </div>
 <% end %>
 <div class="row">
+<div class="nav-link" >
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+             <%= form_tag hikes_path, class: "p-3", method: :get do %>
+               <div class="dropdown-item">
+                 <%= check_box_tag :beginner %>
+                 <%= label_tag :beginner %>
+                 <br>
+                 <%= check_box_tag :intermediate %>
+                 <%= label_tag :intermediate %>
+                 <br>
+                 <%= check_box_tag :expert %>
+                 <%= label_tag :expert %>
+               </div>
+                <%= submit_tag "Search", class: "btn btn-primary" %>
+             <% end %>
+          </div>
+        </div>
+          </div>
 
 
 
