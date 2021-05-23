@@ -9,12 +9,18 @@
         <%= link_to "Home", :root, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Hikes", :hikes, class: "nav-link" %>
+        <%= link_to "All Hikes", :hikes, class: "nav-link" %>
       </li>
+      <% if user_signed_in? %>
+      <li class="nav-item">
+         <%= link_to "My Hikes", dashboard_path, class: "nav-link"  %>
+      </li>
+      <% end %>
       <li class="nav-item dropdown"> 
       <% if user_signed_in? %>
         <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
         <div class="dropdown-menu dropdown-menu-right">
+       
            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link-logut" %>
         </div>
       <% else %>
