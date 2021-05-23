@@ -11,10 +11,7 @@
   background-color: white;
   border-color: transparent;
 }
-.logo_navbar {
-  width: 120px;
-  height: auto;
-}
+
 .navbar-nav {
   width: 100%;
   margin-left: 10px;
@@ -22,4 +19,19 @@
 .nav-item:last-child {
   justify-self: flex-end;
   margin-left: auto;
+}
+
+
+.navbar-hikeasy {
+  justify-content: space-between;
+  background: #BBCEA8;
+}
+
+.navbar-hikeasy .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-hikeasy .navbar-brand img {
+  width: 120px;
+  height: auto;
 }
