@@ -2,17 +2,13 @@
     <div class="card-form">
     <div class="card-booking-body">
     <div>
-    <span><i class="fas fa-map-marker-alt"></i>Country</span>
+    <span><i class="far fa-calendar-alt"></i> <%=@booking.hike.length%> Days</span>
     <br>
-    <span><i class="far fa-calendar-alt"></i># of Days</span>
+    <span><i class="fas fa-hiking"></i> <%=@booking.hike.distance%>km</span>
     <br>
-    <span><i class="fas fa-mountain"></i>Type of Terrain</span>
+    <span><i class="fas fa-expand-alt"></i> <%=@booking.hike.elevation%></span>
     <br>
-    <span><i class="fas fa-hiking"></i>Distance</span>
-    <br>
-    <span><i class="fas fa-expand-alt"></i>Elevation</span>
-    <br>
-    <span>Button Tag of Difficulty (beginner-advance)</span>
+    <span><%=@booking.hike.difficulty%></span>
     </div>
     <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">
     Leave a Review
