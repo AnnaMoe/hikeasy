@@ -24,6 +24,7 @@ puts 'creating hikes'
         difficulty: ["beginner", "intermediate", "expert"].sample,
         distance: rand(24..60),
         length: rand(3..31),
+        terrain: "Alpine",
         group_size: rand(3..10),
         start_address: Address.create(address: Faker::Address.country),
         end_address: Address.create(address: Faker::Address.country),

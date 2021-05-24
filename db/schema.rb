@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_181434) do
+ActiveRecord::Schema.define(version: 2021_05_24_181435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_181434) do
     t.string "map_style"
     t.integer "distance"
     t.integer "elevation"
+    t.string "terrain"
     t.index ["chatroom_id"], name: "index_hikes_on_chatroom_id"
     t.index ["end_address_id"], name: "index_hikes_on_end_address_id"
     t.index ["start_address_id"], name: "index_hikes_on_start_address_id"
