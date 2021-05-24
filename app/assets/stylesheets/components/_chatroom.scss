@@ -38,6 +38,13 @@
   border: 1px solid rgb(235,235,235);
 }
 
+.notification-guide {
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+}
+
 .notification-blank {
   display: flex;
   align-items: center;
@@ -48,9 +55,11 @@
 .notification-members {
   display: flex;
   align-items: center;
-  margin-bottom: 0px;
+  margin-bottom: 8px;
   padding: 0px 16px;
 }
+
+
 
 .notification-members .notification-members-content {
   // flex-grow: 1;

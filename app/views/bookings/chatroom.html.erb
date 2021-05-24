@@ -1,53 +1,57 @@
 <div class="container mt-5">
-<div class="row">
-  <div class="col-8">
-  
-  
-
-  <div class="notification-blank">
-    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-    <div class="notification-content-blank align-items-centers">
-      <h3 class="m-0 ml-1">Hello <%=@booking.user.nickname  %>. Welcome to <em><%= @hike.chatroom.name %> </em></h3>
-    </div>
-  </div>
-    
-    <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-      <% @chatroom.messages.each do |message| %>
-      <div class="notification">
-        <%= render 'messages/message', message: message %>
+  <div class="row">
+    <div class="col-8">
+      <div class="notification-blank">
+        <img src='<%= current_user.avatar_url %>' class="avatar-large" />
+        <div class="notification-content-blank align-items-centers">
+          <h3 class="m-0 ml-1">Hello <%=@booking.user.nickname %>. Welcome to <em>
+              <%= @hike.chatroom.name %>
+            </em></h3>
+        </div>
       </div>
+      <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+        <div class="notification-guide">
+          <div class="notification-members">
+            <img class="avatar dropdown-toggle" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+            <div class="notification-members-content">
+              <p class="m-0">Your Guide: Lukas, 28 years old</p>
+              <p class="text-muted m-0"></small><em>Germany</em></small></p>
+            </div>
+          </div>
+          <p class="text-muted m-0"></small>Hey Group. Welcome to your chosen Hike <em>Malerweg.</em> I am looking
+          forward to sharing this hike experience with you all. This is the place to introduce yourself, ask any
+          questions you mave have, and get connected with your fellow hikers. Let's make this hike an unique adenture
+          for everyone!</small></p>
+        </div>
+        <% @chatroom.messages.each do |message| %>
+          <div class="notification">
+            <img class="avatar dropdown-toggle mr-4" src="<%= message.user.avatar_url %>  " />
+            <%= render 'messages/message' , message: message %>
+          </div>
+        <% end %>
+      </div>
+      <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+        <%= f.input :content, label: false, placeholder: "Message your fellow hikers" %>
+        <%= hidden_field_tag :booking_id, @booking.id %>
+        <%= hidden_field_tag :hike_id, @hike.id %>
+        <%# <%=f.submit class: "button" %>
       <% end %>
     </div>
-
-
-
-    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-      <%= f.input :content, label: false, placeholder: "Message your fellow hikers" %>
-      <%= hidden_field_tag :booking_id, @booking.id %>
-      <%= hidden_field_tag :hike_id, @hike.id %>
-      
-      <%# <%= f.submit class: "button" %> 
-    <% end %>
-  </div>
-  <div class="col-4">
-    <h2>members</h2>
-    <% @chatroom.hike.bookings.each do |booking| %>
-    <div class="notification-members">
-      <img class="avatar dropdown-toggle" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-      <div class="notification-members-content">
-        <p class="m-0"><%= booking.user.nickname %>, Age</p>
-        <p class="text-muted m-0"></small><em>Country</em></small></p>
+    <div class="col-4">
+      <div class="card-chatroom">
+        <h2>members</h2>
+        <% @chatroom.hike.bookings.each do |booking| %>
+          <div class="notification-members">
+            <img class="avatar dropdown-toggle" src="<%= booking.user.avatar_url  %>" /> 
+            <div class="notification-members-content">
+              <p class="m-0">
+                <%= booking.user.nickname %>, Age
+              </p>
+              <p class="text-muted m-0"></small><em>Country</em></small></p>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
-    <% end %>
-    
-
   </div>
 </div>
- 
-</div>
-
-
-
-
-
