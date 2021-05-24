@@ -18,7 +18,7 @@
       <% end %>
       <li class="nav-item dropdown"> 
       <% if user_signed_in? %>
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= current_user.avatar_url %>" />
         <div class="dropdown-menu dropdown-menu-right">
        
            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link-logut" %>
