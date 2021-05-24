@@ -5,9 +5,6 @@
         <h3 class= "mb-4">Complete your booking</h3>
         <%= simple_form_for [@hike, @booking] do |f| %>
           <div class="form-row">
-          <%= f.input :date %>
-          </div>
-          <div class="form-row">
             <div class="form-group col-md-6">
               <%= f.input :first_name, label: false, placeholder: 'First Name (filled from profile)' %>
             </div>
