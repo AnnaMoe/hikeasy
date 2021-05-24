@@ -17,10 +17,8 @@
       insert map here
       </div>
     <div class= col-lg-4>
-    insert highlights card here
-    leave a review button
-    <%# <%= render 'review' %>
-    <%# <%= link_to "My group page", hike_booking_chatroom_path(@booking.hike, @booking), class: "discover_more_botton" %>
+    <%= render 'highlights'%>
+    </div>
     </div>
   </div>
 
@@ -32,7 +30,7 @@
   <hr>
 
   Group Members
-  Visit group page button
+  <%= link_to "Visit Group Page", hike_booking_chatroom_path(@booking.hike, @booking), class: "discover_more_botton" %>
   <hr>
 
   #hikeasy user pics
