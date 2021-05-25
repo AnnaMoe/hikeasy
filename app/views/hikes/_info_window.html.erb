@@ -1,16 +1,21 @@
 
-  <%= link_to hike_path(hike), class:'text-decoration-none' do %> 
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="popup-image" />
-      <div class="popup-infos">
-        <div>
-          <h6><%= hike.name %></h6>
-          <h6>difficulty: <%= hike.difficulty %></h6>
-        </div>
-        <strong><h6><%= hike.price %>$</h6></strong>
-        
-        
-      </div> 
-  <% end %>
+<%= link_to hike_path(hike), class: 'text-decoration-none' do %> 
+  <div class="container">
+    <div class="row">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" class="img-fluid" alt="...">
+    </div>
+    <div class="d-flex justify-content-between pt-1">
+      <div class="font-weight-bold"><%= hike.name %></div>
+      <div class="font-weight-bold">$<%= hike.price %></div>
+    </div>
+    <div class="d-flex">
+      <%= hike.length %>
+    </div>
+    <div class="d-flex text-capitalize">
+      <%= hike.difficulty %>
+    </div>
+  </div>
+<% end %>
 
 
        
