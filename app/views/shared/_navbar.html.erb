@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a href="#"><img class="logo_navbar" src="https://i.ibb.co/GRT4xyd/hik-Easy-logo.png" alt="hik-Easy-logo" border="0"></a>
+  <a href="#"><img class="logo_navbar" src="<%= asset_path 'logo.png' %>" alt="hik-Easy-logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,39 +9,19 @@
         <%= link_to "Home", :root, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Hikes", :hikes, class: "nav-link" %>
+        <%= link_to "All Hikes", :hikes, class: "nav-link" %>
       </li>
-      <li class="nav-item">
-
-        <div class="nav-link" >
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown button
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-             <%= form_tag hikes_path, class: "p-3", method: :get do %>
-               <div class="dropdown-item">
-                 <%= check_box_tag :beginner %>
-                 <%= label_tag :beginner %>
-                 <br>
-                 <%= check_box_tag :intermediate %>
-                 <%= label_tag :intermediate %>
-                 <br>
-                 <%= check_box_tag :expert %>
-                 <%= label_tag :expert %>
-               </div>
-                <%= submit_tag "Search", class: "btn btn-primary" %>
-             <% end %>
+      <li class="nav-item dropdown"> 
+        <% if user_signed_in? %>
+          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= current_user.avatar_url %>" />
+          <div class="dropdown-menu dropdown-menu-right">
+            <%= link_to "My Hikes", dashboard_path, class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
-        </div>
-          </div>
-
-      <% if user_signed_in? %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-      <% else %>
-        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-      <% end %>
-
+        <% else %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <% end %>
       </li>
     </ul>
   </div>
