@@ -1,17 +1,21 @@
 // Specific CSS for your home-page
 body{
     background-color: #F6F6F3;
-    padding-top: 56px;
+    
 }
 .carousel-inner {
     width: 100%;
-    height: 600px;
+    height: 550px;
+}
+.carousel-item {
 }
 .carousel-item > img {
     top: 0;
     left: 0;
     min-width: 100%;
-    height: 600px;
+    height: 550px;
+    object-fit: cover;
+    background-position: center;
 }
 .welcome_to_discover {
     width: 100%;
