@@ -1,30 +1,16 @@
- <div class="col-12">
-  <div class="bg-white rounded p-3">
-    <h4>Add your review</h4>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addReviewModal">Leave Your Review</button>
-      
-      <div class="modal fade" id="addReviewModal" tabindex="-1" role="dialog" aria-labelledby="addReviewModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <%= simple_form_for [@booking.hike, @booking, @review] do |f| %>
-              <div class="modal-header">
-                <h5 class="modal-title" id="addReviewModalLabel">How was your hiking experience?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                  <div class="form-group">
-                    <%= f.input :rating, label: "Rate your hike", as: :select, collection: (1..5), required: true, id:'example', input_html: { id: 'review_rating' } %>
-                    <%= f.input :comment, label: false, as: :text, placeholder: 'Leave a comment' %>
-                  </div>
-              </div>
-              <div class="modal-footer">
-                <%= f.button :submit, "Submit review", class: "btn btn-primary" %>
-              </div>
-            <% end %>
-          </div>
-        </div>
+  <div class="col-12">
+      <div class="bg-white rounded p-3">
+        <h4>User, how was your experience?</h4>
+        <%= simple_form_for [@booking.hike, @booking, @review] do |f| %>
+        Rate your hike
+          <%= f.input :comment,  placeholder: 'Leave a comment' %>
+          <%= f.input :rating, as: :select, collection: (1..5), required: true, id:'example', input_html: { id: 'review_rating' } %>
+        Rate your guide
+        <%= f.input :comment,  placeholder: 'Leave a comment' %>
+        <%= f.input :rating, as: :select, collection: (1..5), required: true, id:'example', input_html: { id: 'review_rating' } %>
+        <% end %>
       </div>
-  </div>
-</div>
+    </div>
+ 
+
+
