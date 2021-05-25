@@ -8,8 +8,21 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
+
+    <div class="row">
+        <div class = "col-lg-8">
+        <hr>
+        <p><%=@hike.description%></p>
+        <hr>
+        </div>
+        <div class = "col-lg-4">
+            <div class = "card-guide">
+            </div>
+        </div>
+
     <div class = "col-lg-3">
       <img class="top-image-hike" src="https://images.unsplash.com/photo-1530406574868-4b989cf06d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+
     </div>
     <div class = "col-lg-4">
       <%= render "bookings/form", booking: @booking %>
