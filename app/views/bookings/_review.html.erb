@@ -5,9 +5,7 @@
         Rate your hike
           <%= f.input :comment,  placeholder: 'Leave a comment' %>
           <%= f.input :rating, as: :select, collection: (1..5), required: true, id:'example', input_html: { id: 'review_rating' } %>
-        Rate your guide
-        <%= f.input :comment,  placeholder: 'Leave a comment' %>
-        <%= f.input :rating, as: :select, collection: (1..5), required: true, id:'example', input_html: { id: 'review_rating' } %>
+        <%= f.button :submit, "Submit review", class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
