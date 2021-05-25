@@ -33,13 +33,14 @@
 <div class ="row">
 <div class="col-lg-12">
     <div class="card-review"><p>Reviews</p>
-        <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm"> 
             <% if @hike.reviews.empty? %>
                 <small><em class="text-muted"> Be the first one to review this Hike aaaaaaa</em></small>
             <% end %>
             <% @hike.reviews.each do |review| %>
                 <div>
-                    <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+                    <img class="avatar-large" alt="avatar-large" src="<%= review.booking.user.avatar_url %> ">  
+                    <div><small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small></div>
+                    
                     <div><% review.rating.times do %>
                       <i class="fas fa-star star-yellow"></i>
                     <% end %>
