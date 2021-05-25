@@ -1,15 +1,18 @@
+<div class= "container-fluid">
+  <div class= "row">
+    <div class= "col-lg-3">
+      <%= form_tag hikes_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "hike"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <div class= "col-lg-3">
+    <div class="nav-link" >
 
-<h1 class="header">Find your hike</h1>
-<%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group">
-    <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Explore" />
-    <button name="button" type="submit" class="btn btn-flat">
-      <i class="fas fa-search"></i> Search
-    </button>
-  </div>
-<% end %>
-<div class="row">
-<div class="nav-link" >
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown button
@@ -31,46 +34,84 @@
           </div>
         </div>
           </div>
-
-
-<h4 class="header m-3">Find your hike</h4>
-<div class="row">
-  <div class="col-md-8">
-    <div class="dropdown ml-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Difficulty
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%= form_tag hikes_path, class: "p-3", method: :get do %>
-          <div class="dropdown-item">
-            <%= check_box_tag :beginner %>
-            <%= label_tag :beginner %>
-            <br>
-            <%= check_box_tag :intermediate %>
-            <%= label_tag :intermediate %>
-            <br>
-            <%= check_box_tag :expert %>
-            <%= label_tag :expert %>
-          </div>
-            <%= submit_tag "Search", class: "btn btn-primary" %>
-        <% end %>
+      </div>
       </div>
     </div>
-  </div> 
-  <div class="col-md-4">
-    <%= form_tag hikes_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "hike"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
   </div>
 </div>
 
-<div id="map" class= "mt-3"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="container">
+    <div class = "row">
+      <div class="col-lg-12">
+      <div id="map"
+          style="width: 100%; height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      </div>
+    </div>
+    <br>
+    <div class = "row">
+      <div class="col-lg-12">
+      <h3>Hike Results:</h3>
+      </div> 
+    </div>
+    <div class="row">  
+  <div class = "col-lg-3">
+      <div class="card-hike">
+      <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+      <div class="card-hike-infos">
+          <div>
+          <h2>Hike Name</h2>
+          <h3>Location</h3>
+          <p>Number of Hikers</p>
+      </div>
+          <h2 class="card-hike-pricing">$</h2>
+      </div>
+      </div>
+  </div>
+  <div class = "col-lg-3">
+      <div class="card-hike">
+      <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+      <div class="card-hike-infos">
+          <div>
+          <h2>Hike Name</h2>
+          <h3>Location</h3>
+          <p>Number of Hikers</p>
+      </div>
+          <h2 class="card-hike-pricing">$</h2>
+      </div>
+      </div>
+  </div>
+  <div class = "col-lg-3">
+      <div class="card-hike">
+      <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+      <div class="card-hike-infos">
+          <div>
+          <h2>Hike Name</h2>
+          <h3>Location</h3>
+          <p>Number of Hikers</p>
+      </div>
+          <h2 class="card-hike-pricing">$</h2>
+      </div>
+      </div>
+  </div>
+  <div class = "col-lg-3">
+      <div class="card-hike">
+      <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+      <div class="card-hike-infos">
+          <div>
+          <h2>Hike Name</h2>
+          <h3>Location</h3>
+          <p>Number of Hikers</p>
+      </div>
+          <h2 class="card-hike-pricing">$</h2>
+      </div>
+      </div>
+  </div>
+</div>  
+
+
 </div>
+
+
