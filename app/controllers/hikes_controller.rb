@@ -29,12 +29,10 @@ class HikesController < ApplicationController
       [{
         lat: @hike.start_address.latitude,
         lng: @hike.start_address.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { hike: @hike })
       },
       {
         lat: @hike.end_address.latitude,
         lng: @hike.end_address.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { hike: @hike })
       }
     ]
 

@@ -38,17 +38,38 @@ end
 
   malerweg = Hike.create(
         name: "Malerweg",
-        price: 800,
+        region: "Germany",
+        price: 400,
         difficulty: "intermediate",
-        accomodation_type: 'cabin',
-        length: '8 days',
+        accomodation_type: 'cave',
+        length: 8,
+        distance: 116,
         group_size: 15,
         start_address: Address.create(address: "Pirna"),
         end_address: Address.create(address: "Stolpen"),
         chatroom: Chatroom.create(name: 'Malerweg'),
-        map_style: 'mapbox://styles/annamoe/ckoyht30h0awk17mj7tuof7ck'
+        map_style: 'mapbox://styles/annamoe/ckoyht30h0awk17mj7tuof7ck',
+        description: "The Elbe Sandstone Mountains Malerweg trail in Saxon Switzerland is one of the most picturesque hiking trails in Germany. Where once painters sought inspiration for their timeless works, you can now walk along a 116 km hiking trail through Saxon Switzerland. Caves can be found in hidden places as a opportunity to sleep in it. Not everybody finds these caves. With a bit of luck our guides will show you theses incredible places, giving you the chance to escape from the civilization."
+  )
+
+  kumano_kodo = Hike.create(
+    name: "Kumano Kodo",
+    region: "Japan",
+    price: "800",
+    difficulty: "intermediate",
+    accomodation_type: "cabin",
+    length: 5,
+    distance: 70,
+    group_size: 10,
+    start_address: Address.create(address: "Mt. Hoshi"),
+        end_address: Address.create(address: "mt. nachi"),
+        chatroom: Chatroom.create(name: 'Kumano Kodo'),
+        map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t', 
+        description: "Away from the crowded subway stations, glaring neon signs and the speeding express trains of the major cities, the Kumano Kodo pilgrimage route gives you the chance to get acquainted with Japan’s soul. This trail, which leads you along ancient forest paths, over countless mountains and through magical, primeval forests, will reveal the character of the country in a way few ever get to experience. And as the huge cedars and cypresses rise above you, trees which serve as wild shrines, worshipped by the local population—you’ll be blown away by this wilder, more calming side of Japan. 
+        In five daily stages, you’ll hike a total of 70 kilometers from west to east, and you’ll conquer more than 13,000 feet (4,000 meters) of elevation. And while that might sound like quite a challenge, we promise it’s worth the effort as there’s no better way to experience the solitude of the Japanese mountains."
   )
 
 puts 'done'
 
 User.create(email: "emma@emma.com", password: "123456")
+
