@@ -9,7 +9,7 @@ def  add_image_to_hike(hike, image_name)
   image = File.open("db/pictures/#{image_name}")
   extension = image_name.split('.').last
 
-  p.photos.attach(io: image, filename: image_name, content_type: "image/#{extension}")
+  hike.photos.attach(io: image, filename: image_name, content_type: "image/#{extension}")
 end
 
 puts 'cleaning up database'
@@ -57,12 +57,12 @@ end
         end_address: Address.create(address: "Stolpen"),
         chatroom: Chatroom.create(name: 'Malerweg'),
         map_style: 'mapbox://styles/annamoe/ckoyht30h0awk17mj7tuof7ck',
-        description: "The Elbe Sandstone Mountains Malerweg trail in Saxon Switzerland is one of the most picturesque hiking trails in Germany. Where once painters sought inspiration for their timeless works, you can now walk along a 116 km hiking trail through Saxon Switzerland. Caves can be found in hidden places as a opportunity to sleep in it. Not everybody finds these caves. With a bit of luck our guides will show you theses incredible places, giving you the chance to escape from the civilization."
-        5.times do |j|
+        description: "The Elbe Sandstone Mountains Malerweg trail in Saxon Switzerland is one of the most picturesque hiking trails in Germany. Where once painters sought inspiration for their timeless works, you can now walk along a 116 km hiking trail through Saxon Switzerland. Caves can be found in hidden places as a opportunity to sleep in it. Not everybody finds these caves. With a bit of luck our guides will show you theses incredible places, giving you the chance to escape from the civilization."    
+  )
+  2.times do |j|
         image_name = malerweg_images[j]
         add_image_to_hike(malerweg, image_name)
       end
-  )
 
   kumano_kodo = Hike.create(
     name: "Kumano Kodo",

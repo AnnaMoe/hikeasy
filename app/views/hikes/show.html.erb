@@ -8,31 +8,18 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-
-    <div class="row">
-        <div class = "col-lg-8">
-        <hr>
-        <p><%=@hike.description%></p>
-        <hr>
-        </div>
-        <div class = "col-lg-4">
-            <div class = "card-guide">
-            </div>
-        </div>
-
     <div class = "col-lg-3">
-      <img class="top-image-hike" src="https://images.unsplash.com/photo-1530406574868-4b989cf06d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
-
+      <%= cl_image_tag @hike.photos[0]&.key, class: "top-image-hike"  %>
+      <%= cl_image_tag @hike.photos[1]&.key, class: "buttom-image-hike"  %>
     </div>
     <div class = "col-lg-4">
       <%= render "bookings/form", booking: @booking %>
     </div>
   </div>
-  </div>
   <div class="row">
     <div class = "col-lg-8">
       <hr>
-      <p>Detailed Description of the Hike</p>
+      <p><%=@hike.description%></p>
       <hr>
     </div>
     <div class = "col-lg-4">
@@ -40,12 +27,12 @@
       </div>
     </div>
   </div>
-  <div class ="row">
-    <div class="col-lg-12">
+  <div class="row justify-content-center mt-5">
+    <div class="col-12">
       <div class="card-review">
         <p>Reviews</p>
         <% if @hike.reviews.empty? %>
-          <small><em class="text-muted"> Be the first one to review this Hike aaaaaaa</em></small>
+          <small><em class="text-muted"> Be the first one to review this Hike</em></small>
         <% end %>
         <% @hike.reviews.each do |review| %>
           <div>
