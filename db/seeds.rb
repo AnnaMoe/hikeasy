@@ -5,7 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+def  add_image_to_hike(hike, image_name)
+  image = File.open("db/pictures/#{image_name}")
+  extension = image_name.split('.').last
 
+  p.photos.attach(io: image, filename: image_name, content_type: "image/#{extension}")
+end
 
 puts 'cleaning up database'
 Review.destroy_all
@@ -35,13 +40,16 @@ puts 'creating hikes'
     )
     puts "hike #{hike.id} is created"
 end
-
+  malerweg_images = ['Malerweg_Bastei.jpeg', 'Malerweg_gate.jpeg']
+  
   malerweg = Hike.create(
         name: "Malerweg",
         region: "Germany",
         price: 400,
         difficulty: "intermediate",
         accomodation_type: 'cave',
+        terrain: "forest, field paths",
+        elevation: 3200,
         length: 8,
         distance: 116,
         group_size: 15,
@@ -50,6 +58,10 @@ end
         chatroom: Chatroom.create(name: 'Malerweg'),
         map_style: 'mapbox://styles/annamoe/ckoyht30h0awk17mj7tuof7ck',
         description: "The Elbe Sandstone Mountains Malerweg trail in Saxon Switzerland is one of the most picturesque hiking trails in Germany. Where once painters sought inspiration for their timeless works, you can now walk along a 116 km hiking trail through Saxon Switzerland. Caves can be found in hidden places as a opportunity to sleep in it. Not everybody finds these caves. With a bit of luck our guides will show you theses incredible places, giving you the chance to escape from the civilization."
+        5.times do |j|
+        image_name = malerweg_images[j]
+        add_image_to_hike(malerweg, image_name)
+      end
   )
 
   kumano_kodo = Hike.create(
@@ -58,6 +70,8 @@ end
     price: "800",
     difficulty: "intermediate",
     accomodation_type: "cabin",
+    terrain: "forest, alpine, panoramic",
+    elevation: 5200,
     length: 5,
     distance: 70,
     group_size: 10,
