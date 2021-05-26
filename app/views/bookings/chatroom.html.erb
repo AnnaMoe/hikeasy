@@ -24,10 +24,7 @@
           for everyone!</small></p>
         </div>
         <% @chatroom.messages.each do |message| %>
-          <div class="notification">
-            <img class="avatar dropdown-toggle mr-4" src="<%= message.user.avatar_url %>  " />
-            <%= render 'messages/message' , message: message %>
-          </div>
+          <%= render 'messages/message' , message: message %>
         <% end %>
       </div>
       <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
