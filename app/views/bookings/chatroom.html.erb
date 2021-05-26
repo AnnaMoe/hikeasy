@@ -4,7 +4,7 @@
       <div class="notification-blank">
         <img src='<%= current_user.avatar_url %>' class="avatar-large" />
         <div class="notification-content-blank align-items-centers">
-          <h3 class="m-0 ml-1">Hello <%=@booking.user.nickname %>. Welcome to <em>
+          <h3 class="m-0 ml-1">Hello <%=@booking.user.first_name %>. Welcome to <em>
               <%= @hike.chatroom.name %>
             </em></h3>
         </div>
@@ -45,7 +45,7 @@
             <img class="avatar dropdown-toggle" src="<%= booking.user.avatar_url  %>" /> 
             <div class="notification-members-content">
               <p class="m-0">
-                <%= booking.user.nickname %>, <%= booking.user.age %>
+                <%= booking.user.first_name %>, <%= booking.user.age %>
               </p>
               <p class="text-muted m-0"></small><em><%= booking.user.country %></em></small></p>
             </div>

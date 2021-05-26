@@ -41,7 +41,7 @@ end
         price: 800,
         difficulty: "intermediate",
         accomodation_type: 'cabin',
-        length: 'distance',
+        length: '8 days',
         group_size: 15,
         start_address: Address.create(address: "Pirna"),
         end_address: Address.create(address: "Stolpen"),
