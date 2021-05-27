@@ -2,9 +2,8 @@
   
   <div class="row">
     <div class= "col-lg-4">
-    <h2>Hike Name</h2>
+    <h2><%=@booking.hike.name%></h2>
     </div>
-    <p>Reviews</p>
   </div>
   <div class= row>
     <div class = "col-lg-12">
@@ -14,7 +13,7 @@
 
   <div class= "row">
     <div class= col-lg-8>
-      insert map here
+      Trail Map
       </div>
     <div class= col-lg-4>
     <%= render 'highlights'%>
@@ -23,9 +22,7 @@
   </div>
 
   <hr>
-  Guide Name
-  Guide Since ...
-  Reviews
+  Guide Name +
   Introduction
   <hr>
 
