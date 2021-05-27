@@ -56,62 +56,24 @@
       <h3>Hike Results:</h3>
       </div> 
     </div>
-    <div class="row">  
-  <div class = "col-lg-3">
-      <div class="card-hike">
-      <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
-      <div class="card-hike-infos">
-          <div>
-          <h2>Hike Name</h2>
-          <h3>Location</h3>
-          <p>Number of Hikers</p>
-      </div>
-          <h2 class="card-hike-pricing">$</h2>
-      </div>
-      </div>
-  </div>
-  <div class = "col-lg-3">
-      <div class="card-hike">
-      <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
-      <div class="card-hike-infos">
-          <div>
-          <h2>Hike Name</h2>
-          <h3>Location</h3>
-          <p>Number of Hikers</p>
-      </div>
-          <h2 class="card-hike-pricing">$</h2>
-      </div>
-      </div>
-  </div>
-  <div class = "col-lg-3">
-      <div class="card-hike">
-      <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
-      <div class="card-hike-infos">
-          <div>
-          <h2>Hike Name</h2>
-          <h3>Location</h3>
-          <p>Number of Hikers</p>
-      </div>
-          <h2 class="card-hike-pricing">$</h2>
-      </div>
-      </div>
-  </div>
-  <div class = "col-lg-3">
-      <div class="card-hike">
-      <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
-      <div class="card-hike-infos">
-          <div>
-          <h2>Hike Name</h2>
-          <h3>Location</h3>
-          <p>Number of Hikers</p>
-      </div>
-          <h2 class="card-hike-pricing">$</h2>
-      </div>
-      </div>
+    <div class="row">
+    <% @hikes.each do |hike| %>
+        <%= link_to hike_path(hike), class:'text-decoration-none' do %>
+        <div class = "col-lg-3">
+          <div class="card-hike">
+            <img class="hike-image" src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+            <div class="card-hike-infos">
+              <h3><%= hike.name %></h3>
+              <h3>location</h3>
+              <p>$<%=hike.price%></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+  
   </div>
 </div>  
 
-
-</div>
 
 

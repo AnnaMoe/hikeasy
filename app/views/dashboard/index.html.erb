@@ -4,16 +4,21 @@
   <h4>Hello, user</h4>
   <p>Your bookings:</p>
   <div class="row">
-  
     <% @bookings.each do |booking| %>
-        <div class="col-12 col-sm-6 col-md-4 my-3 card-suggestion">
           <%= link_to hike_booking_path(booking.hike, booking), class:'text-decoration-none' do %>
-            <div>
-              <%= booking.hike.name %>
-              <%= booking.hike.start_address %>
-              <%= booking.hike.price %>$
+            <div class="col-lg-4">
+            <div class="card-hike">
+            <img class="hike-image" src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+              <div class="card-hike-infos">
+                <h2><%= booking.hike.name %></h2>
+                <h3><%= booking.hike.start_address %></h3>
+                <p>$<%=booking.hike.price%></p>
+              <% end %>
+              </div>
             </div>
-          <% end %>
+          </div>
+          </div>
+           
         </div>
     <% end %>
   </div>
