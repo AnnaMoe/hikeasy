@@ -12,6 +12,7 @@
       <%= cl_image_tag @hike.photos[0]&.key, class: "top-image-hike"  %>
       <%= cl_image_tag @hike.photos[1]&.key, class: "buttom-image-hike"  %>
     </div>
+    <%= raise %>
     <div class = "col-lg-4">
       <%= render "bookings/form", booking: @booking %>
     </div>
