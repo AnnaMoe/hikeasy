@@ -6,15 +6,15 @@
         <%= simple_form_for [@hike, @booking] do |f| %>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <%= f.input :first_name, label: false, placeholder: 'First Name' %>
+              <%= f.input :first_name, label: false, placeholder: 'First Name', input_html: { value: @booking.first_name } %>
             </div>
             <div class="form-group col-md-6">
-              <%= f.input :last_name, label: false, placeholder: 'Last Name' %>
+              <%= f.input :last_name, label: false, placeholder: 'Last Name', input_html: { value:@booking.last_name } %>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <%= f.input :email, label: false, placeholder: 'Email Address' %>
+              <%= f.input :email, label: false, placeholder: 'Email Address', input_html: { value: @booking.email } %>
             </div>
             <div class="form-group col-md-6">
               <%= f.input :phone_number, label: false, placeholder: 'Phone Number' %>
@@ -24,37 +24,36 @@
             <div class="form-group col-lg-9">
               <%= f.input :credit_card, label: false, placeholder: 'Card Number' %>
             </div>
-              <div class="form-group col-lg-3">
+            <div class="form-group col-lg-3">
               <%= f.input :credit_card_in_database, label: false, placeholder: 'MM/YY' %>
             </div>
-              <p><small><em class="text-muted">By clicking <strong>'Confirm'</strong> you are agreeing to our Terms & Conditions, Privacy Policy, and to received booking-related messages.</em></small></p>
-
-<button type="button" class="button" data-toggle="modal" data-target="#exampleModal">
-  Confirm booking
-</button>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Great, your booking has been confirmed</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        You will receive a confirmation email soon with your booking details.
-      </div>
-      <div class="modal-footer">
-        <%# <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> %>
-        <%= link_to "Visit Dashboard", dashboard_path, class: "btn btn-secondary" %>
+            <p><small><em class="text-muted">By clicking <strong>'Confirm'</strong> you are agreeing to our <a href="#">Terms & Conditions</a>, <a href="#">Privacy Policy</a>, and to receive booking-related messages.</em></small></p>
+          </div>
+          <div class="form-row justify-content-end">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              Confirm booking
+            </button>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
-            </div>
-          </div>
-        <% end %>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Great, your booking has been confirmed</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          You will receive a confirmation email soon with your booking details.
+        </div>
+        <div class="modal-footer">
+          <%= link_to "Visit Dashboard", dashboard_path, class: "btn btn-primary" %>
+        </div>
       </div>
     </div>
   </div>
