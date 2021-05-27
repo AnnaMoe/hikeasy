@@ -7,6 +7,9 @@ class Hike < ApplicationRecord
 
   scope :filter_by_difficulty, ->(difficulty) { where difficulty: difficulty }
   scope :filter_by_region, ->(region_id) { where region_id: region_id }
+  scope :filter_by_accomodation, ->(accomodation) { where accomodation_type: accomodation }
+  scope :filter_by_price, ->(min, max) { where price: min..max }
+  scope :filter_by_lenght, ->(min, max) { where length: min..max }
 
   belongs_to :chatroom
 end
