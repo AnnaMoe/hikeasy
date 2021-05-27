@@ -27,6 +27,7 @@ puts 'creating hikes'
         name: Faker::Mountain.name,
         price: rand(400..800),
         difficulty: ["beginner", "intermediate", "expert"].sample,
+        accomodation_type: ["cabin", "tent", "tipi", "under the stars"].sample
         distance: rand(24..60),
         length: rand(3..31),
         terrain: "Alpine",
