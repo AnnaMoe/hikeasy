@@ -11,6 +11,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.hike = @hike
     @booking.user = current_user
+    @booking.first_name = current_user.first_name
+    @booking.last_name = current_user.last_name
+    @booking.email = current_user.email
     authorize @booking
     @booking.save!
     redirect_to edit_hike_booking_path(@hike, @booking)
