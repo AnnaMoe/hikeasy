@@ -4,7 +4,8 @@
     <p class="float-right card-booking-price"><strong>$<%=@hike.price%></strong></p>
     <h5 class="card-booking-title"><strong> <%=@hike.name%></strong></h5>
     <div class="mb-2">
-    <div class="dates"><p><em>July 23rd- July 30th<em></p></div>
+    <span><p><em>July 23rd - July 30th</p></em></span>
+    <br>
     <span><i class="far fa-calendar-alt"></i> <%=@hike.length%> Days</span>
     <br>
     <span><i class="fas fa-hiking"></i> <%=@hike.distance%> Kilometers</span>
@@ -17,7 +18,7 @@
     </div>
 
       <%= simple_form_for [@hike, @booking] do |f| %>
-        <%# <%= f.input :date, as: :string, label: false, placeholder: 'Start Date'%>
+        <%= f.input :date, as: :string, label: false, placeholder: 'July 23rd-July 30th'%>
         <%= f.button :button, "Book now", class: "btn-book w-100 mt-2" %>
       <% end %>
     </div>
