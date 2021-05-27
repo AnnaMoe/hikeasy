@@ -4,15 +4,16 @@ class HikesController < ApplicationController
 
 
   def index
-    if params[:beginner]
-      @hikes = policy_scope(Hike).filter_by_difficulty("beginner")
-    elsif params[:intermediate]
-      @hikes = policy_scope(Hike).filter_by_difficulty("intermediate")
-    elsif params[:expert]
-      @hikes = policy_scope(Hike).filter_by_difficulty("expert")
-    else
       @hikes = policy_scope(Hike).order(created_at: :desc)
-    end
+      @hikes = @hikes.filter_by_difficulty(params[:difficulty]) if params[:difficulty]
+      @hikes = @hikes.filter_by_accomodation(params[:accomodation]) if params[:accomodation]
+
+      if params[:price]
+        min = params[:price].first.empty? ? 400 : params[:price].first.to_i
+        max = params[:price].last.empty? ? 800 : params[:price].last.to_i
+        @hikes = @hikes.filter_by_price(min,max)
+      end
+
     #@hikes = policy_scope(Hike).order(created_at: :desc)
     @markers = @hikes.map do |hike|
       {
@@ -29,12 +30,10 @@ class HikesController < ApplicationController
       [{
         lat: @hike.start_address.latitude,
         lng: @hike.start_address.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { hike: @hike })
       },
       {
         lat: @hike.end_address.latitude,
         lng: @hike.end_address.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { hike: @hike })
       }
     ]
 

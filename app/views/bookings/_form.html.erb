@@ -2,19 +2,17 @@
     <div class="card-form">
     <div class="card-booking-body">
     <p class="float-right card-booking-price"><strong>$<%=@hike.price%></strong></p>
-    <p class="card-booking-title"><strong><%=@hike.name%></strong></p>
-    <div>
-    <span><i class="fas fa-map-marker-alt"></i>Country</span>
+    <h5 class="card-booking-title"><strong> <%=@hike.name%></strong></h5>
+    <div class="mb-2">
+    <span><i class="far fa-calendar-alt"></i> <%=@hike.length%> Days</span>
     <br>
-    <span><i class="far fa-calendar-alt"></i># of Days</span>
+    <span><i class="fas fa-hiking"></i> <%=@hike.distance%> Kilometers</span>
     <br>
-    <span><i class="fas fa-mountain"></i>Type of Terrain</span>
+    <span><i class="fas fa-mountain"></i> <%=@hike.terrain%></span>
     <br>
-    <span><i class="fas fa-hiking"></i>Distance</span>
+    <span><i class="fas fa-expand-alt"></i> <%=@hike.elevation%> Meters</span>
     <br>
-    <span><i class="fas fa-expand-alt"></i>Elevation</span>
-    <br>
-    <span>Button Tag of Difficulty (beginner-advance)</span>
+    <span><%=@hike.difficulty%></span>
     </div>
 
       <%= simple_form_for [@hike, @booking] do |f| %>

@@ -8,6 +8,8 @@ const initChatroomCable = () => {
     consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
       received(data) {
         messagesContainer.insertAdjacentHTML('beforeend', data);
+        // todo: figure it out a way of not making screen blink and losing focus on new message input
+        messagesContainer.children[messagesContainer.children.length - 1].scrollIntoView();
       }
     });
   }
