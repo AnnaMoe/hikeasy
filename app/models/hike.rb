@@ -12,4 +12,6 @@ class Hike < ApplicationRecord
   scope :filter_by_lenght, ->(min, max) { where length: min..max }
 
   belongs_to :chatroom
+
+  has_many_attached :photos
 end

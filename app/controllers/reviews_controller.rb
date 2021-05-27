@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.booking = @booking
     authorize @review
-    if @review.save
+    if @review.save!
       redirect_to hike_path(@hike)
     else
       render 'bookings/show'
