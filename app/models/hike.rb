@@ -9,4 +9,6 @@ class Hike < ApplicationRecord
   scope :filter_by_region, ->(region_id) { where region_id: region_id }
 
   belongs_to :chatroom
+
+  has_many_attached :photos
 end
