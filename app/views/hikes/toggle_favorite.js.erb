@@ -1,0 +1,6 @@
+const hikeId = '<%= @hike.id%>'
+function toggleFavoriteButton(hikeId, innerHTML) {
+  let favoriteButton = document.querySelector(`.favorite-icon[data-id='${hikeId}']`)
+  favoriteButton.classList.toggle('red');
+}
+toggleLikeButton(cocktailId);

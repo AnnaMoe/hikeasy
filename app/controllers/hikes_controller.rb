@@ -1,6 +1,6 @@
 class HikesController < ApplicationController
-
-  before_action :set_hike, only: [:show]
+  before_action :authenticate_user!, only: :toggle_favorite
+  before_action :set_hike, only: [:show, :toggle_favorite]
 
 
   def index
@@ -24,7 +24,6 @@ class HikesController < ApplicationController
     end
   end
 
-
   def show
     @markers =
       [{
@@ -36,11 +35,15 @@ class HikesController < ApplicationController
         lng: @hike.end_address.longitude,
       }
     ]
-
-
     @booking = Booking.new
     authorize @hike
     authorize @booking
+  end
+
+  def toggle_favorite
+    current_user.favorited?(@hike) ?
+    current_user.unfavorite(@hike) : 
+    current_user.favorite(@hike)
   end
 
  private
