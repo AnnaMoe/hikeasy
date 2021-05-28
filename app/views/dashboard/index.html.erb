@@ -22,4 +22,14 @@
         </div>
     <% end %>
   </div>
+
+  <p>Your favourites:</p>
+  <div class="row">
+    <ul>
+      <% @favourite_hikes.each do |f| %>
+        <li><%= f.name %></li>
+      <% end %>
+    </ul>
+  </div>
+
 </div>
