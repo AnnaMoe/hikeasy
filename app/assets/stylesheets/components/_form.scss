@@ -1,4 +1,4 @@
-.card-form{
+.card-form-highlights{
 width: 300px;
 height: 450px;
 background: #FFFFFF;
@@ -7,7 +7,19 @@ box-sizing: border-box;
 border-radius: 10px;
 padding: 40px;
 text-align: left;
-margin-left: 200px;
+
+}
+
+.card-form{
+width: 350px;
+height: 450px;
+background: #FFFFFF;
+outline: .25px solid rgba(242, 239, 239, 0.5);
+box-sizing: border-box;
+border-radius: 10px;
+padding: 40px;
+text-align: left;
+margin-left: 70px;
 }
 
 
