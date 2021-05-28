@@ -32,7 +32,7 @@ puts 'creating hikes'
         length: rand(3..31),
         terrain: "Alpine",
         group_size: rand(3..10),
-        region: Faker::Address.country),
+        region: Faker::Address.country,
         start_address: Address.create(address: Faker::Address.country),
         end_address: Address.create(address: Faker::Address.country),
         chatroom: Chatroom.create(name: 'Group Page'),
@@ -45,9 +45,12 @@ end
   
   malerweg = Hike.create(
         name: "Malerweg",
+        title: "Sandstone Filled Malerweg through Saxony Switzerland",
+        subtitle: "An unforgettable and physically demanding 76-km trek through the Saxony Switzerland National Park, in Saxony, Germany. A 8-day tour led by Lukas - local certified guide.",
+        national_park: "Saxony Switzerland",
         region: "Germany",
         price: 400,
-        difficulty: "intermediate",
+        difficulty: "Intermediate",
         accomodation_type: 'cave',
         terrain: "forest, field paths",
         elevation: 3200,
