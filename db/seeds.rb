@@ -33,6 +33,7 @@ puts 'creating hikes'
         length: rand(3..31),
         terrain: "Alpine",
         group_size: rand(3..10),
+        region: Faker::Address.country,
         start_address: Address.create(address: Faker::Address.country),
         end_address: Address.create(address: Faker::Address.country),
         chatroom: Chatroom.create(name: 'Group Page'),

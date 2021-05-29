@@ -13,5 +13,9 @@ class Hike < ApplicationRecord
 
   belongs_to :chatroom
 
+  # comes from cloudinary
   has_many_attached :photos
+
+  # comes from favorite gem
+  acts_as_favoritable
 end

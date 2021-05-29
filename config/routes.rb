@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :hikes, only: [:index, :show] do
+    member do
+      post 'toggle_favorite', to: "hikes#toggle_favorite"
+    end
     resources :bookings, only: [:create, :new, :show, :update, :edit] do
      # member do
         get 'chatroom' 

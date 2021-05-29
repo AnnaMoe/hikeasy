@@ -5,6 +5,9 @@ class HikePolicy < ApplicationPolicy
     end
   end
   def show?
-      true
-    end
+    true
+  end
+  def toggle_favorite?
+    true
+  end
 end
