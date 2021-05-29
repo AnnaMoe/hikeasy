@@ -45,90 +45,98 @@
     </div>
   </div>
 </div>
-<<<<<<< HEAD
-<div class="row mt-5">
-  <div class="col-md-8">
-    <h3><strong><%= @booking.hike.title %></strong></h3>
-    <h3><strong><%= @booking.hike.length %> Day Guided Trek</strong></h3>
-    <p><%= @booking.hike.subtitle %></p>
-    <table>
-      <tr>
-        <td class="pr-5">
-          <p><i class="far fa-image"></i> National Park</p>
-        </td>
-        <td>
-          <p><%=@booking.hike.national_park%></p>
-        </td>
-      </tr>
-      <tr>
-        <td class="pr-5">
-          <p><i class="far fa-clock"></i> Duration</p>
-        </td>
-        <td>
-          <p><%= @booking.hike.length %> Days</p>
-        </td>
-      </tr>
-      <tr>
-        <td class="pr-5">
-          <p><i class="fas fa-arrow-right"></i> Distance</p>
-        </td>
-        <td>
-          <p><%= @booking.hike.distance %> Kilometers</p>
-        </td>
-      </tr>
-      <tr>
-        <td class="pr-5">
-          <p><i class="fas fa-arrow-up"></i> Elevation</p>
-        </td>
-        <td>
-          <p><%= @booking.hike.elevation %> Meters</p>
-        </td>
-      </tr>
-      <tr>
-        <td class="pr-5">
-          <p><i class="fas fa-weight"></i> Skill Level</p>
-        </td>
-        <td>
-          <p><%= @booking.hike.difficulty %></p>
-        </td>
-      </tr>
-    </table>
-    <hr>
-    <h4><strong>Description</strong></h4>
-    <p><%= @booking.hike.description %></p>
-    <hr>
-    <h4>About the Guide</h4>
-  </div>
-  <div class="col-md-4">
-    <div class="container booking-form">
-      <div class="card-form-highlights">
-        <div class="card-booking-body">
-          <div class="card-weather m-5">
-            <h3>weather in Prina</h3>
-            <h4>Today's date</h4>
-            <p>Clear sky</p>
-            <img src="" alt="">
-            <h4>Temperature</h4>
-          </div>
-          <h3>Fellow Hikers</h3>
-          <% @hike.bookings.each do |booking| %>
-          <div class="notification-members mb-5">
-            <img class="avatar dropdown-toggle" src="<%= booking.user.avatar_url  %>" /> 
-            <div class="notification-members-content">
-              <p class="m-0">
-                <%= booking.user.first_name %>, <%= booking.user.age %>
-              </p>
-              <p class="text-muted m-0"></small><em><%= booking.user.country %></em></small></p>
+<div class= "container mt-5 details-hike">
+  <div class="row mt-5">
+    <div class="col-md-8">
+      <h3><strong><%= @booking.hike.title %></strong></h3>
+      <h3><strong><%= @booking.hike.length %> Day Guided Trek</strong></h3>
+      <p><%= @booking.hike.subtitle %></p>
+      <table>
+        <tr>
+          <td class="pr-5">
+            <p><i class="far fa-image"></i> National Park</p>
+          </td>
+          <td>
+            <p><%=@booking.hike.national_park%></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="pr-5">
+            <p><i class="far fa-clock"></i> Duration</p>
+          </td>
+          <td>
+            <p><%= @booking.hike.length %> Days</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="pr-5">
+            <p><i class="fas fa-arrow-right"></i> Distance</p>
+          </td>
+          <td>
+            <p><%= @booking.hike.distance %> Kilometers</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="pr-5">
+            <p><i class="fas fa-arrow-up"></i> Elevation</p>
+          </td>
+          <td>
+            <p><%= @booking.hike.elevation %> Meters</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="pr-5">
+            <p><i class="fas fa-weight"></i> Skill Level</p>
+          </td>
+          <td>
+            <p><%= @booking.hike.difficulty %></p>
+          </td>
+        </tr>
+      </table>
+      <hr>
+      <h4><strong>Description</strong></h4>
+      <p><%= @booking.hike.description %></p>
+      <hr>
+      <h4>About the Guide</h4>
+    </div>
+    <div class="col-md-4">
+      <div class="container booking-form">
+        <div class="card-form-highlights">
+          <div class="card-booking-body">
+            <div class="card-weather m-5">
+              <h3>Expected Weather Forecast</h3>
+              <h4 id="date"></h4>
+              <p id="description"></p>
+              <div class="d-flex">
+                <img src="" alt="" id="icon" height="50" width="50">
+                <h4 id="temperature" data-longitude= 
+                '<%= @hike.start_address.longitude %>'
+                data-latitude= 
+                '<%= @hike.start_address.latitude %>'
+                 ></h4>
+              </div>
             </div>
-            <% end %>
+            <h3>Fellow Hikers</h3>
+            <% @hike.bookings.each do |booking| %>
+            <div class="notification-members mb-5">
+              <img class="avatar dropdown-toggle" src="<%= booking.user.avatar_url  %>" /> 
+              <div class="notification-members-content">
+                <p class="m-0">
+                  <%= booking.user.first_name %>, <%= booking.user.age %>
+                </p>
+                <p class="text-muted m-0"></small><em><%= booking.user.country %></em></small></p>
+              </div>
+              <% end %>
+              
+            </div>
             <%= link_to "Visit Group Page", hike_booking_chatroom_path(@booking.hike, @booking), class: "discover_more_botton" %> 
           </div>
         </div>
       </div>
+      Group Members
+      
+      <hr>
+      #hikeasy user pics
     </div>
-    Group Members
-    
-    <hr>
-    #hikeasy user pics
   </div>
 </div>
