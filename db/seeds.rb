@@ -51,7 +51,7 @@ end
         national_park: "Saxony Switzerland",
         region: "Germany",
         price: 400,
-        difficulty: "Intermediate",
+        difficulty: "intermediate",
         accomodation_type: 'cave',
         terrain: "forest, field paths",
         elevation: 3200,
