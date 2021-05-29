@@ -1,16 +1,17 @@
-<div class= "container-fluid hikes">
-  <div class= "row">
-    <div class= "col-lg-3">
-      <%= form_tag hikes_path, method: :get do %>
+<div class="container hikes">
+  <div class="row justify-content-center mt-4 mb-5">
+    <div class="d-flex align-items-center">
+      <%= form_tag hikes_path, class: "d-flex", method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "hike"
         %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
 
     </div>
-    <div class= "col-lg-2">
-      <div class="nav-link" >
+    <div>
+      <div class="nav-link">
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Difficulty
@@ -31,10 +32,29 @@
         </div>
       </div>
     </div>
-   <div class= "col-lg-2">
+    <div>
       <div class="nav-link" >
         <div class="dropdown">
-          <div style="width:500px;">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Length
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="dropdown-item">
+                       <form method="post">
+                  <div data-role="rangeslider">
+            <label for="length-min">2</label>
+            <input type="range" name="length-min" id="length-min" value="2" min="2" max="9">
+            <label for="length-max">9</label>
+          </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   <div>
+      <div class="nav-link" >
+        <div class="dropdown">
+          <div>
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Accomodation
           </button>
@@ -58,7 +78,7 @@
       </div>
     </div>
   </div>
-    <div class= "col-lg-2">
+    <div>
       <div class="nav-link" >
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,7 +97,7 @@
           </div>
         </div>
       </div>
-      <div class= "col-lg-2">
+      <div>
       <div class="nav-link" >
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -97,32 +117,11 @@
           </div>
         </div>
       </div>
-
-      <div class= "col-lg-2">
-      <div class="nav-link" >
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Length
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <div class="dropdown-item">
-                       <form method="post">
-                  <div data-role="rangeslider">
-            <label for="length-min">2</label>
-            <input type="range" name="length-min" id="length-min" value="2" min="2" max="9">
-            <label for="length-max">9</label>
-          </div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
 
 
 <div class="container hikes">
-    <div class = "row">
+    <div class="row">
       <div class="col-lg-12">
 
       <div id="map"
@@ -133,63 +132,18 @@
     </div>
 
     <br>
-    <div class = "row">
+    <div class="row">
       <div class="col-lg-12">
 
-      <h3>Hike Results:</h3>
+      <div class="hike_results">Hike Results:</div>
       </div>
     </div>
-    <div class="row">
-  <div class = "col-lg-3">
-      <div class="card-hike">
-      <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
-      <div class="card-hike-infos">
-          <div>
-          <h2>Hike Name</h2>
-          <h3>Location</h3>
-          <p>Number of Hikers</p>
-      </div>
-          <h2 class="card-hike-pricing">$</h2>
-      </div>
-      </div>
-  </div>
-  <div class = "col-lg-3">
-      <div class="card-hike">
-      <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
-      <div class="card-hike-infos">
-          <div>
-          <h2>Hike Name</h2>
-          <h3>Location</h3>
-          <p>Number of Hikers</p>
-      </div>
-          <h2 class="card-hike-pricing">$</h2>
-      </div>
-      </div>
-  </div>
-  <div class = "col-lg-3">
-      <div class="card-hike">
-      <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
-      <div class="card-hike-infos">
-          <div>
-          <h2>Hike Name</h2>
-          <h3>Location</h3>
-          <p>Number of Hikers</p>
-      </div>
-          <h2 class="card-hike-pricing">$</h2>
-      </div>
-      </div>
-  </div>
-  <br>
-  <div class = "row">
-    <div class="col-lg-12">
-      <div class ="hike_results">Hike Results:</div>
-    </div>
-  </div>
+    
   <div class="row">
     <% @hikes.each do |hike| %>
       <% if hike.photos.attached? %>
         <%= link_to hike_path(hike), class:'text-decoration-none' do %>
-          <div class = "col-lg-3">
+          <div class="col-lg-3">
             <div class="card-hike">
               <%= cl_image_tag hike.photos.first.key, class: 'hike-image' %>
               <div class="card-hike-infos">
@@ -202,7 +156,7 @@
         </div>
       <% else %>
         <%= link_to hike_path(hike), class:'text-decoration-none' do %>
-          <div class = "col-lg-3">
+          <div class="col-lg-3">
             <div class="card-hike">
               <img class="hike-image" src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
               <div class="card-hike-infos">
@@ -215,4 +169,7 @@
         </div>
       <% end %>
     <% end %>
+</div>
+</div>
+</div>
 </div>
