@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5 hikes">
   <div class = "row">
     <div class = "col-lg-5">
       <div id="map-start-end"
@@ -20,6 +20,13 @@
   <div class="row">
     <div class = "col-lg-8">
       <hr>
+      <%# <%= link_to "Add as favorite", toggle_favorite_hike_path(@hike), remote: true, method: :post, class: "favorite-icon" %> 
+
+      <%= link_to toggle_favorite_hike_path(@hike), remote: true, method: :post, class: "favorite-icon"  do %>
+        <i class="fas fa-heart"></i>
+      <% end %>
+
+
       <p><%=@hike.description%></p>
       <hr>
     </div>
