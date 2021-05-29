@@ -20,11 +20,10 @@
   <div class="row">
     <div class = "col-lg-8">
       <hr>
+      
       <%# <%= link_to "Add as favorite", toggle_favorite_hike_path(@hike), remote: true, method: :post, class: "favorite-icon" %> 
 
-      <%= link_to toggle_favorite_hike_path(@hike), remote: true, method: :post, class: "favorite-icon"  do %>
-        <i class="fas fa-heart"></i>
-      <% end %>
+     
 
 
       <p><%=@hike.description%></p>
@@ -62,11 +61,10 @@
         <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
         <div class="card-hike-infos">
           <div>
-            <h2>Hike Name</h2>
-            <h3>Location</h3>
-            <p>Number of Hikers</p>
+            <div class ="hike_name">Hike Name</div>
+            <div class ="location">Location</div>
+            <div class ="price">Number of Hikers</div>
           </div>
-          <h2 class="card-hike-pricing">$<%=@hike.price%></h2>
         </div>
       </div>
     </div>
@@ -75,11 +73,10 @@
         <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
         <div class="card-hike-infos">
           <div>
-            <h2>Hike Name</h2>
-            <h3>Location</h3>
-            <p>Number of Hikers</p>
+            <div class ="hike_name">Hike Name</div>
+            <div class ="location">Location</div>
+            <div class ="price">Number of Hikers</div>
           </div>
-          <h2 class="card-hike-pricing">$<%=@hike.price%></h2>
         </div>
       </div>
     </div>
@@ -88,11 +85,10 @@
         <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
         <div class="card-hike-infos">
           <div>
-            <h2>Hike Name</h2>
-            <h3>Location</h3>
-            <p>Number of Hikers</p>
+            <div class ="hike_name">Hike Name</div>
+            <div class ="location">Location</div>
+            <div class ="price">Number of Hikers</div>
           </div>
-          <h2 class="card-hike-pricing">$<%=@hike.price%></h2>
         </div>
       </div>
     </div>
@@ -101,11 +97,10 @@
         <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
         <div class="card-hike-infos">
           <div>
-            <h2>Hike Name</h2>
-            <h3>Location</h3>
-            <p>Number of Hikers</p>
+            <div class ="hike_name">Hike Name</div>
+            <div class ="location">Location</div>
+            <div class ="price">Number of Hikers</div>
           </div>
-          <h2 class="card-hike-pricing">£99.99</h2>
         </div>
       </div>
     </div>

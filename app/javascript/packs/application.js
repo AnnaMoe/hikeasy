@@ -27,6 +27,7 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initMapboxShow } from '../plugins/init_mapbox';
 import { initChatroomCable } from '../channels/chatroom_channel';
+import { initWeather } from '../components/init_weather';
 
 
 // Internal imports, e.g:
@@ -36,4 +37,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initMapboxShow();
   initChatroomCable();
+  initWeather();
+  
 });
+

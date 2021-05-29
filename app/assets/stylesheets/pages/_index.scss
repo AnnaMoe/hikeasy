@@ -26,6 +26,7 @@
   font-size: 32px;
   line-height: 37px;
   margin-bottom: 10px;
+  margin-top: 25px;
 }
 .card-hike-infos {
   margin-left: 10px;
@@ -62,5 +63,35 @@
   font-size: 18px;
   line-height: 21px;
 }
-
+.hello_user {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+  margin-bottom: 25px;
+}
+.sub_title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 25px;
+}
+.favorites_hikes {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: -40px;
+    max-width: 33.3333333333%;
+}
+.green_color {
+    background: #BBCEA8;
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    margin-top: 50px;
+}
 
