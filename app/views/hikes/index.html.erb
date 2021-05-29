@@ -7,17 +7,15 @@
           class: "form-control",
           placeholder: "hike"
         %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
+
     </div>
-    <div class= "col-lg-3">
+    <div class= "col-lg-2">
       <div class="nav-link" >
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Difficulty
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <%= form_tag hikes_path, class: "p-3", method: :get do %>
               <div class="dropdown-item">
                 <%= check_box_tag "difficulty[]", "beginner" %>
                 <%= label_tag :beginner %>
@@ -28,34 +26,100 @@
                 <%= check_box_tag "difficulty[]", "expert" %>
                 <%= label_tag :expert %>
                 <br>
-                <%# <br> %>
-                <%# <%= check_box_tag "accomodation[]", "cabin" %>
-                <%# <%= label_tag :cabin %>
-                <%# <br> %>
-                <%# <%= check_box_tag "accomodation[]", "tent" %>
-                <%# <%= label_tag :tent %>
-                <%# <br>
-                  <%= check_box_tag "accomodation[]", "tipi" %>
-                <%# <%= label_tag :tipi %>
-                <%# <br> %>
-                <%# <%= check_box_tag "accomodation[]", "under the stars" %>
-                <%# <%= label_tag :under_the_stars %>
-                <%# <br> %>
-                <%# <%= number_field_tag "price[]", "minimum" %>
-                <%# <%= label_tag :min %>
-                <%# <br> %>
-                <%# <%= number_field_tag "price[]", "maximum" %>
-                <%# <%= label_tag :max %>
-                <%# </div> %>
-                <%= submit_tag "Search", class: "btn btn-primary" %>
-              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   <div class= "col-lg-2">
+      <div class="nav-link" >
+        <div class="dropdown">
+          <div style="width:500px;">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Accomodation
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="dropdown-item">
+                <br>
+                <%= check_box_tag "accomodation[]", "cabin" %>
+                <%= label_tag :cabin %>
+                <br>
+                <%= check_box_tag "accomodation[]", "tent" %>
+                <%= label_tag :tent %>
+                <br>
+                <%= check_box_tag "accomodation[]", "tipi" %>
+                <%= label_tag :tipi %>
+                <br>
+                <%= check_box_tag "accomodation[]", "under the stars" %>
+                <%= label_tag :under_the_stars %>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+    <div class= "col-lg-2">
+      <div class="nav-link" >
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Price
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="dropdown-item">
+    <form method="post">
+      <div data-role="rangeslider">
+        <label for="price-min">400</label>
+        <input type="range" name="price-min" id="price-min" value="200" min="400" max="800">
+        <label for="price-max">800</label>
+      </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class= "col-lg-2">
+      <div class="nav-link" >
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Distance
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-item">
+                <form method="post">
+                  <div data-role="rangeslider">
+            <label for="distance-min">24</label>
+            <input type="range" name="distance-min" id="distance-min" value="24" min="24" max="60">
+            <label for="distance-max">60</label>
+          </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class= "col-lg-2">
+      <div class="nav-link" >
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Length
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="dropdown-item">
+                       <form method="post">
+                  <div data-role="rangeslider">
+            <label for="length-min">2</label>
+            <input type="range" name="length-min" id="length-min" value="2" min="2" max="9">
+            <label for="length-max">9</label>
+          </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+
 
 <div class="container hikes">
     <div class = "row">
@@ -67,6 +131,53 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
+
+    <br>
+    <div class = "row">
+      <div class="col-lg-12">
+
+      <h3>Hike Results:</h3>
+      </div>
+    </div>
+    <div class="row">
+  <div class = "col-lg-3">
+      <div class="card-hike">
+      <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+      <div class="card-hike-infos">
+          <div>
+          <h2>Hike Name</h2>
+          <h3>Location</h3>
+          <p>Number of Hikers</p>
+      </div>
+          <h2 class="card-hike-pricing">$</h2>
+      </div>
+      </div>
+  </div>
+  <div class = "col-lg-3">
+      <div class="card-hike">
+      <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+      <div class="card-hike-infos">
+          <div>
+          <h2>Hike Name</h2>
+          <h3>Location</h3>
+          <p>Number of Hikers</p>
+      </div>
+          <h2 class="card-hike-pricing">$</h2>
+      </div>
+      </div>
+  </div>
+  <div class = "col-lg-3">
+      <div class="card-hike">
+      <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+      <div class="card-hike-infos">
+          <div>
+          <h2>Hike Name</h2>
+          <h3>Location</h3>
+          <p>Number of Hikers</p>
+      </div>
+          <h2 class="card-hike-pricing">$</h2>
+      </div>
+      </div>
   </div>
   <br>
   <div class = "row">
@@ -104,5 +215,4 @@
         </div>
       <% end %>
     <% end %>
-  </div>
 </div>
