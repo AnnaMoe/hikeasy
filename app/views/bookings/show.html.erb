@@ -103,9 +103,22 @@
       <div class="container booking-form">
         <div class="card-form-highlights">
           <div class="card-booking-body">
+            <div class="card-weather m-5">
+              <h3>Expected Weather Forecast</h3>
+              <h4 id="date"></h4>
+              <p id="description"></p>
+              <div class="d-flex">
+                <img src="" alt="" id="icon" height="50" width="50">
+                <h4 id="temperature" data-longitude= 
+                '<%= @hike.start_address.longitude %>'
+                data-latitude= 
+                '<%= @hike.start_address.latitude %>'
+                 ></h4>
+              </div>
+            </div>
             <h3>Fellow Hikers</h3>
             <% @hike.bookings.each do |booking| %>
-            <div class="notification-members mb-4">
+            <div class="notification-members mb-5">
               <img class="avatar dropdown-toggle" src="<%= booking.user.avatar_url  %>" /> 
               <div class="notification-members-content">
                 <p class="m-0">
@@ -113,16 +126,17 @@
                 </p>
                 <p class="text-muted m-0"></small><em><%= booking.user.country %></em></small></p>
               </div>
+              <% end %>
+              
             </div>
-            <% end %>
             <%= link_to "Visit Group Page", hike_booking_chatroom_path(@booking.hike, @booking), class: "discover_more_botton" %> 
           </div>
         </div>
       </div>
+      Group Members
+      
+      <hr>
+      #hikeasy user pics
     </div>
-    Group Members
-    
-    <hr>
-    #hikeasy user pics
   </div>
 </div>
