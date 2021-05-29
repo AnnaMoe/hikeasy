@@ -1,7 +1,7 @@
 
 <%= link_to hike_path(hike), class: 'text-decoration-none' do %> 
   <div class="container">
-    <div class="row">
+    <div class="row">    
       <% if hike.photos.attached? %>
         <%= cl_image_tag hike.photos.first.key, class: 'hike-image' %>
       <% else %>
@@ -9,6 +9,10 @@
       <% end %>
     </div>
     <div class="d-flex justify-content-between pt-1">
+            <%= link_to toggle_favorite_hike_path(hike), remote: true, method: :post do %>
+            <div class="like-icon mx-2 <%= 'red' if current_user.favorited?(hike) %>" data-id="<%= hike.id %>">
+            <i class="fas fa-heart"></i>
+            <% end %>
       <div class="font-weight-bold"><%= hike.name %></div>
       <div class="font-weight-bold">$<%= hike.price %></div>
     </div>
