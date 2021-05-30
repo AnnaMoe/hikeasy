@@ -1,25 +1,43 @@
-
 <div class="container mt-5">
-
-  <h4>Hello, user</h4>
-  <p>Your bookings:</p>
+  <div class ="hello_user">Hello, user</div>
+  <div class ="sub_title">Your bookings:</div>
   <div class="row">
     <% @bookings.each do |booking| %>
-          <%= link_to hike_booking_path(booking.hike, booking), class:'text-decoration-none' do %>
-            <div class="col-lg-4">
-            <div class="card-hike">
+      <%= link_to hike_booking_path(booking.hike, booking), class:'text-decoration-none' do %>
+        <div class="col-lg-4">
+          <div class="card-hike">
             <img class="hike-image" src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
-              <div class="card-hike-infos">
-                <h2><%= booking.hike.name %></h2>
-                <h3><%= booking.hike.region %></h3>
-                <p>$<%=booking.hike.price%></p>
-              <% end %>
-              </div>
+            <div class="card-hike-infos">
+              <div class ="hike_name"><%= booking.hike.name %></div>
+              <div class ="location"><%= booking.hike.region %></div>
+              <div class ="price">$<%=booking.hike.price%></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+<div class="container mt-5">
+<div class ="sub_title">Your favourites:</div>
+<div class="row">
+  <ul>
+    <% @favourite_hikes.each do |hike| %>
+      <div class="favorites_hikes">
+        <div class="card-hike">
+          <%= link_to hike_path(hike), class:'text-decoration-none' do %>
+            <img class="hike-image" src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+            <div class="card-hike-infos">
+              <div class="hike_name"><%= hike.name %></div>
+                <div class="location"><%= hike.region %></div>
+                <div class="price">$<%=hike.price%></div>
             </div>
           </div>
-          </div>
-           
-        </div>
+        <% end %>
+      </div>
     <% end %>
-  </div>
+  </ul>
+</div>
+</div>
 </div>

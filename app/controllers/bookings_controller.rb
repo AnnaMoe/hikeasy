@@ -33,6 +33,17 @@ class BookingsController < ApplicationController
   def show
     @review = Review.new(booking: @booking)
     # redirect_to dashboard_index_path
+    @hike = Hike.find(params[:hike_id])
+     @markers =
+      [{
+        lat: @hike.start_address.latitude,
+        lng: @hike.start_address.longitude,
+      },
+      {
+        lat: @hike.end_address.latitude,
+        lng: @hike.end_address.longitude,
+      }
+    ]
   end
 
   def confirmation

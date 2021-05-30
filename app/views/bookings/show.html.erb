@@ -1,35 +1,142 @@
-<div class= "container">
-  
+<div class= "container mt-5 details-hike">
   <div class="row">
-    <div class= "col-lg-4">
-    <h2><%=@booking.hike.name%></h2>
+    <div class= "col-md-12">
+      <div class="d-flex justify-content-between">
+        <h2><strong><%=@booking.hike.name%></strong></h2>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Leave a Review
+        </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <%= render 'review' %>
+              </div>
+              <div class="modal-footer">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</div>  
   <div class= row>
     <div class = "col-lg-12">
-    <p>Dates Booked</p>
+      <p>Dates Booked</p>
     </div>
   </div>
-
   <div class= "row">
-    <div class= col-lg-8>
-      Trail Map
+    <div class= col-md-6>
+      <div id="map-start-end"
+        style="width: 100%; height: 450px;"
+        data-style="<%= @booking.hike.map_style %>"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    <div class= col-lg-4>
-    <%= render 'highlights'%>
     </div>
+    <div class= col-md-4>
+      <%# <%= render 'highlights'%> 
     </div>
   </div>
-
-  <hr>
-  Guide Name +
-  Introduction
-  <hr>
-
-  Group Members
-  <%= link_to "Visit Group Page", hike_booking_chatroom_path(@booking.hike, @booking), class: "discover_more_botton" %>
-  <hr>
-
-  #hikeasy user pics
-
+</div>
+<div class= "container mt-5 details-hike">
+  <div class="row mt-5">
+    <div class="col-md-8">
+      <h3><strong><%= @booking.hike.title %></strong></h3>
+      <h3><strong><%= @booking.hike.length %> Day Guided Trek</strong></h3>
+      <p><%= @booking.hike.subtitle %></p>
+      <table>
+        <tr>
+          <td class="pr-5">
+            <p><i class="far fa-image"></i> National Park</p>
+          </td>
+          <td>
+            <p><%=@booking.hike.national_park%></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="pr-5">
+            <p><i class="far fa-clock"></i> Duration</p>
+          </td>
+          <td>
+            <p><%= @booking.hike.length %> Days</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="pr-5">
+            <p><i class="fas fa-arrow-right"></i> Distance</p>
+          </td>
+          <td>
+            <p><%= @booking.hike.distance %> Kilometers</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="pr-5">
+            <p><i class="fas fa-arrow-up"></i> Elevation</p>
+          </td>
+          <td>
+            <p><%= @booking.hike.elevation %> Meters</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="pr-5">
+            <p><i class="fas fa-weight"></i> Skill Level</p>
+          </td>
+          <td>
+            <p><%= @booking.hike.difficulty %></p>
+          </td>
+        </tr>
+      </table>
+      <hr>
+      <h4><strong>Description</strong></h4>
+      <p><%= @booking.hike.description %></p>
+      <hr>
+      <h4>About the Guide</h4>
+    </div>
+    <div class="col-md-4">
+      <div class="container booking-form">
+        <div class="card-form-highlights">
+          <div class="card-booking-body">
+            <div class="card-weather m-5">
+              <h3>Expected Weather Forecast</h3>
+              <h4 id="date"></h4>
+              <p id="description"></p>
+              <div class="d-flex">
+                <img src="" alt="" id="icon" height="50" width="50">
+                <h4 id="temperature" data-longitude= 
+                '<%= @hike.start_address.longitude %>'
+                data-latitude= 
+                '<%= @hike.start_address.latitude %>'
+                 ></h4>
+              </div>
+            </div>
+            <h3>Fellow Hikers</h3>
+            <% @hike.bookings.each do |booking| %>
+            <div class="notification-members mb-5">
+              <img class="avatar dropdown-toggle" src="<%= booking.user.avatar_url  %>" /> 
+              <div class="notification-members-content">
+                <p class="m-0">
+                  <%= booking.user.first_name %>, <%= booking.user.age %>
+                </p>
+                <p class="text-muted m-0"></small><em><%= booking.user.country %></em></small></p>
+              </div>
+              <% end %>
+              
+            </div>
+            <%= link_to "Visit Group Page", hike_booking_chatroom_path(@booking.hike, @booking), class: "discover_more_botton" %> 
+          </div>
+        </div>
+      </div>
+      Group Members
+      
+      <hr>
+      #hikeasy user pics
+    </div>
+  </div>
 </div>

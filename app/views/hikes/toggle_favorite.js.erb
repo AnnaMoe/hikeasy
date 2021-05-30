@@ -1,0 +1,8 @@
+var hikeId = '<%= @hike.id%>'
+
+function toggleLikeButton(hikeId, innerHTML) {
+  let likeButton = document.querySelector(`.like-icon[data-id='${hikeId}']`)
+  likeButton.classList.toggle('favorite');
+}
+
+toggleLikeButton(hikeId);
