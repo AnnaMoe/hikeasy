@@ -3,18 +3,20 @@
     <div class="col-12 col-md-6 offset-md-3">
       <div class="bg-white rounded p-3 shadow confirmation mt-3 mb-3">
         <h3 class= "mb-4">Complete your booking</h3>
+        <%= params[:booking][:date] %>
         <%= simple_form_for [@hike, @booking] do |f| %>
+          <%= f.input_field :date, as: :hidden, value: params[:booking][:date] %>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <%= f.input :first_name, placeholder: 'First Name', input_html: { value: @booking.first_name } %>
+              <%= f.input :first_name, placeholder: 'First Name', input_html: { value: current_user.first_name } %>
             </div>
             <div class="form-group col-md-6">
-              <%= f.input :last_name, placeholder: 'Last Name', input_html: { value:@booking.last_name } %>
+              <%= f.input :last_name, placeholder: 'Last Name', input_html: { value:current_user.last_name } %>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <%= f.input :email, placeholder: 'Email Address', input_html: { value: @booking.email } %>
+              <%= f.input :email, placeholder: 'Email Address', input_html: { value: current_user.email } %>
             </div>
             <div class="form-group col-md-6">
               <%= f.input :phone_number, placeholder: 'Phone Number' %>
@@ -40,13 +42,13 @@
 
           <div class="form-row">
             <div class="col-md-4">
-              <%= f.input :credit_card_in_database, label: 'Expiration Month', placeholder: 'MM/YY' %>
+              <%= f.input :credit_card_expiration_month, label: 'Expiration Month', placeholder: 'MM/YY' %>
             </div>
             <div class="col-md-4">
-              <%= f.input :credit_card_in_database, label: 'Expiration Year', placeholder: 'MM/YY' %>
+              <%= f.input :credit_card_expiration_year, label: 'Expiration Year', placeholder: 'MM/YY' %>
             </div>
             <div class="col-md-4">
-              <%= f.input :credit_card_in_database, label: 'CVC', placeholder: 'CVC' %>
+              <%= f.input :credit_card_cvc, label: 'CVC', placeholder: 'CVC' %>
             </div>  
           </div>
 
@@ -55,7 +57,8 @@
             <small><em class="text-muted">By clicking <strong>'Confirm'</strong> you are agreeing to our <a href="#">Terms & Conditions</a>, <a href="#">Privacy Policy</a>, and to receive booking-related messages.</em></small>
           </div>
           <hr />
-          <button class="btn btn-primary btn-lg btn-block" type="button" data-toggle="modal" data-target="#exampleModal">Confirm booking</button>
+          <%# <button class="" type="button" data-toggle="modal" data-target="#exampleModal"></button> %>
+          <%= f.button :button, "Confirm booking", class: "btn btn-primary btn-lg btn-block" %>
 
         <% end %>
       </div>

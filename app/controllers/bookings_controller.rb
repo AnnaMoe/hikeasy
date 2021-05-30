@@ -2,7 +2,8 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :confirmation]
 
   def new
-    @booking =Booking.new
+    @hike = Hike.find(params[:hike_id])
+    @booking = Booking.new
     authorize @booking
   end
 
@@ -11,12 +12,13 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.hike = @hike
     @booking.user = current_user
-    @booking.first_name = current_user.first_name
-    @booking.last_name = current_user.last_name
-    @booking.email = current_user.email
     authorize @booking
-    @booking.save!
-    redirect_to edit_hike_booking_path(@hike, @booking)
+    if @booking.save
+      redirect_to dashboard_path
+    else
+      render :new
+    end
+    
   end
 
   def edit
@@ -63,12 +65,18 @@ class BookingsController < ApplicationController
   private
 
     def set_booking
-        @booking =Booking.find(params[:id])
+      @booking =Booking.find(params[:id])
       authorize @booking
     end
 
     def booking_params
-      params.require(:booking).permit(:date, :first_name, :last_name)
+      params
+        .require(:booking)
+        .permit(
+          :date, :first_name, :last_name, :phone_number, :credit_card, 
+          :credit_card_expiration_month, :credit_card_expiration_year,
+          :credit_card_cvc, :email
+        )
     end
 
 end
