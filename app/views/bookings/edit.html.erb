@@ -6,38 +6,63 @@
         <%= simple_form_for [@hike, @booking] do |f| %>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <%= f.input :first_name, label: false, placeholder: 'First Name', input_html: { value: @booking.first_name } %>
+              <%= f.input :first_name, placeholder: 'First Name', input_html: { value: @booking.first_name } %>
             </div>
             <div class="form-group col-md-6">
-              <%= f.input :last_name, label: false, placeholder: 'Last Name', input_html: { value:@booking.last_name } %>
+              <%= f.input :last_name, placeholder: 'Last Name', input_html: { value:@booking.last_name } %>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
-              <%= f.input :email, label: false, placeholder: 'Email Address', input_html: { value: @booking.email } %>
+              <%= f.input :email, placeholder: 'Email Address', input_html: { value: @booking.email } %>
             </div>
             <div class="form-group col-md-6">
-              <%= f.input :phone_number, label: false, placeholder: 'Phone Number' %>
+              <%= f.input :phone_number, placeholder: 'Phone Number' %>
             </div>
           </div>
+          
+          <h4 class="mb-3">Payment</h4>
           <div class="form-row">
-            <div class="form-group col-lg-9">
-              <%= f.input :credit_card, label: false, placeholder: 'Card Number' %>
+            <div class="form-group col-lg-12">  
+            <label>Credit Card Number</label>
+              <div class="input-group">
+                <%= f.input_field :credit_card, placeholder: 'Card Number', class: 'form-control' %>
+                <div class="input-group-text">
+                  <div class="icon-container">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="form-group col-lg-3">
-              <%= f.input :credit_card_in_database, label: false, placeholder: 'MM/YY' %>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-4">
+              <%= f.input :credit_card_in_database, label: 'Expiration Month', placeholder: 'MM/YY' %>
             </div>
-            <p><small><em class="text-muted">By clicking <strong>'Confirm'</strong> you are agreeing to our <a href="#">Terms & Conditions</a>, <a href="#">Privacy Policy</a>, and to receive booking-related messages.</em></small></p>
+            <div class="col-md-4">
+              <%= f.input :credit_card_in_database, label: 'Expiration Year', placeholder: 'MM/YY' %>
+            </div>
+            <div class="col-md-4">
+              <%= f.input :credit_card_in_database, label: 'CVC', placeholder: 'CVC' %>
+            </div>  
           </div>
-          <div class="form-row justify-content-end">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-              Confirm booking
-            </button>
+
+          
+          <div class="form-row">
+            <small><em class="text-muted">By clicking <strong>'Confirm'</strong> you are agreeing to our <a href="#">Terms & Conditions</a>, <a href="#">Privacy Policy</a>, and to receive booking-related messages.</em></small>
           </div>
+          <hr />
+          <button class="btn btn-primary btn-lg btn-block" type="button" data-toggle="modal" data-target="#exampleModal">Confirm booking</button>
+
         <% end %>
       </div>
     </div>
   </div>
+
+  
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
