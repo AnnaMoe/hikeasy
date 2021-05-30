@@ -12,7 +12,7 @@
     <h3 class="card-booking-title"><strong>$<%=@hike.price%></strong></h3>
     <p><i class="fas fa-star"></i> Reviews</p>
         <%= simple_form_for [@hike, @booking] do |f| %>
-        <%= f.input :date, as: :string, label: false, placeholder: 'Availability',  input_html: {class: "datepicker", :onchange => "handleBookingFormChange(event)"}%>
+        <%= f.input :dates, collection: [['15.07.2021 - 22.07.2021', '15.07.2021 - 22.07.2021'], ['20.08.2021 - 27.08.2021', '20.08.2021 - 27.08.2021'],['12.09.2021 - 20.09.2021', '12.09.2021 - 20.09.2021'] ], label: false, placeholder: 'Availability'%>
         <%= f.button :button, "Book now", class: "btn btn-primary w-100 mt-2 p-3" %>
       <% end %>
      
