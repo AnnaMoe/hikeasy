@@ -22,9 +22,9 @@
 <div class= "container mt-3">
   <div class="row mt-5">
     <div class="col-md-8">
-      <h3><strong><%= @hike.title %></strong></h3>
-      <h3><strong><%= @hike.length %> Day Guided Trek</strong></h3>
-      <p><%= @hike.subtitle %></p>
+      <div class="titolo_hike"><%= @hike.title %></div>
+      <div class="sottotitolo_hike"><%= @hike.length %> Day Guided Trek</div>
+      <div class="testo_hike"><%= @hike.subtitle %></div>
       <table>
         <tr>
           <td class="pr-5">
@@ -76,12 +76,12 @@
     </div>
       <div class="col-lg-8">
         <hr>
-        <h4><strong>Description</strong></h4>
-        <p><%= @hike.description %></p>
+        <div class="descrizione">Description</div>
+        <div class="testo_descrizione"><%= @hike.description %></div>
         <hr>
       </div>
       <div class="col-lg-8">
-        <h4>About the Guide</h4>
+        <div class="about_the_guide">About the Guide</div>
         <div class="row">
         <div class="col guide-avatar">
         <img src="https://images.unsplash.com/photo-1586022045315-1cdd6493045c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIyMjk2MzMz&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit"/>
@@ -111,7 +111,7 @@
         <hr>
       </div>
       <div class="col-lg-8">
-        <h4>What others are saying about <%=@hike.name%></h4>
+        <div class="about_the_guide">What others are saying about <%=@hike.name%></div>
         <div class="card-review">
         <p>Reviews</p>
         <% if @hike.reviews.empty? %>
@@ -132,7 +132,7 @@
         <hr>
       </div>
       <div class="col-lg-8">
-        <h4>You might also like:</h4>
+        <div class="you_may_also_like">You might also like:</div>
       </div>
   </div>
   </div>
