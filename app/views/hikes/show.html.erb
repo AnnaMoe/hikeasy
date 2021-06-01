@@ -1,5 +1,5 @@
 <div class="container-fluid mt-5">
-<div class= "row">
+  <div class= "row">
     <div class= col-md-6>
       <div id="map-start-end"
         style="width: 100%; height: 450px;"
@@ -8,15 +8,23 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
+    <div class = "col-lg-3">
+      <%= cl_image_tag @hike.photos[0]&.key, class: "image-hike"  %>
+      <%= cl_image_tag @hike.photos[1]&.key, class: "image-hike"  %>
+    </div>
+     <div class = "col-lg-3">
+      <%= cl_image_tag @hike.photos[0]&.key, class: "image-hike"  %>
+      <%= cl_image_tag @hike.photos[1]&.key, class: "image-hike"  %>
+    </div>
   </div>
 </div>
 </div>
 <div class= "container mt-3">
   <div class="row mt-5">
     <div class="col-md-8">
-      <h3><strong>hike title descrption</strong></h3>
+      <h3><strong><%= @hike.title %></strong></h3>
       <h3><strong><%= @hike.length %> Day Guided Trek</strong></h3>
-      <p>hike subtitle</p>
+      <p><%= @hike.subtitle %></p>
       <table>
         <tr>
           <td class="pr-5">
@@ -104,6 +112,23 @@
       </div>
       <div class="col-lg-8">
         <h4>What others are saying about <%=@hike.name%></h4>
+        <div class="card-review">
+        <p>Reviews</p>
+        <% if @hike.reviews.empty? %>
+          <small><em class="text-muted"> Be the first one to review this Hike</em></small>
+        <% end %>
+        <% @hike.reviews.each do |review| %>
+          <div>
+            <img class="avatar-large" alt="avatar-large" src="<%= review.booking.user.avatar_url %> ">
+            <div><small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small></div>
+            <div><% review.rating.times do %>
+                <i class="fas fa-star star-yellow"></i>
+              <% end %>
+            </div>
+            <p class="mb-0"><%= review.comment %></p>
+          </div>
+        <% end %>
+      </div>
         <hr>
       </div>
       <div class="col-lg-8">

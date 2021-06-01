@@ -1,0 +1,20 @@
+<div class="row">
+  <% bookings.each do |booking| %>
+    <div class="col-md-4">
+      <%= link_to hike_booking_path(booking.hike, booking), class:'text-decoration-none' do %>
+        <div class="card-hike">
+          <% if booking.hike.photos.attached? %>
+            <%= cl_image_tag booking.hike.photos.first.key, class: 'hike-image' %>
+          <% else  %>
+            <img class="hike-image" src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+          <% end %>
+          <div class="card-hike-infos">
+            <div class ="hike_name"><%= booking.hike.name %></div>
+            <div class ="location"><%= booking.hike.region %></div>
+            <div class ="price">$<%=booking.hike.price%></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>     
+</div>
