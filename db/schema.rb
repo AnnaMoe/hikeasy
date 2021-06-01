@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_31_213353) do
+ActiveRecord::Schema.define(version: 2021_06_01_210857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,7 +55,12 @@ ActiveRecord::Schema.define(version: 2021_05_31_213353) do
     t.string "phone_number"
     t.string "email"
     t.string "credit_card"
+    t.string "credit_card_expiration_month"
+    t.string "credit_card_expiration_year"
+    t.integer "credit_card_cvc"
     t.string "dates"
+    t.bigint "group_hikes_id"
+    t.index ["group_hikes_id"], name: "index_bookings_on_group_hikes_id"
     t.index ["hike_id"], name: "index_bookings_on_hike_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -81,6 +86,15 @@ ActiveRecord::Schema.define(version: 2021_05_31_213353) do
     t.index ["favoritor_id", "favoritor_type"], name: "fk_favorites"
     t.index ["favoritor_type", "favoritor_id"], name: "index_favorites_on_favoritor_type_and_favoritor_id"
     t.index ["scope"], name: "index_favorites_on_scope"
+  end
+
+  create_table "group_hikes", force: :cascade do |t|
+    t.date "start_at"
+    t.date "end_at"
+    t.bigint "hike_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hike_id"], name: "index_group_hikes_on_hike_id"
   end
 
   create_table "hikes", force: :cascade do |t|
@@ -109,11 +123,6 @@ ActiveRecord::Schema.define(version: 2021_05_31_213353) do
     t.index ["start_address_id"], name: "index_hikes_on_start_address_id"
   end
 
-  create_table "hikes_related_hikes", id: false, force: :cascade do |t|
-    t.bigint "hike_id"
-    t.bigint "related_hike_id"
-  end
-
   create_table "messages", force: :cascade do |t|
     t.string "content"
     t.bigint "chatroom_id", null: false
@@ -122,11 +131,6 @@ ActiveRecord::Schema.define(version: 2021_05_31_213353) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "related_hikes", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -156,8 +160,10 @@ ActiveRecord::Schema.define(version: 2021_05_31_213353) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "group_hikes", column: "group_hikes_id"
   add_foreign_key "bookings", "hikes"
   add_foreign_key "bookings", "users"
+  add_foreign_key "group_hikes", "hikes"
   add_foreign_key "hikes", "addresses", column: "end_address_id"
   add_foreign_key "hikes", "addresses", column: "start_address_id"
   add_foreign_key "hikes", "chatrooms"
