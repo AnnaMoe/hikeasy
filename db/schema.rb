@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_28_165930) do
+ActiveRecord::Schema.define(version: 2021_05_31_213353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,11 @@ ActiveRecord::Schema.define(version: 2021_05_28_165930) do
     t.index ["start_address_id"], name: "index_hikes_on_start_address_id"
   end
 
+  create_table "hikes_related_hikes", id: false, force: :cascade do |t|
+    t.bigint "hike_id"
+    t.bigint "related_hike_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.string "content"
     t.bigint "chatroom_id", null: false
@@ -116,6 +121,11 @@ ActiveRecord::Schema.define(version: 2021_05_28_165930) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "related_hikes", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reviews", force: :cascade do |t|

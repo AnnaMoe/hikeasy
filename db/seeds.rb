@@ -91,6 +91,7 @@ end
         In five daily stages, you’ll hike a total of 70 kilometers from west to east, and you’ll conquer more than 13,000 feet (4,000 meters) of elevation. And while that might sound like quite a challenge, we promise it’s worth the effort as there’s no better way to experience the solitude of the Japanese mountains."
   )
 
+
 kumano_kodo_images = ['kumano_kodo_1.jpg', 'kumano_kodo_2.jpg']
 2.times do |j|
         image_name = kumano_kodo_images[j]
