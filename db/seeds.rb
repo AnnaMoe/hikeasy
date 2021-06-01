@@ -22,7 +22,7 @@ puts 'database is clean'
 puts 'creating hikes'
 
 
-10.times do
+1.times do
     hike = Hike.create(
         name: Faker::Mountain.name,
         price: rand(400..800),
@@ -65,14 +65,14 @@ end
         description: "The Elbe Sandstone Mountains Malerweg trail in Saxon Switzerland is one of the most picturesque hiking trails in Germany. Where once painters sought inspiration for their timeless works, you can now walk along a 116 km hiking trail through Saxon Switzerland. Caves can be found in hidden places as a opportunity to sleep in it. Not everybody finds these caves. With a bit of luck our guides will show you theses incredible places, giving you the chance to escape from the civilization."
   )
 
-  malerweg_images = ['Malerweg_Bastei.jpeg', 'Malerweg_gate.jpeg']
-  2.times do |j|
+  malerweg_images = ['Malerweg_Bastei.jpeg', 'Malerweg_Elbe.jpg',  'Malerweg_view.jpg', 'Malerweg_gate.jpeg']
+  4.times do |j|
         image_name = malerweg_images[j]
         add_image_to_hike(malerweg, image_name)
       end
 
 
-  kumano_kodo = Hike.create(
+kumano_kodo = Hike.create(
     name: "Kumano Kodo",
     region: "Japan",
     price: "800",
@@ -91,12 +91,36 @@ end
         In five daily stages, you’ll hike a total of 70 kilometers from west to east, and you’ll conquer more than 13,000 feet (4,000 meters) of elevation. And while that might sound like quite a challenge, we promise it’s worth the effort as there’s no better way to experience the solitude of the Japanese mountains."
   )
 
-
-kumano_kodo_images = ['kumano_kodo_1.jpg', 'kumano_kodo_2.jpg']
-2.times do |j|
+  kumano_kodo_images = ['kumano_kodo_1.jpg', 'kumano_kodo_2.jpg', 'kumano_kodo_mountain.jpg', 'kumano_kodo_sign.jpg']
+4.times do |j|
         image_name = kumano_kodo_images[j]
         add_image_to_hike(kumano_kodo, image_name)
       end
+
+  alta_via = Hike.create(
+    name: "Alta Via 1",
+    region: "Italy",
+    price: "550",
+    difficulty: "intermediate",
+    accomodation_type: "cabin",
+    terrain: ", alpine, panoramic",
+    elevation: 5200,
+    length: 10,
+    distance: 120,
+    group_size: 10,
+    start_address: Address.create(address: "Toblach"),
+        end_address: Address.create(address: "Belluno"),
+        chatroom: Chatroom.create(name: 'Alta Via 1'),
+        map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+        description: "Away from the crowded subway stations, glaring neon signs and the speeding express trains of the major cities, the Kumano Kodo pilgrimage route gives you the chance to get acquainted with Japan’s soul. This trail, which leads you along ancient forest paths, over countless mountains and through magical, primeval forests, will reveal the character of the country in a way few ever get to experience. And as the huge cedars and cypresses rise above you, trees which serve as wild shrines, worshipped by the local population—you’ll be blown away by this wilder, more calming side of Japan.
+        In five daily stages, you’ll hike a total of 70 kilometers from west to east, and you’ll conquer more than 13,000 feet (4,000 meters) of elevation. And while that might sound like quite a challenge, we promise it’s worth the effort as there’s no better way to experience the solitude of the Japanese mountains."
+  )
+
+ alta_via_images = ['Dolomiten.jpg']
+4.times do |j|
+        image_name = alta_via_images[j]
+        add_image_to_hike(alta_via, image_name)
+      end 
 
 puts 'done'
 
