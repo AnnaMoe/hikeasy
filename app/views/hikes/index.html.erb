@@ -1,6 +1,6 @@
 <div class= "container">
 <%= form_tag hikes_path, method: :get do %>
-  <div class= "row">
+  <div class= "row mt-3">
       <div class= "col-lg-2">
         <div class="nav-link" >
             <div class="dropdown">
@@ -119,7 +119,7 @@
     </div>
 
 <div class= "col-lg-2">
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= submit_tag "Search", class: "btn btn-primary-search" %>
 </div>
 
 <% end %>
@@ -128,7 +128,9 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-10"><h2>Hike Results:</h2></div>
+    <div class="col-lg-10">
+      <div class="hike_results">Hike Results:</div>
+    </div>
     <div clas="col-lg-1"><button class="btn active"><i class="fas fa-list"></i></button></div>
     <div clas="col-lg-1"><button class="btn active"><i class="far fa-map"></i></button></div>
   </div>
@@ -140,12 +142,12 @@
             <div class="card-product">
               <%= cl_image_tag hike.photos.first.key, class: 'hike-image' %>
                 <div class="card-product-infos">
-                  <div>$<%=hike.price%></div>
-                 <div><h2><%= hike.name %></h2></div>
-                  <div><p><em><%= hike.region %></em></p></div>
+                  <div class ="prezzo">$<%=hike.price%></div>
+                 <div class ="nome_hike"><%= hike.name %></div>
+                  <div class="luogo"><%= hike.region %></div>
                   <div><i class="fas fa-arrow-right"></i> <%= hike.distance %> Kilometers</div>
                   <div><i class="fas fa-arrow-up"></i> <%= hike.elevation %>m Elevation</div>
-                  <div><%= hike.difficulty %></div>
+                  <div class="difficolta"><%= hike.difficulty %></div>
                 </div>
             </div>
             <% end %>
@@ -156,12 +158,12 @@
             <div class="card-product">
               <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
               <div class="card-product-infos">
-                  <div>$<%=hike.price%></div>
-                 <div><h2><%= hike.name %></h2></div>
-                  <div><p><em><%= hike.region %></em></p></div>
+                  <div class ="prezzo">$<%=hike.price%></div>
+                 <div class ="nome_hike"><%= hike.name %></div>
+                  <div class="luogo"><%= hike.region %></div>
                   <div><i class="fas fa-arrow-right"></i> <%= hike.distance %> Kilometers</div>
                   <div><i class="fas fa-arrow-up"></i> <%= hike.elevation %>m Elevation</div>
-                  <div><%= hike.difficulty %></div>
+                  <div class="difficolta"><%= hike.difficulty %></div>
                 </div>
             </div>
             <% end %>
@@ -181,5 +183,5 @@
       </div>
     </div>
   </div>
-
+</div>
 

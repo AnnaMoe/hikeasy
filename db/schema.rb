@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2021_05_31_213353) do
     t.string "phone_number"
     t.string "email"
     t.string "credit_card"
+    t.string "dates"
     t.index ["hike_id"], name: "index_bookings_on_hike_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
