@@ -23,3 +23,17 @@
 .dropdown {
     display:inline-block;
 }
+
+.online-badge {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #1FE5BD;
+}
+
+.offline-badge {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #d8312b;
+}

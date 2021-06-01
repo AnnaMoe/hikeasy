@@ -39,10 +39,10 @@
         <div class="card-weather">
           <h3>Expected Weather Forecast</h3>
           <h4 id="date"></h4>
-          <p id="description"></p>
-          <div class="d-flex">
-            <img src="" alt="" id="icon" height="50" width="50">
-            <h4 id="temperature" data-longitude='<%= @chatroom.hike.start_address.longitude %>'
+          <p id="description" class="m-0"></p>
+              <div class="d-flex align-items-center">
+                <img src="" alt="" id="icon" height="50" width="50">
+                <h4 id="temperature" class="m-0" data-longitude= '<%= @chatroom.hike.start_address.longitude %>'
             data-latitude='<%= @chatroom.hike.start_address.latitude %>'></h4>
           </div>
         </div>
@@ -51,9 +51,16 @@
           <div class="notification-members">
             <img class="avatar dropdown-toggle" src="<%= booking.user.avatar_url  %>" />
       <div class="notification-members-content">
-        <p class="m-0">
-          <%= booking.user.first_name %>, <%= booking.user.age %>
-        </p>
+        <div class="d-flex align-items-center">
+          <p class="m-0">
+            <%= booking.user.first_name %>, <%= booking.user.age %>
+          </p>
+          <% if user_signed_in? %>
+            <p class="online-badge m-0 ml-2"></p>
+          <% else %>
+            <p class="offline-badge m-0 ml-2"></p>
+          <% end %>
+        </div>
         <p class="text-muted m-0"></small><em><%= booking.user.country %></em></small></p>
   </div>
 </div>
