@@ -9,6 +9,10 @@
   clear: both;
 }
 
+// td {
+//   padding-right: 5px;
+// }
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
@@ -75,11 +79,49 @@
   line-height: 28px;
   margin-bottom: 25px;
 }
-.green_color {
-    background: #BBCEA8;
-    position: absolute;
-    height: 100px;
-    width: 100%;
-    margin-top: 50px;
-}
 
+.favorites_hikes {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: -40px;
+    max-width: 33.3333333333%;
+}
+.prezzo {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+}
+.nome_hike {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 37px;
+}
+.luogo {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  margin-bottom: 10px;
+}
+.difficolta {
+  margin-top: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+}
+.btn {
+  font-family: Roboto;
+  font-size: 16px;
+}
+.dropdown-menu {
+  font-family: Roboto;
+}
