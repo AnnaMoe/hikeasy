@@ -112,15 +112,55 @@ kumano_kodo = Hike.create(
         end_address: Address.create(address: "Belluno"),
         chatroom: Chatroom.create(name: 'Alta Via 1'),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "Away from the crowded subway stations, glaring neon signs and the speeding express trains of the major cities, the Kumano Kodo pilgrimage route gives you the chance to get acquainted with Japan’s soul. This trail, which leads you along ancient forest paths, over countless mountains and through magical, primeval forests, will reveal the character of the country in a way few ever get to experience. And as the huge cedars and cypresses rise above you, trees which serve as wild shrines, worshipped by the local population—you’ll be blown away by this wilder, more calming side of Japan.
-        In five daily stages, you’ll hike a total of 70 kilometers from west to east, and you’ll conquer more than 13,000 feet (4,000 meters) of elevation. And while that might sound like quite a challenge, we promise it’s worth the effort as there’s no better way to experience the solitude of the Japanese mountains."
+        description: "The most famous hiking trail in the Dolomites, the Alta Via 1, lives up to its promise. Although it doesn't travel through villages like the Tour du Mont Blanc does, the rifugios (mountain huts) you stay at along the way offer up loads of Italian charm and heaps of Italian food. You'll experience brilliant green meadows, rugged monoliths towering overhead, and plenty of World War I history as you pass by former battlefields and fortification remnants."
   )
 
- alta_via_images = ['Dolomiten.jpg']
+ alta_via_images = ['dolomites_2.jpg', 'Dolomiten.jpg', 'dolomites_3.jpg', 'dolomites_4.jpg']
 4.times do |j|
         image_name = alta_via_images[j]
         add_image_to_hike(alta_via, image_name)
       end 
+
+south_west_coast_path = Hike.create(
+    name: "South West Coast Path",
+    region: "Englad",
+    price: "840",
+    difficulty: "intermediate",
+    accomodation_type: "cabin, holiday-house, tent",
+    terrain: "field, beach",
+    elevation: 500,
+    length: 20,
+    distance: 500,
+    group_size: 8,
+    start_address: Address.create(address: "Poole"),
+        end_address: Address.create(address: "Minehead"),
+        chatroom: Chatroom.create(name: 'Alta Via 1'),
+        map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+        description: "As a National Trail, the South West Coast Path is signposted all the way round by the acorn. In addition to this you will find large commemorative markers at key points on the trail such as Minehead (the start), Porthallow (the mid-point) and South Haven Point (the end). All off which offer the perfect excuse for a photo! There are also a number of way markers along the way that will tell you how far from each end of the trail you are"
+  )
+  image_name = ['south_west_coast_path.jpg']
+  add_image_to_hike(south_west_coast_path, image_name)
+
+torres_del_paine = Hike.create(
+    name: "Torres del Paine",
+    region: "Chile",
+    price: "1230",
+    difficulty: "expert",
+    accomodation_type: "tent",
+    terrain: "alpine",
+    elevation: 7000,
+    length: 8,
+    distance: 130,
+    group_size: 10,
+    start_address: Address.create(address: "torres del paine"),
+        end_address: Address.create(address: "torres del paine"),
+        chatroom: Chatroom.create(name: 'Torres del Paine'),
+        map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+        description: "As a National Trail, the South West Coast Path is signposted all the way round by the acorn. In addition to this you will find large commemorative markers at key points on the trail such as Minehead (the start), Porthallow (the mid-point) and South Haven Point (the end). All off which offer the perfect excuse for a photo! There are also a number of way markers along the way that will tell you how far from each end of the trail you are"
+  )
+  image_name = ['torres_del_paine.jpg']
+  add_image_to_hike(torres_del_paine, image_name)
+    
 
 puts 'done'
 
