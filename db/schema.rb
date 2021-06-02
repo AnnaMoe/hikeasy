@@ -55,12 +55,9 @@ ActiveRecord::Schema.define(version: 2021_06_01_210857) do
     t.string "phone_number"
     t.string "email"
     t.string "credit_card"
-    t.string "credit_card_expiration_month"
-    t.string "credit_card_expiration_year"
-    t.integer "credit_card_cvc"
     t.string "dates"
-    t.bigint "group_hikes_id"
-    t.index ["group_hikes_id"], name: "index_bookings_on_group_hikes_id"
+    t.bigint "group_hike_id"
+    t.index ["group_hike_id"], name: "index_bookings_on_group_hike_id"
     t.index ["hike_id"], name: "index_bookings_on_hike_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -160,7 +157,7 @@ ActiveRecord::Schema.define(version: 2021_06_01_210857) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "group_hikes", column: "group_hikes_id"
+  add_foreign_key "bookings", "group_hikes"
   add_foreign_key "bookings", "hikes"
   add_foreign_key "bookings", "users"
   add_foreign_key "group_hikes", "hikes"

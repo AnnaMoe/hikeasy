@@ -7,6 +7,6 @@ class CreateGroupHikes < ActiveRecord::Migration[6.0]
       t.timestamps
     end
     
-    add_reference :bookings, :group_hikes, foreign_key: true
+    add_reference :bookings, :group_hike, foreign_key: true
   end
 end

@@ -13,6 +13,7 @@ def  add_image_to_hike(hike, image_name)
 end
 
 puts 'cleaning up database'
+GroupHike.destroy_all
 Review.destroy_all
 Booking.destroy_all
 Hike.destroy_all
