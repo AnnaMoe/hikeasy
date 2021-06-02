@@ -22,7 +22,7 @@ puts 'database is clean'
 puts 'creating hikes'
 
 
-1.times do
+5.times do
     hike = Hike.create(
         name: Faker::Mountain.name,
         price: rand(400..800),
