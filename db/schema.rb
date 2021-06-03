@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_30_200829) do
+
+ActiveRecord::Schema.define(version: 2021_06_01_210857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +57,8 @@ ActiveRecord::Schema.define(version: 2021_05_30_200829) do
     t.string "email"
     t.string "credit_card"
     t.string "dates"
+    t.bigint "group_hike_id"
+    t.index ["group_hike_id"], name: "index_bookings_on_group_hike_id"
     t.index ["hike_id"], name: "index_bookings_on_hike_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -81,6 +84,15 @@ ActiveRecord::Schema.define(version: 2021_05_30_200829) do
     t.index ["favoritor_id", "favoritor_type"], name: "fk_favorites"
     t.index ["favoritor_type", "favoritor_id"], name: "index_favorites_on_favoritor_type_and_favoritor_id"
     t.index ["scope"], name: "index_favorites_on_scope"
+  end
+
+  create_table "group_hikes", force: :cascade do |t|
+    t.date "start_at"
+    t.date "end_at"
+    t.bigint "hike_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hike_id"], name: "index_group_hikes_on_hike_id"
   end
 
   create_table "hikes", force: :cascade do |t|
@@ -146,8 +158,10 @@ ActiveRecord::Schema.define(version: 2021_05_30_200829) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "group_hikes"
   add_foreign_key "bookings", "hikes"
   add_foreign_key "bookings", "users"
+  add_foreign_key "group_hikes", "hikes"
   add_foreign_key "hikes", "addresses", column: "end_address_id"
   add_foreign_key "hikes", "addresses", column: "start_address_id"
   add_foreign_key "hikes", "chatrooms"
