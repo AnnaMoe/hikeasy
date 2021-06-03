@@ -36,11 +36,28 @@
     width: 250px;
     object-fit: cover;
   }
+
+  .hike-image-map{
+    height: 100%;
+    width: 200px;
+    object-fit: cover;
+  }
   
   .card-hike h2 {
     font-size: 18px;
     font-weight: bold;
     margin: 0;
+  }
+
+  .card-map-infos {
+    position: relative;
+  }
+
+  .card-map-infos .heart {
+    position: absolute;
+    right: -10px;
+    color: black;
+    
   }
 
   .card-hike h3 {
