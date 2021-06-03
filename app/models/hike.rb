@@ -1,5 +1,5 @@
 class Hike < ApplicationRecord
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
   has_many :group_hikes
   belongs_to :start_address, class_name: "Address", foreign_key: "start_address_id"
