@@ -339,9 +339,9 @@ chadar_trek_image = ['chadar_trek.jpg']
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "The Chilkoot Trail is a 33 mile long recreational trail. Each summer over 10,000 people hike some or all of it. The majority of visitors day hike on the trail for just a few hours. Others spend an average of 3-5 days backpacking the entire trail. Each year a few hearty people run the trail in one stretch."
   )    
-chilkoot_trail = ['chilkoot_trail.jpg']
+chilkoot_trail_image = ['chilkoot_trail.jpg']
    1.times do |j|
-        image_name = chilkoot_trail[j]
+        image_name = chilkoot_trail_image[j]
         add_image_to_hike(chilkoot_trail, image_name)
       end 
     puts "#{chilkoot_trail.name} is created" 
