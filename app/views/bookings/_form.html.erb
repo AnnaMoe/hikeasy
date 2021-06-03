@@ -12,7 +12,7 @@
     <h3 class="card-booking-title"><strong>$<%=@hike.price%></strong></h3>
     <p><i class="fas fa-star"></i> Reviews</p>
         <%= simple_form_for [@hike, @booking] do |f| %>
-        <%= f.input :group_hike, collection: @hike.group_hikes, selected: @hike.group_hikes.first %>
+        <%= f.input :group_hike, label: "Availabilities", collection: @hike.group_hikes, selected: @hike.group_hikes.first %>
         
         <%= f.button :button, "Book now", class: "btn btn-primary w-100 mt-2 p-3" %>
       <% end %>

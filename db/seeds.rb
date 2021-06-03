@@ -42,8 +42,20 @@ puts 'creating hikes'
         description: ["From Chamonix, France to Zermatt, Switzerland is a classic Swiss trek that cuts through some of the most spectacular alpine terrain on the planet. High alpine passes, quaint Swiss villages and sweeping mountain vistas are all found on the trek. This hike is a true European hiking adventure with lots of time spent in the high alps. Our adventurous style provides the experience of the rustic Swiss alpine huts with the comfort and luxury. Since the alpine hutsprovide our food and bedding, we hike the trail each day with a lightweight day pack. While the Swiss hut system is dorm-style lodging, spending a few nights high in the Alps allows you to fully immerse yourself in the Swiss Alps experience. The best of both worlds! Our trek begins at the traditional starting point of the route in the French alpine village of Chamonix. We then quickly cross into French-speaking Switzerland. After hiking through the town of Verbier, we make our way high into the Swiss alps and begin using the high mountain hut system. We make our way across an easy glacier crossing and eventually end up in the small Swiss village of Arolla and then through high mountain passes into German-speaking Switzerland. The last leg takes us through more small villages and into the Visp Valley where we eventually arrive in the car free town of Zermatt under the shadow of the iconic Matterhorn. Almost all of the hike is along alpine trails high up in Switzerland. Very little off-trail hiking is encountered, but we do make use of ladders occasionally.", "The Dolomites of Northern Italy are truly magical and the Alta Via One Hut to Hut trek is the premier high mountain trek of the region. For more serious trekkers, our adventurous hut to hut guided trek takes you along the best of the Alta Via 1, the most famous of the Dolomites treks and the one with most breathtaking views. A high traverse though the heart of the Dolomites, this is the trek to do in the Dolomites. Hiking by idyllic lakes, through beautiful forests and up over high mountain rocky passes, this is European hut to hut trekking at it’s finest. Located in the German-speaking area of Italy know as the South Tirol and also the Italian area of Veneto, the Dolomites are a hikers paradise. We begin hike at the beautiful Lago di Braies and spend the next days traversing the Alta Via to Passo Duran. We continue along hrough the Fanes-Sennes-Braies National Park to the Falzorego Pass using the high mountain hut system. We continue through the Cinque Torri and Nuvaloa area before making a spectacular traverse by the famous North wall of Civetta. We are then picked up and taken back to Cortina for the final night at our hotel. This is a high mountain hut to hut trek for more serious hikers who are looking for adventure.", "The Amalfi Coast is one of the most dramatic coastlines in Europe. Mountains jut steeply out of the Mediterranean and picturesque towns nestled in the coves below. Walking the ancient hillsides studded with lemon groves and framed by deep gorges, we descend from the Agerola Plain to the quaint towns of Positano, Ravello, and of course Amalfi itself. No visit to the Bay of Naples would be complete without a trip to see the remains of Pompeii under the imposing volcanic cone of Mount Vesuvius.", "Escape from the crowds as you as you explore the Lofoten archipelago, a rugged island chain lying 122 miles north of the Arctic Circle. Bathed by the light of the midnight sun, and rising out of the Norwegian Sea like a fortress wall, the 4,000-foot granite peaks of Lofoten will mesmerize you with their craggy summits, lovely jade meadows, and unforgettable views of Norway’s sparkling fjords. Beginning in Henningsvær, Lofoten, our eight-day hiking tour of Norway connects tiny villages on the islands of Moskenesøya, Flakstadøya and Austvågøya. Hike across remote mountain tops, visit secluded beaches and walk through tiny hamlets with colorful wooden fishing cottages perched at the water’s edge.Whether it’s hiking across the summits of Kollfjellet, Merraflestinden and Munken, or whale watching from the harbor in Reine, one of the most beautiful seaside villages in the world, you’ll witness the most revered landscapes in all of Norway.", "We begin our journey in Sinaia, the country’s oldest mountain resort. Over the course of the following week, we trek through the lush, deep forests of Transylvania’s National Parks, explore the mesmerizing alpine world of the wild Făgăraș Mountains, and visit the colorful countryside and authentic Transylvanian villages of Peștera and Magura. We hike along the forested slopes of Piatra Craiului National Park to the world famous Bran Castle, known as Dracula’s Castle. A highlight is our scenic drive along Transfăgărășan Road, one of the most scenic roads in the world. We end our journey on a tour through the medieval streets of Sighișoara – a UNESCO World Heritage Site. Our last night is enjoyed in the lively city of Brașov, which is known for its Gothic, Baroque, and colorful Renaissance architecture; Rope Street – one of the narrowest streets in Europe; as well as the Black Church, (Biserica Neagra), the largest Gothic church in Romania.The mix of pristine forests stretching from the Carpathian Mountains to the Black Sea, the diverse wildlife, rich folk culture, and charming castles situated in medieval towns make this a trek that should be high on every hiker’s bucket list."].sample,
         elevation: rand(1500..5000),
     )
+   
     puts "hike #{hike.id} is created"
+     GroupHike.create( 
+    hike: hike,
+    start_at: Date.today + 30,
+    end_at: Date.today + 38
+  )
+  GroupHike.create( 
+    hike: hike,
+    start_at: Date.today + 60,
+    end_at: Date.today + 68
+  )
 end
+ 
 
   malerweg = Hike.create(
         name: "Malerweg",
@@ -81,6 +93,11 @@ end
     start_at: Date.today + 60,
     end_at: Date.today + 68
   )
+  GroupHike.create( 
+    hike: malerweg,
+    start_at: Date.today + 75,
+    end_at: Date.today + 83
+  )
 
   malerweg_images = ['Malerweg_Bastei.jpeg', 'Malerweg_Elbe.jpg',  'Malerweg_view.jpg', 'Malerweg_gate.jpeg']
   4.times do |j|
@@ -114,6 +131,17 @@ kumano_kodo = Hike.create(
         image_name = kumano_kodo_images[j]
         add_image_to_hike(kumano_kodo, image_name)
       end
+
+  GroupHike.create( 
+    hike: kumano_kodo,
+    start_at: Date.today + 20,
+    end_at: Date.today + 25
+  )
+  GroupHike.create( 
+    hike: kumano_kodo,
+    start_at: Date.today + 50,
+    end_at: Date.today + 55
+  )    
   puts "#{kumano_kodo.name} is created"
 
   alta_via = Hike.create(
@@ -139,6 +167,21 @@ kumano_kodo = Hike.create(
         image_name = alta_via_images[j]
         add_image_to_hike(alta_via, image_name)
       end 
+    GroupHike.create( 
+    hike: alta_via,
+    start_at: Date.today + 30,
+    end_at: Date.today + 40
+  )
+  GroupHike.create( 
+    hike: alta_via,
+    start_at: Date.today + 50,
+    end_at: Date.today + 60
+  )  
+   GroupHike.create( 
+    hike: alta_via,
+    start_at: Date.today + 70,
+    end_at: Date.today + 80
+  )    
   puts "#{alta_via.name} is created"
 
 south_west_coast_path = Hike.create(
@@ -163,6 +206,16 @@ south_west_coast_path = Hike.create(
         image_name = south_west_coast_path_image[j]
         add_image_to_hike(south_west_coast_path, image_name)
       end 
+   GroupHike.create( 
+    hike: south_west_coast_path,
+    start_at: Date.today + 10,
+    end_at: Date.today + 30
+  )  
+  GroupHike.create( 
+    hike: south_west_coast_path,
+    start_at: Date.today + 40,
+    end_at: Date.today + 60
+  ) 
   puts "#{south_west_coast_path.name} is created"
 
 torres_del_paine = Hike.create(
@@ -187,7 +240,11 @@ torres_del_paine = Hike.create(
         image_name = torres_del_paine_image[j]
         add_image_to_hike(torres_del_paine, image_name)
       end 
-  
+  GroupHike.create( 
+    hike: torres_del_paine,
+    start_at: Date.today + 100,
+    end_at: Date.today + 108
+  ) 
     puts "#{torres_del_paine.name} is created"
 
 zion_narrows = Hike.create(
@@ -212,7 +269,11 @@ zion_narrows_image = ['zion.jpg']
         image_name = zion_narrows_image[j]
         add_image_to_hike(zion_narrows, image_name)
       end 
-  
+   GroupHike.create( 
+    hike: zion_narrows,
+    start_at: Date.today + 40,
+    end_at: Date.today + 42
+  ) 
     puts "#{zion_narrows.name} is created"
 
 kilimandscharo = Hike.create(
@@ -237,7 +298,11 @@ kilimandscharo_image = ['kilimanjaro.jpg']
         image_name = kilimandscharo_image[j]
         add_image_to_hike(kilimandscharo, image_name)
       end 
-  
+  GroupHike.create( 
+    hike: kilimandscharo,
+    start_at: Date.today + 70,
+    end_at: Date.today + 78
+  ) 
     puts "#{kilimandscharo.name} is created"  
     
 larapinta_trail = Hike.create(
@@ -262,7 +327,11 @@ larapinta_image = ['larapinta.jpg']
         image_name = larapinta_image[j]
         add_image_to_hike(larapinta_trail, image_name)
       end 
-  
+   GroupHike.create( 
+    hike: larapinta_trail,
+    start_at: Date.today + 120,
+    end_at: Date.today + 128
+  ) 
     puts "#{larapinta_trail.name} is created"   
     
 laugavegur_trail = Hike.create(
@@ -287,7 +356,11 @@ laugavegur_image = ['laugavegur.jpg']
         image_name = laugavegur_image[j]
         add_image_to_hike(laugavegur_trail, image_name)
       end 
-  
+  GroupHike.create( 
+    hike: laugavegur_trail,
+    start_at: Date.today + 90,
+    end_at: Date.today + 95
+  ) 
     puts "#{laugavegur_trail.name} is created"  
 
  st_olavsweg = Hike.create(
@@ -312,6 +385,11 @@ st_olavsweg_image = ['st_olavsweg.jpg']
         image_name = st_olavsweg_image[j]
         add_image_to_hike(st_olavsweg, image_name)
       end 
+    GroupHike.create( 
+    hike: st_olavsweg,
+    start_at: Date.today + 90,
+    end_at: Date.today + 105
+  )   
     puts "#{st_olavsweg.name} is created"  
     
   chadar_trek = Hike.create(
@@ -336,6 +414,11 @@ chadar_trek_image = ['chadar_trek.jpg']
         image_name = chadar_trek_image[j]
         add_image_to_hike(chadar_trek, image_name)
       end 
+   GroupHike.create( 
+    hike: chadar_trek,
+    start_at: Date.today + 200,
+    end_at: Date.today + 208
+  )     
     puts "#{chadar_trek.name} is created"  
     
   chilkoot_trail = Hike.create(
@@ -360,6 +443,12 @@ chilkoot_trail_image = ['chilkoot_trail.jpg']
         image_name = chilkoot_trail_image[j]
         add_image_to_hike(chilkoot_trail, image_name)
       end 
+
+    GroupHike.create( 
+    hike: chilkoot_trail,
+    start_at: Date.today + 50,
+    end_at: Date.today + 54
+  )    
     puts "#{chilkoot_trail.name} is created" 
 
 puts 'done'
