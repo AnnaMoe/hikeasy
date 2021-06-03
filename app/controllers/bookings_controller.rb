@@ -8,8 +8,10 @@ class BookingsController < ApplicationController
 
   def create
     @hike = Hike.find(params[:hike_id])
+    @group_hike = GroupHike.find(params[:booking][:group_hike])
     @booking = Booking.new(booking_params)
     @booking.hike = @hike
+    @booking.group_hike = @group_hike
     @booking.user = current_user
     @booking.first_name = current_user.first_name
     @booking.last_name = current_user.last_name
@@ -68,7 +70,7 @@ class BookingsController < ApplicationController
     end
 
     def booking_params
-      params.require(:booking).permit(:dates, :first_name, :last_name)
+      params.require(:booking).except(:group_hike).permit(:dates, :first_name, :last_name)
     end
 
 end

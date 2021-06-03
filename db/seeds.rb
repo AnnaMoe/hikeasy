@@ -13,6 +13,7 @@ def  add_image_to_hike(hike, image_name)
 end
 
 puts 'cleaning up database'
+GroupHike.destroy_all
 Review.destroy_all
 Booking.destroy_all
 Hike.destroy_all
@@ -64,6 +65,21 @@ end
         map_style: 'mapbox://styles/annamoe/ckoyht30h0awk17mj7tuof7ck',
         description: "The Elbe Sandstone Mountains Malerweg trail in Saxon Switzerland is one of the most picturesque hiking trails in Germany. Where once painters sought inspiration for their timeless works, you can now walk along a 116 km hiking trail through Saxon Switzerland. Caves can be found in hidden places as a opportunity to sleep in it. Not everybody finds these caves. With a bit of luck our guides will show you theses incredible places, giving you the chance to escape from the civilization."
    
+  )
+  GroupHike.create( 
+    hike: malerweg,
+    start_at: Date.today,
+    end_at: Date.today + 8
+  )
+  GroupHike.create( 
+    hike: malerweg,
+    start_at: Date.today + 30,
+    end_at: Date.today + 38
+  )
+  GroupHike.create( 
+    hike: malerweg,
+    start_at: Date.today + 60,
+    end_at: Date.today + 68
   )
 
   malerweg_images = ['Malerweg_Bastei.jpeg', 'Malerweg_Elbe.jpg',  'Malerweg_view.jpg', 'Malerweg_gate.jpeg']
