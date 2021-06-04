@@ -13,8 +13,6 @@ class Hike < ApplicationRecord
   scope :filter_by_length, ->(min, max) { where length: min..max }
   scope :filter_by_distance, ->(min, max) { where distance: min..max }
 
-  belongs_to :chatroom
-
   # comes from cloudinary
   has_many_attached :photos
 
