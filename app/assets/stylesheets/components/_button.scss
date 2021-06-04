@@ -1,6 +1,6 @@
 .button {
     width: 165px;
-    height: 55px;
+    height: 40px;
     border-radius: 5px;
     background-color: #748067;
     color: white;
@@ -9,7 +9,7 @@
 
 .btn-book{
     width: 165px;
-    height: 55px;
+    height: 40px;
     border-radius: 5px;
     background-color: #748067;
     color: white;
@@ -36,4 +36,8 @@
   height: 9px;
   border-radius: 50%;
   background-color: #d8312b;
+}
+
+.btn.btn-primary.w-50.mt-5.p-2{
+  margin-left: 80px;
 }
