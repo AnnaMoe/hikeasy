@@ -28,6 +28,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initMapboxShow } from '../plugins/init_mapbox';
 import { initChatroomCable } from '../channels/chatroom_channel';
 import { initWeather } from '../components/init_weather';
+import { initCountdown } from '../components/init_countdown';
 
 
 // Internal imports, e.g:
@@ -38,6 +39,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapboxShow();
   initChatroomCable();
   initWeather();
+  initCountdown();
   
 });
 

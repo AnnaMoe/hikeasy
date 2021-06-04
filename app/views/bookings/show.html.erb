@@ -3,7 +3,7 @@
     <div class= "col-md-12">
       <div class="d-flex justify-content-center mb-4">
       <div class="titel_booking_seite">
-        <div class="titolo_myhike"><%=@booking.hike.name%></div><em class="text-muted"><%=@booking.group_hike %></em>
+        <div class="titolo_myhike"><%=@booking.hike.name%></div><em class="text-muted" id="countdown"><%=@booking.group_hike %></em>
       </div>
         <button type="button" class="btn btn-primary ml-4" data-toggle="modal" data-target="#exampleModal">
           Leave a Review
@@ -108,6 +108,7 @@
       <div class="container booking-form">
         <div class="card-form-highlights">
           <div class="card-booking-body">
+            <div id="demo"></div>
             <div class="card-weather">
               <h3>Today's Weather</h3>
               <h4 id="date"></h4>
