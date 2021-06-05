@@ -10,15 +10,21 @@ text-align: left;
 }
 
 .card-form{
-width: 350px;
+width: 300px;
 height: 350px;
 background: #FFFFFF;
 outline: .25px solid rgba(242, 239, 239, 0.5);
 box-sizing: border-box;
 border-radius: 10px;
-padding: 40px;
+padding: 20px;
 text-align: left;
 margin-left: 70px;
+}
+
+#sticky-form {
+  position: -webkit-sticky;
+position: sticky;
+top: 20px;
 }
 
 
@@ -36,3 +42,18 @@ margin-left: 70px;
 // }
 
 
+.card-booking-title{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 21px;
+}
+
+.card-booking-price{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 21px;
+}
