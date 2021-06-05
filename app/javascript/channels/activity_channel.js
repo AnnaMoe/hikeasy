@@ -20,5 +20,12 @@ consumer.subscriptions.create("ActivityChannel", {
     console.log(data)
     let elements = document.querySelectorAll(`.user-${data.user_id}-status`)
     console.log(elements)
+    elements.forEach(element => {
+      if (data.status == "online") {
+        element.classList.add("online")
+      } else {
+        element.classList.remove("online")
+      }
+    })
   },
 })

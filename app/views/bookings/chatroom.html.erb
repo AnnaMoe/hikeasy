@@ -55,11 +55,9 @@
           <p class="m-0">
             <%= booking.user.first_name %>, <%= booking.user.age %>
           </p>
-          <% if user_signed_in? %>
-            <p class="online-badge m-0 ml-2"></p>
-          <% else %>
-            <p class="offline-badge m-0 ml-2"></p>
-          <% end %>
+          
+            <span class="activity-status online user-<%= booking.user.id %>-status">.</span>
+         
         </div>
         <p class="text-muted m-0"></small><em><%= booking.user.country %></em></small></p>
   </div>

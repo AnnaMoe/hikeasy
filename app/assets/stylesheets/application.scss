@@ -27,3 +27,12 @@ p{
   font-size: 16px;
   line-height: 24px;
 }
+
+.activity-status {
+  font-size: 40px;
+  color: red;
+
+  &.online {
+    color: green;
+  }
+}
