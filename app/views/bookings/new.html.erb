@@ -42,10 +42,10 @@
 
           <div class="form-row">
             <div class="col-md-4">
-              <%= f.input :credit_card_expiration_month, label: 'Expiration Month', placeholder: 'MM/YY' %>
+              <%= f.input :credit_card_expiration_month, label: 'Expiration Month', collection: @months %>
             </div>
             <div class="col-md-4">
-              <%= f.input :credit_card_expiration_year, label: 'Expiration Year', placeholder: 'MM/YY' %>
+              <%= f.input :credit_card_expiration_year, label: 'Expiration Year', collection: Date.today.year..Date.today.year+8 %>
             </div>
             <div class="col-md-4">
               <%= f.input :credit_card_cvc, label: 'CVC', placeholder: 'CVC' %>

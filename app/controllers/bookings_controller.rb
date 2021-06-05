@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   def new
     @hike = Hike.find(params[:hike_id])
     @booking = Booking.new
+    set_years_and_months
     authorize @booking
   end
 
@@ -18,6 +19,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to dashboard_path
     else
+      set_years_and_months
       render :new, status: :unprocessable_entity
     end
     
@@ -66,6 +68,23 @@ class BookingsController < ApplicationController
   def set_booking
     @booking =Booking.find(params[:id] || params[:booking_id])
     authorize @booking
+  end
+
+  def set_years_and_months
+    @months = [ 
+      ["January", "1"],
+      ["February", "2"],
+      ["March", "3"],
+      ["April", "4"],
+      ["May", "5"],
+      ["June", "6"],
+      ["July", "7"],
+      ["August", "8"],
+      ["September", "9"],
+      ["October", "10"],
+      ["November", "11"],
+      ["December", "12"],
+    ]
   end
 
   def booking_params
