@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_06_01_210857) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -91,6 +90,8 @@ ActiveRecord::Schema.define(version: 2021_06_01_210857) do
     t.bigint "hike_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "chatroom_id"
+    t.index ["chatroom_id"], name: "index_group_hikes_on_chatroom_id"
     t.index ["hike_id"], name: "index_group_hikes_on_hike_id"
   end
 
@@ -107,7 +108,6 @@ ActiveRecord::Schema.define(version: 2021_06_01_210857) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "start_address_id"
     t.bigint "end_address_id"
-    t.bigint "chatroom_id"
     t.string "map_style"
     t.integer "distance"
     t.integer "elevation"
@@ -115,7 +115,6 @@ ActiveRecord::Schema.define(version: 2021_06_01_210857) do
     t.string "title"
     t.string "subtitle"
     t.string "national_park"
-    t.index ["chatroom_id"], name: "index_hikes_on_chatroom_id"
     t.index ["end_address_id"], name: "index_hikes_on_end_address_id"
     t.index ["start_address_id"], name: "index_hikes_on_start_address_id"
   end
@@ -136,7 +135,9 @@ ActiveRecord::Schema.define(version: 2021_06_01_210857) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "rating"
+    t.bigint "hike_id"
     t.index ["booking_id"], name: "index_reviews_on_booking_id"
+    t.index ["hike_id"], name: "index_reviews_on_hike_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -160,11 +161,12 @@ ActiveRecord::Schema.define(version: 2021_06_01_210857) do
   add_foreign_key "bookings", "group_hikes"
   add_foreign_key "bookings", "hikes"
   add_foreign_key "bookings", "users"
+  add_foreign_key "group_hikes", "chatrooms"
   add_foreign_key "group_hikes", "hikes"
   add_foreign_key "hikes", "addresses", column: "end_address_id"
   add_foreign_key "hikes", "addresses", column: "start_address_id"
-  add_foreign_key "hikes", "chatrooms"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "reviews", "bookings"
+  add_foreign_key "reviews", "hikes"
 end

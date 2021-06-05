@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :confirmation]
+  before_action :set_booking, only: [:show, :edit, :update, :confirmation, :chatroom]
 
   def new
     @booking =Booking.new
@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
   def create
     @hike = Hike.find(params[:hike_id])
     @group_hike = GroupHike.find(params[:booking][:group_hike])
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new()
     @booking.hike = @hike
     @booking.group_hike = @group_hike
     @booking.user = current_user
@@ -33,10 +33,11 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @bookings = Booking.where(group_hike: @booking.group_hike)
     @review = Review.new(booking: @booking)
     # redirect_to dashboard_index_path
     @hike = Hike.find(params[:hike_id])
-     @markers =
+    @markers =
       [{
         lat: @hike.start_address.latitude,
         lng: @hike.start_address.longitude,
@@ -53,24 +54,19 @@ class BookingsController < ApplicationController
   end
 
   def chatroom
-    @booking =Booking.find(params[:booking_id])
     authorize @booking
-    @hike = Hike.find(params[:hike_id])
-    @booking.hike = @hike
-    @chatroom = @hike.chatroom
+    @chatroom = @booking.group_hike.chatroom
     @message = Message.new(chatroom: @chatroom)
-    
   end
 
   private
 
-    def set_booking
-        @booking =Booking.find(params[:id])
-      authorize @booking
-    end
+  def set_booking
+    @booking =Booking.find(params[:id] || params[:booking_id])
+    authorize @booking
+  end
 
-    def booking_params
-      params.require(:booking).except(:group_hike).permit(:dates, :first_name, :last_name)
-    end
-
+  def booking_params
+    params.require(:booking).except(:group_hike).permit(:first_name, :last_name)
+  end
 end

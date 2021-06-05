@@ -124,7 +124,7 @@
             </div>
             <div class="mt-3">
               <h3><strong>Fellow Hikers</strong></h3>
-              <% @hike.bookings.each do |booking| %>
+              <% @bookings.each do |booking| %>
                 <div class="notification-members mb-4">
                 <img class="avatar dropdown-toggle" src="<%= booking.user.avatar_url  %>" />
                   <div class="notification-members-content">
