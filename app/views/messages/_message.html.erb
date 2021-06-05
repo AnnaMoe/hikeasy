@@ -2,6 +2,7 @@
   <img class="avatar dropdown-toggle mr-4" src="<%= message.user.avatar_url %>  " />
   <div class="message-container" id="message-<%= message.id %>">
     <i class="author">
+      <span class="activity-status online user-<%= message.user.id %>-status">.</span>
       <span><%= message.user.nickname %></span>
       <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
     </i>
