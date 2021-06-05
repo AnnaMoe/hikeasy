@@ -1,10 +1,9 @@
 <div class="container booking-form">
     <div class="card-form">
     <div class="card-booking-body">
-    <div class="col float-right">
      <%= link_to toggle_favorite_hike_path(@hike), remote: true, method: :post do %>
         <div class="like-icon mx-2 <%= 'not-favorited' unless current_user.favorited?(@hike) %>" data-id="<%= @hike.id %>">
-          <i class="float-right fas fa-heart"></i>
+          <i class="fas fa-heart booking"></i>
         </div>
       <% end %>
     </div>
@@ -12,8 +11,9 @@
     <h3 class="card-booking-title"><strong>$<%=@hike.price%></strong></h3>
     <p><i class="fas fa-star"></i> Reviews</p>
         <%= simple_form_for [@hike, @booking] do |f| %>
-        <%= f.input :dates, collection: [['15.07.2021 - 22.07.2021', '15.07.2021 - 22.07.2021'], ['20.08.2021 - 27.08.2021', '20.08.2021 - 27.08.2021'],['12.09.2021 - 20.09.2021', '12.09.2021 - 20.09.2021'] ], label: false, placeholder: 'Availability'%>
-        <%= f.button :button, "Book now", class: "btn btn-primary w-100 mt-2 p-3" %>
+        <%= f.input :group_hike, label: "Availabilities", collection: @hike.group_hikes, selected: @hike.group_hikes.first %>
+        
+        <%= f.button :button, "Book now", class: "btn btn-primary w-50 mt-5 p-2" %>
       <% end %>
      
     </div>

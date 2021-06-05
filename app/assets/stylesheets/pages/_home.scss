@@ -24,11 +24,14 @@ body{
     box-sizing: border-box;
     display: flex;
 }
-.welcome_to_hikeasy {
+.slogan_hikeasy{
     width:50%;
-    height: 230px;
+    height:100px;
+    margin-top: 5rem;
+}
+.welcome_to_hikeasy {
+    height: 37px;
     position: relative;
-    margin-top: 6rem;
     margin-right: 50px;
     text-align: right;
     font-family: Roboto;
@@ -37,6 +40,16 @@ body{
     font-size: 32px;
     line-height: 37px;
 }
+.avventura_unica {
+    position: relative;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: right;
+    margin-right: 50px;
+}
 .discover_more{
     width: 50%;
     height: 230px;
@@ -44,6 +57,7 @@ body{
 }
 .discover_more_botton{
   color: #F6F6F3;
+  font-weight: bold;
   padding: 16px 32px;
   border-radius: 4px;
   background: #748067;
