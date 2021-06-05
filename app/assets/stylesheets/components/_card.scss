@@ -179,3 +179,33 @@
   justify-content: space-between;
 }
 
+.card-prod {
+  overflow: hidden;
+  height: 100px;
+  background:none;
+  display: flex;
+  margin-top: 0px;
+}
+
+.card-prod img {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card-prod h2 {
+  font-size: 16px;
+  font-weight: normal;
+  margin-top: -10px;
+}
+
+.card-prod p {
+  font-size: 16px;
+  opacity: .7;
+  margin-bottom: 0;
+}
+
+.card-prod .card-prod-infos {
+  padding: 16px;
+}

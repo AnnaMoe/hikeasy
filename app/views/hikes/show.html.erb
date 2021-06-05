@@ -1,6 +1,6 @@
 <div class="container-fluid mt-5">
   <div class= "row">
-    <div class= col-md-6>
+    <div class= col-lg-6>
       <div id="map-start-end"
         style="width: 100%; height: 450px;"
         data-style="<%= @hike.map_style %>"
@@ -9,11 +9,11 @@
       </div>
     </div>
     <div class = "col-lg-3">
-      <%= cl_image_tag @hike.photos[0]&.key, class: "image-hike mb-3"  %>
+      <%= cl_image_tag @hike.photos[0]&.key, class: "image-hike"  %>
       <%= cl_image_tag @hike.photos[1]&.key, class: "image-hike"  %>
     </div>
     <div class = "col-lg-3">
-      <%= cl_image_tag @hike.photos[2]&.key, class: "image-hike mb-3"  %>
+      <%= cl_image_tag @hike.photos[2]&.key, class: "image-hike"  %>
       <%= cl_image_tag @hike.photos[3]&.key, class: "image-hike"  %>
     </div>
   </div>
@@ -80,31 +80,31 @@
   </div>
   <div class="col-lg-8">
     <div class="about_the_guide">About the Guide</div>
-    <div class="row">
-      <div class="col guide-avatar">
-        <img src="https://images.unsplash.com/photo-1586022045315-1cdd6493045c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIyMjk2MzMz&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit"/>
-      </div>
-      <div class="float-left col">
-        Guide Name
-      </div>
-      <br>
-      <div class="col">
-      
-        <i class="fas fa-star"></i>Reviews
+    <p class="float-right"><i class="fas fa-star"></i>Reviews</p>
+    <div class="card-prod">
+    <img src="https://images.unsplash.com/photo-1586022045315-1cdd6493045c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIyMjk2MzMz&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+      <div class="card-prod-infos">
+        <h2>Guide</h2>
+        <h2>Guide Since</h2>
       </div>
     </div>
+    <p>Guide Introduction</p>
+      
+        
+  
     <hr>
   </div>
   <div class="col-lg-8">
     <div class="about_the_guide">What others are saying about <%=@hike.name%></div>
-    <div class="card-review">
-      <p>Reviews</p>
+    <div class="row"></div>
+    <div class="col-lg-4">
+    <div class="card-prod">
       <% if @hike.reviews.empty? %>
         <small><em class="text-muted"> Be the first one to review this Hike</em></small>
       <% end %>
       <% @hike.reviews.each do |review| %>
         <div>
-          <img class="avatar-large" alt="avatar-large" src="<%= review.booking.user.avatar_url %> ">
+          <img src="<%= review.booking.user.avatar_url %> ">
           <div><small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small></div>
           <div><% review.rating.times do %>
               <i class="fas fa-star star-yellow"></i>
@@ -114,8 +114,13 @@
         </div>
       <% end %>
     </div>
+    </div>
     <hr>
   </div>
+
+
+
+
   <div class="col-lg-8">
     <h4>You might also like:</h4>
     <% @related_hikes.each do |related_hike| %>
