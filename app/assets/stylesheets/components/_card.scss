@@ -32,7 +32,7 @@
   }
 
   .hike-image{
-    height: 100%;
+    height: 200px;
     width: 250px;
     object-fit: cover;
   }
@@ -90,7 +90,7 @@
 
   .card-product {
     overflow: hidden;
-    height: 200px;
+    height: 260px;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
@@ -100,12 +100,14 @@
   
   .card-product img {
     height: 100%;
-    width: 250px;
+    width: 300px;
     object-fit: cover;
   }
     
   .card-product .card-product-infos {
     padding: 16px;
+    width: 850px;
+    padding-bottom: 10px;
   }
 
   .card-product .card-product-infos .card-product-heading{
@@ -162,4 +164,18 @@
     margin-bottom: 10px;
   }
  
+.card-product-infos-heading{
+  display:flex;
+  justify-content: space-between;
+}
+
+.card-product-infos-subheading{
+  display:flex;
+  justify-content: space-between;
+}
+
+.card-product-infos-last-row{
+  display:flex;
+  justify-content: space-between;
+}
 

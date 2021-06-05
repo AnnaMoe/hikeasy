@@ -108,7 +108,8 @@
       <div class="container booking-form">
         <div class="card-form-highlights">
           <div class="card-booking-body">
-            <div id="demo"></div>
+            <ul id="booking-show-countdown" data-reference-date="<%= @booking.group_hike.start_at%>">
+            </ul>
             <div class="card-weather">
               <h3>Today's Weather</h3>
               <h4 id="date"></h4>
