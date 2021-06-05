@@ -68,13 +68,13 @@
           </tr>
         </table>
       </div>
-      <div class="col-lg-8">
+      <div>
         <hr>
         <div class="descrizione">Description</div>
         <div class="testo_descrizione"><%= @hike.description %></div>
         <hr>
       </div>
-      <div class="col-lg-8">
+      <div>
         <div class="about_the_guide">About the Guide</div>
         <div class="row">
           <div class="col guide-avatar">
@@ -91,7 +91,7 @@
         </div>
         <hr>
       </div>
-      <div class="col-lg-8">
+      <div>
         <div class="about_the_guide">What others are saying about <%=@hike.name%></div>
         <div class="card-review">
           <p>Reviews</p>
@@ -112,7 +112,7 @@
         </div>
         <hr>
       </div>
-      <div class="col-lg-8">
+      <div>
         <h4>You might also like:</h4>
         <% @related_hikes.each do |related_hike| %>
           <% if related_hike.photos.attached? %>
