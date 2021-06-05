@@ -3,9 +3,9 @@
     <div class="col-12 col-md-6 offset-md-3">
       <div class="bg-white rounded p-3 shadow confirmation mt-3 mb-3">
         <h3 class= "mb-4">Complete your booking</h3>
-        <%= params[:booking][:date] %>
+        <%= params[:booking][:group_hike] %>
         <%= simple_form_for [@hike, @booking] do |f| %>
-          <%= f.input_field :date, as: :hidden, value: params[:booking][:date] %>
+          <%= f.input_field :group_hike, as: :hidden, value: params[:booking][:group_hike] %>
           <div class="form-row">
             <div class="form-group col-md-6">
               <%= f.input :first_name, placeholder: 'First Name', input_html: { value: current_user.first_name } %>

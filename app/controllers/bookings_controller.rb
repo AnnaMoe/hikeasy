@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
   def create
     @hike = Hike.find(params[:hike_id])
     @group_hike = GroupHike.find(params[:booking][:group_hike])
-    @booking = Booking.new()
+    @booking = Booking.new(booking_params)
     @booking.hike = @hike
     @booking.group_hike = @group_hike
     @booking.user = current_user
@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to dashboard_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
     
   end
@@ -77,5 +77,6 @@ class BookingsController < ApplicationController
         :credit_card_expiration_month, :credit_card_expiration_year,
         :credit_card_cvc, :email
       )
+      #:credit_card_expiration_month, :credit_card_expiration_year, :credit_card_cvc
   end
 end
