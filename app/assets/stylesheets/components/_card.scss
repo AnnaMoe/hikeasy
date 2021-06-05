@@ -23,7 +23,6 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 10px;
     margin-bottom: 20px;
-    padding-right: 5px;
   }
   
   .card-hike > img {
@@ -34,7 +33,7 @@
 
   .hike-image{
     height: 150px;
-    width: 250px;
+    width: 100%;
     object-fit: cover;
   }
 
