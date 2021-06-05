@@ -1,6 +1,6 @@
 .button {
     width: 165px;
-    height: 55px;
+    height: 40px;
     border-radius: 5px;
     background-color: #748067;
     color: white;
@@ -9,7 +9,7 @@
 
 .btn-book{
     width: 165px;
-    height: 55px;
+    height: 40px;
     border-radius: 5px;
     background-color: #748067;
     color: white;
@@ -38,6 +38,10 @@
   background-color: #d8312b;
 }
 
+.btn.btn-primary.w-50.mt-5.p-2{
+  margin-left: 70px;
+  position: relative;
+}
 .button.difficolta{
   color: white;
   background-color: #748067;
