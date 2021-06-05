@@ -52,6 +52,7 @@
             </div>  
           </div>
 
+
           
           <div class="form-row">
             <small><em class="text-muted">By clicking <strong>'Confirm'</strong> you are agreeing to our <a href="#">Terms & Conditions</a>, <a href="#">Privacy Policy</a>, and to receive booking-related messages.</em></small>
@@ -61,6 +62,25 @@
           <%= f.button :button, "Confirm booking", class: "btn btn-primary btn-lg btn-block" %>
 
         <% end %>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Great, your booking has been confirmed</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You will receive a confirmation email soon with your booking details.
+      </div>
+      <div class="modal-footer">
+        <%# <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> %>
+        <%= link_to "Visit Dashboard", dashboard_path, class: "btn btn-primary" %>
+
       </div>
     </div>
   </div>
@@ -86,4 +106,7 @@
     </div>
   </div>
 </div>
-
+</div>
+</div>
+</div>
+</div>

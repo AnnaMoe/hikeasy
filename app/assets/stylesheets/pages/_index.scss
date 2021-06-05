@@ -23,10 +23,11 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 32px;
+  font-size: 28px;
   line-height: 37px;
   margin-bottom: 10px;
   margin-top: 25px;
+  margin-left: 5px;
 }
 .card-hike-infos {
   margin-left: 10px;
@@ -79,6 +80,7 @@
   line-height: 28px;
   margin-bottom: 25px;
 }
+
 .favorites_hikes {
     position: relative;
     width: 100%;
@@ -87,11 +89,56 @@
     margin-left: -40px;
     max-width: 33.3333333333%;
 }
-.green_color {
-    background: #BBCEA8;
-    position: absolute;
-    height: 100px;
-    width: 100%;
-    margin-top: 50px;
+.prezzo {
+  display:grid;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 31px;
+}
+.nome_hike {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 37px;
+  }
+.luogo {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 10px;
+  
+}
+.difficolta {
+  margin-top: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+
+}
+.btn {
+  font-family: Roboto;
+  font-size: 16px;
+}
+.dropdown-menu {
+  font-family: Roboto;
 }
 
+.availability{
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  margin-bottom: 25px;
+}
+
+.col-lg-1{
+margin-left: 50px;
+}

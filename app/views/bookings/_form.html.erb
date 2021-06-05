@@ -1,19 +1,19 @@
-<div class="container booking-form">
+<div class="container booking-form" id="sticky-form">
     <div class="card-form">
     <div class="card-booking-body">
-    <div class="col float-right">
      <%= link_to toggle_favorite_hike_path(@hike), remote: true, method: :post do %>
-        <div class="like-icon mx-2 <%= 'favorite' if current_user.favorited?(@hike) %>" data-id="<%= @hike.id %>">
-          <i class="float-right fas fa-heart"></i>
+        <div class="like-icon mx-2 <%= 'not-favorited' unless current_user.favorited?(@hike) %>" data-id="<%= @hike.id %>">
+          <i class="fas fa-heart booking"></i>
         </div>
       <% end %>
     </div>
     <h4 class="float-right card-booking-price"><strong><%=@hike.length%> Days</strong></h4>
     <h3 class="card-booking-title"><strong>$<%=@hike.price%></strong></h3>
     <p><i class="fas fa-star"></i> Reviews</p>
-        <%= simple_form_for([@hike, @booking], method: :get, url: new_hike_booking_path(@hike) ) do |f| %>
-        <%= f.input :date, as: :string, label: false, placeholder: 'Availability',  input_html: {class: "datepicker", :onchange => "handleBookingFormChange(event)"}%>
-        <%= f.button :button, "Book now", class: "btn-book w-100 mt-2" %>
+      <%= simple_form_for [@hike, @booking], method: :get, url: new_hike_booking_path(@hike) ) do |f| %>
+        <%= f.input :group_hike, label: "Availabilities", collection: @hike.group_hikes, selected: @hike.group_hikes.first %>
+
+        <%= f.button :button, "Book now", class: "btn btn-primary w-50 mt-5 p-2" %>
       <% end %>
      
     </div>

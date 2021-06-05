@@ -13,9 +13,17 @@
 @import "pages/index";
 @import "pages/show";
 @import "pages/hikes";
+@import "pages/dashboard";
 @import "components/card";
 @import "components/form";
 @import "components/images";
 @import "components/button";
-@import "components/filters"
+@import "components/filters";
 
+p{
+    font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_30_190640) do
+ActiveRecord::Schema.define(version: 2021_06_04_204343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,9 @@ ActiveRecord::Schema.define(version: 2021_05_30_190640) do
     t.string "credit_card_expiration_month"
     t.string "credit_card_expiration_year"
     t.integer "credit_card_cvc"
+    t.string "dates"
+    t.bigint "group_hike_id"
+    t.index ["group_hike_id"], name: "index_bookings_on_group_hike_id"
     t.index ["hike_id"], name: "index_bookings_on_hike_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -85,6 +88,17 @@ ActiveRecord::Schema.define(version: 2021_05_30_190640) do
     t.index ["scope"], name: "index_favorites_on_scope"
   end
 
+  create_table "group_hikes", force: :cascade do |t|
+    t.date "start_at"
+    t.date "end_at"
+    t.bigint "hike_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "chatroom_id"
+    t.index ["chatroom_id"], name: "index_group_hikes_on_chatroom_id"
+    t.index ["hike_id"], name: "index_group_hikes_on_hike_id"
+  end
+
   create_table "hikes", force: :cascade do |t|
     t.integer "price"
     t.string "name"
@@ -98,7 +112,6 @@ ActiveRecord::Schema.define(version: 2021_05_30_190640) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "start_address_id"
     t.bigint "end_address_id"
-    t.bigint "chatroom_id"
     t.string "map_style"
     t.integer "distance"
     t.integer "elevation"
@@ -106,7 +119,6 @@ ActiveRecord::Schema.define(version: 2021_05_30_190640) do
     t.string "title"
     t.string "subtitle"
     t.string "national_park"
-    t.index ["chatroom_id"], name: "index_hikes_on_chatroom_id"
     t.index ["end_address_id"], name: "index_hikes_on_end_address_id"
     t.index ["start_address_id"], name: "index_hikes_on_start_address_id"
   end
@@ -148,11 +160,13 @@ ActiveRecord::Schema.define(version: 2021_05_30_190640) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "group_hikes"
   add_foreign_key "bookings", "hikes"
   add_foreign_key "bookings", "users"
+  add_foreign_key "group_hikes", "chatrooms"
+  add_foreign_key "group_hikes", "hikes"
   add_foreign_key "hikes", "addresses", column: "end_address_id"
   add_foreign_key "hikes", "addresses", column: "start_address_id"
-  add_foreign_key "hikes", "chatrooms"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "reviews", "bookings"

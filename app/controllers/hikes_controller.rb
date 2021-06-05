@@ -50,6 +50,10 @@ class HikesController < ApplicationController
     @booking = Booking.new
     authorize @hike
     authorize @booking
+    related_difficulty = @hike.difficulty
+    related_region = @hike.region
+    @related_hikes = Hike.where(difficulty: related_difficulty).or(Hike.where(region: related_region)).sample(4).&(Hike.where.not(id:@hike.id))
+
   end
 
   def toggle_favorite

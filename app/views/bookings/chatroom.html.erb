@@ -5,7 +5,7 @@
         <img src='<%= current_user.avatar_url %>' class="avatar-large" />
         <div class="notification-content-blank align-items-centers">
           <h3 class="m-0 ml-1">Hello <%=@booking.user.first_name %>. Welcome to <em>
-              <%= @hike.chatroom.name %>
+              <%= @chatroom.name %>
             </em></h3>
         </div>
       </div>
@@ -30,25 +30,42 @@
       <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
         <%= f.input :content, label: false, placeholder: "Message your fellow hikers" %>
         <%= hidden_field_tag :booking_id, @booking.id %>
-        <%= hidden_field_tag :hike_id, @hike.id %>
+        <%= hidden_field_tag :hike_id, @booking.hike.id %>
         <%# <%=f.submit class: "button" %>
       <% end %>
     </div>
     <div class="col-4">
       <div class="card-chatroom">
-        <h2>members</h2>
-        <% @chatroom.hike.bookings.each do |booking| %>
-          <div class="notification-members">
-            <img class="avatar dropdown-toggle" src="<%= booking.user.avatar_url  %>" /> 
-            <div class="notification-members-content">
-              <p class="m-0">
-                <%= booking.user.first_name %>, <%= booking.user.age %>
-              </p>
-              <p class="text-muted m-0"></small><em><%= booking.user.country %></em></small></p>
-            </div>
+        <div class="card-weather">
+          <h3>Expected Weather Forecast</h3>
+          <h4 id="date"></h4>
+          <p id="description" class="m-0"></p>
+              <div class="d-flex align-items-center">
+                <img src="" alt="" id="icon" height="50" width="50">
+                <h4 id="temperature" class="m-0" data-longitude= '<%= @booking.hike.start_address.longitude %>'
+            data-latitude='<%= @booking.hike.start_address.latitude %>'></h4>
           </div>
-        <% end %>
-      </div>
-    </div>
+        </div>
+        <h2>members</h2>
+        <% @chatroom.group_hike.bookings.each do |booking| %>
+          <div class="notification-members">
+            <img class="avatar dropdown-toggle" src="<%= booking.user.avatar_url  %>" />
+      <div class="notification-members-content">
+        <div class="d-flex align-items-center">
+          <p class="m-0">
+            <%= booking.user.first_name %>, <%= booking.user.age %>
+          </p>
+          <% if user_signed_in? %>
+            <p class="online-badge m-0 ml-2"></p>
+          <% else %>
+            <p class="offline-badge m-0 ml-2"></p>
+          <% end %>
+        </div>
+        <p class="text-muted m-0"></small><em><%= booking.user.country %></em></small></p>
   </div>
+</div>
+<% end %>
+</div>
+</div>
+</div>
 </div>
