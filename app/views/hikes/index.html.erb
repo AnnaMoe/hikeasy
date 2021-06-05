@@ -148,7 +148,10 @@
                     </div>
                     <div class="card-product-infos-subheading">
                     <div class="luogo"><%= hike.region %></div>
-                    <div class="reviews"><i class="fas fa-star"></i> /5.00</div>
+                    <div class="reviews"><i class="fas fa-star"></i> /
+                      <% @rating = hike.reviews.map { |r| r.rating} %>
+                      <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(2)  %>
+                    </div>
                     </div>
                     <div><i class="far fa-clock"></i> <%= hike.length %> Days</div>
                     <div><i class="fas fa-arrow-right"></i> <%= hike.distance %> Kilometers</div>
