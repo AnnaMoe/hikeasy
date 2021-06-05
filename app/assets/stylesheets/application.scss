@@ -29,10 +29,12 @@ p{
 }
 
 .activity-status {
-  font-size: 40px;
-  color: red;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #d8312b;
 
   &.online {
-    color: green;
+    background-color: #1FE5BD;
   }
 }
