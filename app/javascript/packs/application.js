@@ -39,7 +39,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapboxShow();
   initChatroomCable();
   initWeather();
-  initCountdown();
-  
+  initCountdown(); 
 });
 
