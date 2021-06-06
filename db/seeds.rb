@@ -74,7 +74,7 @@ seb = User.create(
 
 puts 'creating hikes'
 
-malerweg = Hike.create!(
+malerweg = Hike.create(
   name: "Malerweg",
   title: "Sandstone Filled Malerweg through Saxony Switzerland",
   subtitle: "An unforgettable and physically demanding 76-km trek through the Saxony Switzerland National Park, in Saxony, Germany. A 8-day tour led by Lukas - local certified guide.",
