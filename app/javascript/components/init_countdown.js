@@ -22,7 +22,7 @@ const initCountdown = () => {
               <li class="seperator">:</li>
               <li><span class="hours">${("00" + hours.toString()).slice(-2)}</span><p class="hours_text mt-2  ">Hours</p></li>
               <li class="seperator">:</li>
-              <li><span class="minutes">${minutes}</span><p class="minutes_text mt-2">Minutes</p></li>`;
+              <li><span class="minutes">${("00" + minutes.toString()).slice(-2)}</span><p class="minutes_text mt-2">Minutes</p></li>`;
 
     // Display the result in the element with id="demo"
     demoElement.innerHTML = html;
