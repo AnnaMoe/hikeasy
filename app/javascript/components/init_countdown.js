@@ -18,11 +18,11 @@ const initCountdown = () => {
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-    const html = `<li><span class="days">${days}</span><p class="days_text">Days</p></li>
+    const html = `<li><span class="days">${days}</span><p class="days_text mt-2">Days</p></li>
               <li class="seperator">:</li>
-              <li><span class="hours">${("00" + hours.toString()).slice(-2)}</span><p class="hours_text">Hours</p></li>
+              <li><span class="hours">${("00" + hours.toString()).slice(-2)}</span><p class="hours_text mt-2  ">Hours</p></li>
               <li class="seperator">:</li>
-              <li><span class="minutes">${minutes}</span><p class="minutes_text">Minutes</p></li>`;
+              <li><span class="minutes">${minutes}</span><p class="minutes_text mt-2">Minutes</p></li>`;
 
     // Display the result in the element with id="demo"
     demoElement.innerHTML = html;
