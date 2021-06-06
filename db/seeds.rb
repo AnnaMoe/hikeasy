@@ -59,6 +59,19 @@ toni = User.create(
   last_name: "Panacek",
 )
 
+seb = User.create(
+  email: "seb@hikeasy.fit",
+  password: "123456",
+  nickname: "ssaunier",
+  age: "30",
+  country: "France",
+  first_name: "Seb",
+  last_name: "Saunier",
+  guide_description: "Based in Dresden, I am in love with the Sandstone of the East because of everything they offer me: beautiful views, challenging climbs, and breathtaking nature. 
+  I love to work with people, share my experience with them and guide them with passion.",
+  guide_since: Date.parse('02-04-2017')
+)
+
 puts 'creating hikes'
 
 malerweg = Hike.create(
@@ -78,7 +91,8 @@ malerweg = Hike.create(
   start_address: Address.create(address: "Pirna"),
   end_address: Address.create(address: "Stolpen"),
   map_style: 'mapbox://styles/annamoe/ckoyht30h0awk17mj7tuof7ck',
-  description: "The Elbe Sandstone Mountains Malerweg trail in Saxon Switzerland is one of the most picturesque hiking trails in Germany. Where once painters sought inspiration for their timeless works, you can now walk along a 116 km hiking trail through Saxon Switzerland. Caves can be found in hidden places as a opportunity to sleep in it. Not everybody finds these caves. With a bit of luck our guides will show you theses incredible places, giving you the chance to escape from the civilization."
+  description: "The Elbe Sandstone Mountains Malerweg trail in Saxon Switzerland is one of the most picturesque hiking trails in Germany. Where once painters sought inspiration for their timeless works, you can now walk along a 116 km hiking trail through Saxon Switzerland. Caves can be found in hidden places as a opportunity to sleep in it. Not everybody finds these caves. With a bit of luck our guides will show you theses incredible places, giving you the chance to escape from the civilization.",
+  guide: seb
 )
 
 GroupHike.create( 
