@@ -148,7 +148,10 @@
                     </div>
                     <div class="card-product-infos-subheading">
                     <div class="luogo"><%= hike.region %></div>
-                    <div class="reviews"><i class="fas fa-star"></i> /5.00</div>
+                    <div class="reviews"><i class="fas fa-star"></i> /
+                      <% @rating = hike.reviews.map { |r| r.rating} %>
+                      <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(2)  %>
+                    </div>
                     </div>
                     <div><i class="far fa-clock"></i> <%= hike.length %> Days</div>
                     <div><i class="fas fa-arrow-right"></i> <%= hike.distance %> Kilometers</div>
@@ -156,7 +159,9 @@
                     <div class="button difficolta"><%= hike.difficulty %></div>
                     <br>
                     <div class="card-product-infos-last-row">
-                    <div class="availability">This hike is available during the months of June, July, August, September</div>
+                    <div class="availability">
+                      Available in: <%= hike.group_hikes.map { |gh| gh.start_at.strftime("%B") }.uniq.join(', ') %>
+                    </div>
                     <%= link_to toggle_favorite_hike_path(hike), remote: true, method: :post do %>
                       <div class="like-icon mx-2 heart <%= 'not-favorited' unless current_user.favorited?(hike) %>" data-id="<%= hike.id %>">
                         <i class="fas fa-heart"></i></div>

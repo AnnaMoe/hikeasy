@@ -140,7 +140,7 @@ kumano_kodo = Hike.create(
   group_size: 10,
   start_address: Address.create(address: "Mt. Hoshi"),
   end_address: Address.create(address: "mt. nachi"),
-  map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+  map_style: 'mapbox://styles/annamoe/ckphettpv2pw217vxhzmeocno',
   description: "Away from the crowded subway stations, glaring neon signs and the speeding express trains of the major cities, the Kumano Kodo pilgrimage route gives you the chance to get acquainted with Japan’s soul. This trail, which leads you along ancient forest paths, over countless mountains and through magical, primeval forests, will reveal the character of the country in a way few ever get to experience. And as the huge cedars and cypresses rise above you, trees which serve as wild shrines, worshipped by the local population—you’ll be blown away by this wilder, more calming side of Japan.
   In five daily stages, you’ll hike a total of 70 kilometers from west to east, and you’ll conquer more than 13,000 feet (4,000 meters) of elevation. And while that might sound like quite a challenge, we promise it’s worth the effort as there’s no better way to experience the solitude of the Japanese mountains."
 )
@@ -420,21 +420,49 @@ puts "#{chilkoot_trail.name} is created"
 end
 
 puts 'Creating bookings'
-booking1 = Booking.create(
+booking1 = Booking.create!(
   hike: malerweg,
   group_hike: malerweg.group_hikes.last,
   user: toni,
   first_name: toni.first_name,
   last_name: toni.last_name,
   email: toni.email,
+  credit_card: Faker::Finance.credit_card, 
+  credit_card_expiration_month: rand(1..12), 
+  credit_card_expiration_year: rand(2021..2030),
+  credit_card_cvc: rand(100..9999)
 )
 
 puts 'Creating reviews'
-review1 = Review.create(
+review1 = Review.create!(
   comment: "Seb is the best guide.",
   rating: "5",
   booking: booking1
 )
+
+Hike.all.each do |h|
+  b = Booking.create(
+    hike: h,
+    group_hike: h.group_hikes.last,
+    user: toni,
+    first_name: toni.first_name,
+    last_name: toni.last_name,
+    email: toni.email,
+    credit_card: Faker::Finance.credit_card, 
+    credit_card_expiration_month: rand(1..12), 
+    credit_card_expiration_year: rand(2021..2030),
+    credit_card_cvc: rand(100..9999)
+  )
+
+  how_many = rand(2..4)
+  how_many.times do |j|
+    r = Review.create(
+      comment: Faker::Lorem.paragraph,
+      rating: rand(4..5),
+      booking: b
+    )
+  end
+end
 
 puts 'done'
 
