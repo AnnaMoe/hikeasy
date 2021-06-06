@@ -1,5 +1,6 @@
 class GroupHike < ApplicationRecord
   belongs_to :hike
+  belongs_to :chatroom
   has_many :bookings
 
   def to_s
