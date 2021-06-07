@@ -98,10 +98,10 @@ puts 'creating hikes'
 malerweg = Hike.create(
   name: "Malerweg",
   title: "Sandstone Filled Malerweg through Saxony Switzerland",
-  subtitle: "An unforgettable and physically demanding 76-km trek through the Saxony Switzerland National Park, in Saxony, Germany. A 8-day tour led by Lukas - local certified guide.",
+  subtitle: "An unforgettable and physically demanding 76-km trek through the Saxony Switzerland National Park, in Saxony, Germany. A 8-day tour led by Dieter - local certified guide.",
   national_park: "Saxony Switzerland",
   region: "Germany",
-  price: 400,
+  price: 610,
   difficulty: "intermediate",
   accomodation_type: 'cave',
   terrain: "forest, field paths",

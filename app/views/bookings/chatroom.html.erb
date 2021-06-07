@@ -12,9 +12,9 @@
       <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
         <div class="notification-guide">
           <div class="notification-members">
-            <img class="avatar dropdown-toggle" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+            <img class="avatar dropdown-toggle" src="<%= @booking.hike.guide.avatar_url  %>"/>
             <div class="notification-members-content">
-              <p class="m-0">Your Guide: Lukas, 28 years old</p>
+              <p class="m-0"><%= @booking.hike.guide.first_name %>, <%= @booking.hike.guide.age %> years old</p>
               <p class="text-muted m-0"></small><em>Germany</em></small></p>
             </div>
           </div>
