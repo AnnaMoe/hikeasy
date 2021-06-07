@@ -466,7 +466,7 @@ Hike.all.each do |h|
     credit_card_cvc: rand(100..9999)
   )
 
-  how_many = rand(2..4)
+  how_many = rand(3..4)
   how_many.times do |j|
     r = Review.create(
       comment: Faker::Lorem.paragraph,
