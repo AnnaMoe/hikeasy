@@ -10,7 +10,7 @@ ul#booking-show-countdown li { display: inline-block; }
 
 ul#booking-show-countdown li span {
   font-size: 40px;
-  font-weight: 300;
+  font-weight: 700;
   line-height: 80px;
 }
 
@@ -22,5 +22,25 @@ ul#booking-show-countdown li.seperator {
 
 ul#booking-show-countdown li p {
   color: #a7abb1;
-  font-size: 25px;
+  font-size: 20px;
 }
+
+.days {
+  background-color: #BBCEA8;
+  color: white;
+  padding: 25px 20px;;
+  border-radius: 5px;
+}
+.hours {
+  background-color: #BBCEA8;
+  color: white;
+  padding: 25px 20px;;
+  border-radius: 5px;
+}
+.minutes {
+  background-color: #BBCEA8;
+  color: white;
+  padding: 25px 20px;
+  border-radius: 5px;
+}
+
