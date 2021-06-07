@@ -75,20 +75,23 @@
         <hr>
       </div>
       <div>
-        <div class="about_the_guide">About the Guide</div>
-        <div class="row">
-          <div class="col guide-avatar">
-            <img src="https://images.unsplash.com/photo-1586022045315-1cdd6493045c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIyMjk2MzMz&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit"/>
-          </div>
-          <div class="float-left col">
-            Guide Name
-          </div>
-          <br>
-          <div class="col">
-          
-            <i class="fas fa-star"></i>Reviews
-          </div>
+       <div class="about_the_guide">About the Guide</div>
+      <div class="row">
+        <div class="col-md-2 guide-avatar">
+          <img class="avatar dropdown-toggle" src="<%= @hike.guide.avatar_url  %>" />
         </div>
+        <div class="col-md-7">
+          <%= @hike.guide.first_name %>
+          <div><em class="text-muted" >Guide since <%= @hike.guide.guide_since.year %></em></div>
+        </div>
+        <br>
+        <div class="float-right col-md-2">
+          <i class="fas fa-star"></i>Reviews
+        </div>
+      </div>
+      <div class="row testo_descrizione mt-4">
+        <%= @hike.guide.guide_description %>
+      </div>
         <hr>
       </div>
       <div>

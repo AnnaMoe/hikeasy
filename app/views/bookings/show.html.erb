@@ -6,7 +6,10 @@
           <%=@booking.hike.name%>
           <em class="text-muted" id="countdown"><%=@booking.group_hike %></em>
         </div>
-        <p class="reviews"><i class="fas fa-star"></i> /5.00</p>
+        <p class="reviews"><i class="fas fa-star"></i> /
+          <% @rating = @hike.reviews.map { |r| r.rating} %>
+          <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(2)  %>
+        </p>
       </div>
     </div>
     <div class = "col-md-3">
@@ -108,9 +111,25 @@
       <div class="testo_descrizione"><%= @hike.description %></div>
       <hr>
       <div class="about_the_guide">About the Guide</div>
+      <div class="row">
+        <div class="col-md-2 guide-avatar">
+          <img class="avatar dropdown-toggle" src="<%= @hike.guide.avatar_url  %>" />
+        </div>
+        <div class="col-md-7">
+          <%= @hike.guide.first_name %>
+          <div><em class="text-muted" >Guide since <%= @hike.guide.guide_since.year %></em></div>
+        </div>
+        <br>
+        <div class="float-right col-md-2">
+          <i class="fas fa-star"></i>Reviews
+        </div>
+      </div>
+      <div class="row testo_descrizione mt-4">
+        <%= @hike.guide.guide_description %>
+      </div>
     </div>
     <div class="col-md-4">
-      <div class="container booking-form">
+      <div class="container booking-form sticky-form">
         <div class="card-form-highlights pt-1">
           <div class="card-booking-body">
             <ul id="booking-show-countdown" data-reference-date="<%= @booking.group_hike.start_at%>">
