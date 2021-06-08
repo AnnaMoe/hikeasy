@@ -442,102 +442,102 @@ create_random_group_hikes(chilkoot_trail)
 puts "#{chilkoot_trail.name} is created" 
 
 
-chapada_diamantia = Hike.create(
-    name: "Chapada Diamantia",
-    region: "Brazil",
-    title: "Stunning Valley Trek through Chapada Diamantia",
-    subtitle: "An breathtaking journey through Chapada Diamantia, in Bahia, Brazil. A 7-day tour led by Andre - local certified guide.",
-    price: 975,
-    difficulty: "Intermediate",
-    accomodation_type: "Cabin",
-    terrain: "Plateua, Valley",
-    national_park: "Bahia",
-    elevation: 900,
-    length: 7,
-    distance: 84,
-    group_size: 10,
-    start_address: Address.create(address: "Dyea"),
-        end_address: Address.create(address: "Bennett "),
-        map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "For those who enjoy hiking, this 7-day trip through Chapada Diamantia is something that cannot be missed. One of the most beautiful crossings through Brazil, this trek offers it all- cliffs, mountains, cascading waterfalls, and natural beauty. Explore the Cave of the Castle and learn about the rich history and culture of the region during your overnight homestays with local families.",
-        guide: dieter,
-        )
-create_random_group_hikes(chapada_diamantia)
-puts "#{chapada_diamantia.name} is created" 
-create_random_group_hikes(chapada_diamantia)
-    puts "#{chapada_diamantia.name} is created"  
+# chapada_diamantia = Hike.create(
+#     name: "Chapada Diamantia",
+#     region: "Brazil",
+#     title: "Stunning Valley Trek through Chapada Diamantia",
+#     subtitle: "An breathtaking journey through Chapada Diamantia, in Bahia, Brazil. A 7-day tour led by Andre - local certified guide.",
+#     price: 975,
+#     difficulty: "Intermediate",
+#     accomodation_type: "Cabin",
+#     terrain: "Plateua, Valley",
+#     national_park: "Bahia",
+#     elevation: 900,
+#     length: 7,
+#     distance: 84,
+#     group_size: 10,
+#     start_address: Address.create(address: "Dyea"),
+#         end_address: Address.create(address: "Bennett "),
+#         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+#         description: "For those who enjoy hiking, this 7-day trip through Chapada Diamantia is something that cannot be missed. One of the most beautiful crossings through Brazil, this trek offers it all- cliffs, mountains, cascading waterfalls, and natural beauty. Explore the Cave of the Castle and learn about the rich history and culture of the region during your overnight homestays with local families.",
+#         guide: dieter,
+#         )
+# create_random_group_hikes(chapada_diamantia)
+# puts "#{chapada_diamantia.name} is created" 
+# create_random_group_hikes(chapada_diamantia)
+#     puts "#{chapada_diamantia.name} is created"  
 
-lost_city = Hike.create(
-    name: "The Lost City",
-    region: "Colombia",
-    price: 450,
-    difficulty: "Intermediate",
-    accomodation_type: "Tent",
-    terrain: "Jungle, Mountain",
-    national_park: "Sierra Nevada de Santa Marta",
-    elevation: 1200,
-    length: 4,
-    distance: 37,
-    group_size: 8,
-    start_address: Address.create(address: "Dyea"),
-        end_address: Address.create(address: "Bennett "),
-        map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "Colombia’s Inca Trail, the Lost City trek is the country’s best multi-day trekking option and a perennial favourite among travellers and backpackers in the country. The trek takes in the gorgeous forests and rivers of the Sierra Nevada de Santa Marta mountains, culminating in a hike to reach the mysterious and beautiful Lost City itself.The Lost City is the best opportunity to connect with nature and prove yourself everything you are capable of. Doing the Lost City Trek will allow you to know part of the Sierra Nevada de Santa Marta in Colombia. You will also have the opportunity to have direct contact with the Kogui; who still preserve the traditions of the Tayronas, the first inhabitants of the Lost City.",
-        guide: dieter,
-)
+# lost_city = Hike.create(
+#     name: "The Lost City",
+#     region: "Colombia",
+#     price: 450,
+#     difficulty: "Intermediate",
+#     accomodation_type: "Tent",
+#     terrain: "Jungle, Mountain",
+#     national_park: "Sierra Nevada de Santa Marta",
+#     elevation: 1200,
+#     length: 4,
+#     distance: 37,
+#     group_size: 8,
+#     start_address: Address.create(address: "Dyea"),
+#         end_address: Address.create(address: "Bennett "),
+#         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+#         description: "Colombia’s Inca Trail, the Lost City trek is the country’s best multi-day trekking option and a perennial favourite among travellers and backpackers in the country. The trek takes in the gorgeous forests and rivers of the Sierra Nevada de Santa Marta mountains, culminating in a hike to reach the mysterious and beautiful Lost City itself.The Lost City is the best opportunity to connect with nature and prove yourself everything you are capable of. Doing the Lost City Trek will allow you to know part of the Sierra Nevada de Santa Marta in Colombia. You will also have the opportunity to have direct contact with the Kogui; who still preserve the traditions of the Tayronas, the first inhabitants of the Lost City.",
+#         guide: dieter,
+# )
 
-create_random_group_hikes(lost_city)
-puts "#{lost_city.name} is created" 
-create_random_group_hikes(lost_city)
-    puts "#{lost_city.name} is created"  
+# create_random_group_hikes(lost_city)
+# puts "#{lost_city.name} is created" 
+# create_random_group_hikes(lost_city)
+#     puts "#{lost_city.name} is created"  
 
-mt_apo = Hike.create(
-    name: "Mt. Apo",
-    region: "Phillipines",
-    price: 450,
-    difficulty: "Beginner",
-    accomodation_type: "Tent",
-    terrain: "Jungle, Mountain",
-    national_park: "Mindanao",
-    elevation: 2956,
-    length: 3,
-    distance: 30,
-    group_size: 10,
-    start_address: Address.create(address: "Dyea"),
-        end_address: Address.create(address: "Bennett "),
-        map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "The stunning beauty of this mountain and the fulfillment that awaits adventurous souls who climb it should be experienced by every Filipino. Standing at 2,956 Meters Above Sea Level Mt. Apo is the highest mountain in the Philippines and is considered to be the Grandfather of Philippine Mountains. The journey isn’t easy and is one of the hardest mountains to hike. You will hike through mystical lakes, lush jungles, rocky mountainsides, and a vertical section of volcanic boulders. It might be a tough adventure but it’s worth it!",
-        guide: dieter,
-)
+# mt_apo = Hike.create(
+#     name: "Mt. Apo",
+#     region: "Phillipines",
+#     price: 450,
+#     difficulty: "Beginner",
+#     accomodation_type: "Tent",
+#     terrain: "Jungle, Mountain",
+#     national_park: "Mindanao",
+#     elevation: 2956,
+#     length: 3,
+#     distance: 30,
+#     group_size: 10,
+#     start_address: Address.create(address: "Dyea"),
+#         end_address: Address.create(address: "Bennett "),
+#         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+#         description: "The stunning beauty of this mountain and the fulfillment that awaits adventurous souls who climb it should be experienced by every Filipino. Standing at 2,956 Meters Above Sea Level Mt. Apo is the highest mountain in the Philippines and is considered to be the Grandfather of Philippine Mountains. The journey isn’t easy and is one of the hardest mountains to hike. You will hike through mystical lakes, lush jungles, rocky mountainsides, and a vertical section of volcanic boulders. It might be a tough adventure but it’s worth it!",
+#         guide: dieter,
+# )
 
-create_random_group_hikes(mt_apo)
-puts "#{mt_apo.name} is created"
-create_random_group_hikes(mt_apo)
-    puts "#{mt_apo.name} is created"  
+# create_random_group_hikes(mt_apo)
+# puts "#{mt_apo.name} is created"
+# create_random_group_hikes(mt_apo)
+#     puts "#{mt_apo.name} is created"  
 
-gangotri = Hike.create(
-    name: "Gangotri Glacier Trek",
-    region: "India",
-    price: 875,
-    difficulty: "Intermediate",
-    accomodation_type: "Tent",
-    terrain: "Mountain, Glacier",
-    national_park: "Himalayas",
-    elevation: 4023,
-    length: 6,
-    distance: 120,
-    group_size: 10,
-    start_address: Address.create(address: "Dyea"),
-        end_address: Address.create(address: "Bennett "),
-        map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "The stunning beauty of this mountain and the fulfillment that awaits adventurous souls who climb it should be experienced by every Filipino. Standing at 2,956 Meters Above Sea Level Mt. Apo is the highest mountain in the Philippines and is considered to be the Grandfather of Philippine Mountains. The journey isn’t easy and is one of the hardest mountains to hike. You will hike through mystical lakes, lush jungles, rocky mountainsides, and a vertical section of volcanic boulders. It might be a tough adventure but it’s worth it!",
-        guide: dieter,
-)
+# gangotri = Hike.create(
+#     name: "Gangotri Glacier Trek",
+#     region: "India",
+#     price: 875,
+#     difficulty: "Intermediate",
+#     accomodation_type: "Tent",
+#     terrain: "Mountain, Glacier",
+#     national_park: "Himalayas",
+#     elevation: 4023,
+#     length: 6,
+#     distance: 120,
+#     group_size: 10,
+#     start_address: Address.create(address: "Dyea"),
+#         end_address: Address.create(address: "Bennett "),
+#         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+#         description: "The stunning beauty of this mountain and the fulfillment that awaits adventurous souls who climb it should be experienced by every Filipino. Standing at 2,956 Meters Above Sea Level Mt. Apo is the highest mountain in the Philippines and is considered to be the Grandfather of Philippine Mountains. The journey isn’t easy and is one of the hardest mountains to hike. You will hike through mystical lakes, lush jungles, rocky mountainsides, and a vertical section of volcanic boulders. It might be a tough adventure but it’s worth it!",
+#         guide: dieter,
+# )
 
-create_random_group_hikes(gangotri)
-puts "#{gangotri.name} is created"
-create_random_group_hikes(gangotri)
-    puts "#{gangotri.name} is created"  
+# create_random_group_hikes(gangotri)
+# puts "#{gangotri.name} is created"
+# create_random_group_hikes(gangotri)
+#     puts "#{gangotri.name} is created"  
 
 
 
