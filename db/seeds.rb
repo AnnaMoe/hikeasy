@@ -121,25 +121,25 @@ GroupHike.create(
   hike: malerweg,
   start_at: Date.today + 8,
   end_at: Date.today + 16,
-  chatroom: Chatroom.create(name: 'Malerweg1'),
+  chatroom: Chatroom.create(name: 'Malerweg'),
 )
 GroupHike.create( 
   hike: malerweg,
   start_at: Date.today + 30,
   end_at: Date.today + 38,
-  chatroom: Chatroom.create(name: 'Malerweg2'),
+  chatroom: Chatroom.create(name: 'Malerweg'),
 )
 GroupHike.create( 
   hike: malerweg,
   start_at: Date.today + 60,
   end_at: Date.today + 68,
-  chatroom: Chatroom.create(name: 'Malerweg3'),
+  chatroom: Chatroom.create(name: 'Malerweg'),
 )
 GroupHike.create( 
   hike: malerweg,
   start_at: Date.today + 75,
   end_at: Date.today + 83,
-  chatroom: Chatroom.create(name: 'Malerweg4'),
+  chatroom: Chatroom.create(name: 'Malerweg'),
 )
 
 malerweg_images = ['Malerweg_Bastei.jpeg', 'Malerweg_Elbe.jpg',  'Malerweg_view.jpg', 'Malerweg_gate.jpeg']
