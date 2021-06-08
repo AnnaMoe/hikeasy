@@ -12,15 +12,18 @@
               <div class="dropdown-item">
                 <form method="post">
                   <div data-role="rangeslider">
-                    <label for="price-min">400</label>
-                    <input type="range" name="price-min" id="price-min" value="200" min="400" max="800">
-                    <script  src="index.js"></script>
-                    <input type="range" name="price-min" id="price-min" value="1
-                    00" min="400" max="800">
-                    <label for="price-max">800</label>
+                      <div class = "container">
+                        <span id=></span>
+                      <div>
+                          <label for="min">400</label>
+                          <input type ="range" min="400" max="800" step="25" onchange="showVal('price-output', this.value)"/>
+                          <label for="max">800</label>
+                        </div>
+                        <output id="price-output'">500</output>
+                     </div>
+                    </div>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -58,12 +61,14 @@
                 <div class="dropdown-item">
                   <form method="post">
                     <div data-role="rangeslider">
-                      <label for="length-min">1
-                      </label>
-                      <input type="range" name="length-min" id="length-min" value="1
-                      " min="1
-                      " max="9">
-                      <label for="length-max">9</label>
+                      <div class = "container">
+                        <div>
+                          <label for="min">1</label>
+                          <input type ="range" min="1" max="9" onchange="showVal('duration-output', this.value)"/>
+                          <label for="max">9</label>
+                        </div>
+                        <output id="duration-output">4</output>
+                     </div>
                     </div>
                   </div>
                 </div>
@@ -80,14 +85,13 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <div class="dropdown-item">
                     <form method="post">
-                      <div data-role="rangeslider">
-                        <label for="distance-min">1
-                        4</label>
-                        <input type="range" name="distance-min" id="distance-min" value="1
-                        4" min="1
-                        4" max="60">
-                        <label for="distance-max">60</label>
-                      </div>
+                        <div>
+                          <label for="min">14</label>
+                          <input type ="range" min="14" max="60" onchange="showVal('distance-output', this.value)"/>
+                          <label for="max">60</label>
+                          </div>
+                          <output id="distance-output">20</output
+                        </div>
                     </div>
                   </div>
                 </div>
