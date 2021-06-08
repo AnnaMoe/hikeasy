@@ -1,6 +1,6 @@
 <div class="container-fluid mt-5">
   <div class= "row">
-    <div class= col-md-6>
+    <div class= col-lg-6>
       <div id="map-start-end"
         style="width: 100%; height: 450px;"
         data-style="<%= @hike.map_style %>"
@@ -9,11 +9,11 @@
       </div>
     </div>
     <div class = "col-lg-3">
-      <%= cl_image_tag @hike.photos[0]&.key, class: "image-hike mb-3"  %>
+      <%= cl_image_tag @hike.photos[0]&.key, class: "image-hike"  %>
       <%= cl_image_tag @hike.photos[1]&.key, class: "image-hike"  %>
     </div>
     <div class = "col-lg-3">
-      <%= cl_image_tag @hike.photos[2]&.key, class: "image-hike mb-3"  %>
+      <%= cl_image_tag @hike.photos[2]&.key, class: "image-hike"  %>
       <%= cl_image_tag @hike.photos[3]&.key, class: "image-hike"  %>
     </div>
   </div>
@@ -91,8 +91,15 @@
           <i class="fas fa-star"></i>4.5 (16 reviews)
         </div>
       </div>
+
+      <br>
+      <div class="col">
+
+        <i class="fas fa-star"></i>Reviews
+
       <div class="row testo_descrizione mt-4">
         <%= @hike.guide.guide_description %>
+
       </div>
         <hr>
       </div>
@@ -118,6 +125,8 @@
             <% end %>
           </div>
         </div>
+
+
         <div class="text-right">
           <button type="button" class="btn btn-primary">More Reviews</button>
         </div>
@@ -134,6 +143,7 @@
                   <div class="card-product-infos">
                   </div>
                 </div>
+
               </div>
             <% end %>
           <% end %>
@@ -144,4 +154,6 @@
       <%= render "bookings/form", booking: @booking %>
     </div>
   </div>
+
 </div>
+
