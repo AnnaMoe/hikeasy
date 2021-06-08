@@ -10,6 +10,9 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/annamoe/ckou737vg9ysy17pb0j098mur'
     });
+    map.resize()
+    
+  
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup({ closeButton: false }).setHTML(marker.infoWindow);
@@ -28,6 +31,11 @@ const initMapbox = () => {
     if (mapElement) {
       // [ ... ]
       fitMapToMarkers(map, markers);
+      window.resizeTo(
+        window.screen.availWidth / 2,
+        window.screen.availHeight / 2
+      );
+    
     }
   }
 
