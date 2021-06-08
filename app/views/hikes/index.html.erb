@@ -85,6 +85,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <div class="dropdown-item">
                     <form method="post">
+
                         <div>
                           <label for="min">14</label>
                           <input type ="range" min="14" max="60" onchange="showVal('distance-output', this.value)"/>
@@ -92,6 +93,7 @@
                           </div>
                           <output id="distance-output">20</output
                         </div>
+
                     </div>
                   </div>
                 </div>
@@ -132,7 +134,6 @@
           <% end %>
         </div>
       </div>
-
       <div class="container">
         <div class="row">
           <div class="col-lg-10">
@@ -141,20 +142,23 @@
           <div clas="col-lg-1"><button class="btn active"><i class="fas fa-list"></i></button></div>
           <div clas="col-lg-1"><button class="btn active"><i class="far fa-map"></i></button></div>
         </div>
-         <% @hikes.each do |hike| %>
+        <% @hikes.each do |hike| %>
           <% if hike.photos.attached? %>
             <%= link_to hike_path(hike), class:'text-decoration-none' do %>
               <div class = "col-lg-12">
                 <div class="card-product">
                   <%= cl_image_tag hike.photos.first.key, class: 'hike-image' %>
                   <div class="card-product-infos">
-                  <div class="card-product-infos-heading">
-                  <div class ="nome_hike"><%= hike.name %></div>
-                  <div class ="prezzo">$<%=hike.price%></div>
+                    <div class="card-product-infos-heading">
+                      <div class ="nome_hike"><%= hike.name %></div>
+                      <div class ="prezzo">$<%=hike.price%></div>
                     </div>
                     <div class="card-product-infos-subheading">
-                    <div class="luogo"><%= hike.region %></div>
-                    <div class="reviews"><i class="fas fa-star"></i> /5.00</div>
+                      <div class="luogo"><%= hike.region %></div>
+                      <div class="reviews"><i class="fas fa-star"></i> /
+                        <% @rating = hike.reviews.map { |r| r.rating} %>
+                        <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(2)  %>
+                      </div>
                     </div>
                     <div><i class="far fa-clock"></i> <%= hike.length %> Days</div>
                     <div><i class="fas fa-arrow-right"></i> <%= hike.distance %> Kilometers</div>
@@ -162,12 +166,14 @@
                     <div class="button difficolta"><%= hike.difficulty %></div>
                     <br>
                     <div class="card-product-infos-last-row">
-                    <div class="availability">This hike is available during the months of June, July, August, September</div>
-                    <%= link_to toggle_favorite_hike_path(hike), remote: true, method: :post do %>
-                      <div class="like-icon mx-2 heart <%= 'not-favorited' unless current_user.favorited?(hike) %>" data-id="<%= hike.id %>">
-                        <i class="fas fa-heart"></i></div>
-                    <% end %>
-                  </div>
+                      <div class="availability">
+                        Available in: <%= hike.group_hikes.map { |gh| gh.start_at.strftime("%B") }.uniq.join(', ') %>
+                      </div>
+                      <%= link_to toggle_favorite_hike_path(hike), remote: true, method: :post do %>
+                        <div class="like-icon mx-2 heart <%= 'not-favorited' unless current_user.favorited?(hike) %>" data-id="<%= hike.id %>">
+                          <i class="fas fa-heart"></i></div>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               <% end %>
@@ -175,16 +181,20 @@
           <% else %>
             <%= link_to hike_path(hike), class:'text-decoration-none' do %>
               <div class = "col-lg-12">
-                 <div class="card-product">
+                <div class="card-product">
                   <img src="https://images.unsplash.com/photo-1511225070737-5af5ac9a690d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" />
                   <div class="card-product-infos">
-                  <div class="card-product-infos-heading">
-                  <div class ="nome_hike"><%= hike.name %></div>
-                  <div class ="prezzo">$<%=hike.price%></div>
+                    <div class="card-product-infos-heading">
+                      <div class ="nome_hike"><%= hike.name %></div>
+                      <div class ="prezzo">$<%=hike.price%></div>
+                      <%= link_to toggle_favorite_hike_path(hike), remote: true, method: :post do %>
+                        <div class="like-icon mx-2 heart <%= 'not-favorited' unless current_user.favorited?(hike) %>" data-id="<%= hike.id %>">
+                          <i class="fas fa-heart"></i></div>
+                      <% end %>
                     </div>
                     <div class="card-product-infos-subheading">
-                    <div class="luogo"><%= hike.region %></div>
-                    <div class="reviews"><i class="fas fa-star"></i> /5.00</div>
+                      <div class="luogo"><%= hike.region %></div>
+                      <div class="reviews"><i class="fas fa-star"></i> /5.00</div>
                     </div>
                     <div><i class="far fa-clock"></i> <%= hike.length %> Days</div>
                     <div><i class="fas fa-arrow-right"></i> <%= hike.distance %> Kilometers</div>
@@ -192,14 +202,10 @@
                     <div class="button difficolta"><%= hike.difficulty %></div>
                     <br>
                     <div class="card-product-infos-last-row">
-                    <div class="availability">This hike is available during the months of June, July, August, September</div>
-                    <%= link_to toggle_favorite_hike_path(hike), remote: true, method: :post do %>
-                      <div class="like-icon mx-2 heart <%= 'not-favorited' unless current_user.favorited?(hike) %>" data-id="<%= hike.id %>">
-                        <i class="fas fa-heart"></i></div>
-                    <% end %>
+                      <div class="availability">This hike is available during the months of June, July, August, September</div>
+                    </div>
                   </div>
-                  </div>
-                  </div>
+                </div>
               <% end %>
             </div>
           <% end %>
@@ -216,5 +222,4 @@
           </div>
         </div>
       </div>
-
 

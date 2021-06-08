@@ -24,7 +24,6 @@
   font-weight: bold;
   font-size: 32px;
   line-height: 37px;
-  margin-bottom: 15px;
 }
 .sottotitolo_hike {
   font-family: Roboto;
@@ -72,4 +71,16 @@
   font-weight: 500;
   font-size: 28px;
   line-height: 33px;
+}
+
+
+.reviews {
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+
+#countdown {
+  font-weight: 300;
+  line-height: 28px;
+  font-size: 20px;
 }

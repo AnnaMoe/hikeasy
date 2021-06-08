@@ -1,32 +1,40 @@
 <div class= "container mt-5 details-hike">
-  <div class="row">
-    <div class= "col-md-12">
-      <div class="d-flex justify-content-center mb-4">
-      <div class="titel_booking_seite">
-        <div class="titolo_myhike"><%=@booking.hike.name%></div><em class="text-muted" id="countdown"><%=@booking.group_hike %></em>
+  <div class="row mb-4">
+    <div class= "col-md-9">
+      <div class="d">
+        <div class="titolo_myhike">
+          <%=@booking.hike.name%>
+          <em class="text-muted" id="countdown"><%=@booking.group_hike %></em>
+        </div>
+        <p class="reviews"><i class="fas fa-star"></i> /
+          <% @rating = @hike.reviews.map { |r| r.rating} %>
+          <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(2)  %>
+        </p>
       </div>
-        <button type="button" class="btn btn-primary ml-4" data-toggle="modal" data-target="#exampleModal">
-          Leave a Review
-        </button>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <%= render 'review' %>
-              </div>
-              <div class="modal-footer">
-              </div>
+    </div>
+    <div class = "col-md-3">
+      <button type="button" class="btn btn-primary d-flex mr-4" data-toggle="modal" data-target="#exampleModal">
+        Leave a Review
+      </button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= render 'review' %>
+            </div>
+            <div class="modal-footer">
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  
 </div>
 <div class= row>
   <div class = "col-lg-12"></div>
@@ -103,14 +111,30 @@
       <div class="testo_descrizione"><%= @hike.description %></div>
       <hr>
       <div class="about_the_guide">About the Guide</div>
+      <div class="row">
+        <div class="col-md-2 guide-avatar">
+          <img class="avatar dropdown-toggle" src="<%= @hike.guide.avatar_url  %>" />
+        </div>
+        <div class="col-md-6">
+          <%= @hike.guide.first_name %>, <%= @hike.guide.age %> years old
+          <div><em class="text-muted" >Guide since <%= @hike.guide.guide_since.year %></em></div>
+        </div>
+        <br>
+        <div class="float-right col-md-3">
+          <i class="fas fa-star"></i>4.5 (16 reviews)
+        </div>
+      </div>
+      <div class="row testo_descrizione mt-4">
+        <%= @hike.guide.guide_description %>
+      </div>
     </div>
     <div class="col-md-4">
-      <div class="container booking-form">
-        <div class="card-form-highlights">
+      <div class="container booking-form sticky-form">
+        <div class="card-form-highlights pt-1">
           <div class="card-booking-body">
             <ul id="booking-show-countdown" data-reference-date="<%= @booking.group_hike.start_at%>">
             </ul>
-            <div class="card-weather">
+            <div class="card-weather mb-5">
               <h3>Today's Weather</h3>
               <h4 id="date"></h4>
               <p id="description" class="m-0"></p>
@@ -136,7 +160,9 @@
                 </div>
               <% end %>
             </div>
-          <%= link_to "Visit Group Page", hike_booking_chatroom_path(@booking.hike, @booking), class: "discover_more_botton" %>
+            <div class="d-flex justify-content-center">
+          <%= link_to "Visit Group Page", hike_booking_chatroom_path(@booking.hike, @booking), class: "btn btn-primary" %>
+          </div>
         </div>
       </div>
     </div>

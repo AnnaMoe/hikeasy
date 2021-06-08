@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_06_04_204343) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +56,9 @@ ActiveRecord::Schema.define(version: 2021_06_04_204343) do
     t.string "phone_number"
     t.string "email"
     t.string "credit_card"
+    t.string "credit_card_expiration_month"
+    t.string "credit_card_expiration_year"
+    t.integer "credit_card_cvc"
     t.string "dates"
     t.bigint "group_hike_id"
     t.index ["group_hike_id"], name: "index_bookings_on_group_hike_id"
@@ -116,7 +120,9 @@ ActiveRecord::Schema.define(version: 2021_06_04_204343) do
     t.string "title"
     t.string "subtitle"
     t.string "national_park"
+    t.bigint "guide_id"
     t.index ["end_address_id"], name: "index_hikes_on_end_address_id"
+    t.index ["guide_id"], name: "index_hikes_on_guide_id"
     t.index ["start_address_id"], name: "index_hikes_on_start_address_id"
   end
 
@@ -162,6 +168,8 @@ ActiveRecord::Schema.define(version: 2021_06_04_204343) do
     t.string "country"
     t.string "first_name"
     t.string "last_name"
+    t.string "guide_description"
+    t.date "guide_since"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -174,6 +182,7 @@ ActiveRecord::Schema.define(version: 2021_06_04_204343) do
   add_foreign_key "group_hikes", "hikes"
   add_foreign_key "hikes", "addresses", column: "end_address_id"
   add_foreign_key "hikes", "addresses", column: "start_address_id"
+  add_foreign_key "hikes", "users", column: "guide_id"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "reviews", "bookings"

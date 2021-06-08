@@ -4,6 +4,7 @@ class Hike < ApplicationRecord
   has_many :group_hikes
   belongs_to :start_address, class_name: "Address", foreign_key: "start_address_id"
   belongs_to :end_address, class_name: "Address", foreign_key: "end_address_id"
+  belongs_to :guide, class_name: "User", foreign_key: "guide_id"
 
 
   scope :filter_by_difficulty, ->(difficulty) { where difficulty: difficulty }
