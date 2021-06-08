@@ -2,8 +2,7 @@
 <div class= "container mt-3">
   <%= form_tag hikes_path, method: :get do %>
     <div class= "row mt-3">
-      <div class= "col-lg-1
-      ">
+      <div class= "col-lg-1">
         <div class="nav-link" >
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -28,8 +27,7 @@
             </div>
           </div>
         </div>
-        <div class= "col-lg-1
-        ">
+        <div class= "col-lg-1">
           <div class="nav-link" >
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -51,8 +49,7 @@
             </div>
           </div>
         </div>
-        <div class= "col-lg-1
-        ">
+        <div class= "col-lg-1">
           <div class="nav-link" >
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -76,8 +73,7 @@
               </div>
             </div>
           </div>
-          <div class= "col-lg-1
-          ">
+          <div class= "col-lg-1">
             <div class="nav-link" >
               <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -92,16 +88,13 @@
                           <input type ="range" min="14" max="60" onchange="showVal('distance-output', this.value)"/>
                           <label for="max">60</label>
                           </div>
-                          <output id="distance-output">20</output
-                        </div>
-
+                          <output id="distance-output">20</output>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class= "col-lg-1
-            ">
+            <div class= "col-lg-1">
               <div class="nav-link" >
                 <div class="dropdown">
                   <div style="width:500px;">
@@ -127,9 +120,7 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class= "col-lg-1
-            ">
+            <div class= "col-lg-1">
               <%= submit_tag "Search", class: "btn btn-primary-search" %>
             </div>
           <% end %>
@@ -164,13 +155,16 @@
                   <div class="card-product-infos">
                     <div class="card-product-infos-heading">
                       <div class ="nome_hike"><%= hike.name %></div>
-                      <div class ="prezzo">$<%=hike.price%></div>
+                        <%= link_to toggle_favorite_hike_path(hike), remote: true, method: :post do %>
+                        <div class="like-icon mx-2 heart <%= 'not-favorited' unless current_user.favorited?(hike) %>" data-id="<%= hike.id %>">
+                          <i class="fas fa-heart index"></i></div>
+                      <% end %>
                     </div>
                     <div class="card-product-infos-subheading">
                       <div class="luogo"><%= hike.region %></div>
-                      <div class="reviews"><i class="fas fa-star"></i> /
-                        <% @rating = hike.reviews.map { |r| r.rating} %>
-                        <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(2)  %>
+                      <div class="reviews"><i class="fas fa-star"></i>
+                         <% @rating = hike.reviews.map { |r| r.rating} %>
+                        <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(2)  %> /  5.00
                       </div>
                     </div>
                     <div><i class="far fa-clock"></i> <%= hike.length %> Days</div>
@@ -182,10 +176,7 @@
                       <div class="availability">
                         Available in: <%= hike.group_hikes.map { |gh| gh.start_at.strftime("%B") }.uniq.join(', ') %>
                       </div>
-                      <%= link_to toggle_favorite_hike_path(hike), remote: true, method: :post do %>
-                        <div class="like-icon mx-2 heart <%= 'not-favorited' unless current_user.favorited?(hike) %>" data-id="<%= hike.id %>">
-                          <i class="fas fa-heart"></i></div>
-                      <% end %>
+                      <div class ="prezzo">$<%=hike.price%></div>
                     </div>
                   </div>
                 </div>
@@ -224,4 +215,5 @@
           <% end %>
         <% end %>
       </div>
+    </div>
 
