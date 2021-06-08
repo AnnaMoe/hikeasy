@@ -36,6 +36,7 @@
     </div>
     <div class="col-4">
       <div class="card-chatroom">
+        <ul id="booking-show-countdown" data-reference-date="<%= @booking.group_hike.start_at%>"></ul>
         <div class="card-weather">
           <h3>Expected Weather Forecast</h3>
           <h4 id="date"></h4>
@@ -46,7 +47,7 @@
             data-latitude='<%= @booking.hike.start_address.latitude %>'></h4>
           </div>
         </div>
-        <h2>members</h2>
+        <h2 class="mt-5">members</h2>
         <% @chatroom.group_hike.bookings.each do |booking| %>
           <div class="notification-members">
             <img class="avatar dropdown-toggle" src="<%= booking.user.avatar_url  %>" />
