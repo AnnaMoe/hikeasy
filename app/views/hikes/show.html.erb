@@ -138,8 +138,8 @@
           <% if related_hike.photos.attached? %>
             <%= link_to hike_path(related_hike), class:'text-decoration-none' do %>
               <div class = "col-lg-12">
-                <div class="card-product">
-                  <%= cl_image_tag related_hike.photos.first.key, class: 'hike-image' %>
+                <div class="card-hike">
+                  <%= cl_image_tag related_hike.photos.first.key %>
                   <div class="card-product-infos">
                   </div>
                 </div>
@@ -150,9 +150,11 @@
         <% end %>
       </div>
     </div>
+    </div>
     <div class="col-lg-4">
       <%= render "bookings/form", booking: @booking %>
     </div>
+  </div>
   </div>
 
 </div>
