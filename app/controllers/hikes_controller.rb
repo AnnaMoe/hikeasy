@@ -52,7 +52,10 @@ class HikesController < ApplicationController
     authorize @booking
     related_difficulty = @hike.difficulty
     related_region = @hike.region
-    @related_hikes = Hike.where(difficulty: related_difficulty).or(Hike.where(region: related_region)).sample(4).&(Hike.where.not(id:@hike.id))
+    related_accomodation = @hike.accomodation_type
+
+
+@related_hikes = Hike.where(region: related_region).or(Hike.where(difficulty: related_difficulty)).or(Hike.where(accomodation_type: related_accomodation))&.where.not(id: @hike.id).sample(4)
 
   end
 

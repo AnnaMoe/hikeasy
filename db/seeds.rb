@@ -59,18 +59,53 @@ toni = User.create(
   last_name: "Panacek",
 )
 
+dieter = User.create(
+  email: "dieter@hikeasy.fit",
+  password: "123456",
+  nickname: "dieterpankratz",
+  age: "30",
+  country: "Germany",
+  first_name: "Dieter",
+  last_name: "Pankratz",
+  guide_description: "Based in Dresden, I am in love with the Sandstone of the East because of everything they offer me: beautiful views, challenging climbs, and breathtaking nature. 
+  I love to work with people, share my experience with them and guide them with passion.",
+  guide_since: Date.parse('02-04-2017')
+)
+
+romeo = User.create(
+  email: "romeo@hikeasy.fit",
+  password: "123456",
+  nickname: "rom-30",
+  age: "30",
+  country: "England",
+  first_name: "Romeo",
+  last_name: "Saint-Albin",
+)
+
+seb = User.create(
+  email: "seb@hikeasy.fit",
+  password: "123456",
+  nickname: "ssaunier",
+  age: "30",
+  country: "France",
+  first_name: "Seb",
+  last_name: "Saunier",
+)
+
+
 puts 'creating hikes'
 
 malerweg = Hike.create(
   name: "Malerweg",
   title: "Sandstone Filled Malerweg through Saxony Switzerland",
-  subtitle: "An unforgettable and physically demanding 76-km trek through the Saxony Switzerland National Park, in Saxony, Germany. A 8-day tour led by Lukas - local certified guide.",
+  subtitle: "An unforgettable and physically demanding 76-km trek through the Saxony Switzerland National Park, in Saxony, Germany. A 8-day tour led by Dieter - local certified guide.",
   national_park: "Saxony Switzerland",
   region: "Germany",
   price: 400,
   difficulty: "Intermediate",
   accomodation_type: 'Cave',
   terrain: "Forest, Field Paths",
+
   elevation: 3200,
   length: 8,
   distance: 116,
@@ -78,13 +113,14 @@ malerweg = Hike.create(
   start_address: Address.create(address: "Pirna"),
   end_address: Address.create(address: "Stolpen"),
   map_style: 'mapbox://styles/annamoe/ckoyht30h0awk17mj7tuof7ck',
-  description: "The Elbe Sandstone Mountains Malerweg trail in Saxon Switzerland is one of the most picturesque hiking trails in Germany. Where once painters sought inspiration for their timeless works, you can now walk along a 116 km hiking trail through Saxon Switzerland. Caves can be found in hidden places as a opportunity to sleep in it. Not everybody finds these caves. With a bit of luck our guides will show you theses incredible places, giving you the chance to escape from the civilization."
+  description: "The Elbe Sandstone Mountains Malerweg trail in Saxon Switzerland is one of the most picturesque hiking trails in Germany. Where once painters sought inspiration for their timeless works, you can now walk along a 116 km hiking trail through Saxon Switzerland. Caves can be found in hidden places as a opportunity to sleep in it. Not everybody finds these caves. With a bit of luck our guides will show you theses incredible places, giving you the chance to escape from the civilization.",
+  guide: dieter
 )
 
 GroupHike.create( 
   hike: malerweg,
-  start_at: Date.today,
-  end_at: Date.today + 8,
+  start_at: Date.today + 8,
+  end_at: Date.today + 16,
   chatroom: Chatroom.create(name: 'Malerweg1'),
 )
 GroupHike.create( 
@@ -113,7 +149,7 @@ malerweg_images = ['Malerweg_Bastei.jpeg', 'Malerweg_Elbe.jpg',  'Malerweg_view.
 end
 puts "#{malerweg.name} is created"  
 
-kumano_kodo = Hike.create(
+kumano_kodo = Hike.create!(
   name: "Kumano Kodo",
   region: "Japan",
   price: 800,
@@ -127,9 +163,10 @@ kumano_kodo = Hike.create(
   group_size: 10,
   start_address: Address.create(address: "Mt. Hoshi"),
   end_address: Address.create(address: "mt. nachi"),
-  map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+  map_style: 'mapbox://styles/annamoe/ckphettpv2pw217vxhzmeocno',
   description: "Away from the crowded subway stations, glaring neon signs and the speeding express trains of the major cities, the Kumano Kodo pilgrimage route gives you the chance to get acquainted with Japan’s soul. This trail, which leads you along ancient forest paths, over countless mountains and through magical, primeval forests, will reveal the character of the country in a way few ever get to experience. And as the huge cedars and cypresses rise above you, trees which serve as wild shrines, worshipped by the local population—you’ll be blown away by this wilder, more calming side of Japan.
-  In five daily stages, you’ll hike a total of 70 kilometers from west to east, and you’ll conquer more than 13,000 feet (4,000 meters) of elevation. And while that might sound like quite a challenge, we promise it’s worth the effort as there’s no better way to experience the solitude of the Japanese mountains."
+  In five daily stages, you’ll hike a total of 70 kilometers from west to east, and you’ll conquer more than 13,000 feet (4,000 meters) of elevation. And while that might sound like quite a challenge, we promise it’s worth the effort as there’s no better way to experience the solitude of the Japanese mountains.",
+  guide: dieter
 )
 
 kumano_kodo_images = ['kumano_kodo_1.jpg', 'kumano_kodo_2.jpg', 'kumano_kodo_mountain.jpg', 'kumano_kodo_sign.jpg']
@@ -157,7 +194,8 @@ alta_via = Hike.create(
   start_address: Address.create(address: "Toblach"),
   end_address: Address.create(address: "Belluno"),
   map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-  description: "The most famous hiking trail in the Dolomites, the Alta Via 1, lives up to its promise. Although it doesn't travel through villages like the Tour du Mont Blanc does, the rifugios (mountain huts) you stay at along the way offer up loads of Italian charm and heaps of Italian food. You'll experience brilliant green meadows, rugged monoliths towering overhead, and plenty of World War I history as you pass by former battlefields and fortification remnants."
+  description: "The most famous hiking trail in the Dolomites, the Alta Via 1, lives up to its promise. Although it doesn't travel through villages like the Tour du Mont Blanc does, the rifugios (mountain huts) you stay at along the way offer up loads of Italian charm and heaps of Italian food. You'll experience brilliant green meadows, rugged monoliths towering overhead, and plenty of World War I history as you pass by former battlefields and fortification remnants.",
+  guide: dieter
 )
 
 alta_via_images = ['dolomites_2.jpg', 'Dolomiten.jpg', 'dolomites_3.jpg', 'dolomites_4.jpg']
@@ -183,7 +221,8 @@ south_west_coast_path = Hike.create(
   start_address: Address.create(address: "Poole"),
   end_address: Address.create(address: "Minehead"),
   map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-  description: "As a National Trail, the South West Coast Path is signposted all the way round by the acorn. In addition to this you will find large commemorative markers at key points on the trail such as Minehead (the start), Porthallow (the mid-point) and South Haven Point (the end). All off which offer the perfect excuse for a photo! There are also a number of way markers along the way that will tell you how far from each end of the trail you are"
+  description: "As a National Trail, the South West Coast Path is signposted all the way round by the acorn. In addition to this you will find large commemorative markers at key points on the trail such as Minehead (the start), Porthallow (the mid-point) and South Haven Point (the end). All off which offer the perfect excuse for a photo! There are also a number of way markers along the way that will tell you how far from each end of the trail you are",
+  guide: dieter
 )
 south_west_coast_path_image = ['south_west_coast_path.jpg', 'south_west_coast_path.jpg']
 2.times do |j|
@@ -208,7 +247,8 @@ torres_del_paine = Hike.create(
     start_address: Address.create(address: "torres del paine"),
     end_address: Address.create(address: "torres del paine"),
     map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-    description: "As a National Trail, the South West Coast Path is signposted all the way round by the acorn. In addition to this you will find large commemorative markers at key points on the trail such as Minehead (the start), Porthallow (the mid-point) and South Haven Point (the end). All off which offer the perfect excuse for a photo! There are also a number of way markers along the way that will tell you how far from each end of the trail you are"
+    description: "As a National Trail, the South West Coast Path is signposted all the way round by the acorn. In addition to this you will find large commemorative markers at key points on the trail such as Minehead (the start), Porthallow (the mid-point) and South Haven Point (the end). All off which offer the perfect excuse for a photo! There are also a number of way markers along the way that will tell you how far from each end of the trail you are",
+  guide: dieter
   )
   torres_del_paine_image = ['torres_del_paine.jpg']
 1.times do |j|
@@ -233,7 +273,8 @@ zion_narrows = Hike.create(
     start_address: Address.create(address: "Glendale"),
         end_address: Address.create(address: "Temple of Sinawava"),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "A hike through The Narrows requires hiking in the Virgin River. You must get your feet wet since there is no trail. Most people choose to start their hike from the Temple of Sinawava via the Riverside Walk and then walk upstream before turning around and hiking back down to the Temple of Sinawava."
+        description: "A hike through The Narrows requires hiking in the Virgin River. You must get your feet wet since there is no trail. Most people choose to start their hike from the Temple of Sinawava via the Riverside Walk and then walk upstream before turning around and hiking back down to the Temple of Sinawava.",
+  guide: dieter
   )    
 zion_narrows_image = ['zion.jpg']
    1.times do |j|
@@ -258,7 +299,8 @@ kilimandscharo = Hike.create(
     start_address: Address.create(address: "Mti Mkubwa"),
         end_address: Address.create(address: "Mweka Camp"),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "The Lemosho starts on the far Western side of Mount Kilimanjaro. It is best trekked on a 7 or 8-day itinerary and offers great acclimatisation. High summit success rates and awesome scenery make the Lemosho one of our favourite routes on Kilimanjaro."
+        description: "The Lemosho starts on the far Western side of Mount Kilimanjaro. It is best trekked on a 7 or 8-day itinerary and offers great acclimatisation. High summit success rates and awesome scenery make the Lemosho one of our favourite routes on Kilimanjaro.",
+  guide: dieter
   )    
 kilimandscharo_image = ['kilimanjaro.jpg']
    1.times do |j|
@@ -283,7 +325,8 @@ larapinta_trail = Hike.create(
     start_address: Address.create(address: "Redbank Gorge"),
         end_address: Address.create(address: "Simpsons Gap"),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "The Larapinta Trail is an extended walking track in the Northern Territory of Australia. Its total length covers 223 kilometres (139 mi) from east to west, with the eastern end at Alice Springs and the western end at Mount Sonder, one of the territory's highest mountains. It follows the West MacDonnell Ranges, sometimes along the ridge line, other times on the plain below, in the West MacDonnell National Park."
+        description: "The Larapinta Trail is an extended walking track in the Northern Territory of Australia. Its total length covers 223 kilometres (139 mi) from east to west, with the eastern end at Alice Springs and the western end at Mount Sonder, one of the territory's highest mountains. It follows the West MacDonnell Ranges, sometimes along the ridge line, other times on the plain below, in the West MacDonnell National Park.",
+  guide: dieter
   )    
 larapinta_image = ['larapinta.jpg']
    1.times do |j|
@@ -308,7 +351,8 @@ laugavegur_trail = Hike.create(
     start_address: Address.create(address: "Landmannalaugar"),
         end_address: Address.create(address: "Skogar "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "The Laugavegur Trail in Iceland is one of the most unique and visually stimulating trails in the world. Not only do you have constantly shifting landscapes, from the rainbow-striped mounds of the highlands in Landmannalaugar to the psychedelic greens of Þórsmörk, but ever-changing conditions as well. No wonder National Geographic ranked this trail in their top 20 in the world. There’s nothing out there that can equal it."
+        description: "The Laugavegur Trail in Iceland is one of the most unique and visually stimulating trails in the world. Not only do you have constantly shifting landscapes, from the rainbow-striped mounds of the highlands in Landmannalaugar to the psychedelic greens of Þórsmörk, but ever-changing conditions as well. No wonder National Geographic ranked this trail in their top 20 in the world. There’s nothing out there that can equal it.",
+  guide: dieter
   )    
 laugavegur_image = ['laugavegur.jpg']
    1.times do |j|
@@ -333,7 +377,8 @@ create_random_group_hikes(laugavegur_trail)
     start_address: Address.create(address: "Trondheim"),
         end_address: Address.create(address: "Ringebur "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "St. Olav Ways - The Pilgrim Paths to Trondheim, is a network of historical trails through beautiful nature, cultural landscapes and historical sites. The trails come from all directions to St. Olav's burial place, the Nidaros Cathedral, which was the northernmost pilgrimage destination for Christianity throughout the Middle Ages."
+        description: "St. Olav Ways - The Pilgrim Paths to Trondheim, is a network of historical trails through beautiful nature, cultural landscapes and historical sites. The trails come from all directions to St. Olav's burial place, the Nidaros Cathedral, which was the northernmost pilgrimage destination for Christianity throughout the Middle Ages.",
+  guide: dieter
   )    
 st_olavsweg_image = ['st_olavsweg.jpg']
    1.times do |j|
@@ -358,7 +403,8 @@ create_random_group_hikes(st_olavsweg)
     start_address: Address.create(address: "Chilling"),
         end_address: Address.create(address: "Karsha "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "The Chadar Trek or the Zanskar Gorge is a winter trail over the frozen Zanskar River, which lies in the Indian union territory of Ladakh. It is traditionally the only means of travel in the area during the harsh winter months. The trail has become popular with international adventure tourists."
+        description: "The Chadar Trek or the Zanskar Gorge is a winter trail over the frozen Zanskar River, which lies in the Indian union territory of Ladakh. It is traditionally the only means of travel in the area during the harsh winter months. The trail has become popular with international adventure tourists.",
+  guide: dieter
   )    
 chadar_trek_image = ['chadar_trek.jpg']
    1.times do |j|
@@ -383,7 +429,8 @@ create_random_group_hikes(chadar_trek)
     start_address: Address.create(address: "Dyea"),
         end_address: Address.create(address: "Bennett "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "The Chilkoot Trail is a 33 mile long recreational trail. Each summer over 10,000 people hike some or all of it. The majority of visitors day hike on the trail for just a few hours. Others spend an average of 3-5 days backpacking the entire trail. Each year a few hearty people run the trail in one stretch."
+        description: "The Chilkoot Trail is a 33 mile long recreational trail. Each summer over 10,000 people hike some or all of it. The majority of visitors day hike on the trail for just a few hours. Others spend an average of 3-5 days backpacking the entire trail. Each year a few hearty people run the trail in one stretch.",
+  guide: dieter
   )    
 chilkoot_trail_image = ['chilkoot_trail.jpg']
    1.times do |j|
@@ -393,6 +440,7 @@ chilkoot_trail_image = ['chilkoot_trail.jpg']
 
 create_random_group_hikes(chilkoot_trail)
 puts "#{chilkoot_trail.name} is created" 
+
 
 chapada_diamantia = Hike.create(
     name: "Chapada Diamantia",
@@ -481,22 +529,96 @@ puts "#{gangotri.name} is created"
 
 
 
+
 puts 'Creating bookings'
-booking1 = Booking.create(
+booking1 = Booking.create!(
   hike: malerweg,
   group_hike: malerweg.group_hikes.last,
   user: toni,
   first_name: toni.first_name,
   last_name: toni.last_name,
   email: toni.email,
+  credit_card: Faker::Finance.credit_card, 
+  credit_card_expiration_month: rand(1..12), 
+  credit_card_expiration_year: rand(2021..2030),
+  credit_card_cvc: rand(100..9999)
+)
+
+puts 'Creating bookings'
+booking2 = Booking.create!(
+  hike: malerweg,
+  group_hike: malerweg.group_hikes.last,
+  user: seb,
+  first_name: dieter.first_name,
+  last_name: dieter.last_name,
+  email: dieter.email,
+  credit_card: Faker::Finance.credit_card, 
+  credit_card_expiration_month: rand(1..12), 
+  credit_card_expiration_year: rand(2021..2030),
+  credit_card_cvc: rand(100..9999)
+)
+
+puts 'Creating bookings'
+booking3 = Booking.create!(
+  hike: malerweg,
+  group_hike: malerweg.group_hikes.last,
+  user: romeo,
+  first_name: romeo.first_name,
+  last_name: romeo.last_name,
+  email: romeo.email,
+  credit_card: Faker::Finance.credit_card, 
+  credit_card_expiration_month: rand(1..12), 
+  credit_card_expiration_year: rand(2021..2030),
+  credit_card_cvc: rand(100..9999)
 )
 
 puts 'Creating reviews'
-review1 = Review.create(
-  comment: "Seb is the best guide.",
+review1 = Review.create!(
+  comment: "Dieter is the best guide. I am impressed how much he knows about this area. I hope I can join him again on another trail",
   rating: "5",
   booking: booking1
 )
+review1.update_attribute :created_at, rand(10..300).days.ago
+
+
+review2 = Review.create!(
+  comment: "Wow, it feels so good being in the nature and get my mind free from my life as a CEO. Thank you hikEasy for these special days.",
+  rating: "5",
+  booking: booking2
+)
+review2.update_attribute :created_at, rand(10..300).days.ago
+
+review3= Review.create!(
+  comment: "Up and down, down and up. It killed my thighs. But so worth it with these amazing people I met.",
+  rating: "5",
+  booking: booking3
+)
+review3.update_attribute :created_at, rand(10..300).days.ago
+
+Hike.all.each do |h|
+  b = Booking.create(
+    hike: h,
+    group_hike: h.group_hikes.last,
+    user: toni,
+    first_name: toni.first_name,
+    last_name: toni.last_name,
+    email: toni.email,
+    credit_card: Faker::Finance.credit_card, 
+    credit_card_expiration_month: rand(1..12), 
+    credit_card_expiration_year: rand(2021..2030),
+    credit_card_cvc: rand(100..9999)
+  )
+
+  how_many = rand(3..4)
+  how_many.times do |j|
+    r = Review.create(
+      comment: Faker::Lorem.paragraph,
+      rating: rand(4..5),
+      booking: b
+    )
+    r.update_attribute :created_at, (rand*10).days.ago
+  end
+end
 
 puts 'done'
 

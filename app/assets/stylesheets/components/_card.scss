@@ -24,7 +24,7 @@
     border-radius: 10px;
     margin-bottom: 20px;
   }
-  
+
   .card-hike > img {
     height: 150px;
     width: 100%;
@@ -42,7 +42,7 @@
     width: 200px;
     object-fit: cover;
   }
-  
+
   .card-hike h2 {
     font-size: 18px;
     font-weight: bold;
@@ -57,20 +57,20 @@
     position: absolute;
     right: -10px;
     color: black;
-    
+
   }
 
   .card-hike h3 {
     font-size: 18px;
   }
-  
+
   .card-hike p {
     font-size: 18px;
     opacity: .7;
     margin: 0;
   }
-  
-  
+
+
   .card-hike .card-hike-info {
     padding: 16px;
     display: flex;
@@ -79,17 +79,17 @@
     position: relative;
     text-align: left;
   }
-  
+
   .card-review{
       padding: 40px;
       margin: 20px 0px;
       text-align: center;
   }
 
+
   .cardhike .card-hike-info{
     margin-top : -5px;
   }
- 
 
   .card-product {
     overflow: hidden;
@@ -100,13 +100,13 @@
     margin-bottom: 20px;
     border-radius: 5px;
   }
-  
+
   .card-product img {
     height: 100%;
     width: 300px;
     object-fit: cover;
   }
-    
+
   .card-product .card-product-infos {
     padding: 16px;
     width: 850px;
@@ -124,26 +124,26 @@
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
-  
+
   .card-trip > img {
     height: 200px;
     width: 100%;
     object-fit: cover;
   }
-  
+
   .card-trip h2 {
     font-size: 16px;
     font-weight: bold;
     margin: 0;
   }
-  
+
   .card-trip p {
     font-size: 12px;
     opacity: .7;
     margin: 0;
   }
-  
-  
+
+
   .card-trip .card-trip-infos {
     padding: 16px;
     display: flex;
@@ -151,7 +151,7 @@
     align-items: flex-end;
     position: relative;
   }
-  
+
   .card-trip-infos .card-trip-user {
     position: absolute;
     right: 16px;
@@ -162,11 +162,14 @@
   .card-weather {
     background-color: #BBCEA8;
     padding: 16px;
-    width: 300px;
+    width: 100%;
     border-radius: 5px;
     margin-bottom: 10px;
+    font-family: Roboto;
+    line-height: 37px;
+
   }
- 
+
 .card-product-infos-heading{
   display:flex;
   justify-content: space-between;
@@ -181,6 +184,7 @@
   display:flex;
   justify-content: space-between;
 }
+
 
 .card-prod {
   overflow: hidden;
@@ -212,3 +216,4 @@
 .card-prod .card-prod-infos {
   padding: 16px;
 }
+
