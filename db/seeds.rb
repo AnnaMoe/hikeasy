@@ -460,7 +460,8 @@ chapada_diamantia = Hike.create(
         end_address: Address.create(address: "Bennett "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "For those who enjoy hiking, this 7-day trip through Chapada Diamantia is something that cannot be missed. One of the most beautiful crossings through Brazil, this trek offers it all- cliffs, mountains, cascading waterfalls, and natural beauty. Explore the Cave of the Castle and learn about the rich history and culture of the region during your overnight homestays with local families."
-)
+        guide: dieter
+        )
 create_random_group_hikes(chapada_diamantia)
 puts "#{chapada_diamantia.name} is created" 
 create_random_group_hikes(chapada_diamantia)
@@ -482,6 +483,7 @@ lost_city = Hike.create(
         end_address: Address.create(address: "Bennett "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "Colombia’s Inca Trail, the Lost City trek is the country’s best multi-day trekking option and a perennial favourite among travellers and backpackers in the country. The trek takes in the gorgeous forests and rivers of the Sierra Nevada de Santa Marta mountains, culminating in a hike to reach the mysterious and beautiful Lost City itself.The Lost City is the best opportunity to connect with nature and prove yourself everything you are capable of. Doing the Lost City Trek will allow you to know part of the Sierra Nevada de Santa Marta in Colombia. You will also have the opportunity to have direct contact with the Kogui; who still preserve the traditions of the Tayronas, the first inhabitants of the Lost City."
+        guide: dieter
 )
 
 create_random_group_hikes(lost_city)
@@ -505,6 +507,7 @@ mt_apo = Hike.create(
         end_address: Address.create(address: "Bennett "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "The stunning beauty of this mountain and the fulfillment that awaits adventurous souls who climb it should be experienced by every Filipino. Standing at 2,956 Meters Above Sea Level Mt. Apo is the highest mountain in the Philippines and is considered to be the Grandfather of Philippine Mountains. The journey isn’t easy and is one of the hardest mountains to hike. You will hike through mystical lakes, lush jungles, rocky mountainsides, and a vertical section of volcanic boulders. It might be a tough adventure but it’s worth it!"
+        guide: dieter
 )
 
 create_random_group_hikes(mt_apo)
@@ -528,6 +531,7 @@ gangotri = Hike.create(
         end_address: Address.create(address: "Bennett "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "The stunning beauty of this mountain and the fulfillment that awaits adventurous souls who climb it should be experienced by every Filipino. Standing at 2,956 Meters Above Sea Level Mt. Apo is the highest mountain in the Philippines and is considered to be the Grandfather of Philippine Mountains. The journey isn’t easy and is one of the hardest mountains to hike. You will hike through mystical lakes, lush jungles, rocky mountainsides, and a vertical section of volcanic boulders. It might be a tough adventure but it’s worth it!"
+        guide: dieter
 )
 
 create_random_group_hikes(gangotri)
