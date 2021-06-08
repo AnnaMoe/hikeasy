@@ -162,14 +162,14 @@
                     </div>
                     <div class="card-product-infos-subheading">
                       <div class="luogo"><%= hike.region %></div>
-                      <div><i class="fas fa-star"></i>
+                      <div class="hike_details"><i class="fas fa-star"></i>
                          <% @rating = hike.reviews.map { |r| r.rating} %>
                         <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(1)  %>/5.0
                       </div>
                     </div>
-                    <div><i class="far fa-clock"></i> <%= hike.length %> Days</div>
-                    <div><i class="fas fa-arrow-right"></i> <%= hike.distance %> Kilometers</div>
-                    <div><i class="fas fa-arrow-up"></i> <%= hike.elevation %>m Elevation</div>
+                    <div class="hike_details"><i class="far fa-clock"></i> <%= hike.length %> Days</div>
+                    <div class="hike_details"><i class="fas fa-arrow-right"></i> <%= hike.distance %> Kilometers</div>
+                    <div class="hike_details"><i class="fas fa-arrow-up"></i> <%= hike.elevation %>m Elevation</div>
                     <div class="button difficolta"><%= hike.difficulty %></div>
                     <br>
                     <div class="card-product-infos-last-row">
