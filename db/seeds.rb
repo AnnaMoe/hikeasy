@@ -463,6 +463,8 @@ chapada_diamantia = Hike.create(
 )
 create_random_group_hikes(chapada_diamantia)
 puts "#{chapada_diamantia.name} is created" 
+create_random_group_hikes(chapada_diamantia)
+    puts "#{chapada_diamantia.name} is created"  
 
 lost_city = Hike.create(
     name: "The Lost City",
@@ -484,6 +486,8 @@ lost_city = Hike.create(
 
 create_random_group_hikes(lost_city)
 puts "#{lost_city.name} is created" 
+create_random_group_hikes(lost_city)
+    puts "#{lost_city.name} is created"  
 
 mt_apo = Hike.create(
     name: "Mt. Apo",
@@ -505,6 +509,8 @@ mt_apo = Hike.create(
 
 create_random_group_hikes(mt_apo)
 puts "#{mt_apo.name} is created"
+create_random_group_hikes(mt_apo)
+    puts "#{mt_apo.name} is created"  
 
 gangotri = Hike.create(
     name: "Gangotri Glacier Trek",
@@ -526,6 +532,8 @@ gangotri = Hike.create(
 
 create_random_group_hikes(gangotri)
 puts "#{gangotri.name} is created"
+create_random_group_hikes(gangotri)
+    puts "#{gangotri.name} is created"  
 
 
 
