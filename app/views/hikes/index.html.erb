@@ -1,3 +1,4 @@
+
 <div class= "container mt-3">
   <%= form_tag hikes_path, method: :get do %>
     <div class= "row mt-3">
@@ -131,9 +132,21 @@
           <div class="col-lg-10">
             <div class="hike_results">Hike Results:</div>
           </div>
-          <div clas="col-lg-1"><button class="btn active"><i class="fas fa-list"></i></button></div>
-          <div clas="col-lg-1"><button class="btn active"><i class="far fa-map"></i></button></div>
-        </div>
+           <button class="btn active" type="button" data-toggle="collapse" data-target="#map_results" aria-expanded="false" aria-controls="collapseExample">
+           <i class="far fa-map"></i> View Map
+           </button>
+            <div class="col-lg-12">
+              <div class="collapse" id="map_results">
+                <div id="map"
+                style="width: 100%; height: 600px;"
+                data-markers="<%= @markers.to_json %>"
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+                </div>
+              </div>
+          </div>
+    </div>
+
+        
         <% @hikes.each do |hike| %>
           <% if hike.photos.attached? %>
             <%= link_to hike_path(hike), class:'text-decoration-none' do %>
@@ -203,14 +216,4 @@
           <% end %>
         <% end %>
       </div>
-      <div class="container">
-        <div class = "row">
-          <div class="col-lg-12">
-            <div id="map"
-          style="width: 100%; height: 600px;"
-          data-markers="<%= @markers.to_json %>"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-            </div>
-          </div>
-        </div>
-      </div>
+    
