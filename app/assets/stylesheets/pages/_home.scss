@@ -16,6 +16,15 @@ body{
     object-fit: cover;
     background-position: center;
 }
+
+.carousel-item.two > img {
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 850px;
+    object-fit: cover;
+    margin-top: -300px;
+}
 .welcome_to_discover {
     width: 100%;
     height: 230px;
