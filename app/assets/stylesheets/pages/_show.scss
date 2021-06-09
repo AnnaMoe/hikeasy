@@ -71,9 +71,11 @@
 .you_may_also_like {
   font-family: Roboto;
   font-style: normal;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 28px;
   line-height: 33px;
+  margin-bottom: 28px;
+  margin-left: 4px;
 }
 
 
@@ -91,6 +93,8 @@
 .guide_description{
   line-height: 28px;
 }
+
+
 
 // .mapboxgl-canvas-container {
 
