@@ -6,10 +6,10 @@
           <%=@booking.hike.name%>
           <em class="text-muted" id="countdown"><%=@booking.group_hike %></em>
         </div>
-        <p class="reviews"><i class="fas fa-star"></i> /
-          <% @rating = @hike.reviews.map { |r| r.rating} %>
-          <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(2)  %>
-        </p>
+      <p class="reviews"><i class="fas fa-star"></i> /
+      <% @rating = @hike.reviews.map { |r| r.rating} %>
+      <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(2)  %>
+      </p>
       </div>
     </div>
     <div class = "col-md-3">
@@ -24,28 +24,24 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
-              <%= render 'review' %>
-            </div>
-            <div class="modal-footer">
-            </div>
+          <div class="modal-body">
+            <%= render 'review' %>
+          </div>
+          <div class="modal-footer">
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+  </div>
 </div>
-<div class= row>
-  <div class = "col-lg-12"></div>
-</div>
-<div class= "row">
-  <div class= col-md-6>
-    <div id="map-start-end"
-        style="width: 100%; height: 450px;"
-        data-style="<%= @booking.hike.map_style %>"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class= "row">
+    <div class= col-md-6>
+      <div id="map-start-end"
+          style="width: 100%; height: 450px;"
+          data-style="<%= @booking.hike.map_style %>"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
     <div class = "col-lg-3">
@@ -58,6 +54,7 @@
     </div>
   </div>
 </div>
+
 <div class= "container mt-3">
   <div class="row mt-5">
     <div class="col-md-8">
@@ -114,7 +111,6 @@
         <div class="testo_descrizione"><%= @hike.description %></div>
         <hr>
       </div>
-    
       <div class="about_the_guide">About the Guide</div>
       <div class="row">
         <div class="col-md-2 guide-avatar">
@@ -133,7 +129,6 @@
         <%= @hike.guide.guide_description %>
       </div>
     </div>
-
     <div class="col-4">
       <div class="card-chatroom">
         <ul id="booking-show-countdown" data-reference-date="<%= @booking.group_hike.start_at%>"></ul>
@@ -160,14 +155,12 @@
                 </div>
               <% end %>
             </div>
-
-
             <div class="d-flex justify-content-center">
-          <%= link_to "Visit Group Page", hike_booking_chatroom_path(@booking.hike, @booking), class: "btn btn-primary" %>
+              <%= link_to "Visit Group Page", hike_booking_chatroom_path(@booking.hike, @booking), class: "btn btn-primary" %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
