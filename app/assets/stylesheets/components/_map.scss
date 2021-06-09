@@ -1,3 +1,19 @@
 // #map-start-end {
 //   border-radius: 15px 0px 0px 15px;
 // }
+
+.mapboxgl-popup-content{
+    font-family: roboto;
+}
+
+.name-thumbnail{
+    color: black;
+    font-size: 16px;
+}
+
+.region-thumbnail{
+    font-size: 16px;
+    font-weight: normal;
+    color: black;
+    font-style: italic;
+}

@@ -1,11 +1,12 @@
+<!-- Image Section-->
 <div class="container-fluid mt-5">
   <div class= "row">
     <div class= col-lg-6>
       <div id="map-start-end"
-        style="width: 100%; height: 450px;"
-        data-style="<%= @hike.map_style %>"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      style="width: 100%; height: 450px;"
+      data-style="<%= @hike.map_style %>"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
     <div class = "col-lg-3">
@@ -18,6 +19,7 @@
     </div>
   </div>
 </div>
+<!-- Body -->
 <div class= "container mt-3">
   <div class="row mt-5">
     <div class="col-md-8">
@@ -69,18 +71,16 @@
         </table>
       </div>
       <div>
-        <hr>
+      <hr>
         <div class="descrizione">Description</div>
         <div class="testo_descrizione"><%= @hike.description %></div>
-        <hr>
+      <hr>
       </div>
-      <div>
-
-       <div class="about_the_guide">About the Guide</div>
-      <div class="row">
-        <div class="col-md-2 guide-avatar">
+      <div class="guide-section">
+        <div class="about_the_guide">About the Guide</div>
+        <div class="row">
+          <div class="col-md-2 guide-avatar">
           <img class="avatar dropdown-toggle" src="<%= @hike.guide.avatar_url  %>" />
-
         </div>
         <div class="col-md-6">
           <%= @hike.guide.first_name %>, <%= @hike.guide.age %> years old
@@ -91,16 +91,13 @@
           <i class="fas fa-star"></i>4.5 (16 reviews)
         </div>
       </div>
-
-      <br>
       <div class="col">
-      <div class="row testo_descrizione mt-4">
-        <%= @hike.guide.guide_description %>
-
-      </div>
+        <div class="row testo_descrizione mt-4">
+          <div class="guide_description"><%= @hike.guide.guide_description %></div>
+        </div>
         <hr>
       </div>
-      <div>
+      <div class="suggestion-section">
         <div class="about_the_guide">What others are saying about <%=@hike.name%></div>
         <div class="card-review">
           <% if @hike.reviews.empty? %>
@@ -110,49 +107,49 @@
             <% @hike.reviews[0..2].each do |review| %>
             <div class="col-md-4 ">
               <img class="avatar-large" alt="avatar-large" src="<%= review.booking.user.avatar_url %> ">
-              <div>
-                <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
-              </div>
+                <div><small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small></div>
               <div><% review.rating.times do %>
-                  <i class="fas fa-star star-yellow"></i>
-                <% end %>
+                <i class="fas fa-star star-yellow"></i>
+              <% end %>
               </div>
               <p class="mb-0"><%= review.comment %></p>
             </div>
             <% end %>
-          </div>
         </div>
-
-
-        <div class="text-right">
-          <button type="button" class="btn btn-primary">More Reviews</button>
-        </div>
-        <hr>
-      </div>
-      <div>
-        <h4>You might also like:</h4>
-        <% @related_hikes.each do |related_hike| %>
-          <% if related_hike.photos.attached? %>
-            <%= link_to hike_path(related_hike), class:'text-decoration-none' do %>
-              <div class = "col-lg-12">
-                <div class="card-hike">
-                  <%= cl_image_tag related_hike.photos.first.key %>
-                  <div class="card-product-infos">
-                  </div>
-                </div>
-
-              </div>
-            <% end %>
-          <% end %>
-        <% end %>
       </div>
     </div>
-    </div>
+  </div>
+</div>
+<!-- Sticky Form-->
     <div class="col-lg-4">
       <%= render "bookings/form", booking: @booking %>
     </div>
   </div>
+</div>
+<!-- Recommended Section-->
+<div class="container">
+  <div class="line-break"><hr></div>
+  <div class="you_may_also_like">You Might Also Like:</div>
+    <div class="row">
+      <% @related_hikes.each do |related_hike| %>
+      <div class="col-lg-3">
+        <%= link_to hike_path(related_hike), class:'text-decoration-none' do %>
+        <div class="card-hike">
+          <% if related_hike.photos.attached? %>
+            <%= cl_image_tag related_hike.photos.first.key, class: 'hike-image' %>
+          <% else  %>
+            <img src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
+          <% end %>
+          <div class ="float-right price mr-2 mt-2">$<%=related_hike.price%></div>
+          <div class="card-hike-infos">
+            <div class ="hike_name"><%= related_hike.name %></div>
+            <div class ="location"><%= related_hike.region %></div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
   </div>
-
 </div>
 

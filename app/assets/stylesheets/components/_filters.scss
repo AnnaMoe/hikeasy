@@ -1,12 +1,20 @@
 .btn.btn-secondary{
-    background-color: #748067;
-    border-color: #748067;
-    border-radius: 40px;
+    background-color: #758563;
+    opacity: 100%;
+    border-radius: 5px;
 }
 
 .btn-primary-search{
     margin-top: 7px;
-    border-radius: 40px;
-    background-color: #748067;
+    border-radius: 5px;
+    background-color: #758563;
+    opacity: 75%;
     color: white;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary.active:not(:disabled):not(.disabled), .show > .btn-secondary.dropdown-toggle {
+    background-color: #758563;
+    opacity: 70%;
+    border-color: none;
+    
 }

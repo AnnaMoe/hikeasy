@@ -1,13 +1,11 @@
-
 <div class= "container mt-3">
   <%= form_tag hikes_path, method: :get do %>
-    <div class= "row mt-3">
-      <div class= "col-lg-1
-      ">
+    <div class= "row mt-5 ml-1">
+      <div class= "col-lg-1">
         <div class="nav-link" >
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-sliders-h"></i> Price
+              <i class="fas fa-sliders-h"></i> Max price
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div class="dropdown-item">
@@ -16,11 +14,11 @@
                       <div class = "container">
                         <span id=></span>
                       <div>
-                          <label for="min">400</label>
-                          <input type ="range" min="400" max="800" step="25" onchange="showVal('price-output', this.value)"/>
-                          <label for="max">800</label>
+                          <label for="min">350</label>
+                          <input name="max_price" type ="range" min="350" max="2000" step="25" onchange="showVal('price-output', this.value)" value="<%= params[:max_price]%>" />
+                          <label for="max">2000</label>
                         </div>
-                        <output id="price-output'">500</output>
+                        <output id="price-output"><%= params[:max_price]%></output>
                      </div>
                     </div>
                   </div>
@@ -28,8 +26,7 @@
             </div>
           </div>
         </div>
-        <div class= "col-lg-1
-        ">
+        <div class= "col-lg-1">
           <div class="nav-link" >
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,13 +34,13 @@
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <div class="dropdown-item">
-                  <%= check_box_tag "difficulty[]", "beginner" %>
+                  <%= check_box_tag "difficulty[]", "Beginner", params[:difficulty]&.include?("Beginner") %>
                   <%= label_tag :beginner %>
                   <br>
-                  <%= check_box_tag "difficulty[]", "intermediate" %>
+                  <%= check_box_tag "difficulty[]", "Intermediate", params[:difficulty]&.include?("Intermediate") %>
                   <%= label_tag :intermediate %>
                   <br>
-                  <%= check_box_tag "difficulty[]", "expert" %>
+                  <%= check_box_tag "difficulty[]", "Expert", params[:difficulty]&.include?("Expert") %>
                   <%= label_tag :expert %>
                   <br>
                 </div>
@@ -51,8 +48,7 @@
             </div>
           </div>
         </div>
-        <div class= "col-lg-1
-        ">
+        <div class= "col-lg-1">
           <div class="nav-link" >
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -65,10 +61,10 @@
                       <div class = "container">
                         <div>
                           <label for="min">1</label>
-                          <input type ="range" min="1" max="9" onchange="showVal('duration-output', this.value)"/>
+                          <input name="max_duration" type ="range" min="1" max="9" onchange="showVal('duration-output', this.value)" value="<%= params[:max_duration]%>" />
                           <label for="max">9</label>
                         </div>
-                        <output id="duration-output">4</output>
+                        <output id="duration-output"><%= params[:max_duration]%></output>
                      </div>
                     </div>
                   </div>
@@ -76,8 +72,7 @@
               </div>
             </div>
           </div>
-          <div class= "col-lg-1
-          ">
+          <div class= "col-lg-1">
             <div class="nav-link" >
               <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -89,19 +84,16 @@
 
                         <div>
                           <label for="min">14</label>
-                          <input type ="range" min="14" max="60" onchange="showVal('distance-output', this.value)"/>
+                          <input name="max_distance" type ="range" min="14" max="60" onchange="showVal('distance-output', this.value)" value="<%= params[:max_distance]%>" />
                           <label for="max">60</label>
                           </div>
-                          <output id="distance-output">20</output
-                        </div>
-
+                          <output id="distance-output"><%= params[:max_distance]%></output>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class= "col-lg-1
-            ">
+            <div class= "col-lg-1">
               <div class="nav-link" >
                 <div class="dropdown">
                   <div style="width:500px;">
@@ -111,25 +103,23 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                       <div class="dropdown-item">
                         <br>
-                        <%= check_box_tag "accomodation[]", "cabin" %>
+                        <%= check_box_tag "accomodation[]", "Cabin", params[:accomodation]&.include?("Cabin") %>
                         <%= label_tag :cabin %>
                         <br>
-                        <%= check_box_tag "accomodation[]", "tent" %>
+                        <%= check_box_tag "accomodation[]", "Tent", params[:accomodation]&.include?("Tent") %>
                         <%= label_tag :tent %>
                         <br>
-                        <%= check_box_tag "accomodation[]", "tipi" %>
+                        <%= check_box_tag "accomodation[]", "Tipi", params[:accomodation]&.include?("Tipi") %>
                         <%= label_tag :tipi %>
                         <br>
-                        <%= check_box_tag "accomodation[]", "under the stars" %>
+                        <%= check_box_tag "accomodation[]", "Under the stars", params[:accomodation]&.include?("Under the stars") %>
                         <%= label_tag :under_the_stars %>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class= "col-lg-1
-            ">
+            <div class= "col-lg-1">
               <%= submit_tag "Search", class: "btn btn-primary-search" %>
             </div>
           <% end %>
@@ -164,58 +154,28 @@
                   <div class="card-product-infos">
                     <div class="card-product-infos-heading">
                       <div class ="nome_hike"><%= hike.name %></div>
-                      <div class ="prezzo">$<%=hike.price%></div>
+                        <%= link_to toggle_favorite_hike_path(hike), remote: true, method: :post do %>
+                        <div class="like-icon mx-2 heart <%= 'not-favorited' unless current_user.favorited?(hike) %>" data-id="<%= hike.id %>">
+                          <i class="fas fa-heart index"></i></div>
+                      <% end %>
                     </div>
                     <div class="card-product-infos-subheading">
                       <div class="luogo"><%= hike.region %></div>
-                      <div class="reviews"><i class="fas fa-star"></i> /
-                        <% @rating = hike.reviews.map { |r| r.rating} %>
-                        <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(2)  %>
+                      <div class="hike_details"><i class="fas fa-star"></i>
+                         <% @rating = hike.reviews.map { |r| r.rating} %>
+                        <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(1)  %>/5.0
                       </div>
                     </div>
-                    <div><i class="far fa-clock"></i> <%= hike.length %> Days</div>
-                    <div><i class="fas fa-arrow-right"></i> <%= hike.distance %> Kilometers</div>
-                    <div><i class="fas fa-arrow-up"></i> <%= hike.elevation %>m Elevation</div>
-                    <div class="button difficolta"><%= hike.difficulty %></div>
+                    <div class="hike_details"><i class="far fa-clock"></i> <%= hike.length %> Days</div>
+                    <div class="hike_details"><i class="fas fa-arrow-right"></i> <%= hike.distance %> Kilometers</div>
+                    <div class="hike_details"><i class="fas fa-arrow-up"></i> <%= hike.elevation %>m Elevation</div>
+                    <div class="btn difficulty difficulty-<%= hike.difficulty.downcase %>"><%= hike.difficulty %></div>
                     <br>
                     <div class="card-product-infos-last-row">
                       <div class="availability">
                         Available in: <%= hike.group_hikes.map { |gh| gh.start_at.strftime("%B") }.uniq.join(', ') %>
                       </div>
-                      <%= link_to toggle_favorite_hike_path(hike), remote: true, method: :post do %>
-                        <div class="like-icon mx-2 heart <%= 'not-favorited' unless current_user.favorited?(hike) %>" data-id="<%= hike.id %>">
-                          <i class="fas fa-heart"></i></div>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% else %>
-            <%= link_to hike_path(hike), class:'text-decoration-none' do %>
-              <div class = "col-lg-12">
-                <div class="card-product">
-                  <img src="https://images.unsplash.com/photo-1511225070737-5af5ac9a690d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" />
-                  <div class="card-product-infos">
-                    <div class="card-product-infos-heading">
-                      <div class ="nome_hike"><%= hike.name %></div>
                       <div class ="prezzo">$<%=hike.price%></div>
-                      <%= link_to toggle_favorite_hike_path(hike), remote: true, method: :post do %>
-                        <div class="like-icon mx-2 heart <%= 'not-favorited' unless current_user.favorited?(hike) %>" data-id="<%= hike.id %>">
-                          <i class="fas fa-heart"></i></div>
-                      <% end %>
-                    </div>
-                    <div class="card-product-infos-subheading">
-                      <div class="luogo"><%= hike.region %></div>
-                      <div class="reviews"><i class="fas fa-star"></i> /5.00</div>
-                    </div>
-                    <div><i class="far fa-clock"></i> <%= hike.length %> Days</div>
-                    <div><i class="fas fa-arrow-right"></i> <%= hike.distance %> Kilometers</div>
-                    <div><i class="fas fa-arrow-up"></i> <%= hike.elevation %>m Elevation</div>
-                    <div class="button difficolta"><%= hike.difficulty %></div>
-                    <br>
-                    <div class="card-product-infos-last-row">
-                      <div class="availability">This hike is available during the months of June, July, August, September</div>
                     </div>
                   </div>
                 </div>
@@ -224,4 +184,11 @@
           <% end %>
         <% end %>
       </div>
+    </div>
 
+<script>
+  function showVal(id, value) {
+    var el = document.getElementById(id);
+    el.innerHTML = value;
+  }
+</script>
