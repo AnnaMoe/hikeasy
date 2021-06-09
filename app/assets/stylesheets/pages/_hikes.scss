@@ -1,3 +1,45 @@
 .not-favorited {
   color: black; // to do use scss variable for red color
 }
+
+.difficulty {
+  margin-top: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+
+.button.difficulty{
+  color: #758563;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn.difficulty{
+  color: white;
+  background-color: #BBCEA8;
+  opacity: 70%;
+  font-weight: normal;
+  text-align: center;
+  width: 150px;
+  border-radius: 5px;
+  height: 30px;
+  padding-top: 2px;
+  font-size: 16px;
+  box-shadow: 0px !important;
+  margin-bottom: 20px;
+}
+
+.btn.difficulty.difficulty-beginner {
+  background-color: green;
+}
+
+.btn.difficulty.difficulty-intermediate {
+  background-color: #BBCEA8;
+}
+
+.btn.difficulty.difficulty-expert {
+  background-color: red;
+}

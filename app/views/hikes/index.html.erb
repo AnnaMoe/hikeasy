@@ -169,7 +169,7 @@
                     <div class="hike_details"><i class="far fa-clock"></i> <%= hike.length %> Days</div>
                     <div class="hike_details"><i class="fas fa-arrow-right"></i> <%= hike.distance %> Kilometers</div>
                     <div class="hike_details"><i class="fas fa-arrow-up"></i> <%= hike.elevation %>m Elevation</div>
-                    <div class="btn difficolta"><%= hike.difficulty %></div>
+                    <div class="btn difficulty difficulty-<%= hike.difficulty.downcase %>"><%= hike.difficulty %></div>
                     <br>
                     <div class="card-product-infos-last-row">
                       <div class="availability">
