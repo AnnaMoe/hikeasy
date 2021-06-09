@@ -1,4 +1,3 @@
-
 <div class= "container mt-3">
   <%= form_tag hikes_path, method: :get do %>
     <div class= "row mt-5 ml-1">
@@ -6,7 +5,7 @@
         <div class="nav-link" >
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-sliders-h"></i> Price
+              <i class="fas fa-sliders-h"></i> Max price
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <div class="dropdown-item">
@@ -15,11 +14,11 @@
                       <div class = "container">
                         <span id=></span>
                       <div>
-                          <label for="min">400</label>
-                          <input type ="range" min="400" max="800" step="25" onchange="showVal('price-output', this.value)"/>
-                          <label for="max">800</label>
+                          <label for="min">350</label>
+                          <input name="max_price" type ="range" min="350" max="2000" step="25" onchange="showVal('price-output', this.value)" value="<%= params[:max_price]%>" />
+                          <label for="max">2000</label>
                         </div>
-                        <output id="price-output'">500</output>
+                        <output id="price-output"><%= params[:max_price]%></output>
                      </div>
                     </div>
                   </div>
@@ -35,13 +34,13 @@
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <div class="dropdown-item">
-                  <%= check_box_tag "difficulty[]", "Beginner" %>
+                  <%= check_box_tag "difficulty[]", "Beginner", params[:difficulty]&.include?("Beginner") %>
                   <%= label_tag :beginner %>
                   <br>
-                  <%= check_box_tag "difficulty[]", "Intermediate" %>
+                  <%= check_box_tag "difficulty[]", "Intermediate", params[:difficulty]&.include?("Intermediate") %>
                   <%= label_tag :intermediate %>
                   <br>
-                  <%= check_box_tag "difficulty[]", "Expert" %>
+                  <%= check_box_tag "difficulty[]", "Expert", params[:difficulty]&.include?("Expert") %>
                   <%= label_tag :expert %>
                   <br>
                 </div>
@@ -62,10 +61,10 @@
                       <div class = "container">
                         <div>
                           <label for="min">1</label>
-                          <input type ="range" min="1" max="9" onchange="showVal('duration-output', this.value)"/>
+                          <input name="max_duration" type ="range" min="1" max="9" onchange="showVal('duration-output', this.value)" value="<%= params[:max_duration]%>" />
                           <label for="max">9</label>
                         </div>
-                        <output id="duration-output">4</output>
+                        <output id="duration-output"><%= params[:max_duration]%></output>
                      </div>
                     </div>
                   </div>
@@ -85,10 +84,10 @@
 
                         <div>
                           <label for="min">14</label>
-                          <input type ="range" min="14" max="60" onchange="showVal('distance-output', this.value)"/>
+                          <input name="max_distance" type ="range" min="14" max="60" onchange="showVal('distance-output', this.value)" value="<%= params[:max_distance]%>" />
                           <label for="max">60</label>
                           </div>
-                          <output id="distance-output">20</output>
+                          <output id="distance-output"><%= params[:max_distance]%></output>
                     </div>
                   </div>
                 </div>
@@ -104,16 +103,16 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                       <div class="dropdown-item">
                         <br>
-                        <%= check_box_tag "accomodation[]", "Cabin" %>
+                        <%= check_box_tag "accomodation[]", "Cabin", params[:accomodation]&.include?("Cabin") %>
                         <%= label_tag :cabin %>
                         <br>
-                        <%= check_box_tag "accomodation[]", "Tent" %>
+                        <%= check_box_tag "accomodation[]", "Tent", params[:accomodation]&.include?("Tent") %>
                         <%= label_tag :tent %>
                         <br>
-                        <%= check_box_tag "accomodation[]", "Tipi" %>
+                        <%= check_box_tag "accomodation[]", "Tipi", params[:accomodation]&.include?("Tipi") %>
                         <%= label_tag :tipi %>
                         <br>
-                        <%= check_box_tag "accomodation[]", "Under the stars" %>
+                        <%= check_box_tag "accomodation[]", "Under the stars", params[:accomodation]&.include?("Under the stars") %>
                         <%= label_tag :under_the_stars %>
                       </div>
                     </div>
@@ -187,3 +186,9 @@
       </div>
     </div>
 
+<script>
+  function showVal(id, value) {
+    var el = document.getElementById(id);
+    el.innerHTML = value;
+  }
+</script>
