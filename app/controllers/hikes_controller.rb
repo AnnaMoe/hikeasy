@@ -6,6 +6,8 @@ class HikesController < ApplicationController
   def index
     @hikes = policy_scope(Hike).order(created_at: :desc)
     @hikes = @hikes.filter_by_difficulty(params[:difficulty]) if params[:difficulty]
+    @hikes = @hikes.filter_by_accomodation(params[:accomodation]) if params[:accomodation]
+    
 
     if params[:price]
       min = params[:price].first.empty? ? 400 : params[:price].first.to_i
@@ -54,9 +56,11 @@ class HikesController < ApplicationController
     related_region = @hike.region
     related_accomodation = @hike.accomodation_type
 
-
-@related_hikes = Hike.where(region: related_region).or(Hike.where(difficulty: related_difficulty)).or(Hike.where(accomodation_type: related_accomodation))&.where.not(id: @hike.id).sample(4)
-
+    @related_hikes = Hike.where(region: related_region)
+                      .or(Hike.where(difficulty: related_difficulty))
+                      .or(Hike.where(accomodation_type: related_accomodation))
+                      &.where.not(id: @hike.id)
+                      .sample(4)
   end
 
   def toggle_favorite

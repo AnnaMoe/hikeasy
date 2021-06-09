@@ -103,7 +103,7 @@ malerweg = Hike.create(
   region: "Germany",
   price: 610,
   difficulty: "Intermediate",
-  accomodation_type: 'Cave',
+  accomodation_type: 'Tent',
   terrain: "Forest, Field Paths",
 
   elevation: 480,
