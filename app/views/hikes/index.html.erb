@@ -15,7 +15,7 @@
                         <span id=></span>
                       <div>
                           <label for="min">350</label>
-                          <input name="max_price" type ="range" min="350" max="2000" step="25" onchange="showVal('price-output', this.value)" value="<%= params[:max_price]%>" />
+                          <input name="max_price" type ="range" min="350" max="2000" step="25" onchange="showVal('price-output', this.value)" value="<%= params[:max_price] || 2000 %>" />
                           <label for="max">2000</label>
                         </div>
                         <output id="price-output"><%= params[:max_price]%></output>
@@ -61,8 +61,8 @@
                       <div class = "container">
                         <div>
                           <label for="min">1</label>
-                          <input name="max_duration" type ="range" min="1" max="9" onchange="showVal('duration-output', this.value)" value="<%= params[:max_duration]%>" />
-                          <label for="max">9</label>
+                          <input name="max_duration" type ="range" min="1" max="20" onchange="showVal('duration-output', this.value)" value="<%= params[:max_duration] || 20 %>" />
+                          <label for="max">20</label>
                         </div>
                         <output id="duration-output"><%= params[:max_duration]%></output>
                      </div>
@@ -84,8 +84,8 @@
 
                         <div>
                           <label for="min">14</label>
-                          <input name="max_distance" type ="range" min="14" max="60" onchange="showVal('distance-output', this.value)" value="<%= params[:max_distance]%>" />
-                          <label for="max">60</label>
+                          <input name="max_distance" type ="range" min="14" max="1000" onchange="showVal('distance-output', this.value)" value="<%= params[:max_distance] || 1000 %>" />
+                          <label for="max">1000</label>
                           </div>
                           <output id="distance-output"><%= params[:max_distance]%></output>
                     </div>
