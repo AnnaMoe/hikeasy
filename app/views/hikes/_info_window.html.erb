@@ -1,6 +1,4 @@
-
 <%= link_to hike_path(hike), class: 'text-decoration-none' do %>
-  <div class="container">
     <div class="row">
       <% if hike.photos.attached? %>
         <%= cl_image_tag hike.photos.first.key, class: 'hike-image-map' %>
@@ -26,7 +24,6 @@
       <% end %>
       
     </div>
-  </div>
 <% end %>
 
 
