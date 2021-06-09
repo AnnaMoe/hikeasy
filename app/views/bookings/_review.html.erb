@@ -1,14 +1,14 @@
-  <div class="col-12">
-      <div class="bg-white rounded p-3">
-        <h4>User, how was your experience?</h4>
-        <%= simple_form_for [@booking.hike, @booking, @review] do |f| %>
-        Rate your hike
-          <%= f.input :comment,  placeholder: 'Leave a comment' %>
-          <%= f.input :rating, as: :select, collection: (1..5), required: true, id:'example', input_html: { id: 'review_rating' } %>
-        <%= f.button :submit, "Submit review", class: "btn btn-primary" %>
-        <% end %>
-      </div>
-    </div>
+<div class="col-12">
+  <div class="bg-white rounded p-3">
+    <h4>User, how was your experience?</h4>
+    <%= simple_form_for [@booking.hike, @booking, @review] do |f| %>
+      Rate your hike
+      <%= f.input :comment,  placeholder: 'Leave a comment' %>
+      <%= f.input :rating, as: :select, collection: (1..5), required: true, id:'example', input_html: { id: 'review_rating' } %>
+      <%= f.button :submit, "Submit review", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
  
 
 

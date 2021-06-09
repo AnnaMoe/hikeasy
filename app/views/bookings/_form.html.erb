@@ -8,8 +8,6 @@
     <h3 class="float-right card-booking-title"><strong>$<%=@hike.price%></strong></h3>
     </div>
     <h4 class="float-right card-booking-price"><strong><%=@hike.length%> Days</strong></h4>
-    
-    
     <br>
     <br>
     <%= simple_form_for([@hike, @booking], method: :get, url: new_hike_booking_path(@hike) ) do |f| %>
