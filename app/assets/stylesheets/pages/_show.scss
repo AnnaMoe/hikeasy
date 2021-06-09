@@ -67,7 +67,21 @@
   line-height: 33px;
   margin-bottom: 28px;
   margin-top: 28px;
+  margin-left: 14px;
 }
+
+.reviews{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  margin-bottom: 28px;
+  margin-top: 28px;
+  margin-left: 8px;
+}
+
+
 .you_may_also_like {
   font-family: Roboto;
   font-style: normal;
@@ -75,8 +89,9 @@
   font-size: 28px;
   line-height: 33px;
   margin-bottom: 28px;
-  margin-left: 4px;
+  margin-left: 16px;
   margin-top: 28px;
+  margin-left: 20px;
 }
 
 
@@ -93,6 +108,11 @@
 
 .guide_description{
   line-height: 28px;
+}
+
+.line-break{
+  margin-left: 20px;
+  width: 65%;
 }
 
 
