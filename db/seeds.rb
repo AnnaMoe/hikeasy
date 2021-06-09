@@ -63,7 +63,7 @@ dieter = User.create(
   email: "dieter@hikeasy.fit",
   password: "123456",
   nickname: "dieterpankratz",
-  age: "30",
+  age: "32",
   country: "Germany",
   first_name: "Dieter",
   last_name: "Pankratz",
@@ -578,6 +578,19 @@ booking3 = Booking.create!(
   first_name: romeo.first_name,
   last_name: romeo.last_name,
   email: romeo.email,
+  credit_card: Faker::Finance.credit_card, 
+  credit_card_expiration_month: rand(1..12), 
+  credit_card_expiration_year: rand(2021..2030),
+  credit_card_cvc: rand(100..9999)
+)
+puts 'Creating bookings'
+booking3 = Booking.create!(
+  hike: malerweg,
+  group_hike: malerweg.group_hikes.second,
+  user: dieter,
+  first_name: dieter.first_name,
+  last_name: dieter.last_name,
+  email: dieter.email,
   credit_card: Faker::Finance.credit_card, 
   credit_card_expiration_month: rand(1..12), 
   credit_card_expiration_year: rand(2021..2030),

@@ -55,16 +55,22 @@
 .notification-members {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 8px;
   padding: 0px 16px;
 }
+
+// .pinned {
+//   flex-grow: 1;
+//   padding: 0 24px;
+// }
 
 
 
 .notification-members .notification-members-content {
   // flex-grow: 1;
   padding: 0 24px;
-  justify-content: center;
+  flex-grow: 1;
 }
 
 .notification .notification-content {
