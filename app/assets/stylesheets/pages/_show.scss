@@ -39,7 +39,7 @@
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 28px;
   margin-bottom: 20px;
 }
 .descrizione{
@@ -48,14 +48,16 @@
   font-weight: bold;
   font-size: 28px;
   line-height: 33px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  margin-top: 28px;
 }
 .testo_descrizione {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 28px;
+  margin-bottom: 28px;
 }
 .about_the_guide {
   font-family: Roboto;
@@ -63,7 +65,8 @@
   font-weight: bold;
   font-size: 28px;
   line-height: 33px;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
+  margin-top: 28px;
 }
 .you_may_also_like {
   font-family: Roboto;
@@ -83,6 +86,10 @@
   font-weight: 300;
   line-height: 28px;
   font-size: 20px;
+}
+
+.guide_description{
+  line-height: 28px;
 }
 
 // .mapboxgl-canvas-container {
