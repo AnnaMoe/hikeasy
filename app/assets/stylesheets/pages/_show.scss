@@ -32,14 +32,14 @@
   font-size: 30px;
   line-height: 35px;
   margin-bottom: 10px;
-  color: #748067;
+  color: #758563;
 }
 .testo_hike {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 28px;
   margin-bottom: 20px;
 }
 .descrizione{
@@ -48,14 +48,16 @@
   font-weight: bold;
   font-size: 28px;
   line-height: 33px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  margin-top: 28px;
 }
 .testo_descrizione {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 28px;
+  margin-bottom: 28px;
 }
 .about_the_guide {
   font-family: Roboto;
@@ -63,14 +65,33 @@
   font-weight: bold;
   font-size: 28px;
   line-height: 33px;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
+  margin-top: 28px;
+  margin-left: 14px;
 }
+
+.reviews{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+  margin-bottom: 28px;
+  margin-top: 28px;
+  margin-left: 8px;
+}
+
+
 .you_may_also_like {
   font-family: Roboto;
   font-style: normal;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 28px;
   line-height: 33px;
+  margin-bottom: 28px;
+  margin-left: 16px;
+  margin-top: 28px;
+  margin-left: 20px;
 }
 
 
@@ -84,6 +105,17 @@
   line-height: 28px;
   font-size: 20px;
 }
+
+.guide_description{
+  line-height: 28px;
+}
+
+.line-break{
+  margin-left: 20px;
+  width: 65%;
+}
+
+
 
 // .mapboxgl-canvas-container {
 
