@@ -57,12 +57,13 @@ body{
 }
 .discover_more_botton{
   color: #F6F6F3;
-  font-weight: bold;
   align-items: center;
   padding: 16px 32px;
   border-radius: 4px;
   background: #748067;
   transition: background 0.3s ease;
+  font-family: roboto;
+  font-size: 16px;
 }
 .discover_more_botton:hover{
     color: #F6F6F3;

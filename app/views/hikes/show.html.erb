@@ -130,7 +130,7 @@
         <hr>
       </div>
       <div>
-        <h4>You might also like:</h4>
+        <div class="descrizione">You might also like:</div>
         <% @related_hikes.each do |related_hike| %>
           <% if related_hike.photos.attached? %>
             <%= link_to hike_path(related_hike), class:'text-decoration-none' do %>
