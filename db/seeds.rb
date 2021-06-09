@@ -561,9 +561,9 @@ booking2 = Booking.create!(
   hike: malerweg,
   group_hike: malerweg.group_hikes.last,
   user: seb,
-  first_name: dieter.first_name,
-  last_name: dieter.last_name,
-  email: dieter.email,
+  first_name: seb.first_name,
+  last_name: seb.last_name,
+  email: seb.email,
   credit_card: Faker::Finance.credit_card, 
   credit_card_expiration_month: rand(1..12), 
   credit_card_expiration_year: rand(2021..2030),
@@ -583,19 +583,7 @@ booking3 = Booking.create!(
   credit_card_expiration_year: rand(2021..2030),
   credit_card_cvc: rand(100..9999)
 )
-puts 'Creating bookings'
-booking3 = Booking.create!(
-  hike: malerweg,
-  group_hike: malerweg.group_hikes.second,
-  user: dieter,
-  first_name: dieter.first_name,
-  last_name: dieter.last_name,
-  email: dieter.email,
-  credit_card: Faker::Finance.credit_card, 
-  credit_card_expiration_month: rand(1..12), 
-  credit_card_expiration_year: rand(2021..2030),
-  credit_card_cvc: rand(100..9999)
-)
+
 
 puts 'Creating reviews'
 review1 = Review.create!(
