@@ -70,14 +70,15 @@ body{
 .discover_more_botton{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #F6F6F3;
-  font-weight: bold;
   align-items: center;
   padding: 12px 24px;
   border-radius: 5px;
   background: #758563;
   transition: background 0.3s ease;
- 
+  font-family: roboto;
+  font-size: 16px;
 }
+
 .discover_more_botton:hover{
     color: #F6F6F3;
      background-color: #4f5845;
