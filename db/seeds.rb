@@ -366,7 +366,7 @@ chapada_diamantina = Hike.create(
     name: "Chapada Diamantia",
     region: "Brazil",
     title: "Stunning Valley Trek through Chapada Diamantia",
-    subtitle: "An breathtaking journey through Chapada Diamantia, in Bahia, Brazil. A 7-day tour led by Andre - local certified guide.",
+    subtitle: "A breathtaking journey through Chapada Diamantia, in Bahia, Brazil. A 7-day tour led by Andre - local certified guide.",
     price: 975,
     difficulty: "Intermediate",
     accomodation_type: "Cabin",
