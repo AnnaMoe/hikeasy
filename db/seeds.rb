@@ -100,7 +100,7 @@ andre = User.create(
   country: "Brasil",
   first_name: "André",
   last_name: "Ferrer",
-  guide_description: "Olá from Brasil! My Name is Andre. When I'm not working as a fullstack engineer or looking after my new puppy, I like to venture out into the wild and see all of what Brasil has to offer. I always try to give my hikers the best experience that they can remember for a lifetime! Vamos!",
+  guide_description: "Olá from Brasil! My Name is André. When I'm not working as a fullstack engineer or looking after my new puppy, I like to venture out into the wild and see all of what Brasil has to offer. I always try to give my hikers the best experience that they can remember for a lifetime! Vamos!",
   guide_since: Date.parse('17-03-2019')
 )
 
@@ -190,37 +190,6 @@ vitor = User.create(
 
 puts 'creating hikes'
 
-
-alta_via = Hike.create(
-  name: "Alta Via 1",
-  region: "Italy",
-  price: 550,
-  title: "Stunning Mountain Trek through the Dolomites",
-  subtitle:"Amazing Hike led by Vitor - local certified guide.",
-  difficulty: "Intermediate",
-  accomodation_type: "Cabin",
-  terrain: "Mountain, Panoramic",
-  national_park: "Dolomites",
-  elevation: 5200,
-  length: 10,
-  distance: 120,
-  group_size: 10,
-  start_address: Address.create(address: "Toblach"),
-  end_address: Address.create(address: "Belluno"),
-  map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-  description: "The most famous hiking trail in the Dolomites, the Alta Via 1, lives up to its promise. Although it doesn't travel through villages like the Tour du Mont Blanc does, the rifugios (mountain huts) you stay at along the way offer up loads of Italian charm and heaps of Italian food. You'll experience brilliant green meadows, rugged monoliths towering overhead, and plenty of World War I history as you pass by former battlefields and fortification remnants.",
-  guide: vitor
-)
-
-alta_via_images = ['dolomites_2.jpg', 'Dolomiten.jpg', 'dolomites_3.jpg', 'dolomites_4.jpg']
-4.times do |j|
-  image_name = alta_via_images[j]
-  add_image_to_hike(alta_via, image_name)
-end 
-create_random_group_hikes(alta_via)
-puts "#{alta_via.name} is created"
-
-
 malerweg = Hike.create(
   name: "Malerweg",
   title: "Sandstone Filled Malerweg through Saxony Switzerland",
@@ -275,64 +244,6 @@ end
 puts "#{malerweg.name} is created" 
 
 
-chapada_diamantina = Hike.create(
-    name: "Chapada Diamantina",
-    region: "Brazil",
-    title: "Stunning Valley Trek through Chapada Diamantia",
-    subtitle: "A breathtaking journey through Chapada Diamantia, in Bahia, Brazil. A 7-day tour led by Andre - local certified guide.",
-    price: 975,
-    difficulty: "Intermediate",
-    accomodation_type: "Cabin",
-    terrain: "Plateua, Valley",
-    national_park: "Bahia",
-    elevation: 900,
-    length: 7,
-    distance: 84,
-    group_size: 10,
-    start_address: Address.create(address: "Lençóis, 46960-000, Brazil"),
-        end_address: Address.create(address: "Mucugê, State of Bahia, 46750-000, Brazil "),
-        map_style: 'mapbox://styles/annamoe/ckpqy9x3j03z318pggacdkaei',
-        description: "For those who enjoy hiking, this 7-day trip through Chapada Diamantina is something that cannot be missed. One of the most beautiful crossings through Brazil, this trek offers it all- cliffs, mountains, cascading waterfalls, and natural beauty. Explore the Cave of the Castle and learn about the rich history and culture of the region during your overnight homestays with local families.",
-        guide: dieter,
-        )
-create_random_group_hikes(chapada_diamantina)
-puts "#{chapada_diamantina.name} is created" 
-
-chapada_diamantina_image = ['chapada.jpg', 'chapada_lakes.jpg', 'chapada_waterfall.jpg', 'chapada_hike.jpg']
-   4.times do |j|
-        image_name = chapada_diamantina_image[j]
-        add_image_to_hike(chapada_diamantina, image_name)
-      end 
-
-kumano_kodo = Hike.create!(
-  name: "Kumano Kodo",
-  region: "Japan",
-  price: 800,
-  difficulty: "Intermediate",
-  accomodation_type: "Cabin",
-  terrain: "Forest, Mountain, Panoramic",
-  national_park: "Kii Hantō Peninsula",
-  elevation: 5200,
-  length: 5,
-  distance: 70,
-  group_size: 10,
-  start_address: Address.create(address: "Mt. Hoshi"),
-  end_address: Address.create(address: "mt. nachi"),
-  map_style: 'mapbox://styles/annamoe/ckphettpv2pw217vxhzmeocno',
-  description: "Away from the crowded subway stations, glaring neon signs and the speeding express trains of the major cities, the Kumano Kodo pilgrimage route gives you the chance to get acquainted with Japan’s soul. This trail, which leads you along ancient forest paths, over countless mountains and through magical, primeval forests, will reveal the character of the country in a way few ever get to experience. And as the huge cedars and cypresses rise above you, trees which serve as wild shrines, worshipped by the local population—you’ll be blown away by this wilder, more calming side of Japan.
-  In five daily stages, you’ll hike a total of 70 kilometers from west to east, and you’ll conquer more than 13,000 feet (4,000 meters) of elevation. And while that might sound like quite a challenge, we promise it’s worth the effort as there’s no better way to experience the solitude of the Japanese mountains.",
-  guide: dieter
-)
-
-kumano_kodo_images = ['kumano_kodo_1.jpg', 'kumano_kodo_2.jpg', 'kumano_kodo_mountain.jpg', 'kumano_kodo_sign.jpg']
-4.times do |j|
-  image_name = kumano_kodo_images[j]
-  add_image_to_hike(kumano_kodo, image_name)
-end
-
-create_random_group_hikes(kumano_kodo)
-
-puts "#{kumano_kodo.name} is created"
 
 alta_via = Hike.create(
   name: "Alta Via 1",
@@ -397,7 +308,7 @@ south_west_coast_path = Hike.create(
   difficulty: "Beginner",
   title: "Stunning Trek through the Southern Coast",
   subtitle:"Amazing Hike led by Vitor - local certified guide.",
-  accomodation_type: "Cabin, Holiday-House, Tent",
+  accomodation_type: "Cabin",
   terrain: "Coastal",
   national_park: "Southern England",
   elevation: 500,
@@ -417,6 +328,36 @@ south_west_coast_path_image = ['south_west_coast_path.jpg', 'south_west_coast_pa
 end 
 create_random_group_hikes(south_west_coast_path) 
 puts "#{south_west_coast_path.name} is created"
+
+chapada_diamantina = Hike.create(
+    name: "Chapada Diamantina",
+    region: "Brazil",
+    title: "Stunning Valley Trek through Chapada Diamantia",
+    subtitle: "A breathtaking journey through Chapada Diamantia, in Bahia, Brazil. A 7-day tour led by André - local certified guide.",
+    price: 975,
+    difficulty: "Intermediate",
+    accomodation_type: "Cabin",
+    terrain: "Plateua, Valley",
+    national_park: "Bahia",
+    elevation: 900,
+    length: 7,
+    distance: 84,
+    group_size: 10,
+    start_address: Address.create(address: "Lençóis, 46960-000, Brazil"),
+        end_address: Address.create(address: "Mucugê, State of Bahia, 46750-000, Brazil "),
+        map_style: 'mapbox://styles/annamoe/ckpqy9x3j03z318pggacdkaei',
+        description: "For those who enjoy hiking, this 7-day trip through Chapada Diamantina is something that cannot be missed. One of the most beautiful crossings through Brazil, this trek offers it all- cliffs, mountains, cascading waterfalls, and natural beauty. Explore the Cave of the Castle and learn about the rich history and culture of the region during your overnight homestays with local families.",
+        guide: andre,
+        )
+create_random_group_hikes(chapada_diamantina)
+puts "#{chapada_diamantina.name} is created" 
+
+chapada_diamantina_image = ['chapada.jpg', 'chapada_lakes.jpg', 'chapada_waterfall.jpg', 'chapada_hike.jpg']
+   4.times do |j|
+        image_name = chapada_diamantina_image[j]
+        add_image_to_hike(chapada_diamantina, image_name)
+      end 
+
 
 torres_del_paine = Hike.create(
     name: "Torres del Paine",
@@ -558,34 +499,7 @@ laugavegur_image = ['laugavegur.jpg']
 create_random_group_hikes(laugavegur_trail)
     puts "#{laugavegur_trail.name} is created"  
 
-chapada_diamantina = Hike.create(
-    name: "Chapada Diamantina",
-    region: "Brazil",
-    title: "Stunning Valley Trek through Chapada Diamantia",
-    subtitle: "A breathtaking journey through Chapada Diamantia, in Bahia, Brazil. A 7-day tour led by Andre - local certified guide.",
-    price: 975,
-    difficulty: "Intermediate",
-    accomodation_type: "Cabin",
-    terrain: "Plateua, Valley",
-    national_park: "Bahia",
-    elevation: 900,
-    length: 7,
-    distance: 84,
-    group_size: 10,
-    start_address: Address.create(address: "Morro do Pai Inácio"),
-        end_address: Address.create(address: "Cachoeira do Sossêgo "),
-        map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "For those who enjoy hiking, this 7-day trip through Chapada Diamantia is something that cannot be missed. One of the most beautiful crossings through Brazil, this trek offers it all- cliffs, mountains, cascading waterfalls, and natural beauty. Explore the Cave of the Castle and learn about the rich history and culture of the region during your overnight homestays with local families.",
-        guide: andre,
-        )
-create_random_group_hikes(chapada_diamantina)
-puts "#{chapada_diamantina.name} is created" 
 
-chapada_diamantina_image = ['chapada.jpg']
-   1.times do |j|
-        image_name = chapada_diamantina_image[j]
-        add_image_to_hike(chapada_diamantina, image_name)
-      end 
 
 kumano_kodo = Hike.create!(
   name: "Kumano Kodo",

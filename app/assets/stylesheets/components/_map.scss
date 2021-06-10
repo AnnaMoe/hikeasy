@@ -2,8 +2,10 @@
 //   border-radius: 15px 0px 0px 15px;
 // }
 
-.mapboxgl-popup-content{
+div.mapboxgl-popup-content{
     font-family: roboto;
+    box-shadow: none !important;
+    background: none !important;
 }
 
 .name-thumbnail{

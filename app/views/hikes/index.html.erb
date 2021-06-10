@@ -66,6 +66,9 @@
                         </div>
                         <div class="ml-5">
                           <output id="duration-output"><%= params[:max_duration]%></output>
+                          <label for="min">2</label>
+                          <input name="max_duration" type ="range" min="2" max="30" onchange="showVal('duration-output', this.value)" value="<%= params[:max_duration] || 20 %>" />
+                          <label for="max">30</label>
                         </div>
                      </div>
                     </div>
