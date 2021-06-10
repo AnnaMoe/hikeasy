@@ -398,7 +398,6 @@ south_west_coast_path = Hike.create(
   title: "Stunning Trek through the Southern Coast",
   subtitle:"Amazing Hike led by Vitor - local certified guide.",
   accomodation_type: "Cabin, Holiday-House, Tent",
-  accomodation_type: "Cabin",
   terrain: "Coastal",
   national_park: "Southern England",
   elevation: 500,
@@ -626,7 +625,6 @@ puts "#{kumano_kodo.name} is created"
     difficulty: "Beginner",
     title: "Stunning Trek through Scandinavian Mountains",
     subtitle:"Amazing Hike led by Vitor - local certified guide.",
-    accomodation_type: "Cabin",
     accomodation_type: "Cabin", 
     terrain: "Mountain, Lake",
     national_park: "Scandinavia",
@@ -752,7 +750,6 @@ gangotri = Hike.create(
 
 create_random_group_hikes(gangotri)
 puts "#{gangotri.name} is created"
-=======
        
 
 
