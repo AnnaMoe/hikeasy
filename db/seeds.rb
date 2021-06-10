@@ -188,12 +188,6 @@ vitor = User.create(
   guide_since: Date.parse('17-03-2017')
 )
 
-
-
-
-
-
-
 puts 'creating hikes'
 
 
@@ -204,6 +198,8 @@ alta_via = Hike.create(
   name: "Alta Via 1",
   region: "Italy",
   price: 550,
+  title: "Stunning Mountain Trek through the Dolomites",
+  subtitle:"Amazing Hike led by Vitor - local certified guide.",
   difficulty: "Intermediate",
   accomodation_type: "Cabin",
   terrain: "Mountain, Panoramic",
@@ -216,7 +212,7 @@ alta_via = Hike.create(
   end_address: Address.create(address: "Belluno"),
   map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
   description: "The most famous hiking trail in the Dolomites, the Alta Via 1, lives up to its promise. Although it doesn't travel through villages like the Tour du Mont Blanc does, the rifugios (mountain huts) you stay at along the way offer up loads of Italian charm and heaps of Italian food. You'll experience brilliant green meadows, rugged monoliths towering overhead, and plenty of World War I history as you pass by former battlefields and fortification remnants.",
-  guide: dieter
+  guide: vitor
 )
 
 alta_via_images = ['dolomites_2.jpg', 'Dolomiten.jpg', 'dolomites_3.jpg', 'dolomites_4.jpg']
@@ -285,6 +281,8 @@ chadar_trek = Hike.create(
     name: "Chadar Trek",
     region: "India",
     price: 1400,
+    title: "Stunning Trek through Hemis National Park",
+    subtitle:"Amazing Hike led by Vitor - local certified guide.",
     difficulty: "Expert",
     accomodation_type: "Tent, Cave",
     terrain: "Mountain, Lake, Glacier",
@@ -297,7 +295,7 @@ chadar_trek = Hike.create(
         end_address: Address.create(address: "Karsha "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "The Chadar Trek or the Zanskar Gorge is a winter trail over the frozen Zanskar River, which lies in the Indian union territory of Ladakh. It is traditionally the only means of travel in the area during the harsh winter months. The trail has become popular with international adventure tourists.",
-  guide: dieter
+  guide: vitor
   )    
 chadar_trek_image = ['chadar_trek.jpg']
    1.times do |j|
@@ -313,6 +311,8 @@ south_west_coast_path = Hike.create(
   region: "England",
   price: 840,
   difficulty: "Beginner",
+  title: "Stunning Trek through the Southern Coast",
+  subtitle:"Amazing Hike led by Vitor - local certified guide.",
   accomodation_type: "Cabin, Holiday-House, Tent",
   terrain: "Coastal",
   national_park: "Southern England",
@@ -324,7 +324,7 @@ south_west_coast_path = Hike.create(
   end_address: Address.create(address: "Minehead"),
   map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
   description: "As a National Trail, the South West Coast Path is signposted all the way round by the acorn. In addition to this you will find large commemorative markers at key points on the trail such as Minehead (the start), Porthallow (the mid-point) and South Haven Point (the end). All off which offer the perfect excuse for a photo! There are also a number of way markers along the way that will tell you how far from each end of the trail you are",
-  guide: dieter
+  guide: vitor
 )
 south_west_coast_path_image = ['south_west_coast_path.jpg', 'south_west_coast_path.jpg']
 2.times do |j|
@@ -339,6 +339,8 @@ torres_del_paine = Hike.create(
     region: "Chile",
     price: 1230,
     difficulty: "Expert",
+    title: "Stunning Valley Trek through the Patagonias",
+    subtitle:"Amazing Hike led by Vitor - local certified guide.",
     accomodation_type: "Tent",
     terrain: "Mountain, Glacier, Panoramic",
     national_park: "Patagonia",
@@ -350,7 +352,7 @@ torres_del_paine = Hike.create(
     end_address: Address.create(address: "torres del paine"),
     map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
     description: "As a National Trail, the South West Coast Path is signposted all the way round by the acorn. In addition to this you will find large commemorative markers at key points on the trail such as Minehead (the start), Porthallow (the mid-point) and South Haven Point (the end). All off which offer the perfect excuse for a photo! There are also a number of way markers along the way that will tell you how far from each end of the trail you are",
-  guide: dieter
+  guide: vitor
   )
   torres_del_paine_image = ['torres_del_paine.jpg']
 1.times do |j|
@@ -364,6 +366,8 @@ zion_narrows = Hike.create(
     name: "Zion Narrows",
     region: "USA",
     price: 350,
+    title: "Stunning Desert Trek through Zion National Park",
+    subtitle:"Amazing Hike led by Vitor - local certified guide.",
     difficulty: "Intermediate",
     accomodation_type: "Cabin",
     terrain: "Desert",
@@ -376,7 +380,7 @@ zion_narrows = Hike.create(
         end_address: Address.create(address: "Temple of Sinawava"),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "A hike through The Narrows requires hiking in the Virgin River. You must get your feet wet since there is no trail. Most people choose to start their hike from the Temple of Sinawava via the Riverside Walk and then walk upstream before turning around and hiking back down to the Temple of Sinawava.",
-  guide: dieter
+  guide: vitor
   )    
 zion_narrows_image = ['zion.jpg']
    1.times do |j|
@@ -390,6 +394,8 @@ kilimandscharo = Hike.create(
     name: "Kilimanjaro",
     region: "Tansania",
     price: 980,
+    title: "Stunning Mountai Trek up Mt. Kilimanjaro",
+    subtitle:"Amazing Hike led by Vitor - local certified guide.",
     difficulty: "Expert",
     accomodation_type: "Tent",
     terrain: "Mountain, Safari",
@@ -402,7 +408,7 @@ kilimandscharo = Hike.create(
         end_address: Address.create(address: "Mweka Camp"),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "The Lemosho starts on the far Western side of Mount Kilimanjaro. It is best trekked on a 7 or 8-day itinerary and offers great acclimatisation. High summit success rates and awesome scenery make the Lemosho one of our favourite routes on Kilimanjaro.",
-  guide: dieter
+  guide: vitor
   )    
 kilimandscharo_image = ['kilimanjaro.jpg']
    1.times do |j|
@@ -416,6 +422,8 @@ larapinta_trail = Hike.create(
     name: "Larapinta Trail",
     region: "Australia",
     price: 1640,
+    title: "Stunning Valley Trek through the Outback",
+    subtitle:"Amazing Hike led by Vitor - local certified guide.",
     difficulty: "Beginner",
     accomodation_type: "Tent",
     terrain: "Desert, Mountain",
@@ -428,7 +436,7 @@ larapinta_trail = Hike.create(
         end_address: Address.create(address: "Simpsons Gap"),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "The Larapinta Trail is an extended walking track in the Northern Territory of Australia. Its total length covers 223 kilometres (139 mi) from east to west, with the eastern end at Alice Springs and the western end at Mount Sonder, one of the territory's highest mountains. It follows the West MacDonnell Ranges, sometimes along the ridge line, other times on the plain below, in the West MacDonnell National Park.",
-  guide: dieter
+  guide: vitor
   )    
 larapinta_image = ['larapinta.jpg']
    1.times do |j|
@@ -442,6 +450,8 @@ laugavegur_trail = Hike.create(
     name: "Laugavegur Trail",
     region: "Iceland",
     price: 1640,
+    title: "Stunning Trek through the Land of Fire and Ice",
+    subtitle:"Amazing Hike led by Vitor - local certified guide.",
     difficulty: "Intermediate",
     accomodation_type: "Tent, Cabin",
     terrain: "Mountain, Glacier, Panoramic",
@@ -454,7 +464,7 @@ laugavegur_trail = Hike.create(
         end_address: Address.create(address: "Skogar "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "The Laugavegur Trail in Iceland is one of the most unique and visually stimulating trails in the world. Not only do you have constantly shifting landscapes, from the rainbow-striped mounds of the highlands in Landmannalaugar to the psychedelic greens of Þórsmörk, but ever-changing conditions as well. No wonder National Geographic ranked this trail in their top 20 in the world. There’s nothing out there that can equal it.",
-  guide: dieter
+  guide: vitor
   )    
 laugavegur_image = ['laugavegur.jpg']
    1.times do |j|
@@ -497,6 +507,7 @@ kumano_kodo = Hike.create!(
   name: "Kumano Kodo",
   region: "Japan",
   price: 800,
+  title: "Breathtaking Journey through the Lush Green of Japan",
   difficulty: "Intermediate",
   accomodation_type: "Cabin",
   terrain: "Forest, Mountain, Panoramic",
@@ -528,6 +539,8 @@ puts "#{kumano_kodo.name} is created"
     region: "Norway",
     price: 2100,
     difficulty: "Beginner",
+    title: "Stunning Trek through Scandinavian Mountains",
+    subtitle:"Amazing Hike led by Vitor - local certified guide.",
     accomodation_type: "Cabin",
     terrain: "Mountain, Lake",
     national_park: "Scandinavia",
@@ -539,7 +552,7 @@ puts "#{kumano_kodo.name} is created"
         end_address: Address.create(address: "Ringebur "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "St. Olav Ways - The Pilgrim Paths to Trondheim, is a network of historical trails through beautiful nature, cultural landscapes and historical sites. The trails come from all directions to St. Olav's burial place, the Nidaros Cathedral, which was the northernmost pilgrimage destination for Christianity throughout the Middle Ages.",
-  guide: dieter
+  guide: vitor
   )    
 st_olavsweg_image = ['st_olavsweg.jpg']
    1.times do |j|
@@ -554,6 +567,8 @@ create_random_group_hikes(st_olavsweg)
     name: "Chilkoot Trail",
     region: "Canada",
     price: 1400,
+    title: "Stunning Trek through Canada with Panaromic Views",
+    subtitle:"Amazing Hike led by Vitor - local certified guide.",
     difficulty: "Intermediate",
     accomodation_type: "Tent, Cave",
     terrain: "Mountain, Lake, Panoramic",
@@ -566,7 +581,7 @@ create_random_group_hikes(st_olavsweg)
         end_address: Address.create(address: "Bennett "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "The Chilkoot Trail is a 33 mile long recreational trail. Each summer over 10,000 people hike some or all of it. The majority of visitors day hike on the trail for just a few hours. Others spend an average of 3-5 days backpacking the entire trail. Each year a few hearty people run the trail in one stretch.",
-  guide: dieter
+  guide: vitor
   )    
 chilkoot_trail_image = ['chilkoot_trail.jpg']
    1.times do |j|
@@ -585,6 +600,8 @@ lost_city = Hike.create(
     name: "The Lost City",
     region: "Colombia",
     price: 450,
+    title: "Stunning Trek through the Jungle",
+    subtitle:"Amazing Hike led by Vitor - local certified guide.",
     difficulty: "Intermediate",
     accomodation_type: "Tent",
     terrain: "Jungle, Mountain",
@@ -597,7 +614,7 @@ lost_city = Hike.create(
         end_address: Address.create(address: "Bennett "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "Colombia’s Inca Trail, the Lost City trek is the country’s best multi-day trekking option and a perennial favourite among travellers and backpackers in the country. The trek takes in the gorgeous forests and rivers of the Sierra Nevada de Santa Marta mountains, culminating in a hike to reach the mysterious and beautiful Lost City itself.The Lost City is the best opportunity to connect with nature and prove yourself everything you are capable of. Doing the Lost City Trek will allow you to know part of the Sierra Nevada de Santa Marta in Colombia. You will also have the opportunity to have direct contact with the Kogui; who still preserve the traditions of the Tayronas, the first inhabitants of the Lost City.",
-        guide: dieter,
+        guide: vitor
 )
 
 create_random_group_hikes(lost_city)
@@ -608,6 +625,8 @@ mt_apo = Hike.create(
     name: "Mt. Apo",
     region: "Phillipines",
     price: 450,
+    title: "Stunning Island Trek up Mt. Apo",
+    subtitle:"Amazing Hike led by Vitor - local certified guide.",
     difficulty: "Beginner",
     accomodation_type: "Tent",
     terrain: "Jungle, Mountain",
@@ -620,7 +639,7 @@ mt_apo = Hike.create(
         end_address: Address.create(address: "Bennett "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "The stunning beauty of this mountain and the fulfillment that awaits adventurous souls who climb it should be experienced by every Filipino. Standing at 2,956 Meters Above Sea Level Mt. Apo is the highest mountain in the Philippines and is considered to be the Grandfather of Philippine Mountains. The journey isn’t easy and is one of the hardest mountains to hike. You will hike through mystical lakes, lush jungles, rocky mountainsides, and a vertical section of volcanic boulders. It might be a tough adventure but it’s worth it!",
-        guide: dieter,
+        guide: vitor,
 )
 
 create_random_group_hikes(mt_apo)
@@ -631,6 +650,8 @@ gangotri = Hike.create(
     name: "Gangotri Glacier Trek",
     region: "India",
     price: 875,
+    title: "Stunning Trek through the Himalays",
+    subtitle:"Amazing Hike led by Vitor - local certified guide.",
     difficulty: "Intermediate",
     accomodation_type: "Tent",
     terrain: "Mountain, Glacier",
@@ -643,7 +664,7 @@ gangotri = Hike.create(
         end_address: Address.create(address: "Bennett "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "The stunning beauty of this mountain and the fulfillment that awaits adventurous souls who climb it should be experienced by every Filipino. Standing at 2,956 Meters Above Sea Level Mt. Apo is the highest mountain in the Philippines and is considered to be the Grandfather of Philippine Mountains. The journey isn’t easy and is one of the hardest mountains to hike. You will hike through mystical lakes, lush jungles, rocky mountainsides, and a vertical section of volcanic boulders. It might be a tough adventure but it’s worth it!",
-        guide: dieter,
+        guide: vitor,
 )
 
 create_random_group_hikes(gangotri)
