@@ -92,6 +92,94 @@ seb = User.create(
   last_name: "Saunier",
 )
 
+andre = User.create(
+  email: "andre@hikeasy.fit",
+  password: "123456",
+  nickname: "andrerferrer",
+  age: "28",
+  country: "Brasil",
+  first_name: "Andre",
+  last_name: "Ferrer",
+  guide_description: "Olá from Brasil! My Name is Andre. When I'm not working as a fullstack engineer or looking after my new puppy, I like to venture out into the wild and see all of what Brasil has to offer. I always try to give my hikers the best experience that they can remember for a lifetime! Vamos!",
+  guide_since: Date.parse('17-03-2019')
+)
+
+laura = User.create(
+  email: "laura@hikeasy.fit",
+  password: "123456",
+  nickname: "laurazerbini",
+  age: "28",
+  country: "Brasil",
+  first_name: "Laura",
+  last_name: "Zerbini",
+)
+
+rahman = User.create(
+  email: "rahman@hikeasy.fit",
+  password: "123456",
+  nickname: "rshafiee",
+  age: "32",
+  country: "Germany",
+  first_name: "Rahman",
+  last_name: "Shafiee",
+)
+
+louis = User.create(
+  email: "louis@hikeasy.fit",
+  password: "123456",
+  nickname: "bear-in-mind",
+  age: "32",
+  country: "France",
+  first_name: "Louis",
+  last_name: "Sommer",
+)
+
+rowena = User.create(
+  email: "rowena@hikeasy.fit",
+  password: "123456",
+  nickname: "rkoerber",
+  age: "29",
+  country: "Germany",
+  first_name: "Rowena",
+  last_name: "Koerber",
+  guide_description: "Hi there! Ready for an amazing time and some spectacular views? Join me for a hike in Japan. This beautiful country has so much to offer- waterfalls, mountain peaks, cherry blossoms + more.",
+  guide_since: Date.parse('17-03-2015')
+)
+
+ai = User.create(
+  email: "ai@hikeasy.fit",
+  password: "123456",
+  nickname: "nishi-ai",
+  age: "29",
+  country: "Japan",
+  first_name: "Ai",
+  last_name: "Nishikawa",
+)
+
+francisco = User.create(
+  email: "francisco@hikeasy.fit",
+  password: "123456",
+  nickname: "Francisco-Webdeveloper",
+  age: "29",
+  country: "Portugal",
+  first_name: "Francisco",
+  last_name: "Santos",
+)
+
+tzegai = User.create(
+  email: "tzegai@hikeasy.fit",
+  password: "123456",
+  nickname: "thidru69",
+  age: "29",
+  country: "Germany",
+  first_name: "Tzegai",
+  last_name: "Hidru",
+)
+
+
+
+
+
 
 puts 'creating hikes'
 
@@ -136,7 +224,6 @@ malerweg = Hike.create(
   difficulty: "Intermediate",
   accomodation_type: 'Tent',
   terrain: "Forest, Field Paths",
-
   elevation: 480,
   length: 8,
   distance: 116,
@@ -382,7 +469,7 @@ chapada_diamantina = Hike.create(
         end_address: Address.create(address: "Cachoeira do Sossêgo "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
         description: "For those who enjoy hiking, this 7-day trip through Chapada Diamantia is something that cannot be missed. One of the most beautiful crossings through Brazil, this trek offers it all- cliffs, mountains, cascading waterfalls, and natural beauty. Explore the Cave of the Castle and learn about the rich history and culture of the region during your overnight homestays with local families.",
-        guide: dieter,
+        guide: andre,
         )
 create_random_group_hikes(chapada_diamantina)
 puts "#{chapada_diamantina.name} is created" 
@@ -410,7 +497,7 @@ kumano_kodo = Hike.create!(
   map_style: 'mapbox://styles/annamoe/ckphettpv2pw217vxhzmeocno',
   description: "Away from the crowded subway stations, glaring neon signs and the speeding express trains of the major cities, the Kumano Kodo pilgrimage route gives you the chance to get acquainted with Japan’s soul. This trail, which leads you along ancient forest paths, over countless mountains and through magical, primeval forests, will reveal the character of the country in a way few ever get to experience. And as the huge cedars and cypresses rise above you, trees which serve as wild shrines, worshipped by the local population—you’ll be blown away by this wilder, more calming side of Japan.
   In five daily stages, you’ll hike a total of 70 kilometers from west to east, and you’ll conquer more than 13,000 feet (4,000 meters) of elevation. And while that might sound like quite a challenge, we promise it’s worth the effort as there’s no better way to experience the solitude of the Japanese mountains.",
-  guide: dieter
+  guide: rowena
 )
 
 kumano_kodo_images = ['kumano_kodo_1.jpg', 'kumano_kodo_2.jpg', 'kumano_kodo_mountain.jpg', 'kumano_kodo_sign.jpg']
@@ -592,6 +679,88 @@ booking3 = Booking.create!(
   credit_card_cvc: rand(100..9999)
 )
 
+puts 'Creating bookings'
+booking4 = Booking.create!(
+  hike: chapada_diamantina,
+  group_hike: chapada_diamantina.group_hikes.last,
+  user: laura,
+  first_name: laura.first_name,
+  last_name: laura.last_name,
+  email: laura.email,
+  credit_card: Faker::Finance.credit_card, 
+  credit_card_expiration_month: rand(1..12), 
+  credit_card_expiration_year: rand(2021..2030),
+  credit_card_cvc: rand(100..9999)
+)
+
+puts 'Creating bookings'
+booking5 = Booking.create!(
+  hike: chapada_diamantina,
+  group_hike: chapada_diamantina.group_hikes.last,
+  user: rahman,
+  first_name: rahman.first_name,
+  last_name: rahman.last_name,
+  email: rahman.email,
+  credit_card: Faker::Finance.credit_card, 
+  credit_card_expiration_month: rand(1..12), 
+  credit_card_expiration_year: rand(2021..2030),
+  credit_card_cvc: rand(100..9999)
+)
+
+puts 'Creating bookings'
+booking6 = Booking.create!(
+  hike: chapada_diamantina,
+  group_hike: chapada_diamantina.group_hikes.last,
+  user: louis,
+  first_name: louis.first_name,
+  last_name: louis.last_name,
+  email: louis.email,
+  credit_card: Faker::Finance.credit_card, 
+  credit_card_expiration_month: rand(1..12), 
+  credit_card_expiration_year: rand(2021..2030),
+  credit_card_cvc: rand(100..9999)
+)
+
+puts 'Creating bookings'
+booking7 = Booking.create!(
+  hike: kumano_kodo,
+  group_hike: kumano_kodo.group_hikes.last,
+  user: ai,
+  first_name: ai.first_name,
+  last_name: ai.last_name,
+  email: ai.email,
+  credit_card: Faker::Finance.credit_card, 
+  credit_card_expiration_month: rand(1..12), 
+  credit_card_expiration_year: rand(2021..2030),
+  credit_card_cvc: rand(100..9999)
+)
+puts 'Creating bookings'
+booking8 = Booking.create!(
+  hike: kumano_kodo,
+  group_hike: kumano_kodo.group_hikes.last,
+  user: francisco,
+  first_name: francisco.first_name,
+  last_name: francisco.last_name,
+  email: francisco.email,
+  credit_card: Faker::Finance.credit_card, 
+  credit_card_expiration_month: rand(1..12), 
+  credit_card_expiration_year: rand(2021..2030),
+  credit_card_cvc: rand(100..9999)
+)
+puts 'Creating bookings'
+booking9 = Booking.create!(
+  hike: kumano_kodo,
+  group_hike: kumano_kodo.group_hikes.last,
+  user: tzegai,
+  first_name: tzegai.first_name,
+  last_name: tzegai.last_name,
+  email: tzegai.email,
+  credit_card: Faker::Finance.credit_card, 
+  credit_card_expiration_month: rand(1..12), 
+  credit_card_expiration_year: rand(2021..2030),
+  credit_card_cvc: rand(100..9999)
+)
+
 
 puts 'Creating reviews'
 review1 = Review.create!(
@@ -615,6 +784,8 @@ review3= Review.create!(
   booking: booking3
 )
 review3.update_attribute :created_at, rand(10..300).days.ago
+
+
 
 Hike.all.each do |h|
   b = Booking.create(
