@@ -16,7 +16,9 @@ class HikesController < ApplicationController
       {
         lat: hike.start_address.latitude,
         lng: hike.start_address.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { hike: hike })
+        infoWindow: render_to_string(partial: "info_window", locals: { hike: hike }),
+        image_url:
+        helpers.asset_url('icon_trekking.png')
       }
     end
   end
@@ -26,10 +28,14 @@ class HikesController < ApplicationController
       [{
         lat: @hike.start_address.latitude,
         lng: @hike.start_address.longitude,
+        image_url:
+        helpers.asset_url('icon_trekking.png')
       },
       {
         lat: @hike.end_address.latitude,
         lng: @hike.end_address.longitude,
+        image_url:
+        helpers.asset_url('icon_trekking.png')
       }
     ]
     @booking = Booking.new
