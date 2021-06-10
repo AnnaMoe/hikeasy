@@ -4,9 +4,9 @@
       <div class="notification-blank">
         <img src='<%= current_user.avatar_url %>' class="avatar-large" />
         <div class="notification-content-blank align-items-centers">
-          <h3 class="m-0 ml-1">Hello <%=@booking.user.first_name %>. Welcome to <em>
-              <%= @chatroom.name %>
-            </em></h3>
+          <h3 class="m-0 ml-1">Hello <%=@booking.user.first_name %>. Welcome to <strong>
+              <%= @chatroom.name %>!
+            </strong></h3>
         </div>
       </div>
       <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
@@ -17,11 +17,11 @@
               <p class="m-0"><%= @booking.hike.guide.first_name %>, <%= @booking.hike.guide.age %> years old</p>
               <p class="text-muted m-0"></small><em>Germany</em></small></p>
             </div>
-            <div class="pinned"><i class="fas fa-thumbtack"></i> <em>Pinned</em></div>
+            <div class="pinned"><i class="fas fa-thumbtack"></i> Pinned</div>
           </div>
-          <p class="text-muted m-0"></small>Hey Group. Welcome to your chosen Hike <em>Malerweg.</em> I am looking
+          <p class="text-muted m-0"></small>Hey Group. Welcome to your chosen hike <strong><%= @chatroom.name %></strong>. I am looking
           forward to sharing this hike experience with you all. This is the place to introduce yourself, ask any
-          questions you may have, and get connected with your fellow hikers. Let's make this hike an unique adenture
+          questions you may have, and get connected with your fellow hikers. Let's make this hike an unique adventure
           for everyone!</small></p>
         </div>
         <% @chatroom.messages.each do |message| %>
