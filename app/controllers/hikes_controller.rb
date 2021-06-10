@@ -28,10 +28,14 @@ class HikesController < ApplicationController
       [{
         lat: @hike.start_address.latitude,
         lng: @hike.start_address.longitude,
+        image_url:
+        helpers.asset_url('icon_trekking.png')
       },
       {
         lat: @hike.end_address.latitude,
         lng: @hike.end_address.longitude,
+        image_url:
+        helpers.asset_url('icon_trekking.png')
       }
     ]
     @booking = Booking.new
