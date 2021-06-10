@@ -4,12 +4,12 @@
       <div class="d">
         <div class="titolo_myhike">
           <%=@booking.hike.name%>
-          <em class="text-muted" id="countdown"><%=@booking.group_hike %></em>
+          <%# <p class="float-right reviews"><i class="fas fa-star"></i>
+            <% @rating = @hike.reviews.map { |r| r.rating} %>
+            <%# <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(1)  %>
+          <%# </p> %> 
         </div>
-      <p class="reviews"><i class="fas fa-star"></i> /
-      <% @rating = @hike.reviews.map { |r| r.rating} %>
-      <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(2)  %>
-      </p>
+        <em class="text-muted" id="countdown"><%=@booking.group_hike %></em>
       </div>
     </div>
     <div class = "col-md-3">
