@@ -8,11 +8,13 @@
       <li class="nav-item">
         <%= link_to "discover", :hikes, class: "nav-link"%>
       </li>
-      <li class=" float-right nav-item">
-        <%= link_to "my hikes", dashboard_path, class: "nav-link" %>
-      </li>
     </ul>
     <ul class="navbar-nav ml-auto">
+      <li>
+      <%=link_to dashboard_path do %>
+      <i class="fas fa-heart nav"></i>
+      <% end %>
+      </li>
       <li class="nav-item dropdown">
         <% if user_signed_in? %>
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= current_user.avatar_url %>" />
