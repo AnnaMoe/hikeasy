@@ -4,6 +4,10 @@
         <%= link_to hike_path(hike), class:'text-decoration-none' do %>
           <% if hike.photos.attached? %>
             <%= cl_image_tag hike.photos.first.key, class: 'hike-image' %>
+            <%= link_to toggle_favorite_hike_path(hike), remote: true, method: :post do %>
+              <div class="like-icon mx-2 heart <%= 'not-favorited' unless current_user.favorited?(hike) %>" data-id="<%= hike.id %>">
+                <i class="fas fa-heart thumbnail"></i></div>
+              <% end %>
           <% else %>
             <img class="hike-image" src="https://images.unsplash.com/photo-1556653922-ca7aa575c39f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjIxNjAwODE3&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit" />
           <% end %>
