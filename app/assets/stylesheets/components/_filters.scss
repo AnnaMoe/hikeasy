@@ -1,15 +1,15 @@
 .btn.btn-secondary{
     background-color: #758563;
-    opacity: 100%;
     border-radius: 5px;
 }
 
-.btn-primary-search{
-    margin-top: 7px;
-    border-radius: 5px;
+.btn.btn-secondary.search{
+    margin-top: 8px;
     background-color: #758563;
-    opacity: 75%;
+    border-radius: 5px;
     color: white;
+    margin-left: 100px;
+    
 }
 
 .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary.active:not(:disabled):not(.disabled), .show > .btn-secondary.dropdown-toggle {
