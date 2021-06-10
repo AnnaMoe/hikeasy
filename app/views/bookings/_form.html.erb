@@ -1,11 +1,6 @@
 <div class="container booking-form sticky-form">
   <div class="card-form">
     <div class="card-booking-body">
-       <%= link_to toggle_favorite_hike_path(@hike), remote: true, method: :post do %>
-        <div class="like-icon mx-2 <%= 'favourite' if current_user.favorited?(@hike) %>" data-id="<%= @hike.id %>">
-          <i class="fas fa-heart"></i>
-        </div>
-      <% end %>
     <p class="hike_details mb-3"><i class="fas fa-star"></i> 
       <% @rating = @hike.reviews.map { |r| r.rating} %>
       <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(1)  %> / 5.0
@@ -19,5 +14,10 @@
       <%= f.input :group_hike, label: "Availabilities", collection: @hike.group_hikes, selected: @hike.group_hikes.first %>
       <%= f.button :button, "Book Now", class: "btn btn-primary w-50 mt-3 p-2" %>
     <% end %>
+     <%= link_to toggle_favorite_hike_path(@hike), remote: true, method: :post do %>
+        <div class="like-icon mx-2 <%= 'favourite' if current_user.favorited?(@hike) %>" data-id="<%= @hike.id %>">
+          <i class="fas fa-heart"></i>
+        </div>
+      <% end %>
   </div>
 </div>
