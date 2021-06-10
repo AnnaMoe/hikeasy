@@ -98,7 +98,7 @@ andre = User.create(
   nickname: "andrerferrer",
   age: "28",
   country: "Brasil",
-  first_name: "Andre",
+  first_name: "André",
   last_name: "Ferrer",
   guide_description: "Olá from Brasil! My Name is Andre. When I'm not working as a fullstack engineer or looking after my new puppy, I like to venture out into the wild and see all of what Brasil has to offer. I always try to give my hikers the best experience that they can remember for a lifetime! Vamos!",
   guide_since: Date.parse('17-03-2019')
