@@ -176,6 +176,19 @@ tzegai = User.create(
   last_name: "Hidru",
 )
 
+vitor = User.create(
+  email: "vitor@hikeasy.fit",
+  password: "123456",
+  nickname: "vitorreis",
+  age: "29",
+  country: "Germany",
+  first_name: "Vitor",
+  last_name: "Reis",
+  guide_description: "Hi, I'm Vitor. I'll be your guide",
+  guide_since: Date.parse('17-03-2017')
+)
+
+
 
 
 
@@ -784,6 +797,48 @@ review3= Review.create!(
   booking: booking3
 )
 review3.update_attribute :created_at, rand(10..300).days.ago
+
+review4= Review.create!(
+  comment: "I already knew Brasil was amazing but this hike completely blew my expectations. Our guide was spectacular!! ",
+  rating: "5",
+  booking: booking4
+)
+review4.update_attribute :created_at, rand(10..300).days.ago
+
+review5= Review.create!(
+  comment: "Wow! This hike was so amazing. Endless sunshine the entire time. I would definitely recommend this.",
+  rating: "5",
+  booking: booking5
+)
+review5.update_attribute :created_at, rand(10..300).days.ago
+
+review6= Review.create!(
+  comment: "Chapada Diamanta was sick! Something everyone should experience once. Oui from me!",
+  rating: "5",
+  booking: booking6
+)
+review6.update_attribute :created_at, rand(10..300).days.ago
+
+review7= Review.create!(
+  comment: "All of the views from this hike were absolutely breathtaking. Rowena was super friendly and my fellow hikers were the best. :)",
+  rating: "5",
+  booking: booking7
+)
+review7.update_attribute :created_at, rand(10..300).days.ago
+
+review8= Review.create!(
+  comment: "Such a cool hike. This is exactly what I was looking for after 6 looooong months of coding bootcamp.",
+  rating: "5",
+  booking: booking8
+)
+review8.update_attribute :created_at, rand(10..300).days.ago
+
+review9= Review.create!(
+  comment: "I loved hiking Kumano Kudo. It was tough but each day ended with a great meal and great friends.",
+  rating: "5",
+  booking: booking9
+)
+review9.update_attribute :created_at, rand(10..300).days.ago
 
 
 
