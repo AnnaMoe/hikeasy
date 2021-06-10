@@ -48,7 +48,7 @@
             data-latitude='<%= @booking.hike.start_address.latitude %>'></h4>
           </div>
         </div>
-        <h2 class="mt-5">Fellow Hikers</h2>
+        <h3 class="mt-5">Fellow Hikers</h3>
         <% @chatroom.group_hike.bookings.each do |booking| %>
           <div class="notification-members">
             <img class="avatar dropdown-toggle" src="<%= booking.user.avatar_url  %>" />
