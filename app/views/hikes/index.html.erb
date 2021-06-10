@@ -60,9 +60,9 @@
                     <div data-role="rangeslider">
                       <div class = "container">
                         <div>
-                          <label for="min">1</label>
-                          <input name="max_duration" type ="range" min="1" max="20" onchange="showVal('duration-output', this.value)" value="<%= params[:max_duration] || 20 %>" />
-                          <label for="max">20</label>
+                          <label for="min">2</label>
+                          <input name="max_duration" type ="range" min="2" max="30" onchange="showVal('duration-output', this.value)" value="<%= params[:max_duration] || 20 %>" />
+                          <label for="max">30</label>
                         </div>
                         <output id="duration-output"><%= params[:max_duration]%></output>
                      </div>
