@@ -126,61 +126,6 @@ end
 create_random_group_hikes(alta_via)
 puts "#{alta_via.name} is created"
 
-malerweg = Hike.create(
-  name: "Malerweg",
-  title: "Sandstone Filled Malerweg through Saxony Switzerland",
-  subtitle: "An unforgettable and physically demanding 76-km trek through the Saxony Switzerland National Park, in Saxony, Germany. A 8-day tour led by Dieter - local certified guide.",
-  national_park: "Saxony Switzerland",
-  region: "Germany",
-  price: 610,
-  difficulty: "Intermediate",
-  accomodation_type: 'Tent',
-  terrain: "Forest, Field Paths",
-
-  elevation: 480,
-  length: 8,
-  distance: 116,
-  group_size: 15,
-  start_address: Address.create(address: "Pirna"),
-  end_address: Address.create(address: "Stolpen"),
-  map_style: 'mapbox://styles/annamoe/ckoyht30h0awk17mj7tuof7ck',
-  description: "The Elbe Sandstone Mountains Malerweg trail in Saxon Switzerland is one of the most picturesque hiking trails in Germany. Where once painters sought inspiration for their timeless works, you can now walk along a 116 km hiking trail through Saxon Switzerland. Caves can be found in hidden places as a opportunity to sleep in it. Not everybody finds these caves. With a bit of luck our guides will show you theses incredible places, giving you the chance to escape from the civilization.",
-  guide: dieter
-)
-
-GroupHike.create( 
-  hike: malerweg,
-  start_at: Date.today + 8,
-  end_at: Date.today + 16,
-  chatroom: Chatroom.create(name: 'Malerweg'),
-)
-GroupHike.create( 
-  hike: malerweg,
-  start_at: Date.today + 30,
-  end_at: Date.today + 38,
-  chatroom: Chatroom.create(name: 'Malerweg'),
-)
-GroupHike.create( 
-  hike: malerweg,
-  start_at: Date.today + 60,
-  end_at: Date.today + 68,
-  chatroom: Chatroom.create(name: 'Malerweg'),
-)
-GroupHike.create( 
-  hike: malerweg,
-  start_at: Date.today + 75,
-  end_at: Date.today + 83,
-  chatroom: Chatroom.create(name: 'Malerweg'),
-)
-
-malerweg_images = ['Malerweg_Bastei.jpeg', 'Malerweg_Elbe.jpg',  'Malerweg_view.jpg', 'Malerweg_gate.jpeg']
-4.times do |j|
-  image_name = malerweg_images[j]
-  add_image_to_hike(malerweg, image_name)
-end
-puts "#{malerweg.name} is created"        
-
-
 chadar_trek = Hike.create(
     name: "Chadar Trek",
     region: "India",
@@ -213,7 +158,7 @@ south_west_coast_path = Hike.create(
   region: "England",
   price: 840,
   difficulty: "Beginner",
-  accomodation_type: "Cabin, Holiday-House, Tent",
+  accomodation_type: "Cabin",
   terrain: "Coastal",
   national_park: "Southern England",
   elevation: 500,
@@ -364,71 +309,12 @@ laugavegur_image = ['laugavegur.jpg']
 create_random_group_hikes(laugavegur_trail)
     puts "#{laugavegur_trail.name} is created"  
 
-chapada_diamantina = Hike.create(
-    name: "Chapada Diamantina",
-    region: "Brazil",
-    title: "Stunning Valley Trek through Chapada Diamantia",
-    subtitle: "A breathtaking journey through Chapada Diamantia, in Bahia, Brazil. A 7-day tour led by Andre - local certified guide.",
-    price: 975,
-    difficulty: "Intermediate",
-    accomodation_type: "Cabin",
-    terrain: "Plateua, Valley",
-    national_park: "Bahia",
-    elevation: 900,
-    length: 7,
-    distance: 84,
-    group_size: 10,
-    start_address: Address.create(address: "Morro do Pai Inácio"),
-        end_address: Address.create(address: "Cachoeira do Sossêgo "),
-        map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "For those who enjoy hiking, this 7-day trip through Chapada Diamantia is something that cannot be missed. One of the most beautiful crossings through Brazil, this trek offers it all- cliffs, mountains, cascading waterfalls, and natural beauty. Explore the Cave of the Castle and learn about the rich history and culture of the region during your overnight homestays with local families.",
-        guide: dieter,
-        )
-create_random_group_hikes(chapada_diamantina)
-puts "#{chapada_diamantina.name} is created" 
-
-chapada_diamantina_image = ['chapada.jpg']
-   1.times do |j|
-        image_name = chapada_diamantina_image[j]
-        add_image_to_hike(chapada_diamantina, image_name)
-      end 
-
-kumano_kodo = Hike.create!(
-  name: "Kumano Kodo",
-  region: "Japan",
-  price: 800,
-  difficulty: "Intermediate",
-  accomodation_type: "Cabin",
-  terrain: "Forest, Mountain, Panoramic",
-  national_park: "Kii Hantō Peninsula",
-  elevation: 5200,
-  length: 5,
-  distance: 70,
-  group_size: 10,
-  start_address: Address.create(address: "Mt. Hoshi"),
-  end_address: Address.create(address: "mt. nachi"),
-  map_style: 'mapbox://styles/annamoe/ckphettpv2pw217vxhzmeocno',
-  description: "Away from the crowded subway stations, glaring neon signs and the speeding express trains of the major cities, the Kumano Kodo pilgrimage route gives you the chance to get acquainted with Japan’s soul. This trail, which leads you along ancient forest paths, over countless mountains and through magical, primeval forests, will reveal the character of the country in a way few ever get to experience. And as the huge cedars and cypresses rise above you, trees which serve as wild shrines, worshipped by the local population—you’ll be blown away by this wilder, more calming side of Japan.
-  In five daily stages, you’ll hike a total of 70 kilometers from west to east, and you’ll conquer more than 13,000 feet (4,000 meters) of elevation. And while that might sound like quite a challenge, we promise it’s worth the effort as there’s no better way to experience the solitude of the Japanese mountains.",
-  guide: dieter
-)
-
-kumano_kodo_images = ['kumano_kodo_1.jpg', 'kumano_kodo_2.jpg', 'kumano_kodo_mountain.jpg', 'kumano_kodo_sign.jpg']
-4.times do |j|
-  image_name = kumano_kodo_images[j]
-  add_image_to_hike(kumano_kodo, image_name)
-end
-
-create_random_group_hikes(kumano_kodo)
-
-puts "#{kumano_kodo.name} is created"
-
  st_olavsweg = Hike.create(
     name: "St. Olavsweg",
     region: "Norway",
     price: 2100,
     difficulty: "Beginner",
-    accomodation_type: "Cabin",
+    accomodation_type: "Cabin", 
     terrain: "Mountain, Lake",
     national_park: "Scandinavia",
     elevation: 560,
@@ -477,77 +363,186 @@ chilkoot_trail_image = ['chilkoot_trail.jpg']
 create_random_group_hikes(chilkoot_trail)
 puts "#{chilkoot_trail.name} is created" 
 
+kumano_kodo = Hike.create!(
+  name: "Kumano Kodo",
+  region: "Japan",
+  price: 800,
+  difficulty: "Intermediate",
+  accomodation_type: "Cabin",
+  terrain: "Forest, Mountain, Panoramic",
+  national_park: "Kii Hantō Peninsula",
+  elevation: 5200,
+  length: 5,
+  distance: 70,
+  group_size: 10,
+  start_address: Address.create(address: "Mt. Hoshi"),
+  end_address: Address.create(address: "mt. nachi"),
+  map_style: 'mapbox://styles/annamoe/ckphettpv2pw217vxhzmeocno',
+  description: "Away from the crowded subway stations, glaring neon signs and the speeding express trains of the major cities, the Kumano Kodo pilgrimage route gives you the chance to get acquainted with Japan’s soul. This trail, which leads you along ancient forest paths, over countless mountains and through magical, primeval forests, will reveal the character of the country in a way few ever get to experience. And as the huge cedars and cypresses rise above you, trees which serve as wild shrines, worshipped by the local population—you’ll be blown away by this wilder, more calming side of Japan.
+  In five daily stages, you’ll hike a total of 70 kilometers from west to east, and you’ll conquer more than 13,000 feet (4,000 meters) of elevation. And while that might sound like quite a challenge, we promise it’s worth the effort as there’s no better way to experience the solitude of the Japanese mountains.",
+  guide: dieter
+)
 
+kumano_kodo_images = ['kumano_kodo_1.jpg', 'kumano_kodo_2.jpg', 'kumano_kodo_mountain.jpg', 'kumano_kodo_sign.jpg']
+4.times do |j|
+  image_name = kumano_kodo_images[j]
+  add_image_to_hike(kumano_kodo, image_name)
+end
 
+create_random_group_hikes(kumano_kodo)
 
+puts "#{kumano_kodo.name} is created"
 
-lost_city = Hike.create(
-    name: "The Lost City",
-    region: "Colombia",
-    price: 450,
+chapada_diamantina = Hike.create(
+    name: "Chapada Diamantina",
+    region: "Brazil",
+    title: "Stunning Valley Trek through Chapada Diamantia",
+    subtitle: "A breathtaking journey through Chapada Diamantia, in Bahia, Brazil. A 7-day tour led by Andre - local certified guide.",
+    price: 975,
     difficulty: "Intermediate",
-    accomodation_type: "Tent",
-    terrain: "Jungle, Mountain",
-    national_park: "Sierra Nevada de Santa Marta",
-    elevation: 1200,
-    length: 4,
-    distance: 37,
-    group_size: 8,
-    start_address: Address.create(address: "Dyea"),
-        end_address: Address.create(address: "Bennett "),
-        map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "Colombia’s Inca Trail, the Lost City trek is the country’s best multi-day trekking option and a perennial favourite among travellers and backpackers in the country. The trek takes in the gorgeous forests and rivers of the Sierra Nevada de Santa Marta mountains, culminating in a hike to reach the mysterious and beautiful Lost City itself.The Lost City is the best opportunity to connect with nature and prove yourself everything you are capable of. Doing the Lost City Trek will allow you to know part of the Sierra Nevada de Santa Marta in Colombia. You will also have the opportunity to have direct contact with the Kogui; who still preserve the traditions of the Tayronas, the first inhabitants of the Lost City.",
-        guide: dieter,
-)
-
-create_random_group_hikes(lost_city)
-puts "#{lost_city.name} is created" 
-
-
-mt_apo = Hike.create(
-    name: "Mt. Apo",
-    region: "Phillipines",
-    price: 450,
-    difficulty: "Beginner",
-    accomodation_type: "Tent",
-    terrain: "Jungle, Mountain",
-    national_park: "Mindanao",
-    elevation: 2956,
-    length: 3,
-    distance: 30,
+    accomodation_type: "Cabin",
+    terrain: "Plateua, Valley",
+    national_park: "Bahia",
+    elevation: 900,
+    length: 7,
+    distance: 84,
     group_size: 10,
-    start_address: Address.create(address: "Dyea"),
-        end_address: Address.create(address: "Bennett "),
+    start_address: Address.create(address: "Morro do Pai Inácio"),
+        end_address: Address.create(address: "Cachoeira do Sossêgo "),
         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "The stunning beauty of this mountain and the fulfillment that awaits adventurous souls who climb it should be experienced by every Filipino. Standing at 2,956 Meters Above Sea Level Mt. Apo is the highest mountain in the Philippines and is considered to be the Grandfather of Philippine Mountains. The journey isn’t easy and is one of the hardest mountains to hike. You will hike through mystical lakes, lush jungles, rocky mountainsides, and a vertical section of volcanic boulders. It might be a tough adventure but it’s worth it!",
+        description: "For those who enjoy hiking, this 7-day trip through Chapada Diamantina is something that cannot be missed. One of the most beautiful crossings through Brazil, this trek offers it all- cliffs, mountains, cascading waterfalls, and natural beauty. Explore the Cave of the Castle and learn about the rich history and culture of the region during your overnight homestays with local families.",
         guide: dieter,
+        )
+create_random_group_hikes(chapada_diamantina)
+puts "#{chapada_diamantina.name} is created" 
+
+chapada_diamantina_image = ['chapada.jpg']
+   1.times do |j|
+        image_name = chapada_diamantina_image[j]
+        add_image_to_hike(chapada_diamantina, image_name)
+      end 
+
+malerweg = Hike.create(
+  name: "Malerweg",
+  title: "Sandstone Filled Malerweg through Saxony Switzerland",
+  subtitle: "An unforgettable and physically demanding 76-km trek through the Saxony Switzerland National Park, in Saxony, Germany. A 8-day tour led by Dieter - local certified guide.",
+  national_park: "Saxony Switzerland",
+  region: "Germany",
+  price: 610,
+  difficulty: "Intermediate",
+  accomodation_type: 'Tent',
+  terrain: "Forest, Field Paths",
+
+  elevation: 480,
+  length: 8,
+  distance: 116,
+  group_size: 15,
+  start_address: Address.create(address: "Pirna"),
+  end_address: Address.create(address: "Stolpen"),
+  map_style: 'mapbox://styles/annamoe/ckoyht30h0awk17mj7tuof7ck',
+  description: "The Elbe Sandstone Mountains Malerweg trail in Saxon Switzerland is one of the most picturesque hiking trails in Germany. Where once painters sought inspiration for their timeless works, you can now walk along a 116 km hiking trail through Saxon Switzerland. Caves can be found in hidden places as a opportunity to sleep in it. Not everybody finds these caves. With a bit of luck our guides will show you theses incredible places, giving you the chance to escape from the civilization.",
+  guide: dieter
 )
 
-create_random_group_hikes(mt_apo)
-puts "#{mt_apo.name} is created"
-
-
-gangotri = Hike.create(
-    name: "Gangotri Glacier Trek",
-    region: "India",
-    price: 875,
-    difficulty: "Intermediate",
-    accomodation_type: "Tent",
-    terrain: "Mountain, Glacier",
-    national_park: "Himalayas",
-    elevation: 4023,
-    length: 6,
-    distance: 120,
-    group_size: 10,
-    start_address: Address.create(address: "Dyea"),
-        end_address: Address.create(address: "Bennett "),
-        map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-        description: "The stunning beauty of this mountain and the fulfillment that awaits adventurous souls who climb it should be experienced by every Filipino. Standing at 2,956 Meters Above Sea Level Mt. Apo is the highest mountain in the Philippines and is considered to be the Grandfather of Philippine Mountains. The journey isn’t easy and is one of the hardest mountains to hike. You will hike through mystical lakes, lush jungles, rocky mountainsides, and a vertical section of volcanic boulders. It might be a tough adventure but it’s worth it!",
-        guide: dieter,
+GroupHike.create( 
+  hike: malerweg,
+  start_at: Date.today + 8,
+  end_at: Date.today + 16,
+  chatroom: Chatroom.create(name: 'Malerweg'),
+)
+GroupHike.create( 
+  hike: malerweg,
+  start_at: Date.today + 30,
+  end_at: Date.today + 38,
+  chatroom: Chatroom.create(name: 'Malerweg'),
+)
+GroupHike.create( 
+  hike: malerweg,
+  start_at: Date.today + 60,
+  end_at: Date.today + 68,
+  chatroom: Chatroom.create(name: 'Malerweg'),
+)
+GroupHike.create( 
+  hike: malerweg,
+  start_at: Date.today + 75,
+  end_at: Date.today + 83,
+  chatroom: Chatroom.create(name: 'Malerweg'),
 )
 
-create_random_group_hikes(gangotri)
-puts "#{gangotri.name} is created"
+malerweg_images = ['Malerweg_Bastei.jpeg', 'Malerweg_Elbe.jpg',  'Malerweg_view.jpg', 'Malerweg_gate.jpeg']
+4.times do |j|
+  image_name = malerweg_images[j]
+  add_image_to_hike(malerweg, image_name)
+end
+puts "#{malerweg.name} is created"        
+
+
+# lost_city = Hike.create(
+#     name: "The Lost City",
+#     region: "Colombia",
+#     price: 450,
+#     difficulty: "Intermediate",
+#     accomodation_type: "Tent",
+#     terrain: "Jungle, Mountain",
+#     national_park: "Sierra Nevada de Santa Marta",
+#     elevation: 1200,
+#     length: 4,
+#     distance: 37,
+#     group_size: 8,
+#     start_address: Address.create(address: "Dyea"),
+#         end_address: Address.create(address: "Bennett "),
+#         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+#         description: "Colombia’s Inca Trail, the Lost City trek is the country’s best multi-day trekking option and a perennial favourite among travellers and backpackers in the country. The trek takes in the gorgeous forests and rivers of the Sierra Nevada de Santa Marta mountains, culminating in a hike to reach the mysterious and beautiful Lost City itself.The Lost City is the best opportunity to connect with nature and prove yourself everything you are capable of. Doing the Lost City Trek will allow you to know part of the Sierra Nevada de Santa Marta in Colombia. You will also have the opportunity to have direct contact with the Kogui; who still preserve the traditions of the Tayronas, the first inhabitants of the Lost City.",
+#         guide: dieter,
+# )
+
+# create_random_group_hikes(lost_city)
+# puts "#{lost_city.name} is created" 
+
+# mt_apo = Hike.create(
+#     name: "Mt. Apo",
+#     region: "Phillipines",
+#     price: 450,
+#     difficulty: "Beginner",
+#     accomodation_type: "Tent",
+#     terrain: "Jungle, Mountain",
+#     national_park: "Mindanao",
+#     elevation: 2956,
+#     length: 3,
+#     distance: 30,
+#     group_size: 10,
+#     start_address: Address.create(address: "Dyea"),
+#         end_address: Address.create(address: "Bennett "),
+#         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+#         description: "The stunning beauty of this mountain and the fulfillment that awaits adventurous souls who climb it should be experienced by every Filipino. Standing at 2,956 Meters Above Sea Level Mt. Apo is the highest mountain in the Philippines and is considered to be the Grandfather of Philippine Mountains. The journey isn’t easy and is one of the hardest mountains to hike. You will hike through mystical lakes, lush jungles, rocky mountainsides, and a vertical section of volcanic boulders. It might be a tough adventure but it’s worth it!",
+#         guide: dieter,
+# )
+
+# create_random_group_hikes(mt_apo)
+# puts "#{mt_apo.name} is created"
+
+
+# gangotri = Hike.create(
+#     name: "Gangotri Glacier Trek",
+#     region: "India",
+#     price: 875,
+#     difficulty: "Intermediate",
+#     accomodation_type: "Tent",
+#     terrain: "Mountain, Glacier",
+#     national_park: "Himalayas",
+#     elevation: 4023,
+#     length: 6,
+#     distance: 120,
+#     group_size: 10,
+#     start_address: Address.create(address: "Dyea"),
+#         end_address: Address.create(address: "Bennett "),
+#         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+#         description: "The stunning beauty of this mountain and the fulfillment that awaits adventurous souls who climb it should be experienced by every Filipino. Standing at 2,956 Meters Above Sea Level Mt. Apo is the highest mountain in the Philippines and is considered to be the Grandfather of Philippine Mountains. The journey isn’t easy and is one of the hardest mountains to hike. You will hike through mystical lakes, lush jungles, rocky mountainsides, and a vertical section of volcanic boulders. It might be a tough adventure but it’s worth it!",
+#         guide: dieter,
+# )
+
+# create_random_group_hikes(gangotri)
+# puts "#{gangotri.name} is created"
 
 
 puts 'Creating bookings'
