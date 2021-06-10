@@ -40,6 +40,50 @@
   margin-right: 0px;
 }
 
+.fas.fa-heart.index:visited {
+  color: #758500;
+}
+
+.fas.fa-heart.index:hover {
+  transform: scale(1.10); 
+}
+
+.fas.fa-heart.index:active {
+  color: #758500;
+}
+
+.fas.fa-heart:hover {
+  transform: scale(1.10); 
+}
+
 .fas.fa-thumbtack{
   color: #758563;
+}
+
+.fas.fa-heart.thumbnail {
+  position: absolute;
+  top: 0%;
+  left: -3%;
+  color: #758563;
+  font-size: 32px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  opacity: 55%;
+  border-radius: 5px;
+  -webkit-text-stroke: 1px white;
+}
+
+.fas.fa-heart.suggestion {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  color: #758563;
+  font-size: 32px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  opacity: 55%;
+  border-radius: 5px;
+  -webkit-text-stroke: 1px white;
 }
