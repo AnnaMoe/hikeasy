@@ -92,8 +92,7 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class= "col-lg-1">
+            <%# <div class= "col-lg-1">
               <div class="nav-link" >
                 <div class="dropdown">
                   <div style="width:500px;">
@@ -104,21 +103,21 @@
                       <div class="dropdown-item">
                         <br>
                         <%= check_box_tag "accomodation[]", "Cabin", params[:accomodation]&.include?("Cabin") %>
-                        <%= label_tag :cabin %>
+                        <%# <%= label_tag :cabin %>
+                        <%# <br> %>
+                        <%# <%= check_box_tag "accomodation[]", "Tent", params[:accomodation]&.include?("Tent") 
+                        <%= label_tag :tent
                         <br>
-                        <%= check_box_tag "accomodation[]", "Tent", params[:accomodation]&.include?("Tent") %>
-                        <%= label_tag :tent %>
-                        <br>
-                        <%= check_box_tag "accomodation[]", "Tipi", params[:accomodation]&.include?("Tipi") %>
-                        <%= label_tag :tipi %>
-                        <br>
+                        <%= check_box_tag "accomodation[]", "Tipi", params[:accomodation]&.include?("Tipi")
+                        <%= label_tag :tipi %> 
+                        <%# <br>
                         <%= check_box_tag "accomodation[]", "Under the stars", params[:accomodation]&.include?("Under the stars") %>
-                        <%= label_tag :under_the_stars %>
-                      </div>
-                    </div>
-                  </div>
+                        <%# <%= label_tag :under_the_stars %>
+                      <%# </div> %> 
+                    <%# </div> %>
+                  <%# </div>
                 </div>
-              </div>
+              </div> %>            
           <% end %>
         </div>
         <div class= "col-lg-1">
