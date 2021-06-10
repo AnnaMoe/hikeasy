@@ -14,11 +14,11 @@
                       <div class = "container">
                         <span id=></span>
                       <div>
-                          <label for="min">350</label>
-                          <input name="max_price" type ="range" min="350" max="2000" step="25" onchange="showVal('price-output', this.value)" value="<%= params[:max_price] || 2000 %>" />
-                          <label for="max">2000</label>
+                          <label for="min">$0</label>
+                          <input name="max_price" type ="range" min="0" max="2000" step="25" onchange="showVal('price-output', this.value)" value="<%= params[:max_price] || 2000 %>" />
+                          <label for="max">$2000</label>
                         </div>
-                        <output id="price-output"><%= params[:max_price]%></output>
+                        $<output id="price-output"><%= params[:max_price]%></output>
                      </div>
                     </div>
                   </div>
@@ -60,11 +60,11 @@
                     <div data-role="rangeslider">
                       <div class = "container">
                         <div>
-                          <label for="min">2</label>
-                          <input name="max_duration" type ="range" min="2" max="30" onchange="showVal('duration-output', this.value)" value="<%= params[:max_duration] || 20 %>" />
-                          <label for="max">30</label>
+                          <label for="min">0</label>
+                          <input name="max_duration" type ="range" min="0" max="30" onchange="showVal('duration-output', this.value)" value="<%= params[:max_duration] || 20 %>" />
+                          <label for="max">30 Days</label>
                         </div>
-                        <output id="duration-output"><%= params[:max_duration]%></output>
+                        <output id="duration-output"><%= params[:max_duration]%></output> Days
                      </div>
                     </div>
                   </div>
@@ -83,17 +83,16 @@
                     <form method="post">
 
                         <div>
-                          <label for="min">14</label>
-                          <input name="max_distance" type ="range" min="14" max="1000" onchange="showVal('distance-output', this.value)" value="<%= params[:max_distance] || 1000 %>" />
-                          <label for="max">1000</label>
+                          <label for="min">0</label>
+                          <input name="max_distance" type ="range" min="0" max="1000" onchange="showVal('distance-output', this.value)" value="<%= params[:max_distance] || 1000 %>" />
+                          <label for="max">1000 Km</label>
                           </div>
-                          <output id="distance-output"><%= params[:max_distance]%></output>
+                          <output id="distance-output"><%= params[:max_distance]%></output>km
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class= "col-lg-1">
+            <%# <div class= "col-lg-1">
               <div class="nav-link" >
                 <div class="dropdown">
                   <div style="width:500px;">
@@ -104,21 +103,21 @@
                       <div class="dropdown-item">
                         <br>
                         <%= check_box_tag "accomodation[]", "Cabin", params[:accomodation]&.include?("Cabin") %>
-                        <%= label_tag :cabin %>
+                        <%# <%= label_tag :cabin %>
+                        <%# <br> %>
+                        <%# <%= check_box_tag "accomodation[]", "Tent", params[:accomodation]&.include?("Tent") 
+                        <%= label_tag :tent
                         <br>
-                        <%= check_box_tag "accomodation[]", "Tent", params[:accomodation]&.include?("Tent") %>
-                        <%= label_tag :tent %>
-                        <br>
-                        <%= check_box_tag "accomodation[]", "Tipi", params[:accomodation]&.include?("Tipi") %>
-                        <%= label_tag :tipi %>
-                        <br>
+                        <%= check_box_tag "accomodation[]", "Tipi", params[:accomodation]&.include?("Tipi")
+                        <%= label_tag :tipi %> 
+                        <%# <br>
                         <%= check_box_tag "accomodation[]", "Under the stars", params[:accomodation]&.include?("Under the stars") %>
-                        <%= label_tag :under_the_stars %>
-                      </div>
-                    </div>
-                  </div>
+                        <%# <%= label_tag :under_the_stars %>
+                      <%# </div> %> 
+                    <%# </div> %>
+                  <%# </div>
                 </div>
-              </div>
+              </div> %>            
           <% end %>
         </div>
         <div class= "col-lg-1">

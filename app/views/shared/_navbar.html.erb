@@ -6,13 +6,15 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "all hikes", :hikes, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "my hikes", dashboard_path, class: "nav-link" %>
+        <%= link_to "discover", :hikes, class: "nav-link"%>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
+      <li>
+      <%=link_to dashboard_path do %>
+      <i class="fas fa-heart nav"></i>
+      <% end %>
+      </li>
       <li class="nav-item dropdown">
         <% if user_signed_in? %>
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= current_user.avatar_url %>" />
