@@ -1,5 +1,8 @@
-<div class="container mt-3">
+<div class="container mt-5">
+<div class="row mb-5">
+<img src='<%= current_user.avatar_url %>' class="avatar-large" />
   <div class ="hello_user">Hello, <%= current_user.first_name%></div>
+</div>
   <div class ="sub_title">Your bookings:</div>
   <%= render "bookings", bookings: @bookings %>
 </div>
@@ -7,3 +10,5 @@
   <div class ="sub_title">Your favourites:</div>
   <%= render "favourites", favourite_hikes: @favourite_hikes %>
 </div>
+
+
