@@ -289,17 +289,17 @@ chapada_diamantina = Hike.create(
     length: 7,
     distance: 84,
     group_size: 10,
-    start_address: Address.create(address: "Morro do Pai Inácio"),
-        end_address: Address.create(address: "Cachoeira do Sossêgo "),
-        map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+    start_address: Address.create(address: "Lençóis, 46960-000, Brazil"),
+        end_address: Address.create(address: "Mucugê, State of Bahia, 46750-000, Brazil "),
+        map_style: 'mapbox://styles/annamoe/ckpqy9x3j03z318pggacdkaei',
         description: "For those who enjoy hiking, this 7-day trip through Chapada Diamantina is something that cannot be missed. One of the most beautiful crossings through Brazil, this trek offers it all- cliffs, mountains, cascading waterfalls, and natural beauty. Explore the Cave of the Castle and learn about the rich history and culture of the region during your overnight homestays with local families.",
         guide: dieter,
         )
 create_random_group_hikes(chapada_diamantina)
 puts "#{chapada_diamantina.name} is created" 
 
-chapada_diamantina_image = ['chapada.jpg']
-   1.times do |j|
+chapada_diamantina_image = ['chapada.jpg', 'chapada_lakes.jpg', 'chapada_waterfall.jpg', 'chapada_hike.jpg']
+   4.times do |j|
         image_name = chapada_diamantina_image[j]
         add_image_to_hike(chapada_diamantina, image_name)
       end 
