@@ -752,7 +752,7 @@ gangotri = Hike.create(
 
 create_random_group_hikes(gangotri)
 puts "#{gangotri.name} is created"
-=======
+
        
 
 
