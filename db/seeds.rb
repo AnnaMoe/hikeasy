@@ -100,7 +100,7 @@ andre = User.create(
   country: "Brasil",
   first_name: "André",
   last_name: "Ferrer",
-  guide_description: "Olá from Brasil! My Name is Andre. When I'm not working as a fullstack engineer or looking after my new puppy, I like to venture out into the wild and see all of what Brasil has to offer. I always try to give my hikers the best experience that they can remember for a lifetime! Vamos!",
+  guide_description: "Olá from Brasil! My Name is André. When I'm not working as a fullstack engineer or looking after my new puppy, I like to venture out into the wild and see all of what Brasil has to offer. I always try to give my hikers the best experience that they can remember for a lifetime! Vamos!",
   guide_since: Date.parse('17-03-2019')
 )
 
@@ -279,7 +279,7 @@ chapada_diamantina = Hike.create(
     name: "Chapada Diamantina",
     region: "Brazil",
     title: "Stunning Valley Trek through Chapada Diamantia",
-    subtitle: "A breathtaking journey through Chapada Diamantia, in Bahia, Brazil. A 7-day tour led by Andre - local certified guide.",
+    subtitle: "A breathtaking journey through Chapada Diamantia, in Bahia, Brazil. A 7-day tour led by André - local certified guide.",
     price: 975,
     difficulty: "Intermediate",
     accomodation_type: "Cabin",
@@ -397,7 +397,7 @@ south_west_coast_path = Hike.create(
   difficulty: "Beginner",
   title: "Stunning Trek through the Southern Coast",
   subtitle:"Amazing Hike led by Vitor - local certified guide.",
-  accomodation_type: "Cabin, Holiday-House, Tent",
+  accomodation_type: "Cabin",
   terrain: "Coastal",
   national_park: "Southern England",
   elevation: 500,
@@ -562,7 +562,7 @@ chapada_diamantina = Hike.create(
     name: "Chapada Diamantina",
     region: "Brazil",
     title: "Stunning Valley Trek through Chapada Diamantia",
-    subtitle: "A breathtaking journey through Chapada Diamantia, in Bahia, Brazil. A 7-day tour led by Andre - local certified guide.",
+    subtitle: "A breathtaking journey through Chapada Diamantia, in Bahia, Brazil. A 7-day tour led by André - local certified guide.",
     price: 975,
     difficulty: "Intermediate",
     accomodation_type: "Cabin",
