@@ -3,9 +3,8 @@
     <div class="card-booking-body">
     <p class="hike_details mb-3">
      <%= link_to toggle_favorite_hike_path(@hike), remote: true, method: :post do %>
-        <div class="like-icon mx-2 <%= 'favourite' if current_user.favorited?(@hike) %>" data-id="<%= @hike.id %>">
-          <i class="fas fa-heart"></i>
-        </div>
+        <div class="like-icon mx-2 heart <%= 'not-favorited' unless current_user.favorited?(@hike) %>" data-id="<%= @hike.id %>">
+          <i class="fas fa-heart "></i></div>
       <% end %>
     </p>
     <h3 class="float-right card-booking-title"><strong>$<%=@hike.price%></strong></h3>
