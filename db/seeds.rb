@@ -59,6 +59,16 @@ toni = User.create(
   last_name: "Panacek",
 )
 
+francisco = User.create(
+  email: "francisco@hikeasy.fit",
+  password: "123456",
+  nickname: "Francisco-Webdeveloper",
+  age: "42",
+  country: "Portugal",
+  first_name: "Francisco",
+  last_name: "Santos",
+)
+
 dieter = User.create(
   email: "dieter@hikeasy.fit",
   password: "123456",
@@ -156,21 +166,11 @@ ai = User.create(
   last_name: "Nishikawa",
 )
 
-francisco = User.create(
-  email: "francisco@hikeasy.fit",
-  password: "123456",
-  nickname: "Francisco-Webdeveloper",
-  age: "29",
-  country: "Portugal",
-  first_name: "Francisco",
-  last_name: "Santos",
-)
-
 tzegai = User.create(
   email: "tzegai@hikeasy.fit",
   password: "123456",
   nickname: "thidru69",
-  age: "29",
+  age: "20",
   country: "Germany",
   first_name: "Tzegai",
   last_name: "Hidru",
@@ -242,6 +242,37 @@ malerweg_images = ['Malerweg_Bastei.jpeg', 'Malerweg_Elbe.jpg',  'Malerweg_view.
   add_image_to_hike(malerweg, image_name)
 end
 puts "#{malerweg.name} is created" 
+
+kumano_kodo = Hike.create!(
+  name: "Kumano Kodo",
+  region: "Japan",
+  price: 800,
+  title: "Breathtaking Journey through the Lush Green of Japan",
+  difficulty: "Intermediate",
+  accomodation_type: "Cabin",
+  terrain: "Forest, Mountain, Panoramic",
+  national_park: "Kii Hantō Peninsula",
+  elevation: 5200,
+  length: 5,
+  distance: 70,
+  group_size: 10,
+  start_address: Address.create(address: "Mt. Hoshi"),
+  end_address: Address.create(address: "mt. nachi"),
+  map_style: 'mapbox://styles/annamoe/ckphettpv2pw217vxhzmeocno',
+  description: "Away from the crowded subway stations, glaring neon signs and the speeding express trains of the major cities, the Kumano Kodo pilgrimage route gives you the chance to get acquainted with Japan’s soul. This trail, which leads you along ancient forest paths, over countless mountains and through magical, primeval forests, will reveal the character of the country in a way few ever get to experience. And as the huge cedars and cypresses rise above you, trees which serve as wild shrines, worshipped by the local population—you’ll be blown away by this wilder, more calming side of Japan.
+  In five daily stages, you’ll hike a total of 70 kilometers from west to east, and you’ll conquer more than 13,000 feet (4,000 meters) of elevation. And while that might sound like quite a challenge, we promise it’s worth the effort as there’s no better way to experience the solitude of the Japanese mountains.",
+  guide: rowena
+)
+
+kumano_kodo_images = ['kumano_kodo_1.jpg', 'kumano_kodo_2.jpg', 'kumano_kodo_mountain.jpg', 'kumano_kodo_sign.jpg']
+4.times do |j|
+  image_name = kumano_kodo_images[j]
+  add_image_to_hike(kumano_kodo, image_name)
+end
+
+create_random_group_hikes(kumano_kodo)
+
+puts "#{kumano_kodo.name} is created"
 
 
 
@@ -329,6 +360,35 @@ end
 create_random_group_hikes(south_west_coast_path) 
 puts "#{south_west_coast_path.name} is created"
 
+
+torres_del_paine = Hike.create(
+    name: "Torres del Paine",
+    region: "Chile",
+    price: 1230,
+    difficulty: "Expert",
+    title: "Stunning Valley Trek through the Patagonias",
+    subtitle:"Amazing Hike led by Vitor - local certified guide.",
+    accomodation_type: "Tent",
+    terrain: "Mountain, Glacier, Panoramic",
+    national_park: "Patagonia",
+    elevation: 7000,
+    length: 8,
+    distance: 130,
+    group_size: 10,
+    start_address: Address.create(address: "torres del paine"),
+    end_address: Address.create(address: "torres del paine"),
+    map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+    description: "As a National Trail, the South West Coast Path is signposted all the way round by the acorn. In addition to this you will find large commemorative markers at key points on the trail such as Minehead (the start), Porthallow (the mid-point) and South Haven Point (the end). All off which offer the perfect excuse for a photo! There are also a number of way markers along the way that will tell you how far from each end of the trail you are",
+  guide: vitor
+  )
+  torres_del_paine_image = ['torres_del_paine.jpg']
+1.times do |j|
+  image_name = torres_del_paine_image[j]
+  add_image_to_hike(torres_del_paine, image_name)
+end 
+create_random_group_hikes(torres_del_paine)
+    puts "#{torres_del_paine.name} is created"
+
 chapada_diamantina = Hike.create(
     name: "Chapada Diamantina",
     region: "Brazil",
@@ -358,34 +418,6 @@ chapada_diamantina_image = ['chapada.jpg', 'chapada_lakes.jpg', 'chapada_waterfa
         add_image_to_hike(chapada_diamantina, image_name)
       end 
 
-
-torres_del_paine = Hike.create(
-    name: "Torres del Paine",
-    region: "Chile",
-    price: 1230,
-    difficulty: "Expert",
-    title: "Stunning Valley Trek through the Patagonias",
-    subtitle:"Amazing Hike led by Vitor - local certified guide.",
-    accomodation_type: "Tent",
-    terrain: "Mountain, Glacier, Panoramic",
-    national_park: "Patagonia",
-    elevation: 7000,
-    length: 8,
-    distance: 130,
-    group_size: 10,
-    start_address: Address.create(address: "torres del paine"),
-    end_address: Address.create(address: "torres del paine"),
-    map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-    description: "As a National Trail, the South West Coast Path is signposted all the way round by the acorn. In addition to this you will find large commemorative markers at key points on the trail such as Minehead (the start), Porthallow (the mid-point) and South Haven Point (the end). All off which offer the perfect excuse for a photo! There are also a number of way markers along the way that will tell you how far from each end of the trail you are",
-  guide: vitor
-  )
-  torres_del_paine_image = ['torres_del_paine.jpg']
-1.times do |j|
-  image_name = torres_del_paine_image[j]
-  add_image_to_hike(torres_del_paine, image_name)
-end 
-create_random_group_hikes(torres_del_paine)
-    puts "#{torres_del_paine.name} is created"
 
 zion_narrows = Hike.create(
     name: "Zion Narrows",
@@ -498,39 +530,6 @@ laugavegur_image = ['laugavegur.jpg']
       end 
 create_random_group_hikes(laugavegur_trail)
     puts "#{laugavegur_trail.name} is created"  
-
-
-
-kumano_kodo = Hike.create!(
-  name: "Kumano Kodo",
-  region: "Japan",
-  price: 800,
-  title: "Breathtaking Journey through the Lush Green of Japan",
-  difficulty: "Intermediate",
-  accomodation_type: "Cabin",
-  terrain: "Forest, Mountain, Panoramic",
-  national_park: "Kii Hantō Peninsula",
-  elevation: 5200,
-  length: 5,
-  distance: 70,
-  group_size: 10,
-  start_address: Address.create(address: "Mt. Hoshi"),
-  end_address: Address.create(address: "mt. nachi"),
-  map_style: 'mapbox://styles/annamoe/ckphettpv2pw217vxhzmeocno',
-  description: "Away from the crowded subway stations, glaring neon signs and the speeding express trains of the major cities, the Kumano Kodo pilgrimage route gives you the chance to get acquainted with Japan’s soul. This trail, which leads you along ancient forest paths, over countless mountains and through magical, primeval forests, will reveal the character of the country in a way few ever get to experience. And as the huge cedars and cypresses rise above you, trees which serve as wild shrines, worshipped by the local population—you’ll be blown away by this wilder, more calming side of Japan.
-  In five daily stages, you’ll hike a total of 70 kilometers from west to east, and you’ll conquer more than 13,000 feet (4,000 meters) of elevation. And while that might sound like quite a challenge, we promise it’s worth the effort as there’s no better way to experience the solitude of the Japanese mountains.",
-  guide: rowena
-)
-
-kumano_kodo_images = ['kumano_kodo_1.jpg', 'kumano_kodo_2.jpg', 'kumano_kodo_mountain.jpg', 'kumano_kodo_sign.jpg']
-4.times do |j|
-  image_name = kumano_kodo_images[j]
-  add_image_to_hike(kumano_kodo, image_name)
-end
-
-create_random_group_hikes(kumano_kodo)
-
-puts "#{kumano_kodo.name} is created"
 
  st_olavsweg = Hike.create(
     name: "St. Olavsweg",
@@ -749,7 +748,6 @@ booking1 = Booking.create!(
   credit_card_cvc: rand(100..9999)
 )
 
-puts 'Creating bookings'
 booking2 = Booking.create!(
   hike: malerweg,
   group_hike: malerweg.group_hikes.last,
@@ -763,7 +761,6 @@ booking2 = Booking.create!(
   credit_card_cvc: rand(100..9999)
 )
 
-puts 'Creating bookings'
 booking3 = Booking.create!(
   hike: malerweg,
   group_hike: malerweg.group_hikes.last,
@@ -777,7 +774,6 @@ booking3 = Booking.create!(
   credit_card_cvc: rand(100..9999)
 )
 
-puts 'Creating bookings'
 booking4 = Booking.create!(
   hike: chapada_diamantina,
   group_hike: chapada_diamantina.group_hikes.last,
@@ -791,7 +787,6 @@ booking4 = Booking.create!(
   credit_card_cvc: rand(100..9999)
 )
 
-puts 'Creating bookings'
 booking5 = Booking.create!(
   hike: chapada_diamantina,
   group_hike: chapada_diamantina.group_hikes.last,
@@ -805,7 +800,6 @@ booking5 = Booking.create!(
   credit_card_cvc: rand(100..9999)
 )
 
-puts 'Creating bookings'
 booking6 = Booking.create!(
   hike: chapada_diamantina,
   group_hike: chapada_diamantina.group_hikes.last,
@@ -819,7 +813,6 @@ booking6 = Booking.create!(
   credit_card_cvc: rand(100..9999)
 )
 
-puts 'Creating bookings'
 booking7 = Booking.create!(
   hike: kumano_kodo,
   group_hike: kumano_kodo.group_hikes.last,
@@ -832,7 +825,7 @@ booking7 = Booking.create!(
   credit_card_expiration_year: rand(2021..2030),
   credit_card_cvc: rand(100..9999)
 )
-puts 'Creating bookings'
+
 booking8 = Booking.create!(
   hike: kumano_kodo,
   group_hike: kumano_kodo.group_hikes.last,
@@ -845,7 +838,7 @@ booking8 = Booking.create!(
   credit_card_expiration_year: rand(2021..2030),
   credit_card_cvc: rand(100..9999)
 )
-puts 'Creating bookings'
+
 booking9 = Booking.create!(
   hike: kumano_kodo,
   group_hike: kumano_kodo.group_hikes.last,
@@ -858,6 +851,33 @@ booking9 = Booking.create!(
   credit_card_expiration_year: rand(2021..2030),
   credit_card_cvc: rand(100..9999)
 )
+
+booking10 = Booking.create!(
+  hike: malerweg,
+  group_hike: malerweg.group_hikes.second,
+  user: francisco,
+  first_name: francisco.first_name,
+  last_name: francisco.last_name,
+  email: francisco.email,
+  credit_card: Faker::Finance.credit_card, 
+  credit_card_expiration_month: rand(1..12), 
+  credit_card_expiration_year: rand(2021..2030),
+  credit_card_cvc: rand(100..9999)
+)
+
+booking11 = Booking.create!(
+  hike: malerweg,
+  group_hike: malerweg.group_hikes.second,
+  user: tzegai,
+  first_name: tzegai.first_name,
+  last_name: tzegai.last_name,
+  email: tzegai.email,
+  credit_card: Faker::Finance.credit_card, 
+  credit_card_expiration_month: rand(1..12), 
+  credit_card_expiration_year: rand(2021..2030),
+  credit_card_cvc: rand(100..9999)
+)
+
 
 
 puts 'Creating reviews'
