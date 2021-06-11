@@ -5,10 +5,12 @@ class BookingsController < ApplicationController
     @hike = Hike.find(params[:hike_id])
     @booking = Booking.new
     set_years_and_months
+    @created = false
     authorize @booking
   end
 
   def create
+    @created = false
     @hike = Hike.find(params[:hike_id])
     @group_hike = GroupHike.find(params[:booking][:group_hike])
     @booking = Booking.new(booking_params)
@@ -17,7 +19,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to dashboard_path
+      @created = true
+      set_years_and_months
+      render :new
     else
       set_years_and_months
       render :new, status: :unprocessable_entity
