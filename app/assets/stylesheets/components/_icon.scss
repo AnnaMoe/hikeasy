@@ -22,12 +22,12 @@
 }
 
 .fas.fa-star{
-  color: #758563;
+  // color: #758563;
 }
 
 .fas.fa-heart{
   font-size: 32px;
-  color: #758563;
+  // color: #758563;
   text-align: right;
   opacity: 30%;
   margin-right: 150px;
@@ -35,30 +35,31 @@
 
 .fas.fa-heart.index{
   font-size: 32px;
-  color: #758563;
   opacity: 30%;
   margin-right: 0px;
 }
+.not-favorited {
+  color: #758563; // to do use scss variable for red color
+}
+
+.favorited {
+  color: black;
+}
+
+.favorited a {
+  color: black;
+}
+
 
 i.fas.fa-heart.nav{
   font-size: 28px;
-  color: #758563;
   opacity: 100%;
   margin-right: 16px;
   margin-top: 6px;
 }
 
-
-.fas.fa-heart.index:visited {
-  color: #758500;
-}
-
 .fas.fa-heart.index:hover {
   transform: scale(1.10); 
-}
-
-.fas.fa-heart.index:active {
-  color: #758500;
 }
 
 .fas.fa-heart:hover {
@@ -73,7 +74,6 @@ i.fas.fa-heart.nav{
   position: absolute;
   top: 0%;
   left: -3%;
-  color: #758563;
   font-size: 32px;
   padding: 12px 24px;
   border: none;
@@ -87,7 +87,6 @@ i.fas.fa-heart.nav{
   position: absolute;
   top: 0%;
   left: 0%;
-  color: #758563;
   font-size: 32px;
   padding: 12px 24px;
   border: none;

@@ -139,7 +139,7 @@
             <%= cl_image_tag related_hike.photos.first.key, class: 'hike-image' %>
 
             <%= link_to toggle_favorite_hike_path(related_hike), remote: true, method: :post do %>
-            <div class="like-icon mx-2 heart <%= 'not-favorited' unless current_user.favorited?(related_hike) %>" data-id="<%= related_hike.id %>">
+            <div class="like-icon mx-2 heart <%= current_user.favorited?(related_hike) ? 'favorited' : 'not-favorited' %>" data-id="<%= related_hike.id %>">
             <i class="fas fa-heart suggestion "></i></div>
              <% end %>
 
