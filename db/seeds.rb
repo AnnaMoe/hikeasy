@@ -615,29 +615,35 @@ puts "#{chilkoot_trail.name} is created"
 # puts "#{lost_city.name} is created" 
 
 
-# mt_apo = Hike.create(
-#     name: "Mt. Apo",
-#     region: "Phillipines",
-#     price: 450,
-#     title: "Stunning Island Trek up Mt. Apo",
-#     subtitle:"Amazing Hike led by Vitor - local certified guide.",
-#     difficulty: "Beginner",
-#     accomodation_type: "Tent",
-#     terrain: "Jungle, Mountain",
-#     national_park: "Mindanao",
-#     elevation: 2956,
-#     length: 3,
-#     distance: 30,
-#     group_size: 10,
-#     start_address: Address.create(address: "Dyea"),
-#         end_address: Address.create(address: "Bennett "),
-#         map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
-#         description: "The stunning beauty of this mountain and the fulfillment that awaits adventurous souls who climb it should be experienced by every Filipino. Standing at 2,956 Meters Above Sea Level Mt. Apo is the highest mountain in the Philippines and is considered to be the Grandfather of Philippine Mountains. The journey isn’t easy and is one of the hardest mountains to hike. You will hike through mystical lakes, lush jungles, rocky mountainsides, and a vertical section of volcanic boulders. It might be a tough adventure but it’s worth it!",
-#         guide: vitor,
-# )
+mt_apo = Hike.create(
+    name: "Mt. Apo",
+    region: "Phillipines",
+    price: 450,
+    title: "Stunning Island Trek up Mt. Apo",
+    subtitle:"Amazing Hike led by Vitor - local certified guide.",
+    difficulty: "Beginner",
+    accomodation_type: "Tent",
+    terrain: "Jungle, Mountain",
+    national_park: "Mindanao",
+    elevation: 2956,
+    length: 3,
+    distance: 30,
+    group_size: 10,
+    start_address: Address.create(address: "mount apo"),
+        end_address: Address.create(address: "mount apo"),
+        map_style: 'mapbox://styles/annamoe/ckp5ljcjo1m8418mmk1cj5g6t',
+        description: "The stunning beauty of this mountain and the fulfillment that awaits adventurous souls who climb it should be experienced by every Filipino. Standing at 2,956 Meters Above Sea Level Mt. Apo is the highest mountain in the Philippines and is considered to be the Grandfather of Philippine Mountains. The journey isn’t easy and is one of the hardest mountains to hike. You will hike through mystical lakes, lush jungles, rocky mountainsides, and a vertical section of volcanic boulders. It might be a tough adventure but it’s worth it!",
+        guide: vitor,
+)
 
-# create_random_group_hikes(mt_apo)
-# puts "#{mt_apo.name} is created"
+mt_apo_image = ['mt_apo.jpg']
+   1.times do |j|
+        image_name = mt_apo_image[j]
+        add_image_to_hike(mt_apo, image_name)
+      end 
+
+create_random_group_hikes(mt_apo)
+puts "#{mt_apo.name} is created"
 
 
 # gangotri = Hike.create(
