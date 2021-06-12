@@ -42,32 +42,29 @@
           <h3>Expected Weather Forecast</h3>
           <h4 id="date"></h4>
           <p id="description" class="m-0"></p>
-              <div class="d-flex align-items-center">
-                <img src="" alt="" id="icon" height="50" width="50">
-                <h4 id="temperature" class="m-0" data-longitude= '<%= @booking.hike.start_address.longitude %>'
-            data-latitude='<%= @booking.hike.start_address.latitude %>'></h4>
+          <div class="d-flex align-items-center">
+            <img src="" alt="" id="icon" height="50" width="50">
+            <h4 id="temperature" class="m-0" data-longitude= '<%= @booking.hike.start_address.longitude %>'data-latitude='<%= @booking.hike.start_address.latitude %>'></h4>
           </div>
         </div>
         <h3 class="mt-5">Fellow Hikers</h3>
         <% @chatroom.group_hike.bookings.each do |booking| %>
           <div class="notification-members">
             <img class="avatar dropdown-toggle" src="<%= booking.user.avatar_url  %>" />
-      <div class="notification-members-content">
-        <div class="d-flex align-items-center">
-          <p class="m-0">
-            <%= booking.user.first_name %>, <%= booking.user.age %>
-          </p>
-          <% if ['francisco@hikeasy.fit', 'tzegai@hikeasy.fit'].include? booking.user.email %>
-            <p class="offline-badge m-0 ml-2"></p>
-          <% else %>
-            <p class="online-badge m-0 ml-2"></p>
-          <% end %>
-        </div>
-        <p class="text-muted m-0"></small><em><%= booking.user.country %></em></small></p>
+            <div class="notification-members-content">
+              <div class="d-flex align-items-center">
+                <p class="m-0"><%= booking.user.first_name %>, <%= booking.user.age %></p>
+                <% if ['francisco@hikeasy.fit', 'tzegai@hikeasy.fit'].include? booking.user.email %>
+                  <p class="offline-badge m-0 ml-2"></p>
+                <% else %>
+                  <p class="online-badge m-0 ml-2"></p>
+                <% end %>
+              </div>
+              <p class="text-muted m-0"></small><em><%= booking.user.country %></em></small></p>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
-<% end %>
-</div>
-</div>
-</div>
 </div>
