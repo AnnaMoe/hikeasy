@@ -1,5 +1,5 @@
 meta_product_name: "hikEasy"
 meta_title: "hikEasy - multi-day group hikes"
 meta_description: "Book your organized multi-day group hiking tour with other passionate hikers just like you. All the hikes are led by a local certified guide. And everything is planned for you from accomodation until gear and meals. "
-meta_image: "photo_cover2.jpeg" # should exist in `app/assets/images/`
+meta_image: "cover_hikeasy.png" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
