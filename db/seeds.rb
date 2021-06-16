@@ -323,8 +323,8 @@ chadar_trek = Hike.create(
         description: "The Chadar Trek or the Zanskar Gorge is a winter trail over the frozen Zanskar River, which lies in the Indian union territory of Ladakh. It is traditionally the only means of travel in the area during the harsh winter months. The trail has become popular with international adventure tourists.",
   guide: vitor
   )    
-chadar_trek_image = ['chadar_trek.jpg']
-   1.times do |j|
+chadar_trek_image = ['chadar_trek.jpg', 'india1.jpg', 'india2.jpg', 'india3.jpg']
+   4.times do |j|
         image_name = chadar_trek_image[j]
         add_image_to_hike(chadar_trek, image_name)
       end 
@@ -352,8 +352,8 @@ south_west_coast_path = Hike.create(
   description: "As a National Trail, the South West Coast Path is signposted all the way round by the acorn. In addition to this you will find large commemorative markers at key points on the trail such as Minehead (the start), Porthallow (the mid-point) and South Haven Point (the end). All off which offer the perfect excuse for a photo! There are also a number of way markers along the way that will tell you how far from each end of the trail you are",
   guide: vitor
 )
-south_west_coast_path_image = ['south_west_coast_path.jpg', 'south_west_coast_path.jpg']
-2.times do |j|
+south_west_coast_path_image = ['south_west_coast_path.jpg', 'england1.jpg', 'england2.jpg', 'england3.jpg',]
+4.times do |j|
   image_name = south_west_coast_path_image[j]
   add_image_to_hike(south_west_coast_path, image_name)
 end 
@@ -381,8 +381,8 @@ torres_del_paine = Hike.create(
     description: "As a National Trail, the South West Coast Path is signposted all the way round by the acorn. In addition to this you will find large commemorative markers at key points on the trail such as Minehead (the start), Porthallow (the mid-point) and South Haven Point (the end). All off which offer the perfect excuse for a photo! There are also a number of way markers along the way that will tell you how far from each end of the trail you are",
   guide: vitor
   )
-  torres_del_paine_image = ['torres_del_paine.jpg']
-1.times do |j|
+  torres_del_paine_image = ['torres_del_paine.jpg', 'chile1.jpg', 'chile2.jpg', 'chile3.jpg']
+4.times do |j|
   image_name = torres_del_paine_image[j]
   add_image_to_hike(torres_del_paine, image_name)
 end 
@@ -439,8 +439,8 @@ zion_narrows = Hike.create(
         description: "A hike through The Narrows requires hiking in the Virgin River. You must get your feet wet since there is no trail. Most people choose to start their hike from the Temple of Sinawava via the Riverside Walk and then walk upstream before turning around and hiking back down to the Temple of Sinawava.",
   guide: vitor
   )    
-zion_narrows_image = ['zion.jpg']
-   1.times do |j|
+zion_narrows_image = ['zion.jpg', 'usa1.jpg', 'usa2.jpg', 'usa3.jpg',]
+   4.times do |j|
         image_name = zion_narrows_image[j]
         add_image_to_hike(zion_narrows, image_name)
       end 
@@ -467,8 +467,8 @@ kilimandscharo = Hike.create(
         description: "The Lemosho starts on the far Western side of Mount Kilimanjaro. It is best trekked on a 7 or 8-day itinerary and offers great acclimatisation. High summit success rates and awesome scenery make the Lemosho one of our favourite routes on Kilimanjaro.",
   guide: vitor
   )    
-kilimandscharo_image = ['kilimanjaro.jpg']
-   1.times do |j|
+kilimandscharo_image = ['kilimanjaro.jpg', 'tansania1.jpg', 'tansania2.jpg','tansania3.jpg']
+   4.times do |j|
         image_name = kilimandscharo_image[j]
         add_image_to_hike(kilimandscharo, image_name)
       end 
@@ -495,8 +495,8 @@ larapinta_trail = Hike.create(
         description: "The Larapinta Trail is an extended walking track in the Northern Territory of Australia. Its total length covers 223 kilometres (139 mi) from east to west, with the eastern end at Alice Springs and the western end at Mount Sonder, one of the territory's highest mountains. It follows the West MacDonnell Ranges, sometimes along the ridge line, other times on the plain below, in the West MacDonnell National Park.",
   guide: vitor
   )    
-larapinta_image = ['larapinta.jpg']
-   1.times do |j|
+larapinta_image = ['larapinta.jpg', 'australia1.jpg', 'australia2.jpg', 'australia3.jpg']
+   4.times do |j|
         image_name = larapinta_image[j]
         add_image_to_hike(larapinta_trail, image_name)
       end 
@@ -523,8 +523,8 @@ laugavegur_trail = Hike.create(
         description: "The Laugavegur Trail in Iceland is one of the most unique and visually stimulating trails in the world. Not only do you have constantly shifting landscapes, from the rainbow-striped mounds of the highlands in Landmannalaugar to the psychedelic greens of Þórsmörk, but ever-changing conditions as well. No wonder National Geographic ranked this trail in their top 20 in the world. There’s nothing out there that can equal it.",
   guide: vitor
   )    
-laugavegur_image = ['laugavegur.jpg']
-   1.times do |j|
+laugavegur_image = ['laugavegur.jpg', 'iceland1.jpg', 'iceland2.jpg', 'iceland3.jpg']
+   4.times do |j|
         image_name = laugavegur_image[j]
         add_image_to_hike(laugavegur_trail, image_name)
       end 
@@ -551,8 +551,8 @@ create_random_group_hikes(laugavegur_trail)
         description: "St. Olav Ways - The Pilgrim Paths to Trondheim, is a network of historical trails through beautiful nature, cultural landscapes and historical sites. The trails come from all directions to St. Olav's burial place, the Nidaros Cathedral, which was the northernmost pilgrimage destination for Christianity throughout the Middle Ages.",
   guide: vitor
   )    
-st_olavsweg_image = ['st_olavsweg.jpg']
-   1.times do |j|
+st_olavsweg_image = ['st_olavsweg.jpg', 'norway1.jpg', 'norway2.jpg', 'norway3.jpg',]
+   4.times do |j|
         image_name = st_olavsweg_image[j]
         add_image_to_hike(st_olavsweg, image_name)
       end 
@@ -580,8 +580,8 @@ create_random_group_hikes(st_olavsweg)
         description: "The Chilkoot Trail is a 33 mile long recreational trail. Each summer over 10,000 people hike some or all of it. The majority of visitors day hike on the trail for just a few hours. Others spend an average of 3-5 days backpacking the entire trail. Each year a few hearty people run the trail in one stretch.",
   guide: vitor
   )    
-chilkoot_trail_image = ['chilkoot_trail.jpg']
-   1.times do |j|
+chilkoot_trail_image = ['chilkoot_trail.jpg', 'canada1.jpg', 'canada2.jpg','canada3.jpg']
+   4.times do |j|
         image_name = chilkoot_trail_image[j]
         add_image_to_hike(chilkoot_trail, image_name)
       end 
@@ -636,8 +636,8 @@ mt_apo = Hike.create(
         guide: vitor,
 )
 
-mt_apo_image = ['mt_apo.jpg']
-   1.times do |j|
+mt_apo_image = ['mt_apo.jpg', 'philippines1.jpg', 'philippines2.jpg', 'philippines3.jpg']
+   4.times do |j|
         image_name = mt_apo_image[j]
         add_image_to_hike(mt_apo, image_name)
       end 
