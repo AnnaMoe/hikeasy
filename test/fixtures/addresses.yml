@@ -1,0 +1,10 @@
+malerweg_start_address:
+  address: "Pirna"
+  latitude: 50.9616923
+  longitude: 13.9386643
+
+malerweg_end_address:
+  address: "Stolpen"
+  latitude: 51.0492329
+  longitude: 14.0830003
+  

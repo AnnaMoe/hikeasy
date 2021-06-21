@@ -1,3 +1,4 @@
+
 class Address < ApplicationRecord
   has_many :hikes
   geocoded_by :address, latitude: :latitude, longitude: :longitude

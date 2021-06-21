@@ -1,0 +1,34 @@
+
+malerweg_photo_1_blob:
+  key: a7jmeu0es8wpre2bxfzb8k5a9uwu
+  filename: Malerweg_Bastei.jpeg
+  content_type: image/jpeg
+  metadata: '{"identified":true,"analyzed":true}'
+  byte_size: 69000
+  checksum: NnvviNecbbn4rsimRb7EWA==
+
+malerweg_photo_2_blob:
+  key: 1ywmworhjjba2084m5v0yv5mt5l0
+  filename: Malerweg_Elbe.jpg
+  content_type: image/jpeg
+  metadata: '{"identified":true,"analyzed":true}'
+  byte_size: 136362
+  checksum: 4iQgmRlw59Yu56NNO3L8hg==
+
+
+malerweg_photo_3_blob:
+  key: gn711m8nakbwjzw7ewareyelcg8j
+  filename: Malerweg_view.jpg
+  content_type: image/jpeg
+  metadata: '{"identified":true,"analyzed":true}'
+  byte_size: 108547
+  checksum: o2nWETkBGf9lZyWukkgnfQ==
+
+
+malerweg_photo_4_blob:
+  key: swknt0pnsv208nnq2s2z4fdp5afy
+  filename: Malerweg_gate.jpeg
+  content_type: image/jpeg
+  metadata: '{"identified":true,"analyzed":true}'
+  byte_size: 128473
+  checksum: AMdwNF8w1OcSBlLuxM6XGA==

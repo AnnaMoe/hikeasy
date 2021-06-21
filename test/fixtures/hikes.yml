@@ -1,0 +1,21 @@
+# filename named after table name
+
+malerweg:
+  name: "Malerweg"
+  title: "Sandstone Filled Malerweg through Saxony Switzerland"
+  subtitle: "An unforgettable and physically demanding 76-km trek through the Saxony Switzerland National Park, in Saxony, Germany. A 8-day tour led by Dieter - local certified guide."
+  national_park: "Saxony Switzerland"
+  region: "Germany"
+  price: 610
+  difficulty: "Intermediate"
+  accomodation_type: 'Tent'
+  terrain: "Forest, Field Paths"
+  elevation: 480
+  length: 8
+  distance: 116
+  group_size: 15
+  start_address: malerweg_start_address
+  end_address: malerweg_start_address
+  map_style: 'mapbox://styles/annamoe/ckoyht30h0awk17mj7tuof7ck'
+  description: "The Elbe Sandstone Mountains Malerweg trail in Saxon Switzerland is one of the most picturesque hiking trails in Germany. Where once painters sought inspiration for their timeless works, you can now walk along a 116 km hiking trail through Saxon Switzerland. Caves can be found in hidden places as a opportunity to sleep in it. Not everybody finds these caves. With a bit of luck our guides will show you theses incredible places, giving you the chance to escape from the civilization."
+  guide: dieter
