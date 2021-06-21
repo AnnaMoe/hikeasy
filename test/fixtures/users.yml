@@ -1,0 +1,15 @@
+anna:
+  email: anna@hikeasy.fit
+  first_name: "Anna"
+  last_name: "Moe"
+
+dieter:
+  email: "dieter@hikeasy.fit"
+  nickname: "dieterpankratz"
+  age: "32"
+  country: "Germany"
+  first_name: "Dieter"
+  last_name: "Pankratz"
+  guide_description: "Based in Dresden, I am in love with the Sandstone of the East because ofeverything they offer me: beautiful views, challenging climbs, and breathtaking nature.
+  I love to work with people, share my experience with them and guide them with passion."
+  guide_since: 02-04-2017
