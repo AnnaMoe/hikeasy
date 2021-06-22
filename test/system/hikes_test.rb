@@ -58,12 +58,8 @@ class HikesTest < ApplicationSystemTestCase
     # save_and_open_screenshot
 
     # # Should be redirected to dashboard
+    # assert equal that the current path is the dashboard path
     assert_equal dashboard_path, page.current_path
-
-    #assert_redirected_to dashboard_path
-    #assert_equal "dashboard", page.current_path
-    #   assert_text "Creating a booking"
-
   end
 
   # test "lets a signed in user create a new review" do
