@@ -47,13 +47,13 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
       - name: Yarn install
         run: yarn install --frozen-lockfile
+      - name: Run Bundle install
+        run: bundle install
       - name: Prepare DB
         run: |
           cp config/database.github.yml config/database.yml
           bundle exec rails db:create db:migrate
           # prep done, we can test
-      - name: Run Bundle install
-        run: bundle install
       - name: Run model tests
         run: bundle exec rails test
       - name: Run system tests
