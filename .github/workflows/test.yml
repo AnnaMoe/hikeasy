@@ -1,7 +1,7 @@
 name: Test
 
 # triggers on
-on: [push]
+on: [push, pull_request]
 
 jobs:
   test:
@@ -32,7 +32,7 @@ jobs:
         uses: ruby/setup-ruby@v1 # short for https://github.com/ruby/setup-ruby
         with:
           # runs 'bundle install' and caches installed gems automatically
-          bundler-cache: true
+          bundler-cache: false
       - name: Set up Node
         uses: actions/setup-node@v2
         with:
