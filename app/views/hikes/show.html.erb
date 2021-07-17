@@ -137,14 +137,12 @@
         <div class="card-hike">
           <% if related_hike.photos.attached? %>
             <%= cl_image_tag related_hike.photos.first.key, class: 'hike-image' %>
-
-            <%= link_to toggle_favorite_hike_path(related_hike), remote: true, method: :post do %>
-            <div class="like-icon mx-2 heart <%= current_user.favorited?(related_hike) ? 'favorited' : 'not-favorited' %>" data-id="<%= related_hike.id %>">
-            <i class="fas fa-heart suggestion "></i></div>
-             <% end %>
-
-
-           
+            <% if current_user %>
+              <%= link_to toggle_favorite_hike_path(related_hike), remote: true, method: :post do %>
+                <div class="like-icon mx-2 heart <%= current_user.favorited?(related_hike) ? 'favorited' : 'not-favorited' %>" data-id="<%= related_hike.id %>">
+                <i class="fas fa-heart suggestion "></i></div>
+              <% end %>
+            <% end %>           
       <%end%>
           <div class ="float-right price mr-2 mt-2">$<%=related_hike.price%></div>
           <div class="card-hike-infos">
