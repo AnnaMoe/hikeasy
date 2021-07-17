@@ -37,7 +37,7 @@ class HikesTest < ApplicationSystemTestCase
     assert_selector ".card-product", count: Hike.count
   end
 
-  test "lets a signed in user create a new booking" do
+  test "let a signed in user create a new booking" do
     login_as users(:anna)
     visit "/hikes/#{hikes(:malerweg).id}"
     #save_and_open_screenshot
@@ -62,20 +62,33 @@ class HikesTest < ApplicationSystemTestCase
     assert_equal dashboard_path, page.current_path
   end
 
-  # test "lets a signed in user create a new review" do
-  #  login_as users(:anna)
-    # visit "/hikes/#{hikes(:malerweg)}/bookings/:booking_id/reviews/new"
-    # # save_and_open_screenshot
+  test "let a signed in user create a new review" do
+   login_as users(:anna)
+   puts "/hikes/#{hikes(:malerweg).id}/bookings/#{bookings(:booking_malerweg).id}/reviews/new"
+    visit "/hikes/#{hikes(:malerweg).id}/bookings/#{bookings(:booking_malerweg).id}"
+    #save_and_open_screenshot
 
-    # fill_in "comment", with: "Amazing experience"
-    # fill_in "rating", with: "5"
-    # # save_and_open_screenshot
+    click_on 'Leave a Review'
+    fill_in "review[comment]", with: "Amazing experience"
+    select "5", :from => "review[rating]"
+    #save_and_open_screenshot
 
-    # click_on 'Submit Review'
-    # # save_and_open_screenshot
+    click_on 'Submit review'
+    #save_and_open_screenshot
 
     # # Should be redirected to Show Hike Page with new review
-    # assert_equal "/hikes/:id", page.current_path
-    # assert_text "Amazing experience"
- # end
+    assert_equal "/hikes/#{hikes(:malerweg).id}", page.current_path
+    #assert_text "Amazing experience"
+  end
+
+  test "let a signed in user write a message on the group page" do
+    login_as users(:anna)
+    visit "/hikes/#{hikes(:malerweg).id}/bookings/#{bookings(:booking_malerweg).id}/chatroom"
+    #save_and_open_screenshot
+    fill_in "message[content]", with: 'Hello everyone'
+    find('#message_content').native.send_keys(:return)
+    # needed to wait website render again before screenshot
+    fill_in "message[content]", with: '' 
+    save_and_open_screenshot
+  end
 end
