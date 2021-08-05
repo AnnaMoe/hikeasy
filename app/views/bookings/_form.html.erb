@@ -9,7 +9,7 @@
       <% end %>
     <% end %>
     </p>
-    <h3 class="float-right card-booking-title"><strong>$<%=@hike.price%></strong></h3>
+    <h3 class="float-right card-booking-title"><strong><%=humanized_money_with_symbol(@hike.price)%></strong></h3>
     </div>
     <div class="hike_details">
     <i class="fas fa-star"></i> 

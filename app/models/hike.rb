@@ -18,4 +18,7 @@ class Hike < ApplicationRecord
 
   # comes from favorite gem
   acts_as_favoritable
+
+  # comes from money-rails gem
+  monetize :price_cents
 end

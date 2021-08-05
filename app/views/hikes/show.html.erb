@@ -144,7 +144,7 @@
               <% end %>
             <% end %>           
       <%end%>
-          <div class ="float-right price mr-2 mt-2">$<%=related_hike.price%></div>
+          <div class ="float-right price mr-2 mt-2"><%=humanized_money_with_symbol(related_hike.price) %></div>
           <div class="card-hike-infos">
             <div class ="hike_name"><%= related_hike.name %></div>
             <div class ="location"><%= related_hike.region %></div>

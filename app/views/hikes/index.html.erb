@@ -175,7 +175,7 @@
                       <div class="availability">
                         Available in: <%= hike.group_hikes.map { |gh| gh.start_at.strftime("%B") }.uniq.join(', ') %>
                       </div>
-                      <div class ="prezzo">$<%=hike.price%></div>
+                      <div class ="prezzo"><%= humanized_money_with_symbol(hike.price) %></div>
                     </div>
                   </div>
                 </div>

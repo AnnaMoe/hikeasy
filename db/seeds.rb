@@ -196,7 +196,7 @@ malerweg = Hike.create(
   subtitle: "An unforgettable and physically demanding 76-km trek through the Saxony Switzerland National Park, in Saxony, Germany. A 8-day tour led by Dieter - local certified guide.",
   national_park: "Saxony Switzerland",
   region: "Germany",
-  price: 610,
+  price: 500,
   difficulty: "Intermediate",
   accomodation_type: 'Tent',
   terrain: "Forest, Field Paths",
