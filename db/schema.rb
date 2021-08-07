@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 2021_08_06_111901) do
     t.bigint "group_hike_id"
     t.string "state"
     t.string "hike_sku"
-    t.integer "amount_cents", default: 0, null: false
     t.string "checkout_session_id"
     t.index ["group_hike_id"], name: "index_bookings_on_group_hike_id"
     t.index ["hike_id"], name: "index_bookings_on_hike_id"
