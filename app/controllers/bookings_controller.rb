@@ -38,8 +38,8 @@ class BookingsController < ApplicationController
         quantity: 1,
       }],            
       mode: 'payment',
-      success_url: dashboard_url,
-      cancel_url: dashboard_url
+      success_url: hike_booking_url(@hike,@booking),
+      cancel_url: hike_url(@hike)
     })
 
     redirect_to session.url, status: 303
