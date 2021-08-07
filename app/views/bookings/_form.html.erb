@@ -19,7 +19,7 @@
     </div>
     <br>
     <br>
-    <%= simple_form_for([@hike, @booking], method: :get, url: new_hike_booking_path(@hike) ) do |f| %>
+    <%= simple_form_for([@hike, @booking], url: hike_bookings_path(@hike) ) do |f| %>
       <%= f.input :group_hike, label: "Available hike dates:", collection: @hike.group_hikes, selected: @hike.group_hikes.first %>
       <%= f.button :button, "Book Now", class: "btn btn-primary w-100 mt-3 p-2" %>
     <% end %>
