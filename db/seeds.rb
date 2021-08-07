@@ -748,10 +748,6 @@ booking1 = Booking.create!(
   first_name: toni.first_name,
   last_name: toni.last_name,
   email: toni.email,
-  credit_card: Faker::Finance.credit_card, 
-  credit_card_expiration_month: rand(1..12), 
-  credit_card_expiration_year: rand(2021..2030),
-  credit_card_cvc: rand(100..9999)
 )
 
 booking2 = Booking.create!(
@@ -761,10 +757,6 @@ booking2 = Booking.create!(
   first_name: seb.first_name,
   last_name: seb.last_name,
   email: seb.email,
-  credit_card: Faker::Finance.credit_card, 
-  credit_card_expiration_month: rand(1..12), 
-  credit_card_expiration_year: rand(2021..2030),
-  credit_card_cvc: rand(100..9999)
 )
 
 booking3 = Booking.create!(
@@ -774,10 +766,6 @@ booking3 = Booking.create!(
   first_name: romeo.first_name,
   last_name: romeo.last_name,
   email: romeo.email,
-  credit_card: Faker::Finance.credit_card, 
-  credit_card_expiration_month: rand(1..12), 
-  credit_card_expiration_year: rand(2021..2030),
-  credit_card_cvc: rand(100..9999)
 )
 
 booking4 = Booking.create!(
@@ -787,10 +775,6 @@ booking4 = Booking.create!(
   first_name: laura.first_name,
   last_name: laura.last_name,
   email: laura.email,
-  credit_card: Faker::Finance.credit_card, 
-  credit_card_expiration_month: rand(1..12), 
-  credit_card_expiration_year: rand(2021..2030),
-  credit_card_cvc: rand(100..9999)
 )
 
 booking5 = Booking.create!(
@@ -800,10 +784,6 @@ booking5 = Booking.create!(
   first_name: rahman.first_name,
   last_name: rahman.last_name,
   email: rahman.email,
-  credit_card: Faker::Finance.credit_card, 
-  credit_card_expiration_month: rand(1..12), 
-  credit_card_expiration_year: rand(2021..2030),
-  credit_card_cvc: rand(100..9999)
 )
 
 booking6 = Booking.create!(
@@ -813,10 +793,6 @@ booking6 = Booking.create!(
   first_name: louis.first_name,
   last_name: louis.last_name,
   email: louis.email,
-  credit_card: Faker::Finance.credit_card, 
-  credit_card_expiration_month: rand(1..12), 
-  credit_card_expiration_year: rand(2021..2030),
-  credit_card_cvc: rand(100..9999)
 )
 
 booking7 = Booking.create!(
@@ -826,10 +802,6 @@ booking7 = Booking.create!(
   first_name: ai.first_name,
   last_name: ai.last_name,
   email: ai.email,
-  credit_card: Faker::Finance.credit_card, 
-  credit_card_expiration_month: rand(1..12), 
-  credit_card_expiration_year: rand(2021..2030),
-  credit_card_cvc: rand(100..9999)
 )
 
 booking8 = Booking.create!(
@@ -839,10 +811,6 @@ booking8 = Booking.create!(
   first_name: francisco.first_name,
   last_name: francisco.last_name,
   email: francisco.email,
-  credit_card: Faker::Finance.credit_card, 
-  credit_card_expiration_month: rand(1..12), 
-  credit_card_expiration_year: rand(2021..2030),
-  credit_card_cvc: rand(100..9999)
 )
 
 booking9 = Booking.create!(
@@ -852,10 +820,6 @@ booking9 = Booking.create!(
   first_name: tzegai.first_name,
   last_name: tzegai.last_name,
   email: tzegai.email,
-  credit_card: Faker::Finance.credit_card, 
-  credit_card_expiration_month: rand(1..12), 
-  credit_card_expiration_year: rand(2021..2030),
-  credit_card_cvc: rand(100..9999)
 )
 
 booking10 = Booking.create!(
@@ -865,10 +829,6 @@ booking10 = Booking.create!(
   first_name: francisco.first_name,
   last_name: francisco.last_name,
   email: francisco.email,
-  credit_card: Faker::Finance.credit_card, 
-  credit_card_expiration_month: rand(1..12), 
-  credit_card_expiration_year: rand(2021..2030),
-  credit_card_cvc: rand(100..9999)
 )
 
 booking11 = Booking.create!(
@@ -878,10 +838,6 @@ booking11 = Booking.create!(
   first_name: tzegai.first_name,
   last_name: tzegai.last_name,
   email: tzegai.email,
-  credit_card: Faker::Finance.credit_card, 
-  credit_card_expiration_month: rand(1..12), 
-  credit_card_expiration_year: rand(2021..2030),
-  credit_card_cvc: rand(100..9999)
 )
 
 
@@ -961,10 +917,6 @@ Hike.all.each do |h|
     first_name: toni.first_name,
     last_name: toni.last_name,
     email: toni.email,
-    credit_card: Faker::Finance.credit_card, 
-    credit_card_expiration_month: rand(1..12), 
-    credit_card_expiration_year: rand(2021..2030),
-    credit_card_cvc: rand(100..9999)
   )
 
   how_many = rand(3..4)

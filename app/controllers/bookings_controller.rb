@@ -112,10 +112,7 @@ class BookingsController < ApplicationController
       .require(:booking)
       .except(:group_hike)
       .permit(
-        :first_name, :last_name, :phone_number, :credit_card, 
-        :credit_card_expiration_month, :credit_card_expiration_year,
-        :credit_card_cvc, :email, hike_sku: @hike.sku, amount: @hike.price, state: 'pending'
+        :first_name, :last_name, :phone_number, :email, hike_sku: @hike.sku, amount: @hike.price, state: 'pending'
       )
-      #:credit_card_expiration_month, :credit_card_expiration_year, :credit_card_cvc
   end
 end

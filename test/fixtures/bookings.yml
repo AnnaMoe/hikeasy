@@ -5,8 +5,4 @@ booking_malerweg:
   last_name: "Moe"
   phone_number: "01763439489"
   email: "anna@hikeasy.fit"
-  credit_card_expiration_month:  "May"
-  credit_card_expiration_year:  "2023"
-  credit_card_cvc:  322
-  credit_card: "4422442244224422"
   group_hike: malerweg_group_hike
