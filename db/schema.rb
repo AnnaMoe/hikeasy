@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_05_145202) do
+ActiveRecord::Schema.define(version: 2021_08_07_173235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,12 +54,12 @@ ActiveRecord::Schema.define(version: 2021_08_05_145202) do
     t.string "last_name"
     t.string "phone_number"
     t.string "email"
-    t.string "credit_card"
-    t.string "credit_card_expiration_month"
-    t.string "credit_card_expiration_year"
-    t.integer "credit_card_cvc"
     t.string "dates"
     t.bigint "group_hike_id"
+    t.string "state"
+    t.string "hike_sku"
+    t.string "checkout_session_id"
+    t.integer "amount_cents", default: 0, null: false
     t.index ["group_hike_id"], name: "index_bookings_on_group_hike_id"
     t.index ["hike_id"], name: "index_bookings_on_hike_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 2021_08_05_145202) do
     t.string "national_park"
     t.bigint "guide_id"
     t.integer "price_cents", default: 0, null: false
+    t.string "sku"
     t.index ["end_address_id"], name: "index_hikes_on_end_address_id"
     t.index ["guide_id"], name: "index_hikes_on_guide_id"
     t.index ["start_address_id"], name: "index_hikes_on_start_address_id"

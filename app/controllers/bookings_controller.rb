@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  include CloudinaryHelper
+
   before_action :set_booking, only: [:show, :edit, :update, :confirmation, :chatroom]
 
   def new
@@ -9,20 +11,38 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @hike = Hike.find(params[:hike_id])
     @group_hike = GroupHike.find(params[:booking][:group_hike])
-    @booking = Booking.new(booking_params)
-    @booking.hike = @hike
-    @booking.group_hike = @group_hike
-    @booking.user = current_user
+    @hike = @group_hike.hike
+    @booking = Booking.create!(
+      hike: @hike, 
+      group_hike: @group_hike, 
+      user: current_user, 
+      hike_sku: @hike.sku, 
+      amount: @hike.price, 
+      state: 'pending'
+    )
+
     authorize @booking
-    if @booking.save
-      redirect_to dashboard_path
-    else
-      set_years_and_months
-      render :new, status: :unprocessable_entity
-    end
-    
+
+    session = Stripe::Checkout::Session.create({
+      payment_method_types: ['card'],
+      line_items: [{
+        price_data: {
+          currency: 'eur',
+          product_data: {
+            name: @hike.name,
+            images: [cl_image_path(@hike.photos.first.key)],
+          },
+          unit_amount: @hike.price_cents,
+        },
+        quantity: 1,
+      }],            
+      mode: 'payment',
+      success_url: hike_booking_url(@hike,@booking),
+      cancel_url: hike_url(@hike)
+    })
+
+    redirect_to session.url, status: 303
   end
 
   def edit
@@ -94,7 +114,7 @@ class BookingsController < ApplicationController
       .permit(
         :first_name, :last_name, :phone_number, :credit_card, 
         :credit_card_expiration_month, :credit_card_expiration_year,
-        :credit_card_cvc, :email
+        :credit_card_cvc, :email, hike_sku: @hike.sku, amount: @hike.price, state: 'pending'
       )
       #:credit_card_expiration_month, :credit_card_expiration_year, :credit_card_cvc
   end
