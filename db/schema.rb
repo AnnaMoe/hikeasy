@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 2021_08_06_111901) do
     t.string "national_park"
     t.bigint "guide_id"
     t.integer "price_cents", default: 0, null: false
+    t.integer "amount_cents", default: 0, null: false
     t.string "sku"
     t.index ["end_address_id"], name: "index_hikes_on_end_address_id"
     t.index ["guide_id"], name: "index_hikes_on_guide_id"
