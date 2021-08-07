@@ -6,5 +6,4 @@ class Booking < ApplicationRecord
 
   monetize :amount_cents
 
-  validates :credit_card, :credit_card_expiration_month, :credit_card_expiration_year, :credit_card_cvc, presence: true
 end
