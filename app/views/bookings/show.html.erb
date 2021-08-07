@@ -3,13 +3,13 @@
     <div class= "col-md-9">
       <div class="d">
         <div class="titolo_myhike">
-          <%=@booking.hike.name%>
+          <%=@booking.hike.name%> successfully booked
           <%# <p class="float-right reviews"><i class="fas fa-star"></i>
             <% @rating = @hike.reviews.map { |r| r.rating} %>
             <%# <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(1)  %>
           <%# </p> %> 
         </div>
-        <em class="text-muted" id="countdown"><%=@booking.group_hike %></em>
+        <em class="text-muted" id="countdown">Your dates: <%=@booking.group_hike %></em>
       </div>
     </div>
     <div class = "col-md-3">
