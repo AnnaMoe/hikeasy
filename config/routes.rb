@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+  # get '/user' => "hikes#index", :as => :user_root
+
   resources :hikes, only: [:index, :show] do
     member do
       post 'toggle_favorite', to: "hikes#toggle_favorite"
