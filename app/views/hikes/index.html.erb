@@ -1,7 +1,7 @@
 <div class= "container mt-3">
   <%= form_tag hikes_path, method: :get do %>
     <div class= "row mt-5 ml-1">
-      <div class= "col-lg-1">
+         <div class= "col-lg-1">
         <div class="nav-link" >
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -26,169 +26,139 @@
             </div>
           </div>
         </div>
-        <div class= "col-lg-1">
-          <div class="nav-link" >
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Difficulty
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <div class="dropdown-item">
-                  <%= check_box_tag "difficulty[]", "Beginner", params[:difficulty]&.include?("Beginner") %>
-                  <%= label_tag :beginner %>
-                  <br>
-                  <%= check_box_tag "difficulty[]", "Intermediate", params[:difficulty]&.include?("Intermediate") %>
-                  <%= label_tag :intermediate %>
-                  <br>
-                  <%= check_box_tag "difficulty[]", "Expert", params[:difficulty]&.include?("Expert") %>
-                  <%= label_tag :expert %>
-                  <br>
+      <div class= "col-lg-1">
+        <div class="nav-link" >
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Difficulty
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="dropdown-item">
+                <%= check_box_tag "difficulty[]", "Beginner", params[:difficulty]&.include?("Beginner") %>
+                <%= label_tag :beginner %>
+                <br>
+                <%= check_box_tag "difficulty[]", "Intermediate", params[:difficulty]&.include?("Intermediate") %>
+                <%= label_tag :intermediate %>
+                <br>
+                <%= check_box_tag "difficulty[]", "Expert", params[:difficulty]&.include?("Expert") %>
+                <%= label_tag :expert %>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class= "col-lg-1">
+        <div class="nav-link" >
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Duration
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="dropdown-item">
+                <form method="post">
+                  <div data-role="rangeslider">
+                    <div class = "container">
+                      <div>
+                        <label for="min">0</label>
+                        <input name="max_duration" type ="range" min="0" max="30" onchange="showVal('duration-output', this.value)" value="<%= params[:max_duration] || 20 %>" />
+                        <label for="max">30 Days</label>
+                      </div>
+                      <output id="duration-output"><%= params[:max_duration]%></output> Days
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class= "col-lg-1">
-          <div class="nav-link" >
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Duration
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <div class="dropdown-item">
-                  <form method="post">
-                    <div data-role="rangeslider">
-                      <div class = "container">
-                        <div>
-                          <label for="min">0</label>
-                          <input name="max_duration" type ="range" min="0" max="30" onchange="showVal('duration-output', this.value)" value="<%= params[:max_duration] || 20 %>" />
-                          <label for="max">30 Days</label>
-                        </div>
-                        <output id="duration-output"><%= params[:max_duration]%></output> Days
-                     </div>
-                    </div>
+      <div class= "col-lg-1">
+        <div class="nav-link" >
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Distance
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="dropdown-item">
+                <form method="post">
+                  <div>
+                    <label for="min">0</label>
+                    <input name="max_distance" type ="range" min="0" max="1000" onchange="showVal('distance-output', this.value)" value="<%= params[:max_distance] || 1000 %>" />
+                    <label for="max">1000 Km</label>
                   </div>
+                  <output id="distance-output"><%= params[:max_distance]%></output> km
                 </div>
               </div>
             </div>
           </div>
-          <div class= "col-lg-1">
-            <div class="nav-link" >
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Distance
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <div class="dropdown-item">
-                    <form method="post">
-
-                        <div>
-                          <label for="min">0</label>
-                          <input name="max_distance" type ="range" min="0" max="1000" onchange="showVal('distance-output', this.value)" value="<%= params[:max_distance] || 1000 %>" />
-                          <label for="max">1000 Km</label>
-                          </div>
-                          <output id="distance-output"><%= params[:max_distance]%></output> km
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <%# <div class= "col-lg-1">
-              <div class="nav-link" >
-                <div class="dropdown">
-                  <div style="width:500px;">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Accomodation
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <div class="dropdown-item">
-                        <br>
-                        <%= check_box_tag "accomodation[]", "Cabin", params[:accomodation]&.include?("Cabin") %>
-                        <%# <%= label_tag :cabin %>
-                        <%# <br> %>
-                        <%# <%= check_box_tag "accomodation[]", "Tent", params[:accomodation]&.include?("Tent") 
-                        <%= label_tag :tent
-                        <br>
-                        <%= check_box_tag "accomodation[]", "Tipi", params[:accomodation]&.include?("Tipi")
-                        <%= label_tag :tipi %> 
-                        <%# <br>
-                        <%= check_box_tag "accomodation[]", "Under the stars", params[:accomodation]&.include?("Under the stars") %>
-                        <%# <%= label_tag :under_the_stars %>
-                      <%# </div> %> 
-                    <%# </div> %>
-                  <%# </div>
-                </div>
-              </div> %>            
-          <% end %>
         </div>
         <div class= "col-lg-1">
           <%= submit_tag "Search", class: "btn btn-secondary search" %>
         </div>
+    </div>
+  <% end %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10">
+      <div class="hike_results">Hike Results:</div>
+    </div>
+    <button class="btn active" type="button" data-toggle="collapse" data-target="#map_results" aria-expanded="false" aria-controls="collapseExample">
+      <i class="far fa-map"></i> Toggle Map
+    </button>
+    <div class="col-lg-12">
+      <div class="collapse show pt-3 pb-3" id="map_results">
+        <div id="map"
+          style="width: 100%; height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10">
-            <div class="hike_results">Hike Results:</div>
-          </div>
-           <button class="btn active" type="button" data-toggle="collapse" data-target="#map_results" aria-expanded="false" aria-controls="collapseExample">
-           <i class="far fa-map"></i> Toggle Map
-           </button>
-            <div class="col-lg-12">
-             <div><%= @hikes.first.name %></div>
-              <div class="collapse show pt-3 pb-3" id="map_results">
-                <div id="map"
-                style="width: 100%; height: 600px;"
-                data-markers="<%= @markers.to_json %>"
-                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+  <% @hikes.each do |hike| %>
+    <% if hike.photos.attached? %>
+      <%= link_to hike_path(hike), class:'text-decoration-none' do %>
+        <div class = "col-lg-12">
+          <div class="card-product">
+            <%= cl_image_tag hike.photos.first.key, class: 'hike-image' %>
+            <div class="card-product-infos">
+              <div class="card-product-infos-heading">
+                <div class ="nome_hike"><%= hike.name %></div>
+                <%= link_to toggle_favorite_hike_path(hike), remote: true, method: :post do %>
+                  <div class="like-icon mx-2 heart <%= current_user != nil && current_user.favorited?(hike) ? 'favorited' : 'not-favorited' %>" data-id="<%= hike.id %>">
+                    <i class="fas fa-heart index"></i></div>
+                <% end %>
+              </div>
+              <div class="card-product-infos-subheading">
+                <div class="luogo"><%= hike.region %></div>
+                <div class="hike_details"><i class="fas fa-star"></i>
+                  <% @rating = hike.reviews.map { |r| r.rating} %>
+                  <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(1)  %>/5.0
                 </div>
               </div>
-          </div>
-    </div>
-
-        
-        <% @hikes.each do |hike| %>
-          <% if hike.photos.attached? %>
-            <%= link_to hike_path(hike), class:'text-decoration-none' do %>
-              <div class = "col-lg-12">
-                <div class="card-product">
-                  <%= cl_image_tag hike.photos.first.key, class: 'hike-image' %>
-                  <div class="card-product-infos">
-                    <div class="card-product-infos-heading">
-                      <div class ="nome_hike"><%= hike.name %></div>
-                        <%= link_to toggle_favorite_hike_path(hike), remote: true, method: :post do %>
-                        <div class="like-icon mx-2 heart <%= current_user != nil && current_user.favorited?(hike) ? 'favorited' : 'not-favorited' %>" data-id="<%= hike.id %>">
-                          <i class="fas fa-heart index"></i></div>
-                      <% end %>
-                    </div>
-                    <div class="card-product-infos-subheading">
-                      <div class="luogo"><%= hike.region %></div>
-                      <div class="hike_details"><i class="fas fa-star"></i>
-                         <% @rating = hike.reviews.map { |r| r.rating} %>
-                        <%= (@rating.inject{ |sum, el| sum + el }.to_f / @rating.size).round(1)  %>/5.0
-                      </div>
-                    </div>
-                    <div class="hike_details"><i class="far fa-clock"></i> <%= hike.length %> Days</div>
-                    <div class="hike_details"><i class="fas fa-arrow-right"></i> <%= hike.distance %> Kilometers</div>
-                    <div class="hike_details"><i class="fas fa-arrow-up"></i> <%= hike.elevation %>m Elevation</div>
-                    <div class="btn difficulty difficulty-<%= hike.difficulty.downcase %>"><%= hike.difficulty %></div>
-                    <br>
-                    <div class="card-product-infos-last-row">
-                      <div class="availability">
-                        Available in: <%= hike.group_hikes.map { |gh| gh.start_at.strftime("%B") }.uniq.join(', ') %>
-                      </div>
-                      <div class ="prezzo"><%= humanized_money_with_symbol(hike.price) %></div>
-                    </div>
-                  </div>
+              <div class="hike_details"><i class="far fa-clock"></i> <%= hike.length %> Days</div>
+              <div class="hike_details"><i class="fas fa-arrow-right"></i> <%= hike.distance %> Kilometers</div>
+              <div class="hike_details"><i class="fas fa-arrow-up"></i> <%= hike.elevation %>m Elevation</div>
+              <div class="btn difficulty difficulty-<%= hike.difficulty.downcase %>"><%= hike.difficulty %></div>
+              <br>
+              <div class="card-product-infos-last-row">
+                <div class="availability">
+                  Available in: <%= hike.group_hikes.map { |gh| gh.start_at.strftime("%B") }.uniq.join(', ') %>
                 </div>
-              <% end %>
+                <div class ="prezzo"><%= humanized_money_with_symbol(hike.price) %></div>
+              </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
       </div>
-    </div>
+    <% end %>
+  <% end %>
+</div>
 
 <script>
-  function showVal(id, value) {
-    var el = document.getElementById(id);
-    el.innerHTML = value;
-  }
+function showVal(id, value) {
+  var el = document.getElementById(id);
+  el.innerHTML = value;
+}
 </script>

@@ -9,7 +9,7 @@ class Hike < ApplicationRecord
   scope :filter_by_difficulty, ->(difficulty) { where difficulty: difficulty }
   scope :filter_by_region, ->(region_id) { where region_id: region_id }
   scope :filter_by_accomodation, ->(accomodation) { where accomodation_type: accomodation }
-  scope :filter_by_max_price, -> (max) { where("price <= ?", max) }
+  scope :filter_by_max_price, -> (max) { where("price_cents <= ?", max.to_i * 100) }
   scope :filter_by_max_distance, -> (max) { where("distance <= ?", max) }
   scope :filter_by_max_duration, -> (max) { where("length <= ?", max) }
 
