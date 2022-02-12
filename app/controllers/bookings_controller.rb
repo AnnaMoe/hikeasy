@@ -17,8 +17,7 @@ class BookingsController < ApplicationController
     @booking.hike = @hike
     @booking.group_hike = @group_hike
     @booking.user = current_user
-    authorize @booking
-    if @booking.save
+    
       @created = true
       set_years_and_months
       render :new
